@@ -1,0 +1,33 @@
+Initial brainstorm for this idea:
+
+GOAL ->
+
+Continuing on my theme for car based projects, this project's goal is to inform and educate a person about a specific automobile they are curious about.
+
+PRODUCT REQUIREMENTS ->
+
+1. Populate a search bar with ALL makes and models
+2. Grab location from browser via JS
+3. Dashboard based application, have different modules dynamically populate using JSON
+
+
+MODULES ->
+1. Common problems with this car (repairpal.com scraping?)
+2. 5 recent news articles containing this vehicle
+3. Average price over time in your area
+4. 5 relevant craigslist listings ?
+5. A small snippet about the car
+
+
+
+OTHER ->
+Eventually add the ability for users to create a profile and save their cars
+
+
+** SOME INFO YOU CAN GET FROM GOOGLE ** :
+
+MPG: Up to 22 city / 31 highway
+Fuel tank capacity: 18.5 gal
+Horsepower: 177 to 271 hp
+Wheel size: 16-18″ diameter, 6.5-8″ width
+Engine: 2.4 L 4-cylinder, 3.5 L V6
