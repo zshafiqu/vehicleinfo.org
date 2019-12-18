@@ -27,7 +27,13 @@ def index():
     for result in r['Results']:
         results.append(result['NHTSACampaignNumber'] + '  ')
 
-    return results
+
+    # results = []
+
+    if len(results) is not 0:
+        return results
+    else:
+        return '<h1>None</h1>'
 
 if __name__ == '__main__':
     run(debug=True, reloader=True)
