@@ -1,9 +1,14 @@
 import requests, json
-from bottle import run, route
-
+from bottle import run, route, template
 
 @route('/')
 def index():
+    # return template('home')
+    return '<h2> stuff </h2>'
+
+
+@route('/diff')
+def diff():
     # url = 'https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeId/440?format=json'
     # r = requests.get(url).json()
     # return r['Results'][0]['Model_Name']
