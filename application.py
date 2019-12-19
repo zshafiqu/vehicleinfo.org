@@ -27,7 +27,7 @@ def getRecalls(year, make, model):
 
     return items
 # ----------------------
-@app.route('/', methods=['POST'])
+@app.route('/handleRequest', methods=['POST'])
 def process():
     query = request.form['searchparameter']
     words = query.split()
@@ -38,8 +38,8 @@ def process():
 @app.route('/')
 def index():
     # return '<h1> On home page </h1>'
-    recalls = getRecalls('2014', 'BMW', '320i')
-    return render_template('dashboard.html', recalls=recalls)
+    # recalls = getRecalls('2014', 'BMW', '320i')
+    return render_template('layout.html')
 # ----------------------
 @app.route('/random')
 def random():
