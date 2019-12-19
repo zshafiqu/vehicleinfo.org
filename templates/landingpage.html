@@ -1,88 +1,90 @@
 
 {% extends "layout.html" %}
 {% block dashboard %}
-
+<!-- BEGIN CONTENT -->
 <div class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="header">
-                        <h4 class="title">2009 Honda Accord</h4>
-                        <p class="category">Mid-size car</p>
-                    </div>
-                    <div class="content">
-                      <img src="https://st.motortrend.com/uploads/sites/10/2015/11/2009-honda-accord-sedan-exl-5-speed-auto-angular-front.png" style="max-width: 50%; max-height: 50%; margin: auto; display:block;">
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card">
-              <div class="header"><h4 class="title">Basic Information for the 2009 Honda Accord</h4></div>
-              <div class="content table-responsive table-full-width">
-                <table class="table table-hover table-striped">
-                  <tbody><!---->
-                    <tr class="ng-star-inserted"><!---->
-                      <td class="ng-star-inserted"><b>MPG:</b></td>
-                      <td class="ng-star-inserted">Up to 22 city / 31 highway</td>
-                    </tr>
-                  </tbody>
-                </table>
+  <div class="container-fluid">
+    <!-- BEGIN ROW 1 -->
+    <div class="row">
+      <!-- Begin Image Card -->
+      <div class="col-md-8">
+          <div class="card">
+              <div class="header">
+                  <h4 class="title">YEAR MAKE MODEL</h4>
+                  <p class="category">SIZE</p>
               </div>
-            </div>
+              <div class="content">
+                <img src="" style="max-width: 50%; max-height: 50%; margin: auto; display:block;">
+              </div>
+          </div>
+      </div>
+      <!-- End Image Card -->
+      <!-- Begin Basic Info Card -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Basic Information for the YEAR MAKE MODEL</h4>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <tbody>
+                <tr class="ng-star-inserted">
+                  <td class="ng-star-inserted"><b>FIELD 1:</b></td>
+                  <td class="ng-star-inserted">Up to X city / Y highway</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-
-
-
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card">
-            <div class="header"><h4 class="title">Recall history for the 2009 Honda Accord</h4></div>
-            <div class="content table-responsive table-full-width">
-              <table class="table table-hover table-striped">
-                <thead><tr><!---->
+      </div>
+      <!-- End Basic Info Card -->
+    </div>
+    <!-- END ROW 1 -->
+    <!-- BEGIN ROW 2 -->
+    <div class="row">
+      <!-- BEGIN RECALL HISTORY CARD -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Recall history for the YEAR MAKE MODEL</h4>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
                   <th class="ng-star-inserted">Recall Number</th>
                   <th class="ng-star-inserted">Recall Date</th>
                   <th class="ng-star-inserted">Component</th>
-                  </tr>
-                </thead>
-                <tbody><!---->
-                  <tr class="ng-star-inserted"><!---->
-                    <td class="ng-star-inserted"><b>17V545000</b></td>
-                    <td class="ng-star-inserted"><b>08/31/2017</b></td>
-                    <td class="ng-star-inserted"><b>AIR BAGS:PASSENGER SIDE FRONTAL</b></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-            <!-- <div class="card"> -->
-              <!-- <div class="header">
-                <h4 class="title">Description about product</h4>
-                <p class="category">More information here</p>
-              </div>
-              <div class="content">
-                <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient. With a smooth metal surface that seamlessly meets the new Retina HD display.</p>
-                <p>The first thing you notice when you hold the phone is how great it feels in your hand. There are no distinct edges. No gaps. Just a smooth, seamless bond of metal and glass that feels like one continuous surface.</p>
-              </div> -->
-            <!-- </div> -->
-          </div>
-          <div class="col-md-8">
-            <div class="card">
-              <div class="header">
-                <h4 class="title">Description about product</h4>
-                <p class="category">More information here</p>
-              </div>
-              <div class="content">
-                <p>Larger, yet dramatically thinner. More powerful, but remarkably power efficient. With a smooth metal surface that seamlessly meets the new Retina HD display.</p>
-                <p>The first thing you notice when you hold the phone is how great it feels in your hand. There are no distinct edges. No gaps. Just a smooth, seamless bond of metal and glass that feels like one continuous surface.</p>
-              </div>
-            </div>
+                </tr>
+              </thead>
+              <tbody><!---->
+                <tr class="ng-star-inserted"><!---->
+                  <td class="ng-star-inserted"><b>F1</b></td>
+                  <td class="ng-star-inserted"><b>F2</b></td>
+                  <td class="ng-star-inserted"><b>F3</b></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
+      </div>
+      <!-- END RECALL HISTORY CARD -->
+      <!-- BEGIN Description Card -->
+      <div class="col-md-8">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Description about product</h4>
+            <p class="category">More information here</p>
+          </div>
+          <div class="content">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+          </div>
+        </div>
+      </div>
+      <!-- END Description Card-->
     </div>
+    <!-- END ROW 2 -->
+  </div>
 </div>
-
+<!-- END CONTENT -->
 {% endblock dashboard %}
