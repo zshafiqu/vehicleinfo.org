@@ -30,10 +30,10 @@ def getRecalls(year, make, model):
 @app.route('/handleRequest', methods=['POST'])
 def process():
     query = request.form['searchparameter']
-    words = query.split()
+    parameter = query.split()
 
-    recalls = getRecalls(words[0], words[1], words[2])
-    return render_template('dashboard.html', recalls=recalls)
+    recalls = getRecalls(parameter[0], parameter[1], parameter[2])
+    return render_template('dashboard.html', recalls=recalls, parameter=parameter)
 # ----------------------
 @app.route('/')
 def index():
@@ -45,7 +45,7 @@ def index():
 def random():
     # return '<h1> On home page </h1>'
     # return render_template('random.html')
-    recalls = getRecalls('2007', 'Honda', 'Civic')
+    recalls = getRecalls('2007', 'honda', 'es')
     return recalls
 # ----------------------
 if __name__ == '__main__':
