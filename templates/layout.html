@@ -24,9 +24,6 @@
     <div class="wrapper">
       <!-- Main Panel -->
       <div class="main-panel" style="min-width: 100%">
-
-
-
         <!-- BEGIN NAVBAR -->
         <nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
@@ -59,49 +56,29 @@
         </nav>
         <!-- END NAVBAR -->
 
-
-
         <!-- BEGIN DASHBOARD CONTENT -->
         {% block dashboard %} {% endblock %}
         <!-- END DASHBOARD CONTENT -->
-
-
 
         <!-- BEGIN FOOTER -->
         <footer class="footer">
             <div class="container-fluid">
                 <nav class="pull-left">
                     <ul>
-                        <li>
-                            <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="#">
-                               Blog
-                            </a>
-                        </li>
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">Portfolio</a></li>
+                      <li><a href="#">Github</a></li>
+                      <li><a href="#">Misc</a></li>
                     </ul>
                 </nav>
             </div>
         </footer>
         <!-- END FOOTER -->
-
-
-        
       </div>
+      <!-- END MAIN PANEL -->
     </div>
+    <!-- END EXTERIOR WRAPPER -->
   </body>
-
 
   <!-- SCRIPTS! -->
   <script src="{{url_for('static', filename='js/jquery.3.2.1.min.js')}}"></script>
