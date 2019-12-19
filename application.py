@@ -16,21 +16,29 @@ def getRecalls(year, make, model):
     url += '?format=json'
 
     # Make request
-    r = requests.get(url).json()
+    items = requests.get(url).json()
+    results = []
 
-    return r
+    # Trim
+    for item in items['Results']:
+        print(item)
+        print('\n')
+        results.append(item)
+
+    return items
 
 @app.route('/')
 def index():
     # return '<h1> On home page </h1>'
-    return render_template('landingpage.html')
+    recalls = getRecalls('2007', 'Honda', 'Civic')
+    return render_template('dashboard.html')
 
 @app.route('/random')
 def random():
     # return '<h1> On home page </h1>'
     # return render_template('random.html')
-    return getRecalls('2007', 'Honda', 'Civic')
-
+    recalls = getRecalls('2007', 'Honda', 'Civic')
+    return recalls
 
 if __name__ == '__main__':
     app.run(debug=True)
