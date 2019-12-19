@@ -20,10 +20,10 @@ def getRecalls(year, make, model):
     results = []
 
     # Trim
-    for item in items['Results']:
-        print(item)
-        print('\n')
-        results.append(item)
+    # for item in items['Results']:
+    #     print(item)
+    #     print('\n')
+    #     results.append(item)
 
     return items
 # ----------------------
