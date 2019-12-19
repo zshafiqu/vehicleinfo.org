@@ -27,11 +27,13 @@ def getRecalls(year, make, model):
 
     return items
 # ----------------------
-@app.route('/process', methods=['POST'])
+@app.route('/', methods=['POST'])
 def process():
     query = request.form['searchparameter']
+    words = query.split()
 
-    return 'Search paramter is ' + query
+    recalls = getRecalls(words[0], words[1], words[2])
+    return render_template('dashboard.html', recalls=recalls)
 # ----------------------
 @app.route('/')
 def index():
