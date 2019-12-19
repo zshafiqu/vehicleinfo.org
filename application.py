@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import requests, json
 # ----------------------
 # Create flask app
@@ -26,6 +26,12 @@ def getRecalls(year, make, model):
         results.append(item)
 
     return items
+# ----------------------
+@app.route('/process', methods=['POST'])
+def process():
+    query = request.form['searchparameter']
+
+    return 'Search paramter is ' + query
 # ----------------------
 @app.route('/')
 def index():
