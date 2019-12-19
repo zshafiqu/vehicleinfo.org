@@ -53,16 +53,18 @@
               <thead>
                 <tr>
                   <th class="ng-star-inserted">Recall Number</th>
-                  <th class="ng-star-inserted">Recall Date</th>
                   <th class="ng-star-inserted">Component</th>
+                  <th class="ng-star-inserted">Consequence</th>
                 </tr>
               </thead>
-              <tbody><!---->
-                <tr class="ng-star-inserted"><!---->
-                  <td class="ng-star-inserted"><b>F1</b></td>
-                  <td class="ng-star-inserted"><b>F2</b></td>
-                  <td class="ng-star-inserted"><b>F3</b></td>
-                </tr>
+              <tbody>
+                {% for recall in recalls['Results'] %}
+                  <tr class="ng-star-inserted">
+                    <td class="ng-star-inserted"><b>{{ recall['NHTSACampaignNumber'] }}</b></td>
+                    <td class="ng-star-inserted"><b>{{ recall['Component'] }}</b></td>
+                    <td class="ng-star-inserted"><b>{{ recall['Conequence'] }}</b></td>
+                  </tr>
+                  {% endfor %}
               </tbody>
             </table>
           </div>
