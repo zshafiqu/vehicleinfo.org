@@ -1,18 +1,25 @@
 from flask import Flask, render_template, request
 from bs4 import BeautifulSoup
 import requests, json
+'''
+requirements ->
+flask, bs4, lxml
+'''
 # ----------------------
 # Create flask app
 app = Flask(__name__)
 # ----------------------
 def scrapeEdmunds(year, make, model):
     # URL to scrape from
-    url = 'https://www.edmunds.com/'+make+'/'+model+'/'+year+'/review/'
+    # url = 'https://www.edmunds.com/'+make+'/'+model+'/'+year+'/review/'
+    url = 'https://www.edmunds.com/lexus/es-300/2001/review/'
     # get html
     source = requests.get(url).text
     soup = BeautifulSoup(source, 'lxml')
+    # print(soup)
 
-    imgSource = soup.find()
+    imgSource = soup.find_all("img", class_="w-100")
+    print(imgSource)
     return ''
 # ----------------------
 # Make an API call to the NHTSA page for recall Information
@@ -33,6 +40,7 @@ def process():
     model = parameter[2]
 
     recalls = getRecalls(year, make, model)
+    stuff = scrapeEdmunds(year, make, model)
     return render_template('dashboard.html', recalls=recalls)
 # ----------------------
 @app.route('/')
