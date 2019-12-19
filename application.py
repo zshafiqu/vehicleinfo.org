@@ -30,7 +30,7 @@ def getRecalls(year, make, model):
 @app.route('/')
 def index():
     # return '<h1> On home page </h1>'
-    recalls = getRecalls('2009', 'Honda', 'Accord')
+    recalls = getRecalls('2014', 'BMW', '320i')
     return render_template('dashboard.html', recalls=recalls)
 # ----------------------
 @app.route('/random')
