@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from bs4 import BeautifulSoup
+from urllib import urlopen
 import requests, json
 '''
 requirements ->
@@ -13,14 +14,20 @@ def scrapeEdmunds(year, make, model):
     # URL to scrape from
     # url = 'https://www.edmunds.com/'+make+'/'+model+'/'+year+'/review/'
     url = 'https://www.edmunds.com/lexus/es-300/2001/review/'
+    # required to emulate broswer user agent
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36',
+        'Origin': 'http://example.com',
+        'Referer': 'http://example.com/some_page'
+        }
     # get html
-    source = requests.get(url).text
+    source = requests.get(url, headers=headers).text
     soup = BeautifulSoup(source, 'lxml')
-    # print(soup)
-
-    imgSource = soup.find_all("img", class_="w-100")
+    imgSource = soup.findAll("img", {"class":"w-100"})
+    imgSource = imgSource[0]['src']
     print(imgSource)
-    return ''
+
+    return imgSource
 # ----------------------
 # Make an API call to the NHTSA page for recall Information
 def getRecalls(year, make, model):
@@ -40,8 +47,8 @@ def process():
     model = parameter[2]
 
     recalls = getRecalls(year, make, model)
-    stuff = scrapeEdmunds(year, make, model)
-    return render_template('dashboard.html', recalls=recalls)
+    imagesrc = scrapeEdmunds(year, make, model)
+    return render_template('dashboard.html', recalls=recalls, imagesrc=imagesrc)
 # ----------------------
 @app.route('/')
 def index():
