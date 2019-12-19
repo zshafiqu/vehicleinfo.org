@@ -33,7 +33,7 @@ def process():
 def index():
     # return '<h1> On home page </h1>'
     # recalls = getRecalls('2014', 'BMW', '320i')
-    return render_template('layout.html')
+    return render_template('home.html')
 # ----------------------
 @app.route('/jsonTest')
 def random():
