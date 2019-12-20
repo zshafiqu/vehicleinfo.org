@@ -39,9 +39,10 @@ def scrapeEdmunds(year, make, model):
         imgSource = imgSource[0]['src']
 
     # imgSource = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
-    print(imgSource)
+    # print(imgSource)
     return imgSource
 # ----------------------
+
 
 with open('car_data/1992.csv', 'r') as csv_file:
     csv_reader = csv.reader(csv_file)
@@ -50,7 +51,13 @@ with open('car_data/1992.csv', 'r') as csv_file:
     next(csv_reader) #skip header
 
     for line in csv_reader:
-        print(line[0]+ ' ' + line[1] + ' ' + line[2])
+        year = line[0]
+        make = line[1]
+        model = line[2]
+
+        url = scrapeEdmunds(year, make, model)
+
+        print(year + ' ' + make + ' ' + model + ' ' + url)
         counter += 1
         if counter is 5:
             break
