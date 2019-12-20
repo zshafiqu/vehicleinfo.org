@@ -43,21 +43,29 @@ def scrapeEdmunds(year, make, model):
     return imgSource
 # ----------------------
 
+year = 1992
 
-with open('car_data/1992.csv', 'r') as csv_file:
-    csv_reader = csv.reader(csv_file)
-    counter = 0;
+while (year <= 2020):
 
-    next(csv_reader) #skip header
+    strYear = str(year)
+    filepath = 'car_data/'+strYear
+    print(filepath)
+    year += 1
 
-    for line in csv_reader:
-        year = line[0]
-        make = line[1]
-        model = line[2]
-
-        url = scrapeEdmunds(year, make, model)
-
-        print(year + ' ' + make + ' ' + model + ' ' + url)
-        counter += 1
-        if counter is 5:
-            break
+# with open('car_data/1992.csv', 'r') as csv_file:
+#     csv_reader = csv.reader(csv_file)
+#     counter = 0;
+#
+#     next(csv_reader) #skip header
+#
+#     for line in csv_reader:
+#         year = line[0]
+#         make = line[1]
+#         model = line[2]
+#
+#         url = scrapeEdmunds(year, make, model)
+#
+#         print(year + ' ' + make + ' ' + model + ' ' + url)
+#         counter += 1
+#         if counter is 5:
+#             break
