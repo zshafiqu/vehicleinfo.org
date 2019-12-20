@@ -45,6 +45,12 @@ def scrapeEdmunds(year, make, model):
 
 with open('car_data/1992.csv', 'r') as csv_file:
     csv_reader = csv.reader(csv_file)
+    counter = 0;
+
+    next(csv_reader) #skip header
 
     for line in csv_reader:
-        print(line)
+        print(line[0]+ ' ' + line[1] + ' ' + line[2])
+        counter += 1
+        if counter is 5:
+            break
