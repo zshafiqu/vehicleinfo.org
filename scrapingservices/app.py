@@ -1,8 +1,31 @@
 from bs4 import BeautifulSoup
 from urllib import urlopen
-import requests, json
+import requests, json, os
 # Script to scrape images for each vehicle in our list
 ''' The goal of this script is to store the source for each image in our database '''
+username = 'test'
+db = 'test'
+passwd = 'test'
+server = 'test'
+port = '0'
+
+print(username)
+print(db)
+print(passwd)
+print(server)
+print(port)
+
+username = os.environ.get('DB_USER')
+db = os.environ.get('DB_NAME')
+passwd = os.environ.get('DB_PASS')
+server = os.environ.get('DB_SERVER')
+port = os.environ.get('DB_PORT')
+
+print(username)
+print(db)
+print(passwd)
+print(server)
+print(port)
 # ----------------------
 def scrapeEdmunds(year, make, model):
     # URL to scrape from
