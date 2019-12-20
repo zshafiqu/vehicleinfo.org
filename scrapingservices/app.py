@@ -43,29 +43,42 @@ def scrapeEdmunds(year, make, model):
     return imgSource
 # ----------------------
 
-year = 1992
+# calls below should open every file and print the first 5 items
+yearCount = 1992
 
-while (year <= 2020):
+while (yearCount <= 2020):
 
-    strYear = str(year)
-    filepath = 'car_data/'+strYear
+    # dupYr = year
+    strYear = str(yearCount)
+    # print('CREATE TABLE '+strYear)
+    filepath = 'car_data/'+strYear+'.csv'
+    newFile = 'new_'+strYear+'.csv'
     print(filepath)
-    year += 1
 
-# with open('car_data/1992.csv', 'r') as csv_file:
-#     csv_reader = csv.reader(csv_file)
-#     counter = 0;
-#
-#     next(csv_reader) #skip header
-#
-#     for line in csv_reader:
-#         year = line[0]
-#         make = line[1]
-#         model = line[2]
-#
-#         url = scrapeEdmunds(year, make, model)
-#
-#         print(year + ' ' + make + ' ' + model + ' ' + url)
-#         counter += 1
-#         if counter is 5:
-#             break
+
+    with open(filepath, 'r') as csv_file:
+        csv_reader = csv.reader(csv_file)
+        # counter = 0;
+
+        # next(csv_reader) #skip header
+
+        with open(newFile, 'w') as new_file:
+            csv_write = csv.writer(new_file, delimiter='\t')
+
+            for line in csv_reader:
+                csv_write.writerow(line[0])
+                csv_write.writerow(line[0])
+
+
+
+            # url = scrapeEdmunds(year, make, model)
+
+            # print(year + ' ' + make + ' ' + model + ' ')
+            # counter += 1
+            # if counter is 5:
+            #     break
+
+
+
+    yearCount += 1
+# ----------------------
