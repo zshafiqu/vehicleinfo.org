@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 from urllib import urlopen
 import requests, json
 # Script to scrape images for each vehicle in our list
+''' The goal of this script is to store the source for each image in our database '''
 # ----------------------
 def scrapeEdmunds(year, make, model):
     # URL to scrape from
