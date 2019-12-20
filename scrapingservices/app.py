@@ -1,20 +1,19 @@
 from bs4 import BeautifulSoup
 from urllib import urlopen
-import requests, json, os
+import requests, json, os, mysql.connector, csv
 # Script to scrape images for each vehicle in our list
 ''' The goal of this script is to store the source for each image in our database '''
 
 username = os.environ.get('DB_USER')
-db = os.environ.get('DB_NAME')
+dbname = os.environ.get('DB_NAME')
 passwd = os.environ.get('DB_PASS')
 server = os.environ.get('DB_SERVER')
 port = os.environ.get('DB_PORT')
 
-print(username)
-print(db)
-print(passwd)
-print(server)
-print(port)
+# mydb = mysql.connector.connect(host=server, port=port, user=username, password=passwd, database=dbname)
+# print('databse connected')
+
+# mysql://scott:tiger@localhost/mydatabase
 # ----------------------
 def scrapeEdmunds(year, make, model):
     # URL to scrape from
@@ -43,3 +42,9 @@ def scrapeEdmunds(year, make, model):
     print(imgSource)
     return imgSource
 # ----------------------
+
+with open('car_data/1992.csv', 'r') as csv_file:
+    csv_reader = csv.reader(csv_file)
+
+    for line in csv_reader:
+        print(line)
