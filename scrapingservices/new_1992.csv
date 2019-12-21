@@ -1,0 +1,283 @@
+year,make,model,body_style,image_src
+1992,Acura,Integra,"[""Sedan"", ""Hatchback""]",https://media.ed.edmunds-media.com/acura/integra/1992/oem/1992_acura_integra_2dr-hatchback_gs-r_s_oem_1_500.jpg
+1992,Acura,Legend,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/acura/legend/1993/oem/1993_acura_legend_coupe_ls_fq_oem_1_500.jpg
+1992,Acura,NSX,"[""Coupe""]",https://media.ed.edmunds-media.com/acura/nsx/1991/oem/1991_acura_nsx_coupe_base_fq_oem_2_500.jpg
+1992,Acura,Vigor,"[""Sedan""]",https://media.ed.edmunds-media.com/acura/vigor/1992/oem/1992_acura_vigor_sedan_gs_s_oem_2_500.jpg
+1992,Alfa Romeo,164,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Alfa Romeo,Spider,"[""Convertible""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Audi,100,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/audi/100/1993/oem/1993_audi_100_sedan_cs_fq_oem_1_500.jpg
+1992,Audi,80,"[""Sedan""]",https://media.ed.edmunds-media.com/audi/80/1992/oem/1992_audi_80_sedan_base_fq_oem_2_500.jpg
+1992,Audi,Quattro,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Audi,S4,"[""Sedan""]",https://media.ed.edmunds-media.com/audi/s4/1993/oem/1993_audi_s4_sedan_quattro_fq_oem_1_500.jpg
+1992,BMW,3 Series,"[""Coupe"", ""Convertible"", ""Sedan""]",https://media.ed.edmunds-media.com/bmw/3-series/1991/oem/1991_bmw_3-series_convertible_325i_fq_oem_1_500.jpg
+1992,BMW,5 Series,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/bmw/5-series/1995/oem/1995_bmw_5-series_wagon_525i_fq_oem_1_500.jpg
+1992,BMW,7 Series,"[""Sedan""]",https://media.ed.edmunds-media.com/bmw/7-series/1991/oem/1991_bmw_7-series_sedan_735i_fq_oem_1_500.jpg
+1992,BMW,8 Series,"[""Coupe""]",https://media.ed.edmunds-media.com/bmw/8-series/1992/oem/1992_bmw_8-series_coupe_850i_fq_oem_1_500.jpg
+1992,BMW,M5,"[""Sedan""]",https://media.ed.edmunds-media.com/bmw/m5/1991/oem/1991_bmw_m5_sedan_base_fq_oem_1_500.jpg
+1992,Buick,Century,"[""Coupe"", ""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/buick/century/1993/oem/1993_buick_century_coupe_custom_fq_oem_1_500.jpg
+1992,Buick,LeSabre,"[""Sedan""]",https://media.ed.edmunds-media.com/buick/lesabre/1992/oem/1992_buick_lesabre_sedan_custom_fq_oem_1_500.jpg
+1992,Buick,Park Avenue,"[""Sedan""]",https://media.ed.edmunds-media.com/buick/park-avenue/1991/oem/1991_buick_park-avenue_sedan_ultra_fq_oem_1_500.jpg
+1992,Buick,Regal,"[""Coupe"", ""Sedan""]",https://media.ed.edmunds-media.com/buick/regal/1992/oem/1992_buick_regal_coupe_gran-sport_fq_oem_1_500.jpg
+1992,Buick,Riviera,"[""Coupe""]",https://media.ed.edmunds-media.com/buick/riviera/1992/oem/1992_buick_riviera_coupe_base_fq_oem_1_500.jpg
+1992,Buick,Roadmaster,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/buick/roadmaster/1992/oem/1992_buick_roadmaster_sedan_limited_fq_oem_1_500.jpg
+1992,Buick,Skylark,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/buick/skylark/1994/oem/1994_buick_skylark_sedan_custom_fq_oem_1_500.jpg
+1992,Cadillac,Allante,"[""Convertible""]",https://media.ed.edmunds-media.com/cadillac/allante/1991/oem/1991_cadillac_allante_convertible_base_fq_oem_2_500.jpg
+1992,Cadillac,Brougham,"[""Sedan""]",https://static.ed.edmunds-media.com/unversioned/img/e17/no-vehicle-img-transparent.png
+1992,Cadillac,DeVille,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/cadillac/deville/1992/oem/1992_cadillac_deville_sedan_touring_fq_oem_1_500.jpg
+1992,Cadillac,Eldorado,"[""Coupe""]",https://media.ed.edmunds-media.com/cadillac/eldorado/1992/oem/1992_cadillac_eldorado_coupe_base_fq_oem_1_500.jpg
+1992,Cadillac,Fleetwood,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/cadillac/fleetwood/1991/oem/1991_cadillac_fleetwood_sedan_sixty-special_fq_oem_1_500.jpg
+1992,Cadillac,Seville,"[""Sedan""]",https://media.ed.edmunds-media.com/cadillac/seville/1992/oem/1992_cadillac_seville_sedan_sts_fq_oem_1_500.jpg
+1992,Chevrolet,1500 Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chevrolet,1500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chevrolet,2500 Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chevrolet,2500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chevrolet,3500 Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chevrolet,3500 Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chevrolet,3500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chevrolet,APV Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chevrolet,Astro Cargo,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/chevrolet/astro/1993/oem/1993_chevrolet_astro_passenger-minivan_lt_s_oem_1_500.jpg
+1992,Chevrolet,Astro Passenger,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/chevrolet/astro/1993/oem/1993_chevrolet_astro_passenger-minivan_lt_s_oem_1_500.jpg
+1992,Chevrolet,Beretta,"[""Coupe""]",https://media.ed.edmunds-media.com/chevrolet/beretta/1993/oem/1993_chevrolet_beretta_coupe_gtz_fq_oem_1_500.jpg
+1992,Chevrolet,Blazer,"[""SUV""]",https://static.ed.edmunds-media.com/unversioned/img/e17/no-vehicle-img-transparent.png
+1992,Chevrolet,Camaro,"[""Hatchback"", ""Convertible""]",https://media.ed.edmunds-media.com/chevrolet/camaro/1991/oem/1991_chevrolet_camaro_convertible_z28_fq_oem_1_500.jpg
+1992,Chevrolet,Caprice,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/chevrolet/caprice/1991/oem/1991_chevrolet_caprice_sedan_classic_fq_oem_1_500.jpg
+1992,Chevrolet,Cavalier,"[""Coupe"", ""Sedan"", ""Wagon"", ""Convertible""]",https://static.ed.edmunds-media.com/unversioned/img/e17/no-vehicle-img-transparent.png
+1992,Chevrolet,Corsica,"[""Sedan""]",https://media.ed.edmunds-media.com/chevrolet/corsica/1992/oem/1992_chevrolet_corsica_sedan_lt_s_oem_1_500.jpg
+1992,Chevrolet,Corvette,"[""Hatchback"", ""Convertible""]",https://media.ed.edmunds-media.com/chevrolet/corvette/1995/oem/1995_chevrolet_corvette_convertible_base_fq_oem_1_500.jpg
+1992,Chevrolet,G-Series G10,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chevrolet,G-Series G20,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chevrolet,G-Series G30,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chevrolet,Lumina,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/chevrolet/lumina/1990/oem/1990_chevrolet_lumina_coupe_base_s_oem_1_500.jpg
+1992,Chevrolet,Lumina APV,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chevrolet,S10 Blazer,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chevrolet,S10 Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chevrolet,S10 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chevrolet,Sportvan G10,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chevrolet,Sportvan G20,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chevrolet,Sportvan G30,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chevrolet,Suburban 1500,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chevrolet,Suburban 2500,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chrysler,Fifth Ave,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Chrysler,Imperial,"[""Sedan""]",https://media.ed.edmunds-media.com/chrysler/new-yorker/1993/oem/1993_chrysler_new-yorker_sedan_salon_fq_oem_1_500.jpg
+1992,Chrysler,LeBaron,"[""Sedan"", ""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/chrysler/le-baron/1991/oem/1991_chrysler_le-baron_convertible_gtc_fq_oem_1_500.jpg
+1992,Chrysler,New Yorker,"[""Sedan""]",https://media.ed.edmunds-media.com/chrysler/new-yorker/1993/oem/1993_chrysler_new-yorker_sedan_salon_fq_oem_1_500.jpg
+1992,Chrysler,Town & Country,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Daihatsu,Charade,"[""Sedan"", ""Hatchback""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Daihatsu,Rocky,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Dodge,Caravan Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Dodge,Caravan Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Dodge,Colt,"[""Hatchback""]",https://media.ed.edmunds-media.com/dodge/colt/1991/oem/1991_dodge_colt_2dr-hatchback_gl_fq_oem_1_500.jpg
+1992,Dodge,D150 Club Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Dodge,D150 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Dodge,D250 Club Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Dodge,D250 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Dodge,D350 Club Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Dodge,D350 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Dodge,Dakota Club Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Dodge,Dakota Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Dodge,Daytona,"[""Hatchback""]",https://media.ed.edmunds-media.com/dodge/daytona/1990/oem/1990_dodge_daytona_2dr-hatchback_es_fq_oem_1_500.jpg
+1992,Dodge,Dynasty,"[""Sedan""]",https://media.ed.edmunds-media.com/dodge/dynasty/1991/oem/1991_dodge_dynasty_sedan_le_fq_oem_1_500.jpg
+1992,Dodge,Grand Caravan Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Dodge,Monaco,"[""Sedan""]",https://media.ed.edmunds-media.com/dodge/monaco/1991/oem/1991_dodge_monaco_sedan_es_fq_oem_1_500.jpg
+1992,Dodge,Ram 50 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Dodge,Ram Van B150,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Dodge,Ram Van B250,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Dodge,Ram Van B350,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Dodge,Ram Wagon B150,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Dodge,Ram Wagon B250,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Dodge,Ram Wagon B350,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Dodge,Ramcharger,"[""SUV""]",https://media.ed.edmunds-media.com/dodge/ramcharger/1991/oem/1991_dodge_ramcharger_2dr-suv_150-s_fq_oem_1_500.jpg
+1992,Dodge,Shadow,"[""Hatchback"", ""Convertible""]",https://static.ed.edmunds-media.com/unversioned/img/e17/no-vehicle-img-transparent.png
+1992,Dodge,Spirit,"[""Sedan""]",https://media.ed.edmunds-media.com/dodge/spirit/1991/oem/1991_dodge_spirit_sedan_es_fq_oem_1_500.jpg
+1992,Dodge,Stealth,"[""Hatchback""]",https://media.ed.edmunds-media.com/dodge/stealth/1991/oem/1991_dodge_stealth_coupe_rt-turbo_fq_oem_1_500.jpg
+1992,Dodge,Viper,"[""Convertible""]",https://media.ed.edmunds-media.com/dodge/viper/1996/oem/1996_dodge_viper_convertible_rt10_s_oem_1_500.jpg
+1992,Eagle,Premier,"[""Sedan""]",https://media.ed.edmunds-media.com/eagle/premier/1991/oem/1991_eagle_premier_sedan_es-limited_fq_oem_1_500.jpg
+1992,Eagle,Summit,"[""Sedan"", ""Hatchback"", ""Wagon""]",https://static.ed.edmunds-media.com/unversioned/img/e17/no-vehicle-img-transparent.png
+1992,Eagle,Talon,"[""Hatchback""]",https://media.ed.edmunds-media.com/eagle/talon/1991/oem/1991_eagle_talon_2dr-hatchback_tsi_fq_oem_2_500.jpg
+1992,Ford,Aerostar Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Ford,Aerostar Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Ford,Bronco,"[""SUV""]",https://media.ed.edmunds-media.com/ford/bronco/1992/oem/1992_ford_bronco_2dr-suv_xlt_fq_oem_1_500.jpg
+1992,Ford,Club Wagon,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Ford,Crown Victoria,"[""Sedan""]",https://media.ed.edmunds-media.com/ford/crown-victoria/1992/oem/1992_ford_crown-victoria_sedan_lx_fq_oem_1_500.jpg
+1992,Ford,Econoline E150 Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Ford,Econoline E250 Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Ford,Econoline E350 Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Ford,Escort,"[""Hatchback"", ""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/ford/escort/1992/oem/1992_ford_escort_2dr-hatchback_gt_fq_oem_1_500.jpg
+1992,Ford,Explorer,"[""SUV""]",https://media.ed.edmunds-media.com/ford/explorer/1991/oem/1991_ford_explorer_4dr-suv_eddie-bauer_fq_oem_1_500.jpg
+1992,Ford,F150 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Ford,F150 Super Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Ford,F250 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Ford,F250 Super Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Ford,F350 Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Ford,F350 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Ford,F350 Super Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Ford,Festiva,"[""Hatchback""]",https://media.ed.edmunds-media.com/ford/festiva/1991/oem/1991_ford_festiva_2dr-hatchback_gl_fq_oem_1_500.jpg
+1992,Ford,Mustang,"[""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/ford/mustang/1991/oem/1991_ford_mustang_convertible_gt_fq_oem_1_500.jpg
+1992,Ford,Probe,"[""Hatchback""]",https://media.ed.edmunds-media.com/ford/probe/1989/oem/1989_ford_probe_fq_oem_1_500.jpg
+1992,Ford,Ranger Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Ford,Ranger Super Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Ford,Taurus,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/ford/taurus/1992/oem/1992_ford_taurus_sedan_lx_fq_oem_1_500.jpg
+1992,Ford,Tempo,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/ford/tempo/1992/oem/1992_ford_tempo_sedan_gls_fq_oem_1_500.jpg
+1992,Ford,Thunderbird,"[""Coupe""]",https://media.ed.edmunds-media.com/ford/thunderbird/1991/oem/1991_ford_thunderbird_coupe_lx_s_oem_1_500.jpg
+1992,Geo,Metro,"[""Hatchback"", ""Convertible""]",https://media.ed.edmunds-media.com/geo/metro/1990/oem/1990_geo_metro_convertible_lsi_fq_oem_1_500.jpg
+1992,Geo,Prizm,"[""Sedan""]",https://media.ed.edmunds-media.com/geo/prizm/1990/oem/1990_geo_prizm_sedan_gsi_fq_oem_1_500.jpg
+1992,Geo,Storm,"[""Coupe"", ""Hatchback""]",https://media.ed.edmunds-media.com/geo/storm/1993/oem/1993_geo_storm_2dr-hatchback_gsi_fq_oem_1_500.jpg
+1992,Geo,Tracker,"[""SUV""]",https://media.ed.edmunds-media.com/geo/tracker/1992/oem/1992_geo_tracker_convertible-suv_lsi-wsoft-top_fq_oem_1_500.jpg
+1992,GMC,1500 Club Coupe,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,GMC,1500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,GMC,2500 Club Coupe,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,GMC,2500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,GMC,3500 Club Coupe,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,GMC,3500 Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,GMC,3500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,GMC,Jimmy,"[""SUV""]",https://media.ed.edmunds-media.com/gmc/s-15-jimmy/1990/oem/1990_gmc_s-15-jimmy_2dr-suv_base_fq_oem_1_500.jpg
+1992,GMC,Rally Wagon 1500,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,GMC,Rally Wagon 2500,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,GMC,Rally Wagon 3500,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,GMC,Safari Cargo,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/gmc/safari-cargo/1990/oem/1990_gmc_safari-cargo_cargo-minivan_base_fq_oem_1_500.jpg
+1992,GMC,Safari Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,GMC,Sonoma Club Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,GMC,Sonoma Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,GMC,Suburban 1500,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,GMC,Suburban 2500,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,GMC,Vandura 1500,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,GMC,Vandura 2500,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,GMC,Vandura 3500,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,GMC,Yukon,"[""SUV""]",https://static.ed.edmunds-media.com/unversioned/img/e17/no-vehicle-img-transparent.png
+1992,Honda,Accord,"[""Coupe"", ""Wagon"", ""Sedan""]",https://media.ed.edmunds-media.com/honda/accord/1992/oem/1992_honda_accord_sedan_ex_fq_oem_1_500.jpg
+1992,Honda,Civic,"[""Hatchback"", ""Sedan""]",https://media.ed.edmunds-media.com/honda/civic/1992/oem/1992_honda_civic_sedan_ex_s_oem_1_500.jpg
+1992,Honda,Prelude,"[""Coupe""]",https://media.ed.edmunds-media.com/honda/prelude/1993/oem/1993_honda_prelude_coupe_s_s_oem_1_500.jpg
+1992,Hyundai,Elantra,"[""Sedan""]",https://media.ed.edmunds-media.com/hyundai/elantra/1992/oem/1992_hyundai_elantra_sedan_gls_fq_oem_1_500.jpg
+1992,Hyundai,Excel,"[""Sedan"", ""Hatchback""]",https://media.ed.edmunds-media.com/hyundai/excel/1993/oem/1993_hyundai_excel_2dr-hatchback_base_fq_oem_1_500.jpg
+1992,Hyundai,Scoupe,"[""Coupe""]",https://media.ed.edmunds-media.com/hyundai/scoupe/1992/oem/1992_hyundai_scoupe_coupe_ls_fq_oem_1_500.jpg
+1992,Hyundai,Sonata,"[""Sedan""]",https://media.ed.edmunds-media.com/hyundai/sonata/1992/oem/1992_hyundai_sonata_sedan_gls_fq_oem_1_500.jpg
+1992,INFINITI,G,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,INFINITI,M,"[""Coupe"", ""Convertible""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,INFINITI,Q,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Isuzu,Amigo,"[""SUV""]",https://media.ed.edmunds-media.com/isuzu/amigo/1990/oem/1990_isuzu_amigo_2dr-suv_s_fq_oem_1_500.jpg
+1992,Isuzu,Impulse,"[""Hatchback""]",https://static.ed.edmunds-media.com/unversioned/img/e17/no-vehicle-img-transparent.png
+1992,Isuzu,Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Isuzu,Rodeo,"[""SUV""]",https://media.ed.edmunds-media.com/isuzu/rodeo/1994/oem/1994_isuzu_rodeo_4dr-suv_s_fq_oem_1_500.jpg
+1992,Isuzu,Spacecab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Isuzu,Stylus,"[""Sedan""]",https://static.ed.edmunds-media.com/unversioned/img/e17/no-vehicle-img-transparent.png
+1992,Isuzu,Trooper,"[""SUV""]",https://static.ed.edmunds-media.com/unversioned/img/e17/no-vehicle-img-transparent.png
+1992,Jaguar,XJ,"[""Sedan"", ""Coupe"", ""Convertible""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Jeep,Cherokee,"[""SUV""]",https://media.ed.edmunds-media.com/jeep/cherokee/1991/oem/1991_jeep_cherokee_2dr-suv_sport_fq_oem_1_500.jpg
+1992,Jeep,Comanche Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Jeep,Wrangler,"[""SUV""]",https://media.ed.edmunds-media.com/jeep/wrangler/1991/oem/1991_jeep_wrangler_convertible-suv_renegade_fq_oem_1_500.jpg
+1992,Land Rover,Range Rover,"[""SUV""]",https://media.ed.edmunds-media.com/landrover/range-rover/1995/oem/1995_landrover_range-rover_4dr-suv_county-classic_s_oem_1_500.jpg
+1992,Lexus,ES,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Lexus,LS,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Lexus,SC,"[""Coupe""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Lincoln,Continental,"[""Sedan""]",https://media.ed.edmunds-media.com/lincoln/continental/1992/oem/1992_lincoln_continental_sedan_signature_fq_oem_1_500.jpg
+1992,Lincoln,Mark VII,"[""Coupe""]",https://static.ed.edmunds-media.com/unversioned/img/e17/no-vehicle-img-transparent.png
+1992,Lincoln,Town Car,"[""Sedan""]",https://media.ed.edmunds-media.com/lincoln/town-car/1991/oem/1991_lincoln_town-car_sedan_cartier_s_oem_1_500.jpg
+1992,MAZDA,323,"[""Hatchback""]",https://media.ed.edmunds-media.com/mazda/323/1990/oem/1990_mazda_323_2dr-hatchback_base_fq_oem_1_500.jpg
+1992,MAZDA,626,"[""Sedan""]",https://media.ed.edmunds-media.com/mazda/626/1992/oem/1992_mazda_626_sedan_lx_fq_oem_1_500.jpg
+1992,MAZDA,929,"[""Sedan""]",https://media.ed.edmunds-media.com/mazda/929/1992/oem/1992_mazda_929_sedan_base_fq_oem_2_500.jpg
+1992,MAZDA,B-Series Cab Plus,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,MAZDA,B-Series Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,MAZDA,MPV,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/mazda/mpv/1990/oem/1990_mazda_mpv_passenger-minivan_base_fq_oem_1_500.jpg
+1992,MAZDA,MX-3,"[""Hatchback""]",https://media.ed.edmunds-media.com/mazda/mx-3/1992/oem/1992_mazda_mx-3_2dr-hatchback_gs_fq_oem_2_500.jpg
+1992,MAZDA,MX-5 Miata,"[""Convertible""]",https://media.ed.edmunds-media.com/mazda/mx-5-miata/1992/oem/1992_mazda_mx-5-miata_convertible_base_s_oem_1_500.jpg
+1992,MAZDA,MX-6,"[""Coupe""]",https://media.ed.edmunds-media.com/mazda/mx-6/1990/oem/1990_mazda_mx-6_coupe_lx_fq_oem_1_500.jpg
+1992,MAZDA,Navajo,"[""SUV""]",https://media.ed.edmunds-media.com/mazda/navajo/1991/oem/1991_mazda_navajo_2dr-suv_base_s_oem_1_500.jpg
+1992,MAZDA,Protege,"[""Sedan""]",https://media.ed.edmunds-media.com/mazda/protege/1992/oem/1992_mazda_protege_sedan_lx_s_oem_1_500.jpg
+1992,Mercedes-Benz,190 E,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Mercedes-Benz,300 CE,"[""Coupe""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Mercedes-Benz,300 D,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Mercedes-Benz,300 E,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Mercedes-Benz,300 SD,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Mercedes-Benz,300 SE,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Mercedes-Benz,300 SL,"[""Convertible""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Mercedes-Benz,300 TE,"[""Wagon""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Mercedes-Benz,400 E,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Mercedes-Benz,400 SE,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Mercedes-Benz,500 E,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Mercedes-Benz,500 SEL,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Mercedes-Benz,500 SL,"[""Convertible""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Mercedes-Benz,600 SEL,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Mercury,Capri,"[""Convertible""]",https://media.ed.edmunds-media.com/mercury/capri/1993/oem/1993_mercury_capri_convertible_base_fq_oem_1_500.jpg
+1992,Mercury,Cougar,"[""Coupe""]",https://media.ed.edmunds-media.com/mercury/cougar/1991/oem/1991_mercury_cougar_coupe_ls_fq_oem_1_500.jpg
+1992,Mercury,Grand Marquis,"[""Sedan""]",https://media.ed.edmunds-media.com/mercury/grand-marquis/1992/oem/1992_mercury_grand-marquis_sedan_ls_fq_oem_1_500.jpg
+1992,Mercury,Sable,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/mercury/sable/1992/oem/1992_mercury_sable_sedan_gs_fq_oem_1_500.jpg
+1992,Mercury,Topaz,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/mercury/topaz/1992/oem/1992_mercury_topaz_sedan_gs_fq_oem_1_500.jpg
+1992,Mercury,Tracer,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/mercury/tracer/1993/oem/1993_mercury_tracer_sedan_lts_fq_oem_1_500.jpg
+1992,Mitsubishi,3000GT,"[""Hatchback""]",https://media.ed.edmunds-media.com/mitsubishi/3000gt/1992/oem/1992_mitsubishi_3000gt_2dr-hatchback_vr-4_fq_oem_1_500.jpg
+1992,Mitsubishi,Diamante,"[""Sedan""]",https://media.ed.edmunds-media.com/mitsubishi/diamante/1992/oem/1992_mitsubishi_diamante_sedan_ls_fq_oem_1_500.jpg
+1992,Mitsubishi,Eclipse,"[""Hatchback""]",https://media.ed.edmunds-media.com/mitsubishi/eclipse/1992/oem/1992_mitsubishi_eclipse_2dr-hatchback_gsx_fq_oem_1_500.jpg
+1992,Mitsubishi,Expo,"[""Wagon""]",https://media.ed.edmunds-media.com/mitsubishi/expo/1992/oem/1992_mitsubishi_expo_4dr-hatchback_sp_fq_oem_1_500.jpg
+1992,Mitsubishi,Galant,"[""Sedan""]",https://media.ed.edmunds-media.com/mitsubishi/galant/1992/oem/1992_mitsubishi_galant_sedan_vr-4_fq_oem_1_500.jpg
+1992,Mitsubishi,Mighty Max Macro Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Mitsubishi,Mighty Max Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Mitsubishi,Mirage,"[""Hatchback"", ""Sedan""]",https://media.ed.edmunds-media.com/mitsubishi/mirage/1992/oem/1992_mitsubishi_mirage_sedan_gs_fq_oem_1_500.jpg
+1992,Mitsubishi,Montero,"[""SUV""]",https://media.ed.edmunds-media.com/mitsubishi/montero/1993/oem/1993_mitsubishi_montero_4dr-suv_rs_fq_oem_1_500.jpg
+1992,Mitsubishi,Precis,"[""Hatchback""]",https://static.ed.edmunds-media.com/unversioned/img/e17/no-vehicle-img-transparent.png
+1992,Nissan,240SX,"[""Hatchback"", ""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/nissan/240sx/1993/oem/1993_nissan_240sx_2dr-hatchback_se_fq_oem_1_500.jpg
+1992,Nissan,300ZX,"[""Hatchback""]",https://media.ed.edmunds-media.com/nissan/300zx/1990/oem/1990_nissan_300zx_2dr-hatchback_2plus2_fq_oem_1_500.jpg
+1992,Nissan,King Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Nissan,Maxima,"[""Sedan""]",https://media.ed.edmunds-media.com/nissan/maxima/1994/oem/1994_nissan_maxima_sedan_gxe_fq_oem_1_500.jpg
+1992,Nissan,NX,"[""Hatchback""]",https://media.ed.edmunds-media.com/nissan/nx/1993/oem/1993_nissan_nx_2dr-hatchback_2000_fq_oem_1_500.jpg
+1992,Nissan,Pathfinder,"[""SUV""]",https://media.ed.edmunds-media.com/nissan/pathfinder/1994/oem/1994_nissan_pathfinder_4dr-suv_se_fq_oem_1_500.jpg
+1992,Nissan,Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Nissan,Sentra,"[""Coupe"", ""Sedan""]",https://media.ed.edmunds-media.com/nissan/sentra/1994/oem/1994_nissan_sentra_sedan_xe_fq_oem_1_500.jpg
+1992,Nissan,Stanza,"[""Sedan""]",https://static.ed.edmunds-media.com/unversioned/img/e17/no-vehicle-img-transparent.png
+1992,Oldsmobile,88,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Oldsmobile,98,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Oldsmobile,Achieva,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/oldsmobile/achieva/1994/oem/1994_oldsmobile_achieva_sedan_sl_fq_oem_1_500.jpg
+1992,Oldsmobile,Bravada,"[""SUV""]",https://media.ed.edmunds-media.com/oldsmobile/bravada/1992/oem/1992_oldsmobile_bravada_4dr-suv_base_fq_oem_1_500.jpg
+1992,Oldsmobile,Custom Cruiser,"[""Wagon""]",https://media.ed.edmunds-media.com/oldsmobile/custom-cruiser/1991/oem/1991_oldsmobile_custom-cruiser_wagon_base_fq_oem_1_500.jpg
+1992,Oldsmobile,Cutlass Ciera,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/oldsmobile/ciera/1996/oem/1996_oldsmobile_ciera_wagon_sl_fq_oem_1_500.jpg
+1992,Oldsmobile,Cutlass Supreme,"[""Sedan"", ""Convertible"", ""Coupe""]",https://media.ed.edmunds-media.com/oldsmobile/cutlass-supreme/1990/oem/1990_oldsmobile_cutlass-supreme_convertible_base_s_oem_1_500.jpg
+1992,Oldsmobile,Silhouette,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/oldsmobile/silhouette/1991/oem/1991_oldsmobile_silhouette_passenger-minivan_base_s_oem_1_500.jpg
+1992,Oldsmobile,Toronado,"[""Coupe""]",https://media.ed.edmunds-media.com/oldsmobile/toronado/1992/oem/1992_oldsmobile_toronado_coupe_base_fq_oem_1_500.jpg
+1992,Plymouth,Acclaim,"[""Sedan""]",https://media.ed.edmunds-media.com/plymouth/acclaim/1991/oem/1991_plymouth_acclaim_sedan_le_fq_oem_1_500.jpg
+1992,Plymouth,Colt,"[""Hatchback""]",https://media.ed.edmunds-media.com/plymouth/colt/1990/oem/1990_plymouth_colt_wagon_dl_fq_oem_1_500.jpg
+1992,Plymouth,Colt Vista,"[""Wagon""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Plymouth,Grand Voyager,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/plymouth/grand-voyager/1991/oem/1991_plymouth_grand-voyager_passenger-minivan_le_fq_oem_1_500.jpg
+1992,Plymouth,Laser,"[""Hatchback""]",https://media.ed.edmunds-media.com/plymouth/laser/1991/oem/1991_plymouth_laser_2dr-hatchback_rs_fq_oem_1_500.jpg
+1992,Plymouth,Sundance,"[""Hatchback""]",https://media.ed.edmunds-media.com/plymouth/sundance/1991/oem/1991_plymouth_sundance_4dr-hatchback_rs_fq_oem_1_500.jpg
+1992,Plymouth,Voyager,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/plymouth/voyager/1991/oem/1991_plymouth_voyager_passenger-minivan_lx_fq_oem_1_500.jpg
+1992,Pontiac,Bonneville,"[""Sedan""]",https://media.ed.edmunds-media.com/pontiac/bonneville/1992/oem/1992_pontiac_bonneville_sedan_se_fq_oem_1_500.jpg
+1992,Pontiac,Firebird,"[""Hatchback"", ""Convertible""]",https://media.ed.edmunds-media.com/pontiac/firebird/1991/oem/1991_pontiac_firebird_2dr-hatchback_formula_fq_oem_3_500.jpg
+1992,Pontiac,Grand Am,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/pontiac/grand-am/1994/oem/1994_pontiac_grand-am_coupe_gt_fq_oem_1_500.jpg
+1992,Pontiac,Grand Prix,"[""Coupe"", ""Sedan""]",https://media.ed.edmunds-media.com/pontiac/grand-prix/1993/oem/1993_pontiac_grand-prix_sedan_le_fq_oem_1_500.jpg
+1992,Pontiac,LeMans,"[""Hatchback"", ""Sedan""]",https://media.ed.edmunds-media.com/pontiac/le-mans/1992/oem/1992_pontiac_le-mans_coupe_se_fq_oem_1_500.jpg
+1992,Pontiac,Sunbird,"[""Sedan"", ""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/pontiac/sunbird/1992/oem/1992_pontiac_sunbird_coupe_se_fq_oem_1_500.jpg
+1992,Pontiac,Trans Sport,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/pontiac/trans-sport/1991/oem/1991_pontiac_trans-sport_passenger-minivan_se_fq_oem_1_500.jpg
+1992,Porsche,911,"[""Coupe"", ""Convertible""]",https://static.ed.edmunds-media.com/unversioned/img/e17/no-vehicle-img-transparent.png
+1992,Porsche,968,"[""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/porsche/968/1992/oem/1992_porsche_968_convertible_base_fq_oem_1_500.jpg
+1992,Saab,900,"[""Sedan"", ""Hatchback"", ""Convertible""]",https://media.ed.edmunds-media.com/saab/900/1992/oem/1992_saab_900_convertible_s_fq_oem_1_500.jpg
+1992,Saab,9000,"[""Sedan"", ""Hatchback""]",https://media.ed.edmunds-media.com/saab/9000/1995/oem/1995_saab_9000_sedan_cde_fq_oem_1_500.jpg
+1992,Saturn,S-Series,"[""Coupe"", ""Sedan""]",https://media.ed.edmunds-media.com/saturn/s-series/1992/oem/1992_saturn_s-series_coupe_sc_fq_oem_1_500.jpg
+1992,Subaru,Justy,"[""Hatchback""]",https://media.ed.edmunds-media.com/subaru/justy/1993/oem/1993_subaru_justy_4dr-hatchback_gl_fq_oem_1_500.jpg
+1992,Subaru,Legacy,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/subaru/legacy/1993/oem/1993_subaru_legacy_wagon_l_fq_oem_1_500.jpg
+1992,Subaru,Loyale,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/subaru/loyale/1993/oem/1993_subaru_loyale_wagon_base_fq_oem_1_500.jpg
+1992,Subaru,SVX,"[""Coupe""]",https://media.ed.edmunds-media.com/subaru/svx/1992/oem/1992_subaru_svx_coupe_ls_fq_oem_1_500.jpg
+1992,Suzuki,Samurai,"[""SUV""]",https://media.ed.edmunds-media.com/suzuki/samurai/1994/oem/1994_suzuki_samurai_convertible-suv_jl_fq_oem_1_500.jpg
+1992,Suzuki,Sidekick,"[""SUV""]",https://media.ed.edmunds-media.com/suzuki/sidekick/1990/oem/1990_suzuki_sidekick_convertible-suv_jlx-wsoft-top_fq_oem_1_500.jpg
+1992,Suzuki,Swift,"[""Sedan"", ""Hatchback""]",https://media.ed.edmunds-media.com/suzuki/swift/1990/oem/1990_suzuki_swift_2dr-hatchback_gt_s_oem_1_500.jpg
+1992,Toyota,4Runner,"[""SUV""]",https://media.ed.edmunds-media.com/toyota/4runner/1992/oem/1992_toyota_4runner_4dr-suv_sr5-v6_fq_oem_1_500.jpg
+1992,Toyota,Camry,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/toyota/camry/1995/oem/1995_toyota_camry_wagon_le_fq_oem_1_500.jpg
+1992,Toyota,Celica,"[""Coupe"", ""Convertible"", ""Hatchback""]",https://static.ed.edmunds-media.com/unversioned/img/e17/no-vehicle-img-transparent.png
+1992,Toyota,Corolla,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/toyota/corolla/1992/oem/1992_toyota_corolla_sedan_le_fq_oem_1_500.jpg
+1992,Toyota,Cressida,"[""Sedan""]",https://media.ed.edmunds-media.com/toyota/cressida/1991/oem/1991_toyota_cressida_sedan_base_fq_oem_1_500.jpg
+1992,Toyota,Land Cruiser,"[""SUV""]",https://media.ed.edmunds-media.com/toyota/land-cruiser/1992/oem/1992_toyota_land-cruiser_4dr-suv_base_fq_oem_1_500.jpg
+1992,Toyota,MR2,"[""Coupe""]",https://media.ed.edmunds-media.com/toyota/mr2/1992/oem/1992_toyota_mr2_coupe_base_fq_oem_1_500.jpg
+1992,Toyota,Paseo,"[""Coupe""]",https://media.ed.edmunds-media.com/toyota/paseo/1992/oem/1992_toyota_paseo_coupe_base_fq_oem_1_500.jpg
+1992,Toyota,Previa,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/toyota/previa/1992/oem/1992_toyota_previa_passenger-minivan_deluxe_fq_oem_1_500.jpg
+1992,Toyota,Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Toyota,Supra,"[""Hatchback""]",https://media.ed.edmunds-media.com/toyota/supra/1992/oem/1992_toyota_supra_2dr-hatchback_base_fq_oem_1_500.jpg
+1992,Toyota,Tercel,"[""Sedan""]",https://media.ed.edmunds-media.com/toyota/tercel/1992/oem/1992_toyota_tercel_coupe_dx_fq_oem_1_500.jpg
+1992,Toyota,Xtra Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+1992,Volkswagen,Cabriolet,"[""Convertible""]",https://media.ed.edmunds-media.com/volkswagen/cabriolet/1993/oem/1993_volkswagen_cabriolet_convertible_base_fq_oem_1_500.jpg
+1992,Volkswagen,Corrado,"[""Coupe""]",https://media.ed.edmunds-media.com/volkswagen/corrado/1991/oem/1991_volkswagen_corrado_2dr-hatchback_base_fq_oem_1_500.jpg
+1992,Volkswagen,Fox,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/volkswagen/fox/1992/oem/1992_volkswagen_fox_sedan_gl_fq_oem_1_500.jpg
+1992,Volkswagen,Golf,"[""Hatchback""]",https://media.ed.edmunds-media.com/volkswagen/golf/1991/oem/1991_volkswagen_golf_4dr-hatchback_gl_fq_oem_1_500.jpg
+1992,Volkswagen,GTI,"[""Hatchback""]",https://media.ed.edmunds-media.com/volkswagen/gti/1992/oem/1992_volkswagen_gti_2dr-hatchback_16v_fq_oem_1_500.jpg
+1992,Volkswagen,Jetta,"[""Sedan""]",https://media.ed.edmunds-media.com/volkswagen/jetta/1992/oem/1992_volkswagen_jetta_sedan_carat_fq_oem_1_500.jpg
+1992,Volkswagen,Passat,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/volkswagen/passat/1993/oem/1993_volkswagen_passat_sedan_glx-v6_fq_oem_1_500.jpg
+1992,Volvo,240,"[""Wagon"", ""Sedan""]",https://media.ed.edmunds-media.com/volvo/240/1990/oem/1990_volvo_240_wagon_dl_fq_oem_1_500.jpg
+1992,Volvo,740,"[""Wagon"", ""Sedan""]",https://media.ed.edmunds-media.com/volvo/740/1990/oem/1990_volvo_740_wagon_base_fq_oem_1_500.jpg
+1992,Volvo,940,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/volvo/940/1993/oem/1993_volvo_940_wagon_base_fq_oem_1_500.jpg
+1992,Volvo,960,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/volvo/960/1993/oem/1993_volvo_960_sedan_base_fq_oem_1_500.jpg
