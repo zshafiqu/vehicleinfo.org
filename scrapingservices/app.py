@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 from urllib import urlopen
-import requests, json, os, mysql.connector, csv
+import requests, json, os, mysql.connector, csv, ast
 # Script to scrape images for each vehicle in our list
 ''' The goal of this script is to store the source for each image in our database '''
 
@@ -73,10 +73,11 @@ def handleFiles(oldFilePath, newFilePath):
                 # print(row)
                 # src = scrapeEdmunds(row[0], row[1], row[2])
                 src = []
-                res = json.loads(row[3])
+                res = ast.literal_eval(row[3])
+                # res = json.loads(row[3])
                 writer.writerow([row[0], row[1], row[2], res, 'src'])
-                print(src)
-                print '*' * int(count)
+                # print(src)
+                # print '*' * int(count)
                 # count += .22
 
     return None
