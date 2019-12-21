@@ -1,0 +1,333 @@
+year,make,model,body_style,image_src
+2004,Acura,MDX,"[""SUV""]",https://media.ed.edmunds-media.com/acura/mdx/2004/oem/2004_acura_mdx_4dr-suv_touring_fq_oem_2_500.jpg
+2004,Acura,NSX,"[""Coupe""]",https://media.ed.edmunds-media.com/acura/nsx/2002/oem/2002_acura_nsx_coupe_base_s_oem_1_500.jpg
+2004,Acura,RL,"[""Sedan""]",https://media.ed.edmunds-media.com/acura/rl/2004/oem/2004_acura_rl_sedan_35_fq_oem_1_500.jpg
+2004,Acura,RSX,"[""Coupe""]",https://media.ed.edmunds-media.com/acura/rsx/2003/oem/2003_acura_rsx_2dr-hatchback_type-s_fq_oem_1_500.jpg
+2004,Acura,TL,"[""Sedan""]",https://media.ed.edmunds-media.com/acura/tl/2004/oem/2004_acura_tl_sedan_base_fq_oem_3_500.jpg
+2004,Acura,TSX,"[""Sedan""]",https://media.ed.edmunds-media.com/acura/tsx/2004/oem/2004_acura_tsx_sedan_base_s_oem_2_500.jpg
+2004,Audi,A4,"[""Convertible"", ""Wagon"", ""Sedan""]",https://media.ed.edmunds-media.com/audi/a4/2004/oem/2004_audi_a4_convertible_30_fq_oem_1_500.jpg
+2004,Audi,A6,"[""Wagon"", ""Sedan""]",https://media.ed.edmunds-media.com/audi/a6/2003/oem/2003_audi_a6_sedan_30_fq_oem_1_500.jpg
+2004,Audi,A8,"[""Sedan""]",https://media.ed.edmunds-media.com/audi/a8/2004/oem/2004_audi_a8_sedan_l-quattro_fq_oem_1_500.jpg
+2004,Audi,allroad,"[""Wagon""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Audi,S4,"[""Wagon"", ""Convertible"", ""Sedan""]",https://media.ed.edmunds-media.com/audi/s4/2004/oem/2004_audi_s4_convertible_quattro_fq_oem_1_500.jpg
+2004,Audi,TT,"[""Convertible"", ""Coupe""]",https://media.ed.edmunds-media.com/audi/tt/2004/oem/2004_audi_tt_convertible_225hp-quattro_s_oem_1_500.jpg
+2004,BMW,3 Series,"[""Sedan"", ""Coupe"", ""Convertible"", ""Wagon""]",https://media.ed.edmunds-media.com/bmw/3-series/2004/oem/2004_bmw_3-series_coupe_330ci_fq_oem_1_500.jpg
+2004,BMW,5 Series,"[""Sedan""]",https://media.ed.edmunds-media.com/bmw/5-series/2004/oem/2004_bmw_5-series_sedan_525i_fq_oem_1_500.jpg
+2004,BMW,6 Series,"[""Convertible"", ""Coupe""]",https://media.ed.edmunds-media.com/bmw/6-series/2004/oem/2004_bmw_6-series_convertible_645ci_fq_oem_2_500.jpg
+2004,BMW,7 Series,"[""Sedan""]",https://media.ed.edmunds-media.com/bmw/7-series/2004/oem/2004_bmw_7-series_sedan_745i_fq_oem_1_500.jpg
+2004,BMW,M3,"[""Convertible"", ""Coupe""]",https://media.ed.edmunds-media.com/bmw/m3/2001/oem/2001_bmw_m3_convertible_base_s_oem_1_500.jpg
+2004,BMW,X3,"[""SUV""]",https://media.ed.edmunds-media.com/bmw/x3/2004/oem/2004_bmw_x3_4dr-suv_30i_fq_oem_3_500.jpg
+2004,BMW,X5,"[""SUV""]",https://media.ed.edmunds-media.com/bmw/x5/2004/oem/2004_bmw_x5_4dr-suv_44i_fq_oem_1_500.jpg
+2004,BMW,Z4,"[""Convertible""]",https://media.ed.edmunds-media.com/bmw/z4/2003/oem/2003_bmw_z4_convertible_25i_fq_oem_1_500.jpg
+2004,Buick,Century,"[""Sedan""]",https://media.ed.edmunds-media.com/buick/century/2003/oem/2003_buick_century_sedan_base_fq_oem_1_500.jpg
+2004,Buick,LeSabre,"[""Sedan""]",https://media.ed.edmunds-media.com/buick/lesabre/2000/oem/2000_buick_lesabre_sedan_limited_fq_oem_4_500.jpg
+2004,Buick,Park Avenue,"[""Sedan""]",https://media.ed.edmunds-media.com/buick/park-avenue/2003/oem/2003_buick_park-avenue_sedan_ultra_fq_oem_1_500.jpg
+2004,Buick,Rainier,"[""SUV""]",https://media.ed.edmunds-media.com/buick/rainier/2004/oem/2004_buick_rainier_4dr-suv_cxl_fq_oem_1_500.jpg
+2004,Buick,Regal,"[""Sedan""]",https://media.ed.edmunds-media.com/buick/regal/2002/oem/2002_buick_regal_sedan_ls_fq_oem_1_500.jpg
+2004,Buick,Rendezvous,"[""SUV""]",https://media.ed.edmunds-media.com/buick/rendezvous/2002/oem/2002_buick_rendezvous_4dr-suv_cx_fq_oem_3_500.jpg
+2004,Cadillac,CTS,"[""Sedan""]",https://media.ed.edmunds-media.com/cadillac/cts/2003/oem/2003_cadillac_cts_sedan_base_s_oem_1_500.jpg
+2004,Cadillac,DeVille,"[""Sedan""]",https://media.ed.edmunds-media.com/cadillac/deville/2002/oem/2002_cadillac_deville_sedan_base_fq_oem_1_500.jpg
+2004,Cadillac,Escalade,"[""SUV""]",https://media.ed.edmunds-media.com/cadillac/escalade/2003/oem/2003_cadillac_escalade_4dr-suv_base_fq_oem_1_500.jpg
+2004,Cadillac,Escalade ESV,"[""SUV""]",https://media.ed.edmunds-media.com/cadillac/escalade-esv/2004/oem/2004_cadillac_escalade-esv_4dr-suv_base_fq_oem_1_500.jpg
+2004,Cadillac,Escalade EXT,"[""Pickup""]",https://media.ed.edmunds-media.com/cadillac/escalade-ext/2002/oem/2002_cadillac_escalade-ext_crew-cab-pickup_base_fq_oem_1_500.jpg
+2004,Cadillac,Seville,"[""Sedan""]",https://media.ed.edmunds-media.com/cadillac/seville/2002/oem/2002_cadillac_seville_sedan_sts_fq_oem_1_500.jpg
+2004,Cadillac,SRX,"[""SUV""]",https://media.ed.edmunds-media.com/cadillac/srx/2004/oem/2004_cadillac_srx_4dr-suv_base_fq_oem_1_500.jpg
+2004,Cadillac,XLR,"[""Convertible""]",https://media.ed.edmunds-media.com/cadillac/xlr/2004/oem/2004_cadillac_xlr_convertible_base_fq_oem_4_500.jpg
+2004,Chevrolet,Astro Cargo,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/chevrolet/astro-cargo/2003/oem/2003_chevrolet_astro-cargo_cargo-minivan_base_fq_oem_1_500.jpg
+2004,Chevrolet,Astro Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Avalanche 1500,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Avalanche 2500,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Aveo,"[""Sedan"", ""Hatchback""]",https://media.ed.edmunds-media.com/chevrolet/aveo/2004/oem/2004_chevrolet_aveo_4dr-hatchback_ls_fq_oem_2_500.jpg
+2004,Chevrolet,Blazer,"[""SUV""]",https://media.ed.edmunds-media.com/chevrolet/blazer/2002/oem/2002_chevrolet_blazer_4dr-suv_ls_fq_oem_1_500.jpg
+2004,Chevrolet,Cavalier,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/chevrolet/cavalier/2003/oem/2003_chevrolet_cavalier_coupe_ls-sport_fq_oem_1_500.jpg
+2004,Chevrolet,Classic,"[""Sedan""]",https://media.ed.edmunds-media.com/chevrolet/classic/2004/oem/2004_chevrolet_classic_sedan_fleet_fq_oem_2_500.jpg
+2004,Chevrolet,Colorado Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Colorado Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Colorado Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Corvette,"[""Convertible"", ""Coupe""]",https://media.ed.edmunds-media.com/chevrolet/corvette/2001/oem/2001_chevrolet_corvette_coupe_z06_fq_oem_4_500.jpg
+2004,Chevrolet,Express 1500 Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Express 1500 Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Express 2500 Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Express 2500 Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Express 3500 Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Express 3500 Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Impala,"[""Sedan""]",https://media.ed.edmunds-media.com/chevrolet/impala/2003/oem/2003_chevrolet_impala_sedan_ls_fq_oem_1_500.jpg
+2004,Chevrolet,Malibu,"[""Hatchback"", ""Sedan""]",https://media.ed.edmunds-media.com/chevrolet/malibu/2004/oem/2004_chevrolet_malibu_sedan_lt_fq_oem_3_500.jpg
+2004,Chevrolet,Monte Carlo,"[""Coupe""]",https://media.ed.edmunds-media.com/chevrolet/monte-carlo/2004/oem/2004_chevrolet_monte-carlo_coupe_ss_fq_oem_4_500.jpg
+2004,Chevrolet,S10 Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Silverado 1500 Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Silverado 1500 Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Silverado 1500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Silverado 2500 Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Silverado 2500 Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Silverado 2500 HD Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Silverado 2500 HD Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Silverado 2500 HD Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Silverado 2500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Silverado 3500 Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Silverado 3500 Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Silverado 3500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,SSR,"[""Pickup""]",https://media.ed.edmunds-media.com/chevrolet/ssr/2003/oem/2003_chevrolet_ssr_regular-cab-pickup_ls_fq_oem_1_500.jpg
+2004,Chevrolet,Suburban 1500,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Suburban 2500,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Tahoe,"[""SUV""]",https://media.ed.edmunds-media.com/chevrolet/tahoe/2003/oem/2003_chevrolet_tahoe_4dr-suv_ls_fq_oem_1_500.jpg
+2004,Chevrolet,Tracker,"[""SUV""]",https://media.ed.edmunds-media.com/chevrolet/tracker/2002/oem/2002_chevrolet_tracker_4dr-suv_base_s_oem_1_500.jpg
+2004,Chevrolet,TrailBlazer,"[""SUV""]",https://media.ed.edmunds-media.com/chevrolet/trailblazer/2003/oem/2003_chevrolet_trailblazer_4dr-suv_ext-lt_fq_oem_1_500.jpg
+2004,Chevrolet,Venture Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chevrolet,Venture Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Chrysler,300M,"[""Sedan""]",https://media.ed.edmunds-media.com/chrysler/300m/2004/oem/2004_chrysler_300m_sedan_special_s_oem_1_500.jpg
+2004,Chrysler,Concorde,"[""Sedan""]",https://media.ed.edmunds-media.com/chrysler/concorde/2002/oem/2002_chrysler_concorde_sedan_limited_fq_oem_1_500.jpg
+2004,Chrysler,Crossfire,"[""Coupe""]",https://media.ed.edmunds-media.com/chrysler/crossfire/2004/oem/2004_chrysler_crossfire_2dr-hatchback_base_fq_oem_1_500.jpg
+2004,Chrysler,Pacifica,"[""Wagon""]",https://media.ed.edmunds-media.com/chrysler/pacifica/2004/oem/2004_chrysler_pacifica_wagon_base_fq_oem_1_500.jpg
+2004,Chrysler,PT Cruiser,"[""Wagon""]",https://media.ed.edmunds-media.com/chrysler/pt-cruiser/2001/oem/2001_chrysler_pt-cruiser_wagon_base_s_oem_1_500.jpg
+2004,Chrysler,Sebring,"[""Coupe"", ""Convertible"", ""Sedan""]",https://media.ed.edmunds-media.com/chrysler/sebring/2003/oem/2003_chrysler_sebring_coupe_lxi_fq_oem_1_500.jpg
+2004,Chrysler,Town & Country,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Dodge,Caravan Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Dodge,Caravan Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Dodge,Dakota Club Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Dodge,Dakota Quad Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Dodge,Dakota Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Dodge,Durango,"[""SUV""]",https://media.ed.edmunds-media.com/dodge/durango/2004/oem/2004_dodge_durango_4dr-suv_base_fq_oem_2_500.jpg
+2004,Dodge,Grand Caravan Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Dodge,Grand Caravan Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Dodge,Intrepid,"[""Sedan""]",https://media.ed.edmunds-media.com/dodge/intrepid/1998/oem/1998_dodge_intrepid_sedan_es_s_oem_1_500.jpg
+2004,Dodge,Neon,"[""Sedan""]",https://media.ed.edmunds-media.com/dodge/neon/2003/oem/2003_dodge_neon_sedan_srt-4_fq_oem_1_500.jpg
+2004,Dodge,Ram 1500 Quad Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Dodge,Ram 1500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Dodge,Ram 2500 Quad Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Dodge,Ram 2500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Dodge,Ram 3500 Quad Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Dodge,Ram 3500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Dodge,Sprinter 2500 Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Dodge,Sprinter 2500 Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Dodge,Sprinter 3500 Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Dodge,Stratus,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/dodge/stratus/2004/oem/2004_dodge_stratus_coupe_rt_fq_oem_1_500.jpg
+2004,Dodge,Viper,"[""Convertible""]",https://media.ed.edmunds-media.com/dodge/viper/2003/oem/2003_dodge_viper_convertible_srt-10_s_oem_3_500.jpg
+2004,Ford,Crown Victoria,"[""Sedan""]",https://media.ed.edmunds-media.com/ford/crown-victoria/2002/oem/2002_ford_crown-victoria_sedan_lx-sport_fq_oem_1_500.jpg
+2004,Ford,E150 Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,E150 Super Duty Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,E250 Super Duty Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,E350 Super Duty Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,E350 Super Duty Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,Escape,"[""SUV""]",https://media.ed.edmunds-media.com/ford/escape/2004/oem/2004_ford_escape_4dr-suv_limited_fq_oem_2_500.jpg
+2004,Ford,Excursion,"[""SUV""]",https://media.ed.edmunds-media.com/ford/excursion/2001/oem/2001_ford_excursion_4dr-suv_limited_fq_oem_2_500.jpg
+2004,Ford,Expedition,"[""SUV""]",https://media.ed.edmunds-media.com/ford/expedition/2003/oem/2003_ford_expedition_4dr-suv_eddie-bauer_fq_oem_2_500.jpg
+2004,Ford,Explorer,"[""SUV""]",https://media.ed.edmunds-media.com/ford/explorer/2002/oem/2002_ford_explorer_4dr-suv_limited_fq_oem_1_500.jpg
+2004,Ford,Explorer Sport Trac,"[""Pickup""]",https://media.ed.edmunds-media.com/ford/explorer-sport-trac/2001/oem/2001_ford_explorer-sport-trac_crew-cab-pickup_base_fq_oem_6_500.jpg
+2004,Ford,F150 (Heritage) Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,F150 (Heritage) Super Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,F150 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,F150 Super Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,F150 SuperCrew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,F250 Super Duty Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,F250 Super Duty Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,F250 Super Duty Super Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,F350 Super Duty Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,F350 Super Duty Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,F350 Super Duty Super Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,Focus,"[""Sedan"", ""Hatchback"", ""Wagon""]",https://media.ed.edmunds-media.com/ford/focus/2002/oem/2002_ford_focus_sedan_zts_fq_oem_1_500.jpg
+2004,Ford,Freestar Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,Freestar Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,Mustang,"[""Convertible"", ""Coupe""]",https://media.ed.edmunds-media.com/ford/mustang/2000/oem/2000_ford_mustang_convertible_gt_fq_oem_4_500.jpg
+2004,Ford,Ranger Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,Ranger Super Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Ford,Taurus,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/ford/taurus/2004/oem/2004_ford_taurus_sedan_ses_fq_oem_1_500.jpg
+2004,Ford,Thunderbird,"[""Convertible""]",https://media.ed.edmunds-media.com/ford/thunderbird/2002/oem/2002_ford_thunderbird_convertible_deluxe_s_oem_1_500.jpg
+2004,GMC,Canyon Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Canyon Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Canyon Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Envoy,"[""SUV""]",https://media.ed.edmunds-media.com/gmc/envoy/2003/oem/2003_gmc_envoy_4dr-suv_slt_fq_oem_1_500.jpg
+2004,GMC,Envoy XL,"[""SUV""]",https://media.ed.edmunds-media.com/gmc/envoy-xl/2003/oem/2003_gmc_envoy-xl_4dr-suv_slt_fq_oem_1_500.jpg
+2004,GMC,Envoy XUV,"[""SUV""]",https://media.ed.edmunds-media.com/gmc/envoy-xuv/2004/oem/2004_gmc_envoy-xuv_4dr-suv_base_s_oem_1_500.jpg
+2004,GMC,Safari Cargo,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/gmc/safari-cargo/2002/oem/2002_gmc_safari-cargo_cargo-minivan_sl_fq_oem_1_500.jpg
+2004,GMC,Safari Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Savana 1500 Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Savana 1500 Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Savana 2500 Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Savana 2500 Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Savana 3500 Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Savana 3500 Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Sierra 1500 Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Sierra 1500 Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Sierra 1500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Sierra 2500 Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Sierra 2500 Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Sierra 2500 HD Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Sierra 2500 HD Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Sierra 2500 HD Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Sierra 2500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Sierra 3500 Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Sierra 3500 Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Sierra 3500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Sonoma Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Yukon,"[""SUV""]",https://media.ed.edmunds-media.com/gmc/yukon/2003/oem/2003_gmc_yukon_4dr-suv_denali_fq_oem_1_500.jpg
+2004,GMC,Yukon XL 1500,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,GMC,Yukon XL 2500,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Honda,Accord,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/honda/accord/2003/oem/2003_honda_accord_coupe_ex_fq_oem_1_500.jpg
+2004,Honda,Civic,"[""Coupe"", ""Sedan"", ""Hatchback""]",https://media.ed.edmunds-media.com/honda/civic/2004/oem/2004_honda_civic_sedan_ex_fq_oem_3_500.jpg
+2004,Honda,CR-V,"[""SUV""]",https://media.ed.edmunds-media.com/honda/cr-v/2003/oem/2003_honda_cr-v_4dr-suv_ex_fq_oem_1_500.jpg
+2004,Honda,Element,"[""SUV""]",https://media.ed.edmunds-media.com/honda/element/2003/oem/2003_honda_element_4dr-suv_dx_fq_oem_1_500.jpg
+2004,Honda,Insight,"[""Hatchback""]",https://media.ed.edmunds-media.com/honda/insight/2002/oem/2002_honda_insight_2dr-hatchback_base_s_oem_1_500.jpg
+2004,Honda,Odyssey,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/honda/odyssey/2000/oem/2000_honda_odyssey_passenger-minivan_ex_fq_oem_3_500.jpg
+2004,Honda,Pilot,"[""SUV""]",https://media.ed.edmunds-media.com/honda/pilot/2003/oem/2003_honda_pilot_4dr-suv_ex_fq_oem_1_500.jpg
+2004,Honda,S2000,"[""Convertible""]",https://media.ed.edmunds-media.com/honda/s2000/2004/oem/2004_honda_s2000_convertible_base_s_oem_1_500.jpg
+2004,HUMMER,H1,"[""Wagon"", ""SUV""]",https://media.ed.edmunds-media.com/hummer/h1/2002/oem/2002_hummer_h1_4dr-suv_wagon_fq_oem_1_500.jpg
+2004,HUMMER,H2,"[""SUV""]",https://media.ed.edmunds-media.com/hummer/h2/2003/oem/2003_hummer_h2_4dr-suv_adventure-series_fq_oem_2_500.jpg
+2004,Hyundai,Accent,"[""Hatchback"", ""Sedan""]",https://media.ed.edmunds-media.com/hyundai/accent/2003/oem/2003_hyundai_accent_2dr-hatchback_gl_fq_oem_1_500.jpg
+2004,Hyundai,Elantra,"[""Sedan"", ""Hatchback""]",https://media.ed.edmunds-media.com/hyundai/elantra/2004/oem/2004_hyundai_elantra_4dr-hatchback_gt_fq_oem_1_500.jpg
+2004,Hyundai,Santa Fe,"[""SUV""]",https://media.ed.edmunds-media.com/hyundai/santa-fe/2002/oem/2002_hyundai_santa-fe_4dr-suv_base_fq_oem_2_500.jpg
+2004,Hyundai,Sonata,"[""Sedan""]",https://media.ed.edmunds-media.com/hyundai/sonata/2002/oem/2002_hyundai_sonata_sedan_lx_fq_oem_1_500.jpg
+2004,Hyundai,Tiburon,"[""Coupe""]",https://media.ed.edmunds-media.com/hyundai/tiburon/2003/oem/2003_hyundai_tiburon_2dr-hatchback_gt_fq_oem_2_500.jpg
+2004,Hyundai,XG350,"[""Sedan""]",https://media.ed.edmunds-media.com/hyundai/xg350/2004/oem/2004_hyundai_xg350_sedan_l_fq_oem_1_500.jpg
+2004,INFINITI,FX,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,INFINITI,G,"[""Coupe"", ""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,INFINITI,I,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,INFINITI,M,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,INFINITI,Q,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,INFINITI,QX,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Isuzu,Ascender,"[""SUV""]",https://media.ed.edmunds-media.com/isuzu/ascender/2003/oem/2003_isuzu_ascender_4dr-suv_limited_fq_oem_1_500.jpg
+2004,Isuzu,Axiom,"[""SUV""]",https://media.ed.edmunds-media.com/isuzu/axiom/2002/oem/2002_isuzu_axiom_4dr-suv_base_fq_oem_1_500.jpg
+2004,Isuzu,Rodeo,"[""SUV""]",https://media.ed.edmunds-media.com/isuzu/rodeo/2002/oem/2002_isuzu_rodeo_4dr-suv_lse_fq_oem_1_500.jpg
+2004,Jaguar,S-Type,"[""Sedan""]",https://media.ed.edmunds-media.com/jaguar/s-type/2002/oem/2002_jaguar_s-type_sedan_30_fq_oem_2_500.jpg
+2004,Jaguar,XJ,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Jaguar,XK,"[""Coupe"", ""Convertible""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Jaguar,X-Type,"[""Sedan""]",https://media.ed.edmunds-media.com/jaguar/x-type/2004/oem/2004_jaguar_x-type_sedan_25_fq_oem_1_500.jpg
+2004,Jeep,Grand Cherokee,"[""SUV""]",https://media.ed.edmunds-media.com/jeep/grand-cherokee/2004/oem/2004_jeep_grand-cherokee_4dr-suv_limited_fq_oem_1_500.jpg
+2004,Jeep,Liberty,"[""SUV""]",https://media.ed.edmunds-media.com/jeep/liberty/2002/oem/2002_jeep_liberty_4dr-suv_limited_fq_oem_2_500.jpg
+2004,Jeep,Wrangler,"[""SUV""]",https://media.ed.edmunds-media.com/jeep/wrangler/2002/oem/2002_jeep_wrangler_convertible-suv_sahara_fq_oem_1_500.jpg
+2004,Kia,Amanti,"[""Sedan""]",https://media.ed.edmunds-media.com/kia/amanti/2004/oem/2004_kia_amanti_sedan_base_fq_oem_1_500.jpg
+2004,Kia,Optima,"[""Sedan""]",https://media.ed.edmunds-media.com/kia/optima/2004/oem/2004_kia_optima_sedan_lx_fq_oem_1_500.jpg
+2004,Kia,Rio,"[""Wagon"", ""Sedan""]",https://media.ed.edmunds-media.com/kia/rio/2003/oem/2003_kia_rio_wagon_cinco_fq_oem_1_500.jpg
+2004,Kia,Sedona,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/kia/sedona/2002/oem/2002_kia_sedona_passenger-minivan_ex_fq_oem_1_500.jpg
+2004,Kia,Sorento,"[""SUV""]",https://media.ed.edmunds-media.com/kia/sorento/2003/oem/2003_kia_sorento_4dr-suv_ex_fq_oem_1_500.jpg
+2004,Kia,Spectra,"[""Sedan"", ""Hatchback""]",https://media.ed.edmunds-media.com/kia/spectra/2002/oem/2002_kia_spectra_sedan_base_fq_oem_1_500.jpg
+2004,Land Rover,Discovery,"[""SUV""]",https://media.ed.edmunds-media.com/landrover/discovery/2003/oem/2003_landrover_discovery_4dr-suv_hse_fq_oem_1_500.jpg
+2004,Land Rover,Freelander,"[""SUV""]",https://media.ed.edmunds-media.com/landrover/freelander/2004/oem/2004_landrover_freelander_4dr-suv_hse_fq_oem_1_500.jpg
+2004,Land Rover,Range Rover,"[""SUV""]",https://media.ed.edmunds-media.com/landrover/range-rover/2004/oem/2004_landrover_range-rover_4dr-suv_hse_s_oem_2_500.jpg
+2004,Lexus,ES,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Lexus,GS,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Lexus,GX,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Lexus,IS,"[""Sedan"", ""Hatchback""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Lexus,LS,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Lexus,LX,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Lexus,RX,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Lexus,SC,"[""Convertible""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Lincoln,Aviator,"[""SUV""]",https://media.ed.edmunds-media.com/lincoln/aviator/2004/oem/2004_lincoln_aviator_4dr-suv_luxury_fq_oem_1_500.jpg
+2004,Lincoln,LS,"[""Sedan""]",https://media.ed.edmunds-media.com/lincoln/ls/2003/oem/2003_lincoln_ls_sedan_sport_fq_oem_1_500.jpg
+2004,Lincoln,Navigator,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Lincoln,Town Car,"[""Sedan""]",https://media.ed.edmunds-media.com/lincoln/town-car/2004/oem/2004_lincoln_town-car_sedan_ultimate_fq_oem_1_500.jpg
+2004,MAZDA,B-Series Cab Plus,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,MAZDA,B-Series Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,MAZDA,MAZDA3,"[""Sedan"", ""Hatchback""]",https://media.ed.edmunds-media.com/mazda/3/2004/oem/2004_mazda_3_sedan_s_fq_oem_2_500.jpg
+2004,MAZDA,MAZDA6,"[""Sedan"", ""Wagon"", ""Hatchback""]",https://media.ed.edmunds-media.com/mazda/6/2004/oem/2004_mazda_6_sedan_i_fq_oem_4_500.jpg
+2004,MAZDA,MPV,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/mazda/mpv/2004/oem/2004_mazda_mpv_passenger-minivan_es_fq_oem_2_500.jpg
+2004,MAZDA,MX-5 Miata,"[""Convertible""]",https://media.ed.edmunds-media.com/mazda/mx-5-miata/2004/oem/2004_mazda_mx-5-miata_convertible_ls_fq_oem_1_500.jpg
+2004,MAZDA,RX-8,"[""Coupe""]",https://media.ed.edmunds-media.com/mazda/rx-8/2004/oem/2004_mazda_rx-8_coupe_manual_fq_oem_2_500.jpg
+2004,MAZDA,Tribute,"[""SUV""]",https://media.ed.edmunds-media.com/mazda/tribute/2004/oem/2004_mazda_tribute_4dr-suv_s_s_oem_1_500.jpg
+2004,Mercedes-Benz,C-Class,"[""Sedan"", ""Coupe"", ""Wagon""]",https://media.ed.edmunds-media.com/mercedes-benz/c-class/2002/oem/2002_mercedes-benz_c-class_wagon_c320_s_oem_1_500.jpg
+2004,Mercedes-Benz,CL-Class,"[""Coupe""]",https://media.ed.edmunds-media.com/mercedes-benz/cl-class/2003/oem/2003_mercedes-benz_cl-class_coupe_cl55-amg_fq_oem_1_500.jpg
+2004,Mercedes-Benz,CLK-Class,"[""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/mercedes-benz/clk-class/2003/oem/2003_mercedes-benz_clk-class_coupe_clk320_fq_oem_1_500.jpg
+2004,Mercedes-Benz,E-Class,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/mercedes-benz/e-class/2003/oem/2003_mercedes-benz_e-class_sedan_e320_s_oem_1_500.jpg
+2004,Mercedes-Benz,G-Class,"[""SUV""]",https://media.ed.edmunds-media.com/mercedes-benz/g-class/2002/oem/2002_mercedes-benz_g-class_4dr-suv_g500_s_oem_1_500.jpg
+2004,Mercedes-Benz,M-Class,"[""SUV""]",https://media.ed.edmunds-media.com/mercedes-benz/m-class/2003/oem/2003_mercedes-benz_m-class_4dr-suv_ml350_fq_oem_1_500.jpg
+2004,Mercedes-Benz,S-Class,"[""Sedan""]",https://media.ed.edmunds-media.com/mercedes-benz/s-class/2003/oem/2003_mercedes-benz_s-class_sedan_s500-4matic_s_oem_1_500.jpg
+2004,Mercedes-Benz,SL-Class,"[""Convertible""]",https://media.ed.edmunds-media.com/mercedes-benz/sl-class/2003/oem/2003_mercedes-benz_sl-class_convertible_sl500_fq_oem_3_500.jpg
+2004,Mercedes-Benz,SLK-Class,"[""Convertible""]",https://media.ed.edmunds-media.com/mercedes-benz/slk-class/2002/oem/2002_mercedes-benz_slk-class_convertible_slk32-amg_s_oem_1_500.jpg
+2004,Mercury,Grand Marquis,"[""Sedan""]",https://media.ed.edmunds-media.com/mercury/grand-marquis/2004/oem/2004_mercury_grand-marquis_sedan_ls-premium_fq_oem_1_500.jpg
+2004,Mercury,Marauder,"[""Sedan""]",https://media.ed.edmunds-media.com/mercury/marauder/2003/oem/2003_mercury_marauder_sedan_base_fq_oem_1_500.jpg
+2004,Mercury,Monterey,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/mercury/monterey/2004/oem/2004_mercury_monterey_passenger-minivan_premier_fq_oem_1_500.jpg
+2004,Mercury,Mountaineer,"[""SUV""]",https://media.ed.edmunds-media.com/mercury/mountaineer/2003/oem/2003_mercury_mountaineer_4dr-suv_luxury_s_oem_1_500.jpg
+2004,Mercury,Sable,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/mercury/sable/2002/oem/2002_mercury_sable_sedan_ls-premium_fq_oem_2_500.jpg
+2004,MINI,Cooper,"[""Hatchback""]",https://media.ed.edmunds-media.com/mini/cooper/2002/oem/2002_mini_cooper_2dr-hatchback_base_fq_oem_1_500.jpg
+2004,Mitsubishi,Diamante,"[""Sedan""]",https://media.ed.edmunds-media.com/mitsubishi/diamante/2004/oem/2004_mitsubishi_diamante_sedan_base_fq_oem_1_500.jpg
+2004,Mitsubishi,Eclipse,"[""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/mitsubishi/eclipse/2003/oem/2003_mitsubishi_eclipse_2dr-hatchback_gts_fq_oem_2_500.jpg
+2004,Mitsubishi,Endeavor,"[""SUV""]",https://media.ed.edmunds-media.com/mitsubishi/endeavor/2004/oem/2004_mitsubishi_endeavor_4dr-suv_limited_fq_oem_2_500.jpg
+2004,Mitsubishi,Galant,"[""Sedan""]",https://media.ed.edmunds-media.com/mitsubishi/galant/2004/oem/2004_mitsubishi_galant_sedan_es_s_oem_1_500.jpg
+2004,Mitsubishi,Lancer,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/mitsubishi/lancer/2004/oem/2004_mitsubishi_lancer_sedan_ls_fq_oem_2_500.jpg
+2004,Mitsubishi,Montero,"[""SUV""]",https://media.ed.edmunds-media.com/mitsubishi/montero/2004/oem/2004_mitsubishi_montero_4dr-suv_limited_fq_oem_1_500.jpg
+2004,Mitsubishi,Montero Sport,"[""SUV""]",https://media.ed.edmunds-media.com/mitsubishi/montero-sport/2002/oem/2002_mitsubishi_montero-sport_4dr-suv_xls_fq_oem_2_500.jpg
+2004,Mitsubishi,Outlander,"[""SUV""]",https://media.ed.edmunds-media.com/mitsubishi/outlander/2003/oem/2003_mitsubishi_outlander_4dr-suv_base_fq_oem_2_500.jpg
+2004,Nissan,350Z,"[""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/nissan/350z/2003/oem/2003_nissan_350z_coupe_enthusiast_s_oem_1_500.jpg
+2004,Nissan,Altima,"[""Sedan""]",https://media.ed.edmunds-media.com/nissan/altima/2004/oem/2004_nissan_altima_sedan_25-s_fq_oem_1_500.jpg
+2004,Nissan,Frontier Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Nissan,Frontier King Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Nissan,Maxima,"[""Sedan""]",https://media.ed.edmunds-media.com/nissan/maxima/2004/oem/2004_nissan_maxima_sedan_35-se_fq_oem_1_500.jpg
+2004,Nissan,Murano,"[""SUV""]",https://media.ed.edmunds-media.com/nissan/murano/2003/oem/2003_nissan_murano_4dr-suv_se_fq_oem_1_500.jpg
+2004,Nissan,Pathfinder,"[""SUV""]",https://media.ed.edmunds-media.com/nissan/pathfinder/2002/oem/2002_nissan_pathfinder_4dr-suv_se_s_oem_1_500.jpg
+2004,Nissan,Pathfinder Armada,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Nissan,Quest,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/nissan/quest/2004/oem/2004_nissan_quest_passenger-minivan_base_fq_oem_1_500.jpg
+2004,Nissan,Sentra,"[""Sedan""]",https://media.ed.edmunds-media.com/nissan/sentra/2004/oem/2004_nissan_sentra_sedan_18-s_fq_oem_1_500.jpg
+2004,Nissan,Titan Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Nissan,Titan King Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Nissan,Xterra,"[""SUV""]",https://media.ed.edmunds-media.com/nissan/xterra/2002/oem/2002_nissan_xterra_4dr-suv_se_s_oem_1_500.jpg
+2004,Oldsmobile,Alero,"[""Coupe"", ""Sedan""]",https://media.ed.edmunds-media.com/oldsmobile/alero/2002/oem/2002_oldsmobile_alero_sedan_gl2_fq_oem_1_500.jpg
+2004,Oldsmobile,Bravada,"[""SUV""]",https://media.ed.edmunds-media.com/oldsmobile/bravada/2002/oem/2002_oldsmobile_bravada_4dr-suv_base_fq_oem_2_500.jpg
+2004,Oldsmobile,Silhouette,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/oldsmobile/silhouette/2002/oem/2002_oldsmobile_silhouette_passenger-minivan_premiere_fq_oem_1_500.jpg
+2004,Pontiac,Aztek,"[""SUV""]",https://media.ed.edmunds-media.com/pontiac/aztek/2003/oem/2003_pontiac_aztek_4dr-suv_base_fq_oem_1_500.jpg
+2004,Pontiac,Bonneville,"[""Sedan""]",https://media.ed.edmunds-media.com/pontiac/bonneville/2002/oem/2002_pontiac_bonneville_sedan_se_fq_oem_1_500.jpg
+2004,Pontiac,Grand Am,"[""Coupe"", ""Sedan""]",https://media.ed.edmunds-media.com/pontiac/grand-am/2003/oem/2003_pontiac_grand-am_sedan_se2_fq_oem_1_500.jpg
+2004,Pontiac,Grand Prix,"[""Sedan""]",https://media.ed.edmunds-media.com/pontiac/grand-prix/2004/oem/2004_pontiac_grand-prix_sedan_gtp_fq_oem_1_500.jpg
+2004,Pontiac,GTO,"[""Coupe""]",https://media.ed.edmunds-media.com/pontiac/gto/2004/oem/2004_pontiac_gto_coupe_base_fq_oem_2_500.jpg
+2004,Pontiac,Montana,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/pontiac/montana/2004/oem/2004_pontiac_montana_passenger-minivan_base_s_oem_1_500.jpg
+2004,Pontiac,Sunfire,"[""Coupe""]",https://media.ed.edmunds-media.com/pontiac/sunfire/2003/oem/2003_pontiac_sunfire_coupe_base_fq_oem_2_500.jpg
+2004,Pontiac,Vibe,"[""Wagon""]",https://media.ed.edmunds-media.com/pontiac/vibe/2003/oem/2003_pontiac_vibe_wagon_base_s_oem_1_500.jpg
+2004,Porsche,911,"[""Convertible"", ""Coupe""]",https://media.ed.edmunds-media.com/porsche/911/2002/oem/2002_porsche_911_coupe_gt2_s_oem_1_500.jpg
+2004,Porsche,Boxster,"[""Convertible""]",https://media.ed.edmunds-media.com/porsche/boxster/2003/oem/2003_porsche_boxster_convertible_base_fq_oem_1_500.jpg
+2004,Porsche,Carrera GT,"[""Convertible""]",https://media.ed.edmunds-media.com/porsche/carrera-gt/2004/oem/2004_porsche_carrera-gt_convertible_base_fq_oem_2_500.jpg
+2004,Porsche,Cayenne,"[""SUV""]",https://media.ed.edmunds-media.com/porsche/cayenne/2003/oem/2003_porsche_cayenne_4dr-suv_turbo-tiptronic_fq_oem_1_500.jpg
+2004,Saab,9-3,"[""Sedan"", ""Convertible""]",https://media.ed.edmunds-media.com/saab/9-3/2004/oem/2004_saab_9-3_sedan_aero_fq_oem_2_500.jpg
+2004,Saab,9-5,"[""Wagon"", ""Sedan""]",https://media.ed.edmunds-media.com/saab/9-5/2004/oem/2004_saab_9-5_wagon_aero_fq_oem_1_500.jpg
+2004,Saturn,Ion,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/saturn/ion/2004/oem/2004_saturn_ion_coupe_base_fq_oem_1_500.jpg
+2004,Saturn,L-Series,"[""Sedan"", ""Wagon""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Saturn,VUE,"[""SUV""]",https://media.ed.edmunds-media.com/saturn/vue/2002/oem/2002_saturn_vue_4dr-suv_base_fq_oem_2_500.jpg
+2004,Scion,xA,"[""Hatchback""]",https://media.ed.edmunds-media.com/scion/xa/2004/oem/2004_scion_xa_4dr-hatchback_base_fq_oem_1_500.jpg
+2004,Scion,xB,"[""Hatchback""]",https://media.ed.edmunds-media.com/scion/xb/2004/oem/2004_scion_xb_4dr-suv_base_fq_oem_1_500.jpg
+2004,Subaru,Baja,"[""Pickup""]",https://media.ed.edmunds-media.com/subaru/baja/2003/oem/2003_subaru_baja_crew-cab-pickup_base_s_oem_1_500.jpg
+2004,Subaru,Forester,"[""SUV""]",https://media.ed.edmunds-media.com/subaru/forester/2003/oem/2003_subaru_forester_wagon_x_fq_oem_1_500.jpg
+2004,Subaru,Impreza,"[""Wagon"", ""Sedan""]",https://media.ed.edmunds-media.com/subaru/impreza/2004/oem/2004_subaru_impreza_sedan_wrx_fq_oem_1_500.jpg
+2004,Subaru,Legacy,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/subaru/legacy/2002/oem/2002_subaru_legacy_sedan_gt_fq_oem_1_500.jpg
+2004,Subaru,Outback,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/subaru/outback/2001/oem/2001_subaru_outback_sedan_limited_fq_oem_1_500.jpg
+2004,Suzuki,Aerio,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/suzuki/aerio/2002/oem/2002_suzuki_aerio_wagon_sx_fq_oem_1_500.jpg
+2004,Suzuki,Forenza,"[""Sedan""]",https://media.ed.edmunds-media.com/suzuki/forenza/2004/oem/2004_suzuki_forenza_sedan_base_fq_oem_1_500.jpg
+2004,Suzuki,Grand Vitara,"[""SUV""]",https://media.ed.edmunds-media.com/suzuki/grand-vitara/2004/oem/2004_suzuki_grand-vitara_4dr-suv_lx_fq_oem_1_500.jpg
+2004,Suzuki,Verona,"[""Sedan""]",https://media.ed.edmunds-media.com/suzuki/verona/2004/oem/2004_suzuki_verona_sedan_ex_s_oem_1_500.jpg
+2004,Suzuki,Vitara,"[""SUV""]",https://media.ed.edmunds-media.com/suzuki/vitara/2004/oem/2004_suzuki_vitara_4dr-suv_lx_fq_oem_1_500.jpg
+2004,Suzuki,XL-7,"[""SUV""]",https://media.ed.edmunds-media.com/suzuki/xl-7/2004/oem/2004_suzuki_xl-7_4dr-suv_ex-iii_fq_oem_2_500.jpg
+2004,Toyota,4Runner,"[""SUV""]",https://media.ed.edmunds-media.com/toyota/4runner/2004/oem/2004_toyota_4runner_4dr-suv_limited_fq_oem_1_500.jpg
+2004,Toyota,Avalon,"[""Sedan""]",https://media.ed.edmunds-media.com/toyota/avalon/2003/oem/2003_toyota_avalon_sedan_xl_fq_oem_1_500.jpg
+2004,Toyota,Camry,"[""Sedan""]",https://media.ed.edmunds-media.com/toyota/camry/2004/oem/2004_toyota_camry_sedan_le_fq_oem_1_500.jpg
+2004,Toyota,Celica,"[""Hatchback""]",https://media.ed.edmunds-media.com/toyota/celica/2003/oem/2003_toyota_celica_2dr-hatchback_gt-s_s_oem_1_500.jpg
+2004,Toyota,Corolla,"[""Sedan""]",https://media.ed.edmunds-media.com/toyota/corolla/2003/oem/2003_toyota_corolla_sedan_le_s_oem_1_500.jpg
+2004,Toyota,Echo,"[""Sedan""]",https://media.ed.edmunds-media.com/toyota/echo/2002/oem/2002_toyota_echo_coupe_base_fq_oem_1_500.jpg
+2004,Toyota,Highlander,"[""SUV""]",https://media.ed.edmunds-media.com/toyota/highlander/2004/oem/2004_toyota_highlander_4dr-suv_base_fq_oem_1_500.jpg
+2004,Toyota,Land Cruiser,"[""SUV""]",https://media.ed.edmunds-media.com/toyota/land-cruiser/2003/oem/2003_toyota_land-cruiser_4dr-suv_base_fq_oem_1_500.jpg
+2004,Toyota,Matrix,"[""Hatchback"", ""Wagon""]",https://media.ed.edmunds-media.com/toyota/matrix/2003/oem/2003_toyota_matrix_wagon_xr_s_oem_1_500.jpg
+2004,Toyota,MR2,"[""Convertible""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Toyota,Prius,"[""Sedan""]",https://media.ed.edmunds-media.com/toyota/prius/2004/oem/2004_toyota_prius_4dr-hatchback_base_fq_oem_1_500.jpg
+2004,Toyota,RAV4,"[""SUV""]",https://media.ed.edmunds-media.com/toyota/rav4/2004/oem/2004_toyota_rav4_4dr-suv_base_s_oem_1_500.jpg
+2004,Toyota,Sequoia,"[""SUV""]",https://media.ed.edmunds-media.com/toyota/sequoia/2003/oem/2003_toyota_sequoia_4dr-suv_limited_s_oem_1_500.jpg
+2004,Toyota,Sienna,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/toyota/sienna/2004/oem/2004_toyota_sienna_passenger-minivan_le-8-passenger_fq_oem_1_500.jpg
+2004,Toyota,Solara,"[""Coupe"", ""Convertible""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Toyota,Tacoma Double Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Toyota,Tacoma Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Toyota,Tacoma Xtracab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Toyota,Tundra Access Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Toyota,Tundra Double Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Toyota,Tundra Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Volkswagen,Golf,"[""Hatchback""]",https://media.ed.edmunds-media.com/volkswagen/golf/2000/oem/2000_volkswagen_golf_2dr-hatchback_gl_s_oem_1_500.jpg
+2004,Volkswagen,GTI,"[""Hatchback""]",https://media.ed.edmunds-media.com/volkswagen/gti/2002/oem/2002_volkswagen_gti_2dr-hatchback_18t_s_oem_1_500.jpg
+2004,Volkswagen,Jetta,"[""Wagon"", ""Sedan""]",https://media.ed.edmunds-media.com/volkswagen/jetta/2004/oem/2004_volkswagen_jetta_sedan_gli-18t_fq_oem_1_500.jpg
+2004,Volkswagen,New Beetle,"[""Hatchback"", ""Convertible""]",https://media.ed.edmunds-media.com/volkswagen/new-beetle/2004/oem/2004_volkswagen_new-beetle_convertible_gls_fq_oem_1_500.jpg
+2004,Volkswagen,Passat,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/volkswagen/passat/2004/oem/2004_volkswagen_passat_wagon_glx-4motion_fq_oem_1_500.jpg
+2004,Volkswagen,Phaeton,"[""Sedan""]",https://media.ed.edmunds-media.com/volkswagen/phaeton/2004/oem/2004_volkswagen_phaeton_sedan_base_fq_oem_2_500.jpg
+2004,Volkswagen,R32,"[""Hatchback""]",https://media.ed.edmunds-media.com/volkswagen/r32/2004/oem/2004_volkswagen_r32_2dr-hatchback_base_fq_oem_1_500.jpg
+2004,Volkswagen,Touareg,"[""SUV""]",https://media.ed.edmunds-media.com/volkswagen/touareg/2004/oem/2004_volkswagen_touareg_4dr-suv_v8_fq_oem_1_500.jpg
+2004,Volvo,C70,"[""Convertible""]",https://media.ed.edmunds-media.com/volvo/c70/2002/oem/2002_volvo_c70_convertible_ht_fq_oem_1_500.jpg
+2004,Volvo,S40,"[""Sedan""]",https://media.ed.edmunds-media.com/volvo/s40/2003/oem/2003_volvo_s40_sedan_base_fq_oem_1_500.jpg
+2004,Volvo,S40 (New),"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2004,Volvo,S60,"[""Sedan""]",https://media.ed.edmunds-media.com/volvo/s60/2002/oem/2002_volvo_s60_sedan_24_fq_oem_1_500.jpg
+2004,Volvo,S80,"[""Sedan""]",https://media.ed.edmunds-media.com/volvo/s80/2004/oem/2004_volvo_s80_sedan_t6-premier_fq_oem_1_500.jpg
+2004,Volvo,V40,"[""Wagon""]",https://media.ed.edmunds-media.com/volvo/v40/2002/oem/2002_volvo_v40_wagon_base_s_oem_1_500.jpg
+2004,Volvo,V70,"[""Wagon""]",https://media.ed.edmunds-media.com/volvo/v70/2004/oem/2004_volvo_v70_wagon_base_fq_oem_1_500.jpg
+2004,Volvo,XC70,"[""Wagon""]",https://media.ed.edmunds-media.com/volvo/xc70/2003/oem/2003_volvo_xc70_wagon_base_fq_oem_1_500.jpg
+2004,Volvo,XC90,"[""SUV""]",https://media.ed.edmunds-media.com/volvo/xc90/2003/oem/2003_volvo_xc90_4dr-suv_t6_fq_oem_2_500.jpg

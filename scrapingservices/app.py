@@ -76,7 +76,7 @@ def handleFiles(oldFilePath, newFilePath):
 
 # handleFiles('car_data/1992.csv', 'new_1992.csv')
 
-yearCount = 1993
+yearCount = 1994
 
 while (yearCount <= 2020):
     stringYear = str(yearCount)

@@ -1,0 +1,348 @@
+year,make,model,body_style,image_src
+2010,Acura,MDX,"[""SUV""]",https://media.ed.edmunds-media.com/acura/mdx/2010/oem/2010_acura_mdx_4dr-suv_base_s_oem_2_500.jpg
+2010,Acura,RDX,"[""SUV""]",https://media.ed.edmunds-media.com/acura/rdx/2010/oem/2010_acura_rdx_4dr-suv_base_s_oem_1_500.jpg
+2010,Acura,RL,"[""Sedan""]",https://media.ed.edmunds-media.com/acura/rl/2010/oem/2010_acura_rl_sedan_base_s_oem_2_500.jpg
+2010,Acura,TL,"[""Sedan""]",https://media.ed.edmunds-media.com/acura/tl/2010/oem/2010_acura_tl_sedan_base_fq_oem_2_500.jpg
+2010,Acura,TSX,"[""Sedan""]",https://media.ed.edmunds-media.com/acura/tsx/2010/oem/2010_acura_tsx_sedan_base_fq_oem_8_500.jpg
+2010,Acura,ZDX,"[""SUV""]",https://media.ed.edmunds-media.com/acura/zdx/2010/oem/2010_acura_zdx_4dr-hatchback_base_fq_oem_3_500.jpg
+2010,Aston Martin,DB9,"[""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/astonmartin/db9/2010/oem/2010_astonmartin_db9_coupe_base_s_oem_1_500.jpg
+2010,Aston Martin,DBS,"[""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/astonmartin/dbs/2010/oem/2010_astonmartin_dbs_convertible_volante_s_oem_1_500.jpg
+2010,Aston Martin,Rapide,"[""Sedan""]",https://media.ed.edmunds-media.com/astonmartin/rapide/2010/oem/2010_astonmartin_rapide_sedan_base_fq_oem_1_500.jpg
+2010,Aston Martin,Vantage,"[""Coupe"", ""Convertible""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Audi,A3,"[""Wagon""]",https://media.ed.edmunds-media.com/audi/a3/2010/oem/2010_audi_a3_wagon_20-tdi-premium_fq_oem_2_500.jpg
+2010,Audi,A4,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/audi/a4/2010/oem/2010_audi_a4_sedan_20t-premium-quattro_fq_oem_2_500.jpg
+2010,Audi,A5,"[""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/audi/a5/2009/oem/2009_audi_a5_coupe_quattro_s_oem_1_500.jpg
+2010,Audi,A6,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/audi/a6/2010/oem/2010_audi_a6_sedan_30t-premium-quattro_fq_oem_1_500.jpg
+2010,Audi,A8,"[""Sedan""]",https://media.ed.edmunds-media.com/audi/a8/2009/oem/2009_audi_a8_sedan_quattro_fq_oem_1_500.jpg
+2010,Audi,Q5,"[""SUV""]",https://media.ed.edmunds-media.com/audi/q5/2010/oem/2010_audi_q5_4dr-suv_32-premium-quattro_fq_oem_1_500.jpg
+2010,Audi,Q7,"[""SUV""]",https://media.ed.edmunds-media.com/audi/q7/2009/oem/2009_audi_q7_4dr-suv_tdi-premium-quattro_fq_oem_1_500.jpg
+2010,Audi,R8,"[""Coupe""]",https://media.ed.edmunds-media.com/audi/r8/2010/oem/2010_audi_r8_coupe_52-quattro_fq_oem_2_500.jpg
+2010,Audi,S4,"[""Sedan""]",https://media.ed.edmunds-media.com/audi/s4/2010/oem/2010_audi_s4_sedan_premium-plus-quattro_fq_oem_1_500.jpg
+2010,Audi,S5,"[""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/audi/s5/2010/oem/2010_audi_s5_coupe_premium-plus-quattro_s_oem_2_500.jpg
+2010,Audi,S6,"[""Sedan""]",https://media.ed.edmunds-media.com/audi/s6/2010/oem/2010_audi_s6_sedan_prestige-quattro_fq_oem_1_500.jpg
+2010,Audi,TT,"[""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/audi/tt/2009/oem/2009_audi_tt_2dr-hatchback_32-quattro_fq_oem_1_500.jpg
+2010,Bentley,Azure T,"[""Convertible""]",https://media.ed.edmunds-media.com/bentley/azure-t/2010/oem/2010_bentley_azure-t_convertible_base_fq_oem_1_500.jpg
+2010,Bentley,Brooklands,"[""Coupe""]",https://media.ed.edmunds-media.com/bentley/brooklands/2010/oem/2010_bentley_brooklands_coupe_base_s_oem_1_500.jpg
+2010,Bentley,Continental,"[""Convertible"", ""Sedan"", ""Coupe""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,BMW,1 Series,"[""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/bmw/1-series/2010/oem/2010_bmw_1-series_convertible_135i_fq_oem_2_500.jpg
+2010,BMW,3 Series,"[""Sedan"", ""Coupe"", ""Convertible"", ""Wagon""]",https://media.ed.edmunds-media.com/bmw/3-series/2008/oem/2008_bmw_3-series_convertible_335i_fq_oem_1_500.jpg
+2010,BMW,5 Series,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/bmw/5-series/2008/oem/2008_bmw_5-series_sedan_528i_s_oem_1_500.jpg
+2010,BMW,6 Series,"[""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/bmw/6-series/2008/oem/2008_bmw_6-series_convertible_650i_fq_oem_2_500.jpg
+2010,BMW,7 Series,"[""Sedan""]",https://media.ed.edmunds-media.com/bmw/7-series/2010/oem/2010_bmw_7-series_sedan_750i_fq_oem_2_500.jpg
+2010,BMW,M3,"[""Coupe"", ""Sedan"", ""Convertible""]",https://media.ed.edmunds-media.com/bmw/m3/2009/oem/2009_bmw_m3_sedan_base_s_oem_1_500.jpg
+2010,BMW,M5,"[""Sedan""]",https://static.ed.edmunds-media.com/unversioned/img/e17/no-vehicle-img-transparent.png
+2010,BMW,M6,"[""Coupe"", ""Convertible""]",https://static.ed.edmunds-media.com/unversioned/img/e17/no-vehicle-img-transparent.png
+2010,BMW,X3,"[""SUV""]",https://media.ed.edmunds-media.com/bmw/x3/2010/oem/2010_bmw_x3_4dr-suv_xdrive30i_fq_oem_4_500.jpg
+2010,BMW,X5,"[""SUV""]",https://media.ed.edmunds-media.com/bmw/x5/2010/oem/2010_bmw_x5_4dr-suv_xdrive35d_s_oem_1_500.jpg
+2010,BMW,X5 M,"[""SUV""]",https://media.ed.edmunds-media.com/bmw/x5-m/2010/oem/2010_bmw_x5-m_4dr-suv_base_fq_oem_3_500.jpg
+2010,BMW,X6,"[""SUV""]",https://media.ed.edmunds-media.com/bmw/x6/2010/oem/2010_bmw_x6_4dr-suv_xdrive35i_s_oem_1_500.jpg
+2010,BMW,X6 M,"[""SUV""]",https://media.ed.edmunds-media.com/bmw/x6-m/2010/oem/2010_bmw_x6-m_4dr-suv_base_fq_oem_1_500.jpg
+2010,BMW,Z4,"[""Convertible""]",https://media.ed.edmunds-media.com/bmw/z4/2009/oem/2009_bmw_z4_convertible_sdrive35i_fq_oem_2_500.jpg
+2010,Buick,Enclave,"[""SUV""]",https://media.ed.edmunds-media.com/buick/enclave/2010/oem/2010_buick_enclave_4dr-suv_cxl2_s_oem_4_500.jpg
+2010,Buick,LaCrosse,"[""Sedan""]",https://media.ed.edmunds-media.com/buick/lacrosse/2010/oem/2010_buick_lacrosse_sedan_cxs_fq_oem_3_500.jpg
+2010,Buick,Lucerne,"[""Sedan""]",https://media.ed.edmunds-media.com/buick/lucerne/2009/oem/2009_buick_lucerne_sedan_cxl-special-edition_fq_oem_1_500.jpg
+2010,Cadillac,CTS,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/cadillac/cts/2010/oem/2010_cadillac_cts_sedan_base_fq_oem_1_500.jpg
+2010,Cadillac,DTS,"[""Sedan""]",https://media.ed.edmunds-media.com/cadillac/dts/2010/oem/2010_cadillac_dts_sedan_premium_fq_oem_1_500.jpg
+2010,Cadillac,Escalade,"[""SUV""]",https://media.ed.edmunds-media.com/cadillac/escalade/2010/oem/2010_cadillac_escalade_4dr-suv_platinum-edition_fq_oem_1_500.jpg
+2010,Cadillac,Escalade ESV,"[""SUV""]",https://media.ed.edmunds-media.com/cadillac/escalade-esv/2010/oem/2010_cadillac_escalade-esv_4dr-suv_platinum-edition_fq_oem_1_500.jpg
+2010,Cadillac,Escalade EXT,"[""Pickup""]",https://media.ed.edmunds-media.com/cadillac/escalade-ext/2010/oem/2010_cadillac_escalade-ext_crew-cab-pickup_premium_fq_oem_1_500.jpg
+2010,Cadillac,SRX,"[""SUV""]",https://media.ed.edmunds-media.com/cadillac/srx/2010/oem/2010_cadillac_srx_4dr-suv_premium_fq_oem_5_500.jpg
+2010,Cadillac,STS,"[""Sedan""]",https://media.ed.edmunds-media.com/cadillac/sts/2009/oem/2009_cadillac_sts_sedan_v6_fq_oem_1_500.jpg
+2010,Chevrolet,Avalanche,"[""SUV""]",https://media.ed.edmunds-media.com/chevrolet/avalanche/2009/oem/2009_chevrolet_avalanche_crew-cab-pickup_ltz_fq_oem_1_500.jpg
+2010,Chevrolet,Aveo,"[""Sedan"", ""Hatchback""]",https://media.ed.edmunds-media.com/chevrolet/aveo/2009/oem/2009_chevrolet_aveo_4dr-hatchback_aveo5-2lt_fq_oem_1_500.jpg
+2010,Chevrolet,Camaro,"[""Coupe""]",https://media.ed.edmunds-media.com/chevrolet/camaro/2010/oem/2010_chevrolet_camaro_coupe_2lt_fq_oem_4_500.jpg
+2010,Chevrolet,Cobalt,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/chevrolet/cobalt/2008/oem/2008_chevrolet_cobalt_coupe_lt_fq_oem_1_500.jpg
+2010,Chevrolet,Colorado Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,Colorado Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,Colorado Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,Corvette,"[""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/chevrolet/corvette/2010/oem/2010_chevrolet_corvette_convertible_base_fq_oem_4_500.jpg
+2010,Chevrolet,Equinox,"[""SUV""]",https://media.ed.edmunds-media.com/chevrolet/equinox/2010/oem/2010_chevrolet_equinox_4dr-suv_ltz_fq_oem_2_500.jpg
+2010,Chevrolet,Express 1500 Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,Express 1500 Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,Express 2500 Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,Express 2500 Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,Express 3500 Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,Express 3500 Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,HHR,"[""Wagon""]",https://media.ed.edmunds-media.com/chevrolet/hhr/2009/oem/2009_chevrolet_hhr_wagon_ls_fq_oem_1_500.jpg
+2010,Chevrolet,Impala,"[""Sedan""]",https://media.ed.edmunds-media.com/chevrolet/impala/2010/oem/2010_chevrolet_impala_sedan_ltz_fq_oem_2_500.jpg
+2010,Chevrolet,Malibu,"[""Sedan""]",https://media.ed.edmunds-media.com/chevrolet/malibu/2010/oem/2010_chevrolet_malibu_sedan_lt2_fq_oem_1_500.jpg
+2010,Chevrolet,Silverado 1500 Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,Silverado 1500 Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,Silverado 1500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,Silverado 2500 HD Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,Silverado 2500 HD Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,Silverado 2500 HD Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,Silverado 3500 HD Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,Silverado 3500 HD Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,Silverado 3500 HD Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,Suburban 1500,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,Suburban 2500,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Chevrolet,Tahoe,"[""SUV""]",https://media.ed.edmunds-media.com/chevrolet/tahoe/2009/oem/2009_chevrolet_tahoe_4dr-suv_lt2_fq_oem_1_500.jpg
+2010,Chevrolet,Traverse,"[""SUV""]",https://media.ed.edmunds-media.com/chevrolet/traverse/2010/oem/2010_chevrolet_traverse_4dr-suv_ltz_fq_oem_4_500.jpg
+2010,Chrysler,300,"[""Sedan""]",https://media.ed.edmunds-media.com/chrysler/300/2008/oem/2008_chrysler_300_sedan_c_fq_oem_3_500.jpg
+2010,Chrysler,PT Cruiser,"[""Wagon""]",https://media.ed.edmunds-media.com/chrysler/pt-cruiser/2009/oem/2009_chrysler_pt-cruiser_wagon_limited_fq_oem_1_500.jpg
+2010,Chrysler,Sebring,"[""Sedan"", ""Convertible""]",https://media.ed.edmunds-media.com/chrysler/sebring/2010/oem/2010_chrysler_sebring_sedan_limited_fq_oem_4_500.jpg
+2010,Chrysler,Town & Country,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Dodge,Avenger,"[""Sedan""]",https://media.ed.edmunds-media.com/dodge/avenger/2010/oem/2010_dodge_avenger_sedan_rt_fq_oem_1_500.jpg
+2010,Dodge,Caliber,"[""Wagon""]",https://media.ed.edmunds-media.com/dodge/caliber/2010/oem/2010_dodge_caliber_wagon_rt-fleet_fq_oem_2_500.jpg
+2010,Dodge,Challenger,"[""Coupe""]",https://media.ed.edmunds-media.com/dodge/challenger/2010/oem/2010_dodge_challenger_coupe_rt_fq_oem_2_500.jpg
+2010,Dodge,Charger,"[""Sedan""]",https://media.ed.edmunds-media.com/dodge/charger/2010/oem/2010_dodge_charger_sedan_rt_fq_oem_2_500.jpg
+2010,Dodge,Dakota Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Dodge,Dakota Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Dodge,Grand Caravan Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Dodge,Grand Caravan Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Dodge,Journey,"[""SUV""]",https://media.ed.edmunds-media.com/dodge/journey/2010/oem/2010_dodge_journey_4dr-suv_rt_fq_oem_2_500.jpg
+2010,Dodge,Nitro,"[""SUV""]",https://media.ed.edmunds-media.com/dodge/nitro/2010/oem/2010_dodge_nitro_4dr-suv_sxt-fleet_fq_oem_1_500.jpg
+2010,Dodge,Ram 1500 Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Dodge,Ram 1500 Quad Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Dodge,Ram 1500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Dodge,Ram 2500 Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Dodge,Ram 2500 Mega Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Dodge,Ram 2500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Dodge,Ram 3500 Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Dodge,Ram 3500 Mega Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Dodge,Ram 3500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Dodge,Viper,"[""Convertible"", ""Coupe""]",https://media.ed.edmunds-media.com/dodge/viper/2010/oem/2010_dodge_viper_convertible_srt-10_fq_oem_1_500.jpg
+2010,Ferrari,458 Italia,"[""Coupe""]",https://media.ed.edmunds-media.com/ferrari/458-italia/2010/oem/2010_ferrari_458-italia_coupe_base_fq_oem_1_500.jpg
+2010,Ferrari,599 GTB Fiorano,"[""Coupe""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ferrari,612 Scaglietti,"[""Coupe""]",https://media.ed.edmunds-media.com/ferrari/612-scaglietti/2010/oem/2010_ferrari_612-scaglietti_coupe_base_fq_oem_2_500.jpg
+2010,Ferrari,California,"[""Convertible""]",https://media.ed.edmunds-media.com/ferrari/california/2010/oem/2010_ferrari_california_convertible_base_fq_oem_1_500.jpg
+2010,Ford,Crown Victoria,"[""Sedan""]",https://media.ed.edmunds-media.com/ford/crown-victoria/2007/oem/2007_ford_crown-victoria_sedan_lx_fq_oem_1_500.jpg
+2010,Ford,E150 Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ford,E150 Super Duty Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ford,E250 Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ford,E350 Super Duty Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ford,E350 Super Duty Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ford,Edge,"[""SUV""]",https://media.ed.edmunds-media.com/ford/edge/2009/oem/2009_ford_edge_4dr-suv_sport_fq_oem_1_500.jpg
+2010,Ford,Escape,"[""SUV""]",https://media.ed.edmunds-media.com/ford/escape/2008/oem/2008_ford_escape_4dr-suv_limited_fq_oem_2_500.jpg
+2010,Ford,Expedition,"[""SUV""]",https://media.ed.edmunds-media.com/ford/expedition/2010/oem/2010_ford_expedition_4dr-suv_el-limited_fq_oem_1_500.jpg
+2010,Ford,Expedition EL,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ford,Explorer,"[""SUV""]",https://media.ed.edmunds-media.com/ford/explorer/2008/oem/2008_ford_explorer_4dr-suv_eddie-bauer_fq_oem_1_500.jpg
+2010,Ford,Explorer Sport Trac,"[""Pickup""]",https://media.ed.edmunds-media.com/ford/explorer-sport-trac/2010/oem/2010_ford_explorer-sport-trac_crew-cab-pickup_limited_fq_oem_2_500.jpg
+2010,Ford,F150 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ford,F150 Super Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ford,F150 SuperCrew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ford,F250 Super Duty Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ford,F250 Super Duty Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ford,F250 Super Duty Super Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ford,F350 Super Duty Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ford,F350 Super Duty Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ford,F350 Super Duty Super Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ford,F450 Super Duty Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ford,Flex,"[""SUV""]",https://media.ed.edmunds-media.com/ford/flex/2010/oem/2010_ford_flex_wagon_limited_fq_oem_6_500.jpg
+2010,Ford,Focus,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/ford/focus/2009/oem/2009_ford_focus_sedan_ses_s_oem_1_500.jpg
+2010,Ford,Fusion,"[""Sedan""]",https://media.ed.edmunds-media.com/ford/fusion/2010/oem/2010_ford_fusion_sedan_sel_fq_oem_2_500.jpg
+2010,Ford,Mustang,"[""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/ford/mustang/2010/oem/2010_ford_mustang_convertible_gt-premium_fq_oem_2_500.jpg
+2010,Ford,Ranger Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ford,Ranger Super Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ford,Taurus,"[""Sedan""]",https://media.ed.edmunds-media.com/ford/taurus/2010/oem/2010_ford_taurus_sedan_limited_fq_oem_3_500.jpg
+2010,Ford,Transit Connect Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Ford,Transit Connect Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Acadia,"[""SUV""]",https://media.ed.edmunds-media.com/gmc/acadia/2010/oem/2010_gmc_acadia_4dr-suv_slt-2_fq_oem_3_500.jpg
+2010,GMC,Canyon Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Canyon Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Canyon Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Savana 1500 Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Savana 1500 Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Savana 2500 Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Savana 2500 Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Savana 3500 Cargo,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Savana 3500 Passenger,"[""Van/Minivan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Sierra 1500 Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Sierra 1500 Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Sierra 1500 Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Sierra 2500 HD Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Sierra 2500 HD Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Sierra 2500 HD Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Sierra 3500 HD Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Sierra 3500 HD Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Sierra 3500 HD Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Terrain,"[""SUV""]",https://media.ed.edmunds-media.com/gmc/terrain/2010/oem/2010_gmc_terrain_4dr-suv_slt-1_fq_oem_1_500.jpg
+2010,GMC,Yukon,"[""SUV""]",https://media.ed.edmunds-media.com/gmc/yukon/2008/oem/2008_gmc_yukon_4dr-suv_denali_fq_oem_1_500.jpg
+2010,GMC,Yukon XL 1500,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,GMC,Yukon XL 2500,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Honda,Accord,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/honda/accord/2009/oem/2009_honda_accord_coupe_ex-l-v-6_s_oem_1_500.jpg
+2010,Honda,Accord Crosstour,"[""SUV""]",https://media.ed.edmunds-media.com/honda/accord-crosstour/2010/oem/2010_honda_accord-crosstour_4dr-hatchback_ex_fq_oem_3_500.jpg
+2010,Honda,Civic,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/honda/civic/2009/oem/2009_honda_civic_sedan_ex-l_fq_oem_1_500.jpg
+2010,Honda,CR-V,"[""SUV""]",https://media.ed.edmunds-media.com/honda/cr-v/2010/oem/2010_honda_cr-v_4dr-suv_ex-l_fq_oem_3_500.jpg
+2010,Honda,Element,"[""SUV""]",https://media.ed.edmunds-media.com/honda/element/2010/oem/2010_honda_element_4dr-suv_ex_s_oem_1_500.jpg
+2010,Honda,Fit,"[""Hatchback""]",https://media.ed.edmunds-media.com/honda/fit/2010/oem/2010_honda_fit_4dr-hatchback_sport_s_oem_2_500.jpg
+2010,Honda,Insight,"[""Hatchback""]",https://media.ed.edmunds-media.com/honda/insight/2010/oem/2010_honda_insight_4dr-hatchback_ex_fq_oem_6_500.jpg
+2010,Honda,Odyssey,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/honda/odyssey/2008/oem/2008_honda_odyssey_passenger-minivan_touring_s_oem_1_500.jpg
+2010,Honda,Pilot,"[""SUV""]",https://media.ed.edmunds-media.com/honda/pilot/2009/oem/2009_honda_pilot_4dr-suv_ex_fq_oem_1_500.jpg
+2010,Honda,Ridgeline,"[""Pickup""]",https://media.ed.edmunds-media.com/honda/ridgeline/2009/oem/2009_honda_ridgeline_crew-cab-pickup_rt_fq_oem_2_500.jpg
+2010,HUMMER,H3,"[""SUV""]",https://media.ed.edmunds-media.com/hummer/h3/2010/oem/2010_hummer_h3_4dr-suv_alpha_fq_oem_3_500.jpg
+2010,HUMMER,H3T,"[""Pickup""]",https://media.ed.edmunds-media.com/hummer/h3t/2010/oem/2010_hummer_h3t_crew-cab-pickup_alpha_fq_oem_1_500.jpg
+2010,Hyundai,Accent,"[""Hatchback"", ""Sedan""]",https://media.ed.edmunds-media.com/hyundai/accent/2010/oem/2010_hyundai_accent_2dr-hatchback_gs_fq_oem_4_500.jpg
+2010,Hyundai,Azera,"[""Sedan""]",https://media.ed.edmunds-media.com/hyundai/azera/2009/oem/2009_hyundai_azera_sedan_limited_s_oem_1_500.jpg
+2010,Hyundai,Elantra,"[""Wagon"", ""Sedan""]",https://media.ed.edmunds-media.com/hyundai/elantra/2008/oem/2008_hyundai_elantra_sedan_gls_fq_oem_1_500.jpg
+2010,Hyundai,Genesis,"[""Sedan""]",https://media.ed.edmunds-media.com/hyundai/genesis/2010/oem/2010_hyundai_genesis_sedan_46_s_oem_2_500.jpg
+2010,Hyundai,Genesis Coupe,"[""Coupe""]",https://media.ed.edmunds-media.com/hyundai/genesis-coupe/2010/oem/2010_hyundai_genesis-coupe_coupe_20t-premium_fq_oem_2_500.jpg
+2010,Hyundai,Santa Fe,"[""SUV""]",https://media.ed.edmunds-media.com/hyundai/santa-fe/2010/oem/2010_hyundai_santa-fe_4dr-suv_limited_fq_oem_5_500.jpg
+2010,Hyundai,Sonata,"[""Sedan""]",https://media.ed.edmunds-media.com/hyundai/sonata/2009/oem/2009_hyundai_sonata_sedan_limited-v6_fq_oem_1_500.jpg
+2010,Hyundai,Tucson,"[""SUV""]",https://media.ed.edmunds-media.com/hyundai/tucson/2010/oem/2010_hyundai_tucson_4dr-suv_limited_fq_oem_4_500.jpg
+2010,Hyundai,Veracruz,"[""SUV""]",https://media.ed.edmunds-media.com/hyundai/veracruz/2009/oem/2009_hyundai_veracruz_4dr-suv_limited_s_oem_1_500.jpg
+2010,INFINITI,EX,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,INFINITI,FX,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,INFINITI,G,"[""Coupe"", ""Sedan"", ""Convertible""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,INFINITI,M,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,INFINITI,QX,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Jaguar,XF,"[""Sedan""]",https://media.ed.edmunds-media.com/jaguar/xf/2009/oem/2009_jaguar_xf_sedan_premium-luxury_fq_oem_2_500.jpg
+2010,Jaguar,XK,"[""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/jaguar/xk-series/2008/oem/2008_jaguar_xk-series_convertible_xk_fq_oem_1_500.jpg
+2010,Jeep,Commander,"[""SUV""]",https://media.ed.edmunds-media.com/jeep/commander/2008/oem/2008_jeep_commander_4dr-suv_limited_s_oem_1_500.jpg
+2010,Jeep,Compass,"[""SUV""]",https://media.ed.edmunds-media.com/jeep/compass/2008/oem/2008_jeep_compass_4dr-suv_limited_fq_oem_1_500.jpg
+2010,Jeep,Grand Cherokee,"[""SUV""]",https://media.ed.edmunds-media.com/jeep/grand-cherokee/2008/oem/2008_jeep_grand-cherokee_4dr-suv_srt-8_fq_oem_1_500.jpg
+2010,Jeep,Liberty,"[""SUV""]",https://media.ed.edmunds-media.com/jeep/liberty/2008/oem/2008_jeep_liberty_4dr-suv_sport_fq_oem_1_500.jpg
+2010,Jeep,Patriot,"[""SUV""]",https://media.ed.edmunds-media.com/jeep/patriot/2010/oem/2010_jeep_patriot_4dr-suv_limited_fq_oem_2_500.jpg
+2010,Jeep,Wrangler,"[""SUV""]",https://media.ed.edmunds-media.com/jeep/wrangler/2010/oem/2010_jeep_wrangler_convertible-suv_rubicon_fq_oem_2_500.jpg
+2010,Kia,Forte,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/kia/forte/2010/oem/2010_kia_forte_sedan_sx_fq_oem_1_500.jpg
+2010,Kia,Optima,"[""Sedan""]",https://media.ed.edmunds-media.com/kia/optima/2010/oem/2010_kia_optima_sedan_sx_fq_oem_1_500.jpg
+2010,Kia,Rio,"[""Sedan"", ""Hatchback""]",https://media.ed.edmunds-media.com/kia/rio/2008/oem/2008_kia_rio_wagon_rio5-sx_fq_oem_2_500.jpg
+2010,Kia,Rondo,"[""Wagon""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Kia,Sedona,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/kia/sedona/2010/oem/2010_kia_sedona_passenger-minivan_ex_fq_oem_1_500.jpg
+2010,Kia,Soul,"[""Wagon""]",https://media.ed.edmunds-media.com/kia/soul/2010/oem/2010_kia_soul_wagon_sport_fq_oem_2_500.jpg
+2010,Kia,Sportage,"[""SUV""]",https://media.ed.edmunds-media.com/kia/sportage/2010/oem/2010_kia_sportage_4dr-suv_ex_fq_oem_1_500.jpg
+2010,Lamborghini,Gallardo,"[""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/lamborghini/gallardo/2010/oem/2010_lamborghini_gallardo_coupe_lp-550-2-valentino-balboni_fq_oem_1_500.jpg
+2010,Lamborghini,Murcielago,"[""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/lamborghini/murcielago/2010/oem/2010_lamborghini_murcielago_coupe_lp-670-4-superveloce_fq_oem_2_500.jpg
+2010,Land Rover,LR2,"[""SUV""]",https://media.ed.edmunds-media.com/landrover/lr2/2010/oem/2010_landrover_lr2_4dr-suv_hse_s_oem_1_500.jpg
+2010,Land Rover,LR4,"[""SUV""]",https://media.ed.edmunds-media.com/landrover/lr4/2010/oem/2010_landrover_lr4_4dr-suv_v8_fq_oem_1_500.jpg
+2010,Land Rover,Range Rover,"[""SUV""]",https://media.ed.edmunds-media.com/land-rover/range-rover/2010/oem/2010_land-rover_range-rover_4dr-suv_supercharged_fq_oem_3_500.jpg
+2010,Land Rover,Range Rover Sport,"[""SUV""]",https://media.ed.edmunds-media.com/landrover/range-rover-sport/2010/oem/2010_landrover_range-rover-sport_4dr-suv_hse_fq_oem_1_500.jpg
+2010,Lexus,ES,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Lexus,GS,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Lexus,GX,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Lexus,HS,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Lexus,IS,"[""Convertible"", ""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Lexus,IS F,"[""Sedan""]",https://media.ed.edmunds-media.com/lexus/is-f/2010/oem/2010_lexus_is-f_sedan_base_fq_oem_1_500.jpg
+2010,Lexus,LS,"[""Sedan""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Lexus,LX,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Lexus,RX,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Lexus,SC,"[""Convertible""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Lincoln,MKS,"[""Sedan""]",https://media.ed.edmunds-media.com/lincoln/mks/2010/oem/2010_lincoln_mks_sedan_base_fq_oem_1_500.jpg
+2010,Lincoln,MKT,"[""SUV""]",https://media.ed.edmunds-media.com/lincoln/mkt/2010/oem/2010_lincoln_mkt_wagon_base_s_oem_1_500.jpg
+2010,Lincoln,MKX,"[""SUV""]",https://media.ed.edmunds-media.com/lincoln/mkx/2008/oem/2008_lincoln_mkx_4dr-suv_base_fq_oem_1_500.jpg
+2010,Lincoln,MKZ,"[""Sedan""]",https://media.ed.edmunds-media.com/lincoln/mkz/2010/oem/2010_lincoln_mkz_sedan_base_fq_oem_1_500.jpg
+2010,Lincoln,Navigator,"[""SUV""]",https://media.ed.edmunds-media.com/lincoln/navigator-l/2009/oem/2009_lincoln_navigator-l_4dr-suv_base_fq_oem_1_500.jpg
+2010,Lincoln,Navigator L,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Lincoln,Town Car,"[""Sedan""]",https://media.ed.edmunds-media.com/lincoln/town-car/2010/oem/2010_lincoln_town-car_sedan_signature-limited_fq_oem_1_500.jpg
+2010,Lotus,Elise,"[""Coupe""]",https://media.ed.edmunds-media.com/lotus/elise/2010/oem/2010_lotus_elise_convertible_base_fq_oem_1_500.jpg
+2010,Lotus,Evora,"[""Coupe""]",https://media.ed.edmunds-media.com/lotus/evora/2010/oem/2010_lotus_evora_coupe_base_s_oem_1_500.jpg
+2010,Lotus,Exige,"[""Coupe""]",https://media.ed.edmunds-media.com/lotus/exige/2010/oem/2010_lotus_exige_coupe_s240_fq_oem_1_500.jpg
+2010,Maserati,GranTurismo,"[""Convertible"", ""Coupe""]",https://media.ed.edmunds-media.com/maserati/granturismo/2010/oem/2010_maserati_granturismo_coupe_s-automatic_fq_oem_1_500.jpg
+2010,Maserati,Quattroporte,"[""Sedan""]",https://media.ed.edmunds-media.com/maserati/quattroporte/2009/oem/2009_maserati_quattroporte_sedan_s_fq_oem_1_500.jpg
+2010,Maybach,57,"[""Sedan""]",https://media.ed.edmunds-media.com/maybach/57/2010/oem/2010_maybach_57_sedan_s_s_oem_1_500.jpg
+2010,Maybach,62,"[""Sedan""]",https://media.ed.edmunds-media.com/maybach/62/2010/oem/2010_maybach_62_sedan_s_s_oem_1_500.jpg
+2010,MAZDA,CX-7,"[""SUV""]",https://media.ed.edmunds-media.com/mazda/cx-7/2010/oem/2010_mazda_cx-7_4dr-suv_i-sport_fq_oem_2_500.jpg
+2010,MAZDA,CX-9,"[""SUV""]",https://media.ed.edmunds-media.com/mazda/cx-9/2010/oem/2010_mazda_cx-9_4dr-suv_grand-touring_fq_oem_3_500.jpg
+2010,MAZDA,MAZDA3,"[""Sedan"", ""Hatchback""]",https://media.ed.edmunds-media.com/mazda/3/2010/oem/2010_mazda_3_4dr-hatchback_s-grand-touring_s_oem_1_500.jpg
+2010,MAZDA,MAZDA5,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/mazda/5/2010/oem/2010_mazda_5_passenger-minivan_grand-touring_fq_oem_2_500.jpg
+2010,MAZDA,MAZDA6,"[""Sedan""]",https://media.ed.edmunds-media.com/mazda/6/2010/oem/2010_mazda_6_sedan_i-touring_fq_oem_3_500.jpg
+2010,MAZDA,MX-5 Miata,"[""Convertible""]",https://media.ed.edmunds-media.com/mazda/mx-5-miata/2010/oem/2010_mazda_mx-5-miata_convertible_grand-touring_fq_oem_2_500.jpg
+2010,MAZDA,RX-8,"[""Coupe""]",https://media.ed.edmunds-media.com/mazda/rx-8/2010/oem/2010_mazda_rx-8_coupe_grand-touring_fq_oem_1_500.jpg
+2010,MAZDA,Tribute,"[""SUV""]",https://media.ed.edmunds-media.com/mazda/tribute/2008/oem/2008_mazda_tribute_4dr-suv_s-grand-touring_s_oem_1_500.jpg
+2010,Mercedes-Benz,C-Class,"[""Sedan""]",https://media.ed.edmunds-media.com/mercedes-benz/c-class/2009/oem/2009_mercedes-benz_c-class_sedan_c300-luxury_fq_oem_1_500.jpg
+2010,Mercedes-Benz,CL-Class,"[""Coupe""]",https://media.ed.edmunds-media.com/mercedes-benz/cl-class/2010/oem/2010_mercedes-benz_cl-class_coupe_cl550-4matic_fq_oem_1_500.jpg
+2010,Mercedes-Benz,CLS-Class,"[""Coupe""]",https://media.ed.edmunds-media.com/mercedes-benz/cls-class/2010/oem/2010_mercedes-benz_cls-class_sedan_cls550_fq_oem_2_500.jpg
+2010,Mercedes-Benz,E-Class,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/mercedes-benz/e-class/2010/oem/2010_mercedes-benz_e-class_sedan_e350_fq_oem_1_500.jpg
+2010,Mercedes-Benz,G-Class,"[""SUV""]",https://media.ed.edmunds-media.com/mercedes-benz/g-class/2010/oem/2010_mercedes-benz_g-class_4dr-suv_g55-amg_fq_oem_4_500.jpg
+2010,Mercedes-Benz,GL-Class,"[""SUV""]",https://media.ed.edmunds-media.com/mercedes-benz/gl-class/2010/oem/2010_mercedes-benz_gl-class_4dr-suv_gl350-bluetec_fq_oem_1_500.jpg
+2010,Mercedes-Benz,GLK-Class,"[""SUV""]",https://media.ed.edmunds-media.com/mercedes-benz/glk-class/2010/oem/2010_mercedes-benz_glk-class_4dr-suv_glk350_s_oem_2_500.jpg
+2010,Mercedes-Benz,M-Class,"[""SUV""]",https://media.ed.edmunds-media.com/mercedes-benz/m-class/2009/oem/2009_mercedes-benz_m-class_4dr-suv_ml550_s_oem_1_500.jpg
+2010,Mercedes-Benz,R-Class,"[""Wagon""]",https://media.ed.edmunds-media.com/mercedes-benz/r-class/2010/evox/2010_mercedes-benz_r-class_wagon_r350-4matic_tds2_evox_4_500.jpg
+2010,Mercedes-Benz,S-Class,"[""Sedan""]",https://media.ed.edmunds-media.com/mercedes-benz/s-class/2010/oem/2010_mercedes-benz_s-class_sedan_s400-hybrid_fq_oem_2_500.jpg
+2010,Mercedes-Benz,SLK-Class,"[""Convertible""]",https://media.ed.edmunds-media.com/mercedes-benz/slk-class/2010/oem/2010_mercedes-benz_slk-class_convertible_slk300_fq_oem_2_500.jpg
+2010,Mercury,Grand Marquis,"[""Sedan""]",https://media.ed.edmunds-media.com/mercury/grand-marquis/2010/oem/2010_mercury_grand-marquis_sedan_ls_fq_oem_1_500.jpg
+2010,Mercury,Mariner,"[""SUV""]",https://media.ed.edmunds-media.com/mercury/mariner/2008/oem/2008_mercury_mariner_4dr-suv_premier_s_oem_1_500.jpg
+2010,Mercury,Milan,"[""Sedan""]",https://media.ed.edmunds-media.com/mercury/milan/2010/oem/2010_mercury_milan_sedan_premier_fq_oem_1_500.jpg
+2010,Mercury,Mountaineer,"[""SUV""]",https://media.ed.edmunds-media.com/mercury/mountaineer/2010/oem/2010_mercury_mountaineer_4dr-suv_premier_fq_oem_1_500.jpg
+2010,MINI,Clubman,"[""Hatchback""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,MINI,Convertible,"[""Convertible""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,MINI,Hardtop,"[""Hatchback""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Mitsubishi,Eclipse,"[""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/mitsubishi/eclipse/2009/oem/2009_mitsubishi_eclipse_2dr-hatchback_gt_s_oem_1_500.jpg
+2010,Mitsubishi,Endeavor,"[""SUV""]",https://media.ed.edmunds-media.com/mitsubishi/endeavor/2008/oem/2008_mitsubishi_endeavor_4dr-suv_se_fq_oem_1_500.jpg
+2010,Mitsubishi,Galant,"[""Sedan""]",https://media.ed.edmunds-media.com/mitsubishi/galant/2009/oem/2009_mitsubishi_galant_sedan_sport-edition_fq_oem_1_500.jpg
+2010,Mitsubishi,Lancer,"[""Sedan"", ""Hatchback""]",https://media.ed.edmunds-media.com/mitsubishi/lancer/2008/oem/2008_mitsubishi_lancer_sedan_es_fq_oem_1_500.jpg
+2010,Mitsubishi,Outlander,"[""SUV""]",https://media.ed.edmunds-media.com/mitsubishi/outlander/2010/oem/2010_mitsubishi_outlander_4dr-suv_gt_fq_oem_3_500.jpg
+2010,Nissan,370Z,"[""Convertible"", ""Coupe""]",https://media.ed.edmunds-media.com/nissan/370z/2010/oem/2010_nissan_370z_coupe_nismo_fq_oem_2_500.jpg
+2010,Nissan,Altima,"[""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/nissan/altima/2010/oem/2010_nissan_altima_coupe_35-sr_fq_oem_1_500.jpg
+2010,Nissan,Armada,"[""SUV""]",https://media.ed.edmunds-media.com/nissan/armada/2010/oem/2010_nissan_armada_4dr-suv_platinum_fq_oem_3_500.jpg
+2010,Nissan,cube,"[""Wagon""]",https://media.ed.edmunds-media.com/nissan/cube/2010/oem/2010_nissan_cube_wagon_18-s-krom-edition_fq_oem_1_500.jpg
+2010,Nissan,Frontier Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Nissan,Frontier King Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Nissan,GT-R,"[""Coupe""]",https://media.ed.edmunds-media.com/nissan/gt-r/2010/oem/2010_nissan_gt-r_coupe_base_fq_oem_2_500.jpg
+2010,Nissan,Maxima,"[""Sedan""]",https://media.ed.edmunds-media.com/nissan/maxima/2010/oem/2010_nissan_maxima_sedan_35-sv_fq_oem_1_500.jpg
+2010,Nissan,Murano,"[""SUV""]",https://media.ed.edmunds-media.com/nissan/murano/2010/oem/2010_nissan_murano_4dr-suv_le_fq_oem_2_500.jpg
+2010,Nissan,Pathfinder,"[""SUV""]",https://media.ed.edmunds-media.com/nissan/pathfinder/2008/oem/2008_nissan_pathfinder_4dr-suv_le_fq_oem_2_500.jpg
+2010,Nissan,Rogue,"[""SUV""]",https://media.ed.edmunds-media.com/nissan/rogue/2010/oem/2010_nissan_rogue_4dr-suv_s-krom-edition_fq_oem_2_500.jpg
+2010,Nissan,Sentra,"[""Sedan""]",https://media.ed.edmunds-media.com/nissan/sentra/2008/oem/2008_nissan_sentra_sedan_se-r-spec-v_s_oem_1_500.jpg
+2010,Nissan,Titan Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Nissan,Titan King Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Nissan,Versa,"[""Sedan"", ""Hatchback""]",https://media.ed.edmunds-media.com/nissan/versa/2010/oem/2010_nissan_versa_4dr-hatchback_18-sl_s_oem_4_500.jpg
+2010,Nissan,Xterra,"[""SUV""]",https://media.ed.edmunds-media.com/nissan/xterra/2009/oem/2009_nissan_xterra_4dr-suv_off-road_fq_oem_1_500.jpg
+2010,Pontiac,G3,"[""Hatchback""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Pontiac,G6,"[""Sedan""]",https://media.ed.edmunds-media.com/pontiac/g6/2010/oem/2010_pontiac_g6_sedan_fleet_fq_oem_1_500.jpg
+2010,Pontiac,Vibe,"[""Wagon""]",https://media.ed.edmunds-media.com/pontiac/vibe/2009/oem/2009_pontiac_vibe_4dr-hatchback_gt_s_oem_1_500.jpg
+2010,Porsche,911,"[""Coupe"", ""Convertible""]",https://media.ed.edmunds-media.com/porsche/911/2010/oem/2010_porsche_911_convertible_carrera-4_fq_oem_1_500.jpg
+2010,Porsche,Boxster,"[""Convertible""]",https://media.ed.edmunds-media.com/porsche/boxster/2010/oem/2010_porsche_boxster_convertible_base_s_oem_1_500.jpg
+2010,Porsche,Cayenne,"[""SUV""]",https://media.ed.edmunds-media.com/porsche/cayenne/2010/oem/2010_porsche_cayenne_4dr-suv_gts_fq_oem_2_500.jpg
+2010,Porsche,Cayman,"[""Coupe""]",https://media.ed.edmunds-media.com/porsche/cayman/2010/oem/2010_porsche_cayman_coupe_base_fq_oem_1_500.jpg
+2010,Porsche,Panamera,"[""Sedan""]",https://media.ed.edmunds-media.com/porsche/panamera/2010/oem/2010_porsche_panamera_sedan_4s_fq_oem_1_500.jpg
+2010,Rolls-Royce,Ghost,"[""Sedan""]",https://media.ed.edmunds-media.com/rolls-royce/ghost/2010/oem/2010_rolls-royce_ghost_sedan_base_fq_oem_1_500.jpg
+2010,Rolls-Royce,Phantom,"[""Convertible"", ""Sedan"", ""Coupe""]",https://media.ed.edmunds-media.com/rolls-royce/phantom/2010/oem/2010_rolls-royce_phantom_sedan_ewb_fq_oem_1_500.jpg
+2010,Saab,9-3,"[""Wagon"", ""Convertible"", ""Sedan""]",https://media.ed.edmunds-media.com/saab/9-3/2010/oem/2010_saab_9-3_convertible_aero_fq_oem_2_500.jpg
+2010,Saab,9-5,"[""Sedan""]",https://media.ed.edmunds-media.com/saab/9-5/2010/oem/2010_saab_9-5_sedan_aero_fq_oem_1_500.jpg
+2010,Saturn,Outlook,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Saturn,VUE,"[""SUV""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Scion,tC,"[""Coupe""]",https://media.ed.edmunds-media.com/scion/tc/2010/oem/2010_scion_tc_2dr-hatchback_base_s_oem_1_500.jpg
+2010,Scion,xB,"[""Hatchback""]",https://media.ed.edmunds-media.com/scion/xb/2008/oem/2008_scion_xb_wagon_base_fq_oem_2_500.jpg
+2010,Scion,xD,"[""Hatchback""]",https://media.ed.edmunds-media.com/scion/xd/2010/oem/2010_scion_xd_4dr-hatchback_base_s_oem_1_500.jpg
+2010,smart,fortwo,"[""Hatchback"", ""Convertible""]",https://media.ed.edmunds-media.com/smart/fortwo/2010/oem/2010_smart_fortwo_2dr-hatchback_brabus-coupe_fq_oem_3_500.jpg
+2010,Subaru,Forester,"[""SUV""]",https://media.ed.edmunds-media.com/subaru/forester/2009/oem/2009_subaru_forester_4dr-suv_25x_fq_oem_1_500.jpg
+2010,Subaru,Impreza,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/subaru/impreza/2008/oem/2008_subaru_impreza_4dr-hatchback_25i_fq_oem_1_500.jpg
+2010,Subaru,Legacy,"[""Sedan""]",https://media.ed.edmunds-media.com/subaru/legacy/2010/oem/2010_subaru_legacy_sedan_25i_fq_oem_1_500.jpg
+2010,Subaru,Outback,"[""Wagon""]",https://media.ed.edmunds-media.com/subaru/outback/2010/oem/2010_subaru_outback_wagon_36r-limited_fq_oem_1_500.jpg
+2010,Subaru,Tribeca,"[""SUV""]",https://media.ed.edmunds-media.com/subaru/tribeca/2010/oem/2010_subaru_tribeca_4dr-suv_36r-touring_fq_oem_21_500.jpg
+2010,Suzuki,Equator Crew Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Suzuki,Equator Extended Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Suzuki,Grand Vitara,"[""SUV""]",https://media.ed.edmunds-media.com/suzuki/grand-vitara/2010/oem/2010_suzuki_grand-vitara_4dr-suv_limited_fq_oem_2_500.jpg
+2010,Suzuki,Kizashi,"[""Sedan""]",https://media.ed.edmunds-media.com/suzuki/kizashi/2010/oem/2010_suzuki_kizashi_sedan_sls_fq_oem_1_500.jpg
+2010,Suzuki,SX4,"[""Sedan"", ""Hatchback""]",https://media.ed.edmunds-media.com/suzuki/sx4/2010/oem/2010_suzuki_sx4_4dr-hatchback_sportback-gts_fq_oem_2_500.jpg
+2010,Toyota,4Runner,"[""SUV""]",https://media.ed.edmunds-media.com/toyota/4runner/2010/oem/2010_toyota_4runner_4dr-suv_limited_s_oem_1_500.jpg
+2010,Toyota,Avalon,"[""Sedan""]",https://media.ed.edmunds-media.com/toyota/avalon/2008/oem/2008_toyota_avalon_sedan_limited_fq_oem_1_500.jpg
+2010,Toyota,Camry,"[""Sedan""]",https://media.ed.edmunds-media.com/toyota/camry/2010/oem/2010_toyota_camry_sedan_le_s_oem_1_500.jpg
+2010,Toyota,Corolla,"[""Sedan""]",https://media.ed.edmunds-media.com/toyota/corolla/2009/oem/2009_toyota_corolla_sedan_s_fq_oem_1_500.jpg
+2010,Toyota,FJ Cruiser,"[""SUV""]",https://media.ed.edmunds-media.com/toyota/fj-cruiser/2008/oem/2008_toyota_fj-cruiser_4dr-suv_base_s_oem_2_500.jpg
+2010,Toyota,Highlander,"[""SUV""]",https://media.ed.edmunds-media.com/toyota/highlander/2010/oem/2010_toyota_highlander_4dr-suv_limited_fq_oem_1_500.jpg
+2010,Toyota,Land Cruiser,"[""SUV""]",https://media.ed.edmunds-media.com/toyota/land-cruiser/2010/oem/2010_toyota_land-cruiser_4dr-suv_base_fq_oem_2_500.jpg
+2010,Toyota,Matrix,"[""Wagon""]",https://media.ed.edmunds-media.com/toyota/matrix/2009/oem/2009_toyota_matrix_4dr-hatchback_s_s_oem_1_500.jpg
+2010,Toyota,Prius,"[""Hatchback""]",https://media.ed.edmunds-media.com/toyota/prius/2010/oem/2010_toyota_prius_4dr-hatchback_ii_fq_oem_2_500.jpg
+2010,Toyota,RAV4,"[""SUV""]",https://media.ed.edmunds-media.com/toyota/rav4/2009/oem/2009_toyota_rav4_4dr-suv_limited_fq_oem_1_500.jpg
+2010,Toyota,Sequoia,"[""SUV""]",https://media.ed.edmunds-media.com/toyota/sequoia/2008/oem/2008_toyota_sequoia_4dr-suv_limited_fq_oem_1_500.jpg
+2010,Toyota,Sienna,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/toyota/sienna/2009/oem/2009_toyota_sienna_passenger-minivan_le-7-passenger_fq_oem_2_500.jpg
+2010,Toyota,Tacoma Access Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Toyota,Tacoma Double Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Toyota,Tacoma Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Toyota,Tundra CrewMax,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Toyota,Tundra Double Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Toyota,Tundra Regular Cab,"[""Pickup""]",https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png
+2010,Toyota,Venza,"[""Wagon""]",https://media.ed.edmunds-media.com/toyota/venza/2010/oem/2010_toyota_venza_wagon_base_fq_oem_2_500.jpg
+2010,Toyota,Yaris,"[""Sedan"", ""Hatchback""]",https://media.ed.edmunds-media.com/toyota/yaris/2010/oem/2010_toyota_yaris_2dr-hatchback_base_fq_oem_2_500.jpg
+2010,Volkswagen,CC,"[""Sedan""]",https://media.ed.edmunds-media.com/volkswagen/cc/2009/oem/2009_volkswagen_cc_sedan_luxury_fq_oem_2_500.jpg
+2010,Volkswagen,Eos,"[""Convertible""]",https://media.ed.edmunds-media.com/volkswagen/eos/2010/oem/2010_volkswagen_eos_convertible_lux_fq_oem_2_500.jpg
+2010,Volkswagen,Golf,"[""Hatchback""]",https://media.ed.edmunds-media.com/volkswagen/golf/2010/oem/2010_volkswagen_golf_2dr-hatchback_25l_fq_oem_2_500.jpg
+2010,Volkswagen,GTI,"[""Hatchback""]",https://media.ed.edmunds-media.com/volkswagen/gti/2010/oem/2010_volkswagen_gti_2dr-hatchback_base_s_oem_1_500.jpg
+2010,Volkswagen,Jetta,"[""Sedan"", ""Wagon""]",https://media.ed.edmunds-media.com/volkswagen/jetta/2008/oem/2008_volkswagen_jetta_sedan_wolfsburg-edition_s_oem_1_500.jpg
+2010,Volkswagen,New Beetle,"[""Hatchback"", ""Convertible""]",https://media.ed.edmunds-media.com/volkswagen/new-beetle/2008/oem/2008_volkswagen_new-beetle_convertible_se_fq_oem_1_500.jpg
+2010,Volkswagen,Passat,"[""Sedan"", ""Wagon""]",https://static.ed.edmunds-media.com/unversioned/img/e17/no-vehicle-img-transparent.png
+2010,Volkswagen,Routan,"[""Van/Minivan""]",https://media.ed.edmunds-media.com/volkswagen/routan/2010/oem/2010_volkswagen_routan_passenger-minivan_sel-premium_fq_oem_2_500.jpg
+2010,Volkswagen,Tiguan,"[""SUV""]",https://media.ed.edmunds-media.com/volkswagen/tiguan/2010/oem/2010_volkswagen_tiguan_4dr-suv_sel_fq_oem_1_500.jpg
+2010,Volkswagen,Touareg,"[""SUV""]",https://media.ed.edmunds-media.com/volkswagen/touareg/2010/oem/2010_volkswagen_touareg_4dr-suv_v6-tdi_s_oem_1_500.jpg
+2010,Volvo,C30,"[""Hatchback""]",https://media.ed.edmunds-media.com/volvo/c30/2010/oem/2010_volvo_c30_2dr-hatchback_r-design_s_oem_3_500.jpg
+2010,Volvo,C70,"[""Convertible""]",https://media.ed.edmunds-media.com/volvo/c70/2010/oem/2010_volvo_c70_convertible_t5_fq_oem_1_500.jpg
+2010,Volvo,S40,"[""Sedan""]",https://media.ed.edmunds-media.com/volvo/s40/2010/oem/2010_volvo_s40_sedan_t5-r-design_fq_oem_2_500.jpg
+2010,Volvo,S80,"[""Sedan""]",https://media.ed.edmunds-media.com/volvo/s80/2010/oem/2010_volvo_s80_sedan_t6_fq_oem_1_500.jpg
+2010,Volvo,V50,"[""Wagon""]",https://media.ed.edmunds-media.com/volvo/v50/2010/oem/2010_volvo_v50_wagon_t5-r-design_fq_oem_1_500.jpg
+2010,Volvo,V70,"[""Wagon""]",https://media.ed.edmunds-media.com/volvo/v70/2009/oem/2009_volvo_v70_wagon_32_fq_oem_1_500.jpg
+2010,Volvo,XC60,"[""SUV""]",https://media.ed.edmunds-media.com/volvo/xc60/2010/oem/2010_volvo_xc60_4dr-suv_32_fq_oem_2_500.jpg
+2010,Volvo,XC70,"[""Wagon""]",https://media.ed.edmunds-media.com/volvo/xc70/2008/oem/2008_volvo_xc70_wagon_32_fq_oem_1_500.jpg
+2010,Volvo,XC90,"[""SUV""]",https://media.ed.edmunds-media.com/volvo/xc90/2009/oem/2009_volvo_xc90_4dr-suv_32_fq_oem_1_500.jpg
