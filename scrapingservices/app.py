@@ -114,7 +114,7 @@ def getSoup(url):
     while True:
         try:
             headers = getHeader()
-            page = requests.get(url, headers=headers, timeout=5).text
+            page = requests.get(url, headers=headers, timeout=20).text
         except:
             print('Fail on request #'+str(i)+', trying again')
             i += 1
