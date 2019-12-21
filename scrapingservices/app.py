@@ -65,7 +65,7 @@ def handleFiles(oldFilePath, newFilePath):
 
                 '''
                 # print(row)
-                src = scrapeEdmunds(row[0], row[1], row[2])
+                # src = scrapeEdmunds(row[0], row[1], row[2])
                 writer.writerow([row[0], row[1], row[2], row[3], src])
                 print(src)
                 print '*' * int(count)
@@ -89,49 +89,4 @@ while (yearCount <= 2020):
     handleFiles(old, new)
 
     yearCount += 1
-
-
-
-
-'''
-# calls below should open every file and print the first 5 items
-yearCount = 1992
-
-while (yearCount <= 2020):
-
-
-    # dupYr = year
-    strYear = str(yearCount)
-    # print('CREATE TABLE '+strYear)
-    filepath = 'car_data/'+strYear+'.csv' # filepath for each year
-    newFileName = 'new_'+strYear+'.csv' # new file name for each year
-    print(filepath)
-
-
-    with open(filepath, 'r') as oldFile: # reading from old csv
-        reader = csv.reader(oldFile)
-        # counter = 0;
-
-        next(reader) #skip header
-
-        with open(newFileName, 'w') as newFile:
-            writer = csv.writer(newFile, delimiter='\t')
-
-            for line in reader:
-                writer.writerow(line[1])
-                # csv_write.writerow(line[0])
-
-
-
-            # url = scrapeEdmunds(year, make, model)
-
-            # print(year + ' ' + make + ' ' + model + ' ')
-            # counter += 1
-            # if counter is 5:
-            #     break
-
-
-
-    yearCount += 1
-    '''
 # ----------------------
