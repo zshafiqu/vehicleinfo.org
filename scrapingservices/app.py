@@ -108,15 +108,10 @@ def getHeader():
 # ----------------------
 def getSoup(url):
     print('in getSoup')
-    # required to emulate broswer user agent
-    # url = 'https://www.kbb.com/honda/civic/1992/'
 
-    # get html
-    # source = requests.get(url, headers=headers).text
+    # required to emulate broswer user agent
     headers = getHeader() # generate a random header
 
-    # headers={ 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:67.0) Gecko/20100101 Firefox/67.0' }
-    # agent = {"User-Agent":'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'}
     print('About to make request')
     page = requests.get(url, headers=headers, timeout=45).text
     print('Finished request')
@@ -125,11 +120,6 @@ def getSoup(url):
 
 
     soup = BeautifulSoup(page, 'lxml', parse_only=onlyImgTags)
-    # print(soup)
-    # print('\n')
-    # imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
-    #
-    # print(imgSource[0]['src'])
 
     # return the soup'd data
     return soup
@@ -193,17 +183,11 @@ def handleFiles(oldFilePath, newFilePath):
 
                 '''
                 # print(row)
-                # src = scrapeKBB(row[0], row[1], row[2])
-                # src = []
-                # print(len(row[3]))
-                # res = ast.literal_eval(row[3]) # convert from string list to list list
                 print(row[0], row[1], row[2], row[3])
 
                 res = ast.literal_eval(row[3]) # convert from string list to list list
                 src = scrapeKBB(row[0], row[1], row[2], res) # retrieve ke/value mapping for body style : img url
-                # res = json.loads(row[3])
-                # print(res)
-                # print(len(res))
+
                 writer.writerow([row[0], row[1], row[2], res, src]) # write to result file
                 # print(src)
                 # print '*' * int(count)
