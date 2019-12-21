@@ -1,0 +1,283 @@
+year,make,model,body_style,image_src
+1992,Acura,Integra,"[""Sedan"", ""Hatchback""]",erc
+1992,Acura,Legend,"[""Sedan"", ""Coupe""]",erc
+1992,Acura,NSX,"[""Coupe""]",erc
+1992,Acura,Vigor,"[""Sedan""]",erc
+1992,Alfa Romeo,164,"[""Sedan""]",erc
+1992,Alfa Romeo,Spider,"[""Convertible""]",erc
+1992,Audi,100,"[""Sedan"", ""Wagon""]",erc
+1992,Audi,80,"[""Sedan""]",erc
+1992,Audi,Quattro,"[""Sedan""]",erc
+1992,Audi,S4,"[""Sedan""]",erc
+1992,BMW,3 Series,"[""Coupe"", ""Convertible"", ""Sedan""]",erc
+1992,BMW,5 Series,"[""Sedan"", ""Wagon""]",erc
+1992,BMW,7 Series,"[""Sedan""]",erc
+1992,BMW,8 Series,"[""Coupe""]",erc
+1992,BMW,M5,"[""Sedan""]",erc
+1992,Buick,Century,"[""Coupe"", ""Sedan"", ""Wagon""]",erc
+1992,Buick,LeSabre,"[""Sedan""]",erc
+1992,Buick,Park Avenue,"[""Sedan""]",erc
+1992,Buick,Regal,"[""Coupe"", ""Sedan""]",erc
+1992,Buick,Riviera,"[""Coupe""]",erc
+1992,Buick,Roadmaster,"[""Sedan"", ""Wagon""]",erc
+1992,Buick,Skylark,"[""Sedan"", ""Coupe""]",erc
+1992,Cadillac,Allante,"[""Convertible""]",erc
+1992,Cadillac,Brougham,"[""Sedan""]",erc
+1992,Cadillac,DeVille,"[""Sedan"", ""Coupe""]",erc
+1992,Cadillac,Eldorado,"[""Coupe""]",erc
+1992,Cadillac,Fleetwood,"[""Sedan"", ""Coupe""]",erc
+1992,Cadillac,Seville,"[""Sedan""]",erc
+1992,Chevrolet,1500 Extended Cab,"[""Pickup""]",erc
+1992,Chevrolet,1500 Regular Cab,"[""Pickup""]",erc
+1992,Chevrolet,2500 Extended Cab,"[""Pickup""]",erc
+1992,Chevrolet,2500 Regular Cab,"[""Pickup""]",erc
+1992,Chevrolet,3500 Crew Cab,"[""Pickup""]",erc
+1992,Chevrolet,3500 Extended Cab,"[""Pickup""]",erc
+1992,Chevrolet,3500 Regular Cab,"[""Pickup""]",erc
+1992,Chevrolet,APV Cargo,"[""Van/Minivan""]",erc
+1992,Chevrolet,Astro Cargo,"[""Van/Minivan""]",erc
+1992,Chevrolet,Astro Passenger,"[""Van/Minivan""]",erc
+1992,Chevrolet,Beretta,"[""Coupe""]",erc
+1992,Chevrolet,Blazer,"[""SUV""]",erc
+1992,Chevrolet,Camaro,"[""Hatchback"", ""Convertible""]",erc
+1992,Chevrolet,Caprice,"[""Sedan"", ""Wagon""]",erc
+1992,Chevrolet,Cavalier,"[""Coupe"", ""Sedan"", ""Wagon"", ""Convertible""]",erc
+1992,Chevrolet,Corsica,"[""Sedan""]",erc
+1992,Chevrolet,Corvette,"[""Hatchback"", ""Convertible""]",erc
+1992,Chevrolet,G-Series G10,"[""Van/Minivan""]",erc
+1992,Chevrolet,G-Series G20,"[""Van/Minivan""]",erc
+1992,Chevrolet,G-Series G30,"[""Van/Minivan""]",erc
+1992,Chevrolet,Lumina,"[""Sedan"", ""Coupe""]",erc
+1992,Chevrolet,Lumina APV,"[""Van/Minivan""]",erc
+1992,Chevrolet,S10 Blazer,"[""SUV""]",erc
+1992,Chevrolet,S10 Extended Cab,"[""Pickup""]",erc
+1992,Chevrolet,S10 Regular Cab,"[""Pickup""]",erc
+1992,Chevrolet,Sportvan G10,"[""Van/Minivan""]",erc
+1992,Chevrolet,Sportvan G20,"[""Van/Minivan""]",erc
+1992,Chevrolet,Sportvan G30,"[""Van/Minivan""]",erc
+1992,Chevrolet,Suburban 1500,"[""SUV""]",erc
+1992,Chevrolet,Suburban 2500,"[""SUV""]",erc
+1992,Chrysler,Fifth Ave,"[""Sedan""]",erc
+1992,Chrysler,Imperial,"[""Sedan""]",erc
+1992,Chrysler,LeBaron,"[""Sedan"", ""Coupe"", ""Convertible""]",erc
+1992,Chrysler,New Yorker,"[""Sedan""]",erc
+1992,Chrysler,Town & Country,"[""Van/Minivan""]",erc
+1992,Daihatsu,Charade,"[""Sedan"", ""Hatchback""]",erc
+1992,Daihatsu,Rocky,"[""SUV""]",erc
+1992,Dodge,Caravan Cargo,"[""Van/Minivan""]",erc
+1992,Dodge,Caravan Passenger,"[""Van/Minivan""]",erc
+1992,Dodge,Colt,"[""Hatchback""]",erc
+1992,Dodge,D150 Club Cab,"[""Pickup""]",erc
+1992,Dodge,D150 Regular Cab,"[""Pickup""]",erc
+1992,Dodge,D250 Club Cab,"[""Pickup""]",erc
+1992,Dodge,D250 Regular Cab,"[""Pickup""]",erc
+1992,Dodge,D350 Club Cab,"[""Pickup""]",erc
+1992,Dodge,D350 Regular Cab,"[""Pickup""]",erc
+1992,Dodge,Dakota Club Cab,"[""Pickup""]",erc
+1992,Dodge,Dakota Regular Cab,"[""Pickup""]",erc
+1992,Dodge,Daytona,"[""Hatchback""]",erc
+1992,Dodge,Dynasty,"[""Sedan""]",erc
+1992,Dodge,Grand Caravan Passenger,"[""Van/Minivan""]",erc
+1992,Dodge,Monaco,"[""Sedan""]",erc
+1992,Dodge,Ram 50 Regular Cab,"[""Pickup""]",erc
+1992,Dodge,Ram Van B150,"[""Van/Minivan""]",erc
+1992,Dodge,Ram Van B250,"[""Van/Minivan""]",erc
+1992,Dodge,Ram Van B350,"[""Van/Minivan""]",erc
+1992,Dodge,Ram Wagon B150,"[""Van/Minivan""]",erc
+1992,Dodge,Ram Wagon B250,"[""Van/Minivan""]",erc
+1992,Dodge,Ram Wagon B350,"[""Van/Minivan""]",erc
+1992,Dodge,Ramcharger,"[""SUV""]",erc
+1992,Dodge,Shadow,"[""Hatchback"", ""Convertible""]",erc
+1992,Dodge,Spirit,"[""Sedan""]",erc
+1992,Dodge,Stealth,"[""Hatchback""]",erc
+1992,Dodge,Viper,"[""Convertible""]",erc
+1992,Eagle,Premier,"[""Sedan""]",erc
+1992,Eagle,Summit,"[""Sedan"", ""Hatchback"", ""Wagon""]",erc
+1992,Eagle,Talon,"[""Hatchback""]",erc
+1992,Ford,Aerostar Cargo,"[""Van/Minivan""]",erc
+1992,Ford,Aerostar Passenger,"[""Van/Minivan""]",erc
+1992,Ford,Bronco,"[""SUV""]",erc
+1992,Ford,Club Wagon,"[""Van/Minivan""]",erc
+1992,Ford,Crown Victoria,"[""Sedan""]",erc
+1992,Ford,Econoline E150 Cargo,"[""Van/Minivan""]",erc
+1992,Ford,Econoline E250 Cargo,"[""Van/Minivan""]",erc
+1992,Ford,Econoline E350 Cargo,"[""Van/Minivan""]",erc
+1992,Ford,Escort,"[""Hatchback"", ""Sedan"", ""Wagon""]",erc
+1992,Ford,Explorer,"[""SUV""]",erc
+1992,Ford,F150 Regular Cab,"[""Pickup""]",erc
+1992,Ford,F150 Super Cab,"[""Pickup""]",erc
+1992,Ford,F250 Regular Cab,"[""Pickup""]",erc
+1992,Ford,F250 Super Cab,"[""Pickup""]",erc
+1992,Ford,F350 Crew Cab,"[""Pickup""]",erc
+1992,Ford,F350 Regular Cab,"[""Pickup""]",erc
+1992,Ford,F350 Super Cab,"[""Pickup""]",erc
+1992,Ford,Festiva,"[""Hatchback""]",erc
+1992,Ford,Mustang,"[""Coupe"", ""Convertible""]",erc
+1992,Ford,Probe,"[""Hatchback""]",erc
+1992,Ford,Ranger Regular Cab,"[""Pickup""]",erc
+1992,Ford,Ranger Super Cab,"[""Pickup""]",erc
+1992,Ford,Taurus,"[""Sedan"", ""Wagon""]",erc
+1992,Ford,Tempo,"[""Sedan"", ""Coupe""]",erc
+1992,Ford,Thunderbird,"[""Coupe""]",erc
+1992,Geo,Metro,"[""Hatchback"", ""Convertible""]",erc
+1992,Geo,Prizm,"[""Sedan""]",erc
+1992,Geo,Storm,"[""Coupe"", ""Hatchback""]",erc
+1992,Geo,Tracker,"[""SUV""]",erc
+1992,GMC,1500 Club Coupe,"[""Pickup""]",erc
+1992,GMC,1500 Regular Cab,"[""Pickup""]",erc
+1992,GMC,2500 Club Coupe,"[""Pickup""]",erc
+1992,GMC,2500 Regular Cab,"[""Pickup""]",erc
+1992,GMC,3500 Club Coupe,"[""Pickup""]",erc
+1992,GMC,3500 Crew Cab,"[""Pickup""]",erc
+1992,GMC,3500 Regular Cab,"[""Pickup""]",erc
+1992,GMC,Jimmy,"[""SUV""]",erc
+1992,GMC,Rally Wagon 1500,"[""Van/Minivan""]",erc
+1992,GMC,Rally Wagon 2500,"[""Van/Minivan""]",erc
+1992,GMC,Rally Wagon 3500,"[""Van/Minivan""]",erc
+1992,GMC,Safari Cargo,"[""Van/Minivan""]",erc
+1992,GMC,Safari Passenger,"[""Van/Minivan""]",erc
+1992,GMC,Sonoma Club Cab,"[""Pickup""]",erc
+1992,GMC,Sonoma Regular Cab,"[""Pickup""]",erc
+1992,GMC,Suburban 1500,"[""SUV""]",erc
+1992,GMC,Suburban 2500,"[""SUV""]",erc
+1992,GMC,Vandura 1500,"[""Van/Minivan""]",erc
+1992,GMC,Vandura 2500,"[""Van/Minivan""]",erc
+1992,GMC,Vandura 3500,"[""Van/Minivan""]",erc
+1992,GMC,Yukon,"[""SUV""]",erc
+1992,Honda,Accord,"[""Coupe"", ""Wagon"", ""Sedan""]",erc
+1992,Honda,Civic,"[""Hatchback"", ""Sedan""]",erc
+1992,Honda,Prelude,"[""Coupe""]",erc
+1992,Hyundai,Elantra,"[""Sedan""]",erc
+1992,Hyundai,Excel,"[""Sedan"", ""Hatchback""]",erc
+1992,Hyundai,Scoupe,"[""Coupe""]",erc
+1992,Hyundai,Sonata,"[""Sedan""]",erc
+1992,INFINITI,G,"[""Sedan""]",erc
+1992,INFINITI,M,"[""Coupe"", ""Convertible""]",erc
+1992,INFINITI,Q,"[""Sedan""]",erc
+1992,Isuzu,Amigo,"[""SUV""]",erc
+1992,Isuzu,Impulse,"[""Hatchback""]",erc
+1992,Isuzu,Regular Cab,"[""Pickup""]",erc
+1992,Isuzu,Rodeo,"[""SUV""]",erc
+1992,Isuzu,Spacecab,"[""Pickup""]",erc
+1992,Isuzu,Stylus,"[""Sedan""]",erc
+1992,Isuzu,Trooper,"[""SUV""]",erc
+1992,Jaguar,XJ,"[""Sedan"", ""Coupe"", ""Convertible""]",erc
+1992,Jeep,Cherokee,"[""SUV""]",erc
+1992,Jeep,Comanche Regular Cab,"[""Pickup""]",erc
+1992,Jeep,Wrangler,"[""SUV""]",erc
+1992,Land Rover,Range Rover,"[""SUV""]",erc
+1992,Lexus,ES,"[""Sedan""]",erc
+1992,Lexus,LS,"[""Sedan""]",erc
+1992,Lexus,SC,"[""Coupe""]",erc
+1992,Lincoln,Continental,"[""Sedan""]",erc
+1992,Lincoln,Mark VII,"[""Coupe""]",erc
+1992,Lincoln,Town Car,"[""Sedan""]",erc
+1992,MAZDA,323,"[""Hatchback""]",erc
+1992,MAZDA,626,"[""Sedan""]",erc
+1992,MAZDA,929,"[""Sedan""]",erc
+1992,MAZDA,B-Series Cab Plus,"[""Pickup""]",erc
+1992,MAZDA,B-Series Regular Cab,"[""Pickup""]",erc
+1992,MAZDA,MPV,"[""Van/Minivan""]",erc
+1992,MAZDA,MX-3,"[""Hatchback""]",erc
+1992,MAZDA,MX-5 Miata,"[""Convertible""]",erc
+1992,MAZDA,MX-6,"[""Coupe""]",erc
+1992,MAZDA,Navajo,"[""SUV""]",erc
+1992,MAZDA,Protege,"[""Sedan""]",erc
+1992,Mercedes-Benz,190 E,"[""Sedan""]",erc
+1992,Mercedes-Benz,300 CE,"[""Coupe""]",erc
+1992,Mercedes-Benz,300 D,"[""Sedan""]",erc
+1992,Mercedes-Benz,300 E,"[""Sedan""]",erc
+1992,Mercedes-Benz,300 SD,"[""Sedan""]",erc
+1992,Mercedes-Benz,300 SE,"[""Sedan""]",erc
+1992,Mercedes-Benz,300 SL,"[""Convertible""]",erc
+1992,Mercedes-Benz,300 TE,"[""Wagon""]",erc
+1992,Mercedes-Benz,400 E,"[""Sedan""]",erc
+1992,Mercedes-Benz,400 SE,"[""Sedan""]",erc
+1992,Mercedes-Benz,500 E,"[""Sedan""]",erc
+1992,Mercedes-Benz,500 SEL,"[""Sedan""]",erc
+1992,Mercedes-Benz,500 SL,"[""Convertible""]",erc
+1992,Mercedes-Benz,600 SEL,"[""Sedan""]",erc
+1992,Mercury,Capri,"[""Convertible""]",erc
+1992,Mercury,Cougar,"[""Coupe""]",erc
+1992,Mercury,Grand Marquis,"[""Sedan""]",erc
+1992,Mercury,Sable,"[""Sedan"", ""Wagon""]",erc
+1992,Mercury,Topaz,"[""Sedan"", ""Coupe""]",erc
+1992,Mercury,Tracer,"[""Sedan"", ""Wagon""]",erc
+1992,Mitsubishi,3000GT,"[""Hatchback""]",erc
+1992,Mitsubishi,Diamante,"[""Sedan""]",erc
+1992,Mitsubishi,Eclipse,"[""Hatchback""]",erc
+1992,Mitsubishi,Expo,"[""Wagon""]",erc
+1992,Mitsubishi,Galant,"[""Sedan""]",erc
+1992,Mitsubishi,Mighty Max Macro Cab,"[""Pickup""]",erc
+1992,Mitsubishi,Mighty Max Regular Cab,"[""Pickup""]",erc
+1992,Mitsubishi,Mirage,"[""Hatchback"", ""Sedan""]",erc
+1992,Mitsubishi,Montero,"[""SUV""]",erc
+1992,Mitsubishi,Precis,"[""Hatchback""]",erc
+1992,Nissan,240SX,"[""Hatchback"", ""Coupe"", ""Convertible""]",erc
+1992,Nissan,300ZX,"[""Hatchback""]",erc
+1992,Nissan,King Cab,"[""Pickup""]",erc
+1992,Nissan,Maxima,"[""Sedan""]",erc
+1992,Nissan,NX,"[""Hatchback""]",erc
+1992,Nissan,Pathfinder,"[""SUV""]",erc
+1992,Nissan,Regular Cab,"[""Pickup""]",erc
+1992,Nissan,Sentra,"[""Coupe"", ""Sedan""]",erc
+1992,Nissan,Stanza,"[""Sedan""]",erc
+1992,Oldsmobile,88,"[""Sedan""]",erc
+1992,Oldsmobile,98,"[""Sedan""]",erc
+1992,Oldsmobile,Achieva,"[""Sedan"", ""Coupe""]",erc
+1992,Oldsmobile,Bravada,"[""SUV""]",erc
+1992,Oldsmobile,Custom Cruiser,"[""Wagon""]",erc
+1992,Oldsmobile,Cutlass Ciera,"[""Sedan"", ""Wagon""]",erc
+1992,Oldsmobile,Cutlass Supreme,"[""Sedan"", ""Convertible"", ""Coupe""]",erc
+1992,Oldsmobile,Silhouette,"[""Van/Minivan""]",erc
+1992,Oldsmobile,Toronado,"[""Coupe""]",erc
+1992,Plymouth,Acclaim,"[""Sedan""]",erc
+1992,Plymouth,Colt,"[""Hatchback""]",erc
+1992,Plymouth,Colt Vista,"[""Wagon""]",erc
+1992,Plymouth,Grand Voyager,"[""Van/Minivan""]",erc
+1992,Plymouth,Laser,"[""Hatchback""]",erc
+1992,Plymouth,Sundance,"[""Hatchback""]",erc
+1992,Plymouth,Voyager,"[""Van/Minivan""]",erc
+1992,Pontiac,Bonneville,"[""Sedan""]",erc
+1992,Pontiac,Firebird,"[""Hatchback"", ""Convertible""]",erc
+1992,Pontiac,Grand Am,"[""Sedan"", ""Coupe""]",erc
+1992,Pontiac,Grand Prix,"[""Coupe"", ""Sedan""]",erc
+1992,Pontiac,LeMans,"[""Hatchback"", ""Sedan""]",erc
+1992,Pontiac,Sunbird,"[""Sedan"", ""Coupe"", ""Convertible""]",erc
+1992,Pontiac,Trans Sport,"[""Van/Minivan""]",erc
+1992,Porsche,911,"[""Coupe"", ""Convertible""]",erc
+1992,Porsche,968,"[""Coupe"", ""Convertible""]",erc
+1992,Saab,900,"[""Sedan"", ""Hatchback"", ""Convertible""]",erc
+1992,Saab,9000,"[""Sedan"", ""Hatchback""]",erc
+1992,Saturn,S-Series,"[""Coupe"", ""Sedan""]",erc
+1992,Subaru,Justy,"[""Hatchback""]",erc
+1992,Subaru,Legacy,"[""Sedan"", ""Wagon""]",erc
+1992,Subaru,Loyale,"[""Sedan"", ""Wagon""]",erc
+1992,Subaru,SVX,"[""Coupe""]",erc
+1992,Suzuki,Samurai,"[""SUV""]",erc
+1992,Suzuki,Sidekick,"[""SUV""]",erc
+1992,Suzuki,Swift,"[""Sedan"", ""Hatchback""]",erc
+1992,Toyota,4Runner,"[""SUV""]",erc
+1992,Toyota,Camry,"[""Sedan"", ""Wagon""]",erc
+1992,Toyota,Celica,"[""Coupe"", ""Convertible"", ""Hatchback""]",erc
+1992,Toyota,Corolla,"[""Sedan"", ""Wagon""]",erc
+1992,Toyota,Cressida,"[""Sedan""]",erc
+1992,Toyota,Land Cruiser,"[""SUV""]",erc
+1992,Toyota,MR2,"[""Coupe""]",erc
+1992,Toyota,Paseo,"[""Coupe""]",erc
+1992,Toyota,Previa,"[""Van/Minivan""]",erc
+1992,Toyota,Regular Cab,"[""Pickup""]",erc
+1992,Toyota,Supra,"[""Hatchback""]",erc
+1992,Toyota,Tercel,"[""Sedan""]",erc
+1992,Toyota,Xtra Cab,"[""Pickup""]",erc
+1992,Volkswagen,Cabriolet,"[""Convertible""]",erc
+1992,Volkswagen,Corrado,"[""Coupe""]",erc
+1992,Volkswagen,Fox,"[""Sedan"", ""Coupe""]",erc
+1992,Volkswagen,Golf,"[""Hatchback""]",erc
+1992,Volkswagen,GTI,"[""Hatchback""]",erc
+1992,Volkswagen,Jetta,"[""Sedan""]",erc
+1992,Volkswagen,Passat,"[""Sedan"", ""Wagon""]",erc
+1992,Volvo,240,"[""Wagon"", ""Sedan""]",erc
+1992,Volvo,740,"[""Wagon"", ""Sedan""]",erc
+1992,Volvo,940,"[""Sedan"", ""Wagon""]",erc
+1992,Volvo,960,"[""Sedan"", ""Wagon""]",erc

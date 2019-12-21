@@ -43,6 +43,7 @@ def scrapeEdmunds(year, make, model):
     return imgSource
 # ----------------------
 def handleFiles(oldFilePath, newFilePath):
+    count = 1.0
     # Does file reading & writing
     with open(oldFilePath) as oldFile:
         reader = csv.reader(oldFile) # create reader object from old file / path
@@ -54,6 +55,7 @@ def handleFiles(oldFilePath, newFilePath):
 
 
             for row in reader: # for each row in the old file
+
                 '''
                 In this schema,
                     year = row[0]
@@ -64,7 +66,10 @@ def handleFiles(oldFilePath, newFilePath):
                 '''
                 # print(row)
                 src = scrapeEdmunds(row[0], row[1], row[2])
-                writer.writerow([row[0], row[1], row[2], row[3], src])
+                writer.writerow([row[0], row[1], row[2], row[3], 'erc'])
+                print(src)
+                print '*' * int(count)
+                count += .21
 
     return None
 # ----------------------
