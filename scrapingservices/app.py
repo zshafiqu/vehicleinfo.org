@@ -185,6 +185,9 @@ def handleFiles(oldFilePath, newFilePath):
                 # src = scrapeKBB(row[0], row[1], row[2])
                 # src = []
                 # print(len(row[3]))
+                # res = ast.literal_eval(row[3]) # convert from string list to list list
+                print(row[0], row[1], row[2], row[3])
+
                 res = ast.literal_eval(row[3]) # convert from string list to list list
                 src = scrapeKBB(row[0], row[1], row[2], res) # retrieve ke/value mapping for body style : img url
                 # res = json.loads(row[3])
