@@ -80,8 +80,8 @@ def handleFiles(oldFilePath, newFilePath):
     return None
 # ----------------------
 
-# handleFiles('car_data/1992.csv', 'new_1992.csv')
-
+handleFiles('car_data/1992.csv', 'new_1992.csv')
+'''
 yearCount = 1994
 
 while (yearCount <= 2020):
@@ -95,4 +95,5 @@ while (yearCount <= 2020):
     handleFiles(old, new)
 
     yearCount += 1
+'''
 # ----------------------
