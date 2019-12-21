@@ -42,7 +42,47 @@ def scrapeEdmunds(year, make, model):
     # print(imgSource)
     return imgSource
 # ----------------------
-def scrapeKBB(year, make, model):
+def getSoup(url):
+    # required to emulate broswer user agent
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36',
+        'Origin': 'http://example.com',
+        'Referer': 'http://example.com/some_page'
+        }
+
+    # get html
+    source = requests.get(url, headers=headers).text
+    soup = BeautifulSoup(source, 'lxml')
+
+    # return the soup'd data
+    return soup
+# ----------------------
+
+
+def scrapeKBB(year, make, model, bodystyles):
+    # build KBB url
+    url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
+
+    if (len(bodystyles) > 1):
+
+
+    imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
+
+    # print(imgSource)
+
+    '''
+    if length of body_style > 1
+        for each body style
+            create a url
+                make a request to that URL
+
+
+
+
+    return a list of img sources,
+
+    '''
+
 
 
 
