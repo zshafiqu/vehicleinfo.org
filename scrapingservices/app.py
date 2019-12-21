@@ -63,10 +63,14 @@ def handleFiles(oldFilePath, newFilePath):
 
                 '''
                 # print(row)
-                writer.writerow([row[0], row[1], row[2], row[3], 'this is a new file.com'])
-                
+                src = scrapeEdmunds(row[0], row[1], row[2])
+                writer.writerow([row[0], row[1], row[2], row[3], src])
+
     return None
 # ----------------------
+
+handleFiles('car_data/1992.csv', 'new_1992.csv')
+
 '''
 # calls below should open every file and print the first 5 items
 yearCount = 1992
