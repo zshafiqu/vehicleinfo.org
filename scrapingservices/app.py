@@ -109,7 +109,9 @@ def getSoup(url):
     headers = getHeader() # generate a random header
 
     print('About to make request')
-    page = requests.get(url, headers=headers, timeout=30).text
+    page = requests.get(url, headers=headers, timeout=45).text
+    # print('STATUS CODE: ' + page.status_code)
+    # page = page.text
     print('Finished request')
     onlyImgTags = SoupStrainer(class_="css-4g6ai3")
 
