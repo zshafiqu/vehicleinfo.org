@@ -1,6 +1,6 @@
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, SoupStrainer
 from urllib import urlopen
-import requests, json, os, mysql.connector, csv, ast
+import requests, json, os, mysql.connector, csv, ast, random
 # Script to scrape images for each vehicle in our list
 ''' The goal of this script is to store the source for each image in our database '''
 
@@ -42,51 +42,75 @@ def scrapeEdmunds(year, make, model):
     # print(imgSource)
     return imgSource
 # ----------------------
-def getSoup(url):
+def getHeader():
+    # return a random user agent header based
+    list = [
+            { 'User-Agent1': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
+            { 'User-Agent2': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
+            { 'User-Agent3': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
+            { 'User-Agent4': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
+            { 'User-Agent5': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
+            { 'User-Agent6': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
+            { 'User-Agent7': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
+            { 'User-Agent8': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
+            { 'User-Agent9': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
+            { 'User-Agent10': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
+            { 'User-Agent11': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
+
+        ]
+    # list is of size 6
+    curr = random.randrange(0, 10)
+    print(list[curr])
+# ----------------------
+def getSoup():
     # required to emulate broswer user agent
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36',
-        'Origin': 'http://example.com',
-        'Referer': 'http://example.com/some_page'
-        }
+    url = 'https://www.kbb.com/honda/civic/1992/'
 
     # get html
-    source = requests.get(url, headers=headers).text
-    soup = BeautifulSoup(source, 'lxml')
+    # source = requests.get(url, headers=headers).text
 
-    # return the soup'd data
-    return soup
-# ----------------------
-
-
-def scrapeKBB(year, make, model, bodystyles):
-    # build KBB url
-    url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
-
-    if (len(bodystyles) > 1):
+    # headers={ 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:67.0) Gecko/20100101 Firefox/67.0' }
+    # agent = {"User-Agent":'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'}
+    page = requests.get(url, headers=headers).text
+    onlyImgTags = SoupStrainer(class_="css-4g6ai3")
 
 
+
+    soup = BeautifulSoup(page, 'lxml', parse_only=onlyImgTags)
     imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
 
-    # print(imgSource)
-
-    '''
-    if length of body_style > 1
-        for each body style
-            create a url
-                make a request to that URL
-
-
-
-
-    return a list of img sources,
-
-    '''
-
-
-
-
+    print(imgSource[0]['src'])
+    # return the soup'd data
     return ''
+# ----------------------
+# def scrapeKBB(year, make, model, bodystyles):
+#     # build KBB url
+#     url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
+#
+#     if (len(bodystyles) > 1):
+#
+#
+#     imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
+#
+#     # print(imgSource)
+#
+#     '''
+#     if length of body_style > 1
+#         for each body style
+#             create a url
+#                 make a request to that URL
+#
+#
+#
+#
+#     return a list of img sources,
+#
+#     '''
+#
+#
+#
+#
+#     return ''
 # ----------------------
 def handleFiles(oldFilePath, newFilePath):
     # count = 1.0
@@ -125,22 +149,22 @@ def handleFiles(oldFilePath, newFilePath):
 
     return None
 # ----------------------
-
+getHeader()
 # handleFiles('car_data/1992.csv', 'new_1992.csv')
 
-yearCount = 1992
-
-while (yearCount <= 2020):
-    stringYear = str(yearCount)
-    old = 'car_data/'+stringYear+'.csv'
-    # new = 'new_'+stringYear+'.csv'
-    new = stringYear+'.csv'
-
-    print(new)
-    print("<------------------------------>")
-    print('\n')
-    handleFiles(old, new)
-
-    yearCount += 1
+# yearCount = 1992
+#
+# while (yearCount <= 2020):
+#     stringYear = str(yearCount)
+#     old = 'car_data/'+stringYear+'.csv'
+#     # new = 'new_'+stringYear+'.csv'
+#     new = stringYear+'.csv'
+#
+#     print(new)
+#     print("<------------------------------>")
+#     print('\n')
+#     handleFiles(old, new)
+#
+#     yearCount += 1
 
 # ----------------------
