@@ -121,6 +121,8 @@ def getSoup():
 
 
     soup = BeautifulSoup(page, 'lxml', parse_only=onlyImgTags)
+    print(soup)
+    print('\n')
     imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
 
     print(imgSource[0]['src'])
@@ -193,7 +195,7 @@ def handleFiles(oldFilePath, newFilePath):
 
     return None
 # ----------------------
-getHeader()
+getSoup()
 # handleFiles('car_data/1992.csv', 'new_1992.csv')
 
 # yearCount = 1992
