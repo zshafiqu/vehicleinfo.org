@@ -132,10 +132,10 @@ def getSoup(url):
 # ----------------------
 def scrapeKBB(year, make, model, bodystyles):
     # build KBB url
-    url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
     map = dict()
 
     if (len(bodystyles) is 1):
+        url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
         soup = getSoup(url)
         imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
         curr = bodystyles[0]
@@ -194,7 +194,7 @@ def handleFiles(oldFilePath, newFilePath):
 year = '1992'
 make = 'honda'
 model = 'civic'
-bodystyles = ['sedan', 'hatchback']
+bodystyles = ['sedan']
 scrapeKBB(year, make, model, bodystyles)
 
 # handleFiles('car_data/1992.csv', 'new_1992.csv')
