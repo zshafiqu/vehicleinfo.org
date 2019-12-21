@@ -140,13 +140,14 @@ def scrapeKBB(year, make, model, bodystyles):
         # try:
         url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
         soup = getSoup(url)
-        imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
+        try:
+            imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
 
-        map[bodystyles[0]] = imgSource[0]['src']
+            map[bodystyles[0]] = imgSource[0]['src']
             # print(map)
-        # except:
-            # print("Error on scraping KBB, single body style")
-            # map[bodystyles[0]] = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
+        except:
+            print("Error on scraping KBB, single body style")
+            map[bodystyles[0]] = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
 
     else:
         index = 0
@@ -154,13 +155,14 @@ def scrapeKBB(year, make, model, bodystyles):
             # try:
             url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'+'?bodystyle='+style
             soup = getSoup(url)
-            imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
+            try:
+                imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
 
-            map[style] = imgSource[0]['src']
-            # except:
-            #     print('Error on scraping KBB, multiple body type')
-            #     map[bodystyles[index]] = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
-            # index += 1
+                map[style] = imgSource[0]['src']
+            except:
+                print('Error on scraping KBB, multiple body type')
+                map[bodystyles[index]] = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
+            index += 1
 
 
     print(map)
@@ -210,20 +212,20 @@ def handleFiles(oldFilePath, newFilePath):
 # scrapeKBB(year, make, model, bodystyles)
 
 # handleFiles('car_data/19921.csv', 'new_1992.csv')
+''' Run script for make and models from 1992 -> 2000 '''
+yearCount = 1992
 
-# yearCount = 1992
-#
-# while (yearCount <= 2020):
-#     stringYear = str(yearCount)
-#     old = 'car_data/'+stringYear+'.csv'
-#     # new = 'new_'+stringYear+'.csv'
-#     new = stringYear+'.csv'
-#
-#     print(new)
-#     print("<------------------------------>")
-#     print('\n')
-#     handleFiles(old, new)
-#
-#     yearCount += 1
+while (yearCount <= 2000):
+    stringYear = str(yearCount)
+    old = 'car_data/'+stringYear+'.csv'
+    new = 'new_'+stringYear+'.csv'
+    # new = stringYear+'.csv'
+
+    print(new)
+    print("<------------------------------>")
+    print('\n')
+    handleFiles(old, new)
+
+    yearCount += 1
 
 # ----------------------
