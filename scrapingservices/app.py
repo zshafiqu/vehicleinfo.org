@@ -42,7 +42,6 @@ import requests, json, os, mysql.connector, csv, ast, random
 #     return imgSource
 # ----------------------
 def getHeader():
-    print('in getHeader')
     # return a random user agent header based on generated number
     list = [
             {
@@ -103,17 +102,14 @@ def getHeader():
         ]
     # list is of size 11
     curr = random.randrange(0, 10)
-    print('Exiting get header')
     return list[curr]
 # ----------------------
 def getSoup(url):
-    print('in getSoup')
-
     # required to emulate broswer user agent
     headers = getHeader() # generate a random header
 
     print('About to make request')
-    page = requests.get(url, headers=headers, timeout=45).text
+    page = requests.get(url, headers=headers, timeout=30).text
     print('Finished request')
     onlyImgTags = SoupStrainer(class_="css-4g6ai3")
 
@@ -126,7 +122,6 @@ def getSoup(url):
 # ----------------------
 def scrapeKBB(year, make, model, bodystyles):
     # build KBB url
-    print('in scrape KBB')
     map = dict()
 
     if (len(bodystyles) == 1):
