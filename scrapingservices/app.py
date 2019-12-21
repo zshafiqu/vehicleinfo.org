@@ -49,16 +49,15 @@ def handleFiles(oldFilePath, newFilePath):
 # ----------------------
 
 with open('car_data/1992.csv') as oldFile:
-    reader = csv.reader(oldFile)
-    # counter = 0
+    reader = csv.reader(oldFile) # create reader object from old file / path
 
     with open('new_1992.csv', 'w') as newFile:
-        writer = csv.writer(newFile)
-        writer.writerow(['year', 'make', 'model', 'body_style', 'image_src'])
-        next(reader)
+        writer = csv.writer(newFile) # create writer object with new file / path
+        writer.writerow(['year', 'make', 'model', 'body_style', 'image_src']) # write the headers on the first row of new file
+        next(reader) # skip the first row of the old file
 
-        for row in reader:
-            # print(row)
+
+        for row in reader: # for each row in the old file
             '''
             In this schema,
                 year = row[0]
@@ -67,6 +66,7 @@ with open('car_data/1992.csv') as oldFile:
                 body_style = row[3] { str() literal representation of a list object }
 
             '''
+            # print(row)
             writer.writerow([row[0], row[1], row[2], row[3], 'this is a new file . com'])
 
 
