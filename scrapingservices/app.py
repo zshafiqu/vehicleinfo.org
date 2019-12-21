@@ -109,7 +109,16 @@ def getSoup(url):
     headers = getHeader() # generate a random header
 
     print('About to make request')
-    page = requests.get(url, headers=headers, timeout=45).text
+    i = 0
+    # for i in range (0, 3):
+    while True:
+        try:
+            page = requests.get(url, headers=headers, timeout=5).text
+        except:
+            print('Fail on request #'+str(i)+', trying again')
+            i += 1
+            continue
+        break
     # print('STATUS CODE: ' + page.status_code)
     # page = page.text
     print('Finished request')
@@ -127,30 +136,30 @@ def scrapeKBB(year, make, model, bodystyles):
     map = dict()
 
     if (len(bodystyles) == 1):
-        try:
-            url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
-            soup = getSoup(url)
-            imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
+        # try:
+        url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
+        soup = getSoup(url)
+        imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
 
-            map[bodystyles[0]] = imgSource[0]['src']
+        map[bodystyles[0]] = imgSource[0]['src']
             # print(map)
-        except:
-            print("Error on scraping KBB, single body style")
-            map[bodystyles[0]] = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
+        # except:
+            # print("Error on scraping KBB, single body style")
+            # map[bodystyles[0]] = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
 
     else:
         index = 0
         for style in bodystyles:
-            try:
-                url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'+'?bodystyle='+style
-                soup = getSoup(url)
-                imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
+            # try:
+            url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'+'?bodystyle='+style
+            soup = getSoup(url)
+            imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
 
-                map[style] = imgSource[0]['src']
-            except:
-                print('Error on scraping KBB, multiple body type')
-                map[bodystyles[index]] = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
-            index += 1
+            map[style] = imgSource[0]['src']
+            # except:
+            #     print('Error on scraping KBB, multiple body type')
+            #     map[bodystyles[index]] = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
+            # index += 1
 
 
     print(map)
