@@ -49,7 +49,7 @@ def scrapeKBB(year, make, model):
     return ''
 # ----------------------
 def handleFiles(oldFilePath, newFilePath):
-    count = 1.0
+    # count = 1.0
     # Does file reading & writing
     with open(oldFilePath) as oldFile:
         reader = csv.reader(oldFile) # create reader object from old file / path
@@ -72,10 +72,12 @@ def handleFiles(oldFilePath, newFilePath):
                 '''
                 # print(row)
                 # src = scrapeEdmunds(row[0], row[1], row[2])
-                writer.writerow([row[0], row[1], row[2], row[3], src])
+                src = []
+                res = json.loads(row[3])
+                writer.writerow([row[0], row[1], row[2], res, 'src'])
                 print(src)
                 print '*' * int(count)
-                count += .22
+                # count += .22
 
     return None
 # ----------------------
