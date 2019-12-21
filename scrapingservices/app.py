@@ -56,7 +56,7 @@ def handleFiles(oldFilePath, newFilePath):
 
         with open(newFilePath, 'w') as newFile:
             writer = csv.writer(newFile) # create writer object with new file / path
-            writer.writerow(['year', 'make', 'model', 'body_style', 'image_src']) # write the headers on the first row of new file
+            writer.writerow(['year', 'make', 'model', 'body_style']) # write the headers on the first row of new file
             next(reader) # skip the first row of the old file
 
 
@@ -73,12 +73,12 @@ def handleFiles(oldFilePath, newFilePath):
                 # print(row)
                 # src = scrapeEdmunds(row[0], row[1], row[2])
                 src = []
-                print(len(row[3]))
+                # print(len(row[3]))
                 res = ast.literal_eval(row[3])
                 # res = json.loads(row[3])
-                print(res)
-                print(len(res))
-                writer.writerow([row[0], row[1], row[2], res, 'src'])
+                # print(res)
+                # print(len(res))
+                writer.writerow([row[0], row[1], row[2], res])
                 # print(src)
                 # print '*' * int(count)
                 # count += .22
@@ -86,14 +86,15 @@ def handleFiles(oldFilePath, newFilePath):
     return None
 # ----------------------
 
-handleFiles('car_data/1992.csv', 'new_1992.csv')
-'''
-yearCount = 1994
+# handleFiles('car_data/1992.csv', 'new_1992.csv')
+
+yearCount = 1992
 
 while (yearCount <= 2020):
     stringYear = str(yearCount)
     old = 'car_data/'+stringYear+'.csv'
-    new = 'new_'+stringYear+'.csv'
+    # new = 'new_'+stringYear+'.csv'
+    new = stringYear+'.csv'
 
     print(new)
     print("<------------------------------>")
@@ -101,5 +102,5 @@ while (yearCount <= 2020):
     handleFiles(old, new)
 
     yearCount += 1
-'''
+
 # ----------------------
