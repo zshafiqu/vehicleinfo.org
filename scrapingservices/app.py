@@ -199,13 +199,13 @@ def handleFiles(oldFilePath, newFilePath):
     return None
 # ----------------------
 # getSoup()
-year = '1992'
-make = 'honhahahahahda'
-model = 'civic'
-bodystyles = ['sedan', 'hatchback']
-scrapeKBB(year, make, model, bodystyles)
+# year = '1992'
+# make = 'honhahahahahda'
+# model = 'civic'
+# bodystyles = ['sedan', 'hatchback']
+# scrapeKBB(year, make, model, bodystyles)
 
-# handleFiles('car_data/1992.csv', 'new_1992.csv')
+handleFiles('car_data/1992.csv', 'new_1992.csv')
 
 # yearCount = 1992
 #
