@@ -42,32 +42,61 @@ def scrapeEdmunds(year, make, model):
     # print(imgSource)
     return imgSource
 # ----------------------
+def handleFiles(oldFilePath, newFilePath):
 
+
+    return None
+# ----------------------
+
+with open('car_data/1992.csv') as oldFile:
+    reader = csv.reader(oldFile)
+    # counter = 0
+
+    with open('new_1992.csv', 'w') as newFile:
+        writer = csv.writer(newFile)
+        writer.writerow(['year', 'make', 'model', 'body_style', 'image_src'])
+        next(reader)
+
+        for row in reader:
+            # print(row)
+            '''
+            In this schema,
+                year = row[0]
+                make = row[1]
+                model = row[2]
+                body_style = row[3] { str() literal representation of a list object }
+
+            '''
+            writer.writerow([row[0], row[1], row[2], row[3], 'this is a new file . com'])
+
+
+'''
 # calls below should open every file and print the first 5 items
 yearCount = 1992
 
 while (yearCount <= 2020):
 
+
     # dupYr = year
     strYear = str(yearCount)
     # print('CREATE TABLE '+strYear)
-    filepath = 'car_data/'+strYear+'.csv'
-    newFile = 'new_'+strYear+'.csv'
+    filepath = 'car_data/'+strYear+'.csv' # filepath for each year
+    newFileName = 'new_'+strYear+'.csv' # new file name for each year
     print(filepath)
 
 
-    with open(filepath, 'r') as csv_file:
-        csv_reader = csv.reader(csv_file)
+    with open(filepath, 'r') as oldFile: # reading from old csv
+        reader = csv.reader(oldFile)
         # counter = 0;
 
-        # next(csv_reader) #skip header
+        next(reader) #skip header
 
-        with open(newFile, 'w') as new_file:
-            csv_write = csv.writer(new_file, delimiter='\t')
+        with open(newFileName, 'w') as newFile:
+            writer = csv.writer(newFile, delimiter='\t')
 
-            for line in csv_reader:
-                csv_write.writerow(line[0])
-                csv_write.writerow(line[0])
+            for line in reader:
+                writer.writerow(line[1])
+                # csv_write.writerow(line[0])
 
 
 
@@ -81,4 +110,5 @@ while (yearCount <= 2020):
 
 
     yearCount += 1
+    '''
 # ----------------------
