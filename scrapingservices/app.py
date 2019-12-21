@@ -209,7 +209,7 @@ def handleFiles(oldFilePath, newFilePath):
 # bodystyles = ['sedan', 'hatchback']
 # scrapeKBB(year, make, model, bodystyles)
 
-handleFiles('car_data/19921.csv', 'new_1992.csv')
+# handleFiles('car_data/19921.csv', 'new_1992.csv')
 
 # yearCount = 1992
 #
