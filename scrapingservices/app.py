@@ -45,18 +45,61 @@ def scrapeEdmunds(year, make, model):
 def getHeader():
     # return a random user agent header based
     list = [
-            { 'User-Agent1': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
-            { 'User-Agent2': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
-            { 'User-Agent3': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
-            { 'User-Agent4': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
-            { 'User-Agent5': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
-            { 'User-Agent6': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
-            { 'User-Agent7': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
-            { 'User-Agent8': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
-            { 'User-Agent9': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
-            { 'User-Agent10': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
-            { 'User-Agent11': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36', 'Origin': 'http://example.com', 'Referer': 'http://example.com/some_page'},
-
+            {
+             'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36',
+             'Origin': 'http://example.com',
+             'Referer': 'http://example.com/some_page'
+             },
+            {
+             'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0',
+             'Origin': 'http://example.com',
+             'Referer': 'http://example.com/some_page'
+             },
+            {
+             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+             'Origin': 'http://example.com',
+             'Referer': 'http://example.com/some_page'
+             },
+            {
+             'User-Agent': 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322)',
+             'Origin': 'http://example.com',
+             'Referer': 'http://example.com/some_page'
+            },
+            {
+             'User-Agent5': 'Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1; 125LA; .NET CLR 2.0.50727; .NET CLR 3.0.04506.648; .NET CLR 3.5.21022)',
+             'Origin': 'http://example.com',
+             'Referer': 'http://example.com/some_page'
+             },
+            {
+             'User-Agent6': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+             'Origin': 'http://example.com',
+             'Referer': 'http://example.com/some_page'
+             },
+            {
+             'User-Agent7': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+             'Origin': 'http://example.com',
+             'Referer': 'http://example.com/some_page'
+             },
+            {
+             'User-Agent8': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36',
+             'Origin': 'http://example.com',
+             'Referer': 'http://example.com/some_page'
+             },
+            {
+             'User-Agent9': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36',
+             'Origin': 'http://example.com',
+             'Referer': 'http://example.com/some_page'
+             },
+            {
+             'User-Agent10': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36',
+             'Origin': 'http://example.com',
+             'Referer': 'http://example.com/some_page'
+             },
+            {
+             'User-Agent11': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36',
+             'Origin': 'http://example.com',
+             'Referer': 'http://example.com/some_page'
+             }
         ]
     # list is of size 6
     curr = random.randrange(0, 10)
