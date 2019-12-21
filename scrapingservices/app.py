@@ -105,9 +105,9 @@ def getHeader():
     curr = random.randrange(0, 10)
     return list[curr]
 # ----------------------
-def getSoup():
+def getSoup(url):
     # required to emulate broswer user agent
-    url = 'https://www.kbb.com/honda/civic/1992/'
+    # url = 'https://www.kbb.com/honda/civic/1992/'
 
     # get html
     # source = requests.get(url, headers=headers).text
@@ -121,42 +121,37 @@ def getSoup():
 
 
     soup = BeautifulSoup(page, 'lxml', parse_only=onlyImgTags)
-    print(soup)
-    print('\n')
-    imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
+    # print(soup)
+    # print('\n')
+    # imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
+    #
+    # print(imgSource[0]['src'])
 
-    print(imgSource[0]['src'])
     # return the soup'd data
-    return ''
+    return soup
 # ----------------------
-# def scrapeKBB(year, make, model, bodystyles):
-#     # build KBB url
-#     url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
-#
-#     if (len(bodystyles) > 1):
-#
-#
-#     imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
-#
-#     # print(imgSource)
-#
-#     '''
-#     if length of body_style > 1
-#         for each body style
-#             create a url
-#                 make a request to that URL
-#
-#
-#
-#
-#     return a list of img sources,
-#
-#     '''
-#
-#
-#
-#
-#     return ''
+def scrapeKBB(year, make, model, bodystyles):
+    # build KBB url
+    url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
+    map = dict()
+
+    if (len(bodystyles) is 1):
+        soup = getSoup(url)
+        imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
+        curr = bodystyles[0]
+        map[curr] = imgSource[0]['src']
+        print(map)
+        return map
+    else:
+        ''' There are multiple body styles, create a list of [ { 'body_style' : url } ] '''
+        for style in bodystyles:
+            url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'+'?bodystyle='+style
+            soup = getSoup(url)
+            imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
+            curr = style
+            map[curr] = imgSource[0]['src']
+        print(map)
+        return map
 # ----------------------
 def handleFiles(oldFilePath, newFilePath):
     # count = 1.0
@@ -195,7 +190,13 @@ def handleFiles(oldFilePath, newFilePath):
 
     return None
 # ----------------------
-getSoup()
+# getSoup()
+year = '1992'
+make = 'honda'
+model = 'civic'
+bodystyles = ['sedan', 'hatchback']
+scrapeKBB(year, make, model, bodystyles)
+
 # handleFiles('car_data/1992.csv', 'new_1992.csv')
 
 # yearCount = 1992
