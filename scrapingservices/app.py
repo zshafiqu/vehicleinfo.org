@@ -111,7 +111,7 @@ def getSoup(url):
 
     # get html
     # source = requests.get(url, headers=headers).text
-    headers = getHeader()
+    headers = getHeader() # generate a random header
 
     # headers={ 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:67.0) Gecko/20100101 Firefox/67.0' }
     # agent = {"User-Agent":'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'}
@@ -161,7 +161,7 @@ def handleFiles(oldFilePath, newFilePath):
 
         with open(newFilePath, 'w') as newFile:
             writer = csv.writer(newFile) # create writer object with new file / path
-            writer.writerow(['year', 'make', 'model', 'body_style']) # write the headers on the first row of new file
+            writer.writerow(['year', 'make', 'model', 'body_style(s)', 'image_source(s)']) # write the headers on the first row of new file
             next(reader) # skip the first row of the old file
 
 
@@ -173,17 +173,19 @@ def handleFiles(oldFilePath, newFilePath):
                     make = row[1]
                     model = row[2]
                     body_style = row[3] { str() literal representation of a list object }
+                    src = scrapeKBB(year, make, model, body_style)
 
                 '''
                 # print(row)
-                # src = scrapeEdmunds(row[0], row[1], row[2])
-                src = []
+                # src = scrapeKBB(row[0], row[1], row[2])
+                # src = []
                 # print(len(row[3]))
-                res = ast.literal_eval(row[3])
+                res = ast.literal_eval(row[3]) # convert from string list to list list
+                src = scrapeKBB(row[0], row[1], row[2], res) # retrieve ke/value mapping for body style : img url
                 # res = json.loads(row[3])
                 # print(res)
                 # print(len(res))
-                writer.writerow([row[0], row[1], row[2], res])
+                writer.writerow([row[0], row[1], row[2], res, src]) # write to result file
                 # print(src)
                 # print '*' * int(count)
                 # count += .22
@@ -191,11 +193,11 @@ def handleFiles(oldFilePath, newFilePath):
     return None
 # ----------------------
 # getSoup()
-year = '1992'
-make = 'honda'
-model = 'civic'
-bodystyles = ['sedan']
-scrapeKBB(year, make, model, bodystyles)
+# year = '1992'
+# make = 'honda'
+# model = 'civic'
+# bodystyles = ['sedan']
+# scrapeKBB(year, make, model, bodystyles)
 
 # handleFiles('car_data/1992.csv', 'new_1992.csv')
 
