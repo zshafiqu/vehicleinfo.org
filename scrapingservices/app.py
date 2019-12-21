@@ -42,6 +42,12 @@ def scrapeEdmunds(year, make, model):
     # print(imgSource)
     return imgSource
 # ----------------------
+def scrapeKBB(year, make, model):
+
+
+
+    return ''
+# ----------------------
 def handleFiles(oldFilePath, newFilePath):
     count = 1.0
     # Does file reading & writing
