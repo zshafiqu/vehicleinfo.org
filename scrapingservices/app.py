@@ -73,8 +73,11 @@ def handleFiles(oldFilePath, newFilePath):
                 # print(row)
                 # src = scrapeEdmunds(row[0], row[1], row[2])
                 src = []
+                print(len(row[3]))
                 res = ast.literal_eval(row[3])
                 # res = json.loads(row[3])
+                print(res)
+                print(len(res))
                 writer.writerow([row[0], row[1], row[2], res, 'src'])
                 # print(src)
                 # print '*' * int(count)
