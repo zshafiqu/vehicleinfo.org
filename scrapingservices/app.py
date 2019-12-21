@@ -42,6 +42,7 @@ import requests, json, os, mysql.connector, csv, ast, random
 #     return imgSource
 # ----------------------
 def getHeader():
+    print('in getHeader')
     # return a random user agent header based on generated number
     list = [
             {
@@ -102,9 +103,11 @@ def getHeader():
         ]
     # list is of size 11
     curr = random.randrange(0, 10)
+    print('Exiting get header')
     return list[curr]
 # ----------------------
 def getSoup(url):
+    print('in getSoup')
     # required to emulate broswer user agent
     # url = 'https://www.kbb.com/honda/civic/1992/'
 
@@ -114,7 +117,9 @@ def getSoup(url):
 
     # headers={ 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:67.0) Gecko/20100101 Firefox/67.0' }
     # agent = {"User-Agent":'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'}
+    print('About to make request')
     page = requests.get(url, headers=headers).text
+    print('Finished request')
     onlyImgTags = SoupStrainer(class_="css-4g6ai3")
 
 
@@ -131,32 +136,58 @@ def getSoup(url):
 # ----------------------
 def scrapeKBB(year, make, model, bodystyles):
     # build KBB url
+    print('in scrape KBB')
     map = dict()
 
-    try:
-        if (len(bodystyles) is 1):
+    if (len(bodystyles) is 1):
+        try:
             url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
             soup = getSoup(url)
             imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
             # curr = bodystyles[0]
             map[bodystyles[0]] = imgSource[0]['src']
-            print(map)
-            return map
-        else:
+            # print(map)
+        except:
+            map[bodystyles[0]] = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
+    else:
+        try:
             ''' There are multiple body styles, create a list of [ { 'body_style' : url } ] '''
             for style in bodystyles:
+                # print('')
                 url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'+'?bodystyle='+style
                 soup = getSoup(url)
                 imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
                 # curr = style
                 map[style] = imgSource[0]['src']
-            print(map)
-            return map
-    except:
-        print('error in scraping')
-        map[bodystyles[0]] = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
-        print(map)
-        return map
+        except:
+            map[bodystyles[0]] = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
+
+    print(map)
+    return map
+    # try:
+    #     if (len(bodystyles) is 1):
+    #         url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
+    #         soup = getSoup(url)
+    #         imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
+    #         # curr = bodystyles[0]
+    #         map[bodystyles[0]] = imgSource[0]['src']
+    #         print(map)
+    #         return map
+    #     else:
+    #         ''' There are multiple body styles, create a list of [ { 'body_style' : url } ] '''
+    #         for style in bodystyles:
+    #             url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'+'?bodystyle='+style
+    #             soup = getSoup(url)
+    #             imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
+    #             # curr = style
+    #             map[style] = imgSource[0]['src']
+    #         print(map)
+    #         return map
+    # except:
+    #     print('error in scraping')
+    #     map[bodystyles[0]] = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
+    #     print(map)
+    #     return map
 # ----------------------
 def handleFiles(oldFilePath, newFilePath):
     # count = 1.0
@@ -207,7 +238,7 @@ def handleFiles(oldFilePath, newFilePath):
 # bodystyles = ['sedan', 'hatchback']
 # scrapeKBB(year, make, model, bodystyles)
 
-handleFiles('car_data/1992.csv', 'new_1992.csv')
+handleFiles('car_data/19921.csv', 'new_1992.csv')
 
 # yearCount = 1992
 #
