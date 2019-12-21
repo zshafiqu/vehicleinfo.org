@@ -134,22 +134,28 @@ def scrapeKBB(year, make, model, bodystyles):
     # build KBB url
     map = dict()
 
-    if (len(bodystyles) is 1):
-        url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
-        soup = getSoup(url)
-        imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
-        curr = bodystyles[0]
-        map[curr] = imgSource[0]['src']
-        print(map)
-        return map
-    else:
-        ''' There are multiple body styles, create a list of [ { 'body_style' : url } ] '''
-        for style in bodystyles:
-            url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'+'?bodystyle='+style
+    try:
+        if (len(bodystyles) is 1):
+            url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
             soup = getSoup(url)
             imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
-            curr = style
-            map[curr] = imgSource[0]['src']
+            # curr = bodystyles[0]
+            map[bodystyles[0]] = imgSource[0]['src']
+            print(map)
+            return map
+        else:
+            ''' There are multiple body styles, create a list of [ { 'body_style' : url } ] '''
+            for style in bodystyles:
+                url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'+'?bodystyle='+style
+                soup = getSoup(url)
+                imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
+                # curr = style
+                map[style] = imgSource[0]['src']
+            print(map)
+            return map
+    except:
+        print('error in scraping')
+        map[bodystyles[0]] = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
         print(map)
         return map
 # ----------------------
@@ -193,11 +199,11 @@ def handleFiles(oldFilePath, newFilePath):
     return None
 # ----------------------
 # getSoup()
-# year = '1992'
-# make = 'honda'
-# model = 'civic'
-# bodystyles = ['sedan']
-# scrapeKBB(year, make, model, bodystyles)
+year = '1992'
+make = 'honhahahahahda'
+model = 'civic'
+bodystyles = ['sedan', 'hatchback']
+scrapeKBB(year, make, model, bodystyles)
 
 # handleFiles('car_data/1992.csv', 'new_1992.csv')
 
