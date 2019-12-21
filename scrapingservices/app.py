@@ -106,13 +106,14 @@ def getHeader():
 # ----------------------
 def getSoup(url):
     # required to emulate broswer user agent
-    headers = getHeader() # generate a random header
+    # headers = getHeader() # generate a random header
 
     print('About to make request')
     i = 0
     # for i in range (0, 3):
     while True:
         try:
+            headers = getHeader()
             page = requests.get(url, headers=headers, timeout=5).text
         except:
             print('Fail on request #'+str(i)+', trying again')
