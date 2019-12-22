@@ -212,20 +212,20 @@ def handleFiles(oldFilePath, newFilePath):
 # scrapeKBB(year, make, model, bodystyles)
 
 # handleFiles('car_data/19921.csv', 'new_1992.csv')
-''' Run script for make and models from 1992 -> 2000 '''
-yearCount = 2000
-
-while (yearCount <= 2020):
-    stringYear = str(yearCount)
-    old = 'car_data/'+stringYear+'.csv'
-    new = 'new_'+stringYear+'.csv'
-    # new = stringYear+'.csv'
-
-    print(new)
-    print("<------------------------------>")
-    print('\n')
-    handleFiles(old, new)
-
-    yearCount += 1
+# ''' Run script for make and models from 1992 -> 2000 '''
+# yearCount = 2001
+#
+# while (yearCount <= 2010):
+#     stringYear = str(yearCount)
+#     old = 'car_data/'+stringYear+'.csv'
+#     new = 'new_'+stringYear+'.csv'
+#     # new = stringYear+'.csv'
+#
+#     print(new)
+#     print("<------------------------------>")
+#     print('\n')
+#     handleFiles(old, new)
+#
+#     yearCount += 1
 
 # ----------------------
