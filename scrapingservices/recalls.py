@@ -12,11 +12,14 @@ def getRecalls(year, make, model):
 
 # ----------------------
 def row_operations(row, writer_object):
+    print('Beginning row operations for '+row[0]+' '+row[1]+' '+row[2])
     # We need to retrieve the list of recalls
     recalls = getRecalls(row[0], row[1], row[2])
+    print(recalls)
     # Write what we already have + newly retrieved recalls item
     writer_object.writerow([row[0], row[1], row[2], row[3], row[4], recalls])
 
+    print('Finished row operations for '+row[0]+' '+row[1]+' '+row[2])
     return None
 # ----------------------
 def handleFilesForRecalls(oldFilePath, newFilePath):
@@ -52,9 +55,13 @@ def handleFilesForRecalls(oldFilePath, newFilePath):
                 year | make | model | body_styles | image_sources | recalls
                 ------------------------------------------------------------
             '''
+            jobs = []
             for row in reader:
                 ''' we have a 'reader obj', and a 'writer' obj that we instantiated inside here '''
-                row_operations(row, writer)
+                p = multiprocessing.Process(target=row_operations, args=(row, writer))
+                jobs.append(p)
+                p.start()
+                # row_operations(row, writer)
                 # # We need to retrieve the list of recalls
                 # recalls = getRecalls(row[0], row[1], row[2])
                 # # Write what we already have + newly retrieved recalls item
@@ -70,4 +77,4 @@ def createNewPath(year):
 # ----------------------
 old = createOldPath(1992)
 new = createNewPath(1992)
-handleFilesForRecalls(old, new) 
+handleFilesForRecalls(old, new)
