@@ -283,7 +283,7 @@ year,make,model,body_style(s),image_source(s)
 2015,Mercedes-Benz,Sprinter 3500 Cargo,['Van/Minivan'],{'Van/Minivan': 'https://file.kelleybluebookimages.com/kbb/base/house/2015/2015-Mercedes-Benz-Sprinter%203500%20Cargo-FrontSide_MSSPRCHT151_640x480.jpg?interpolation=high-quality&downsize=391:*'}
 2015,MINI,Convertible,['Convertible'],{'Convertible': 'https://file.kelleybluebookimages.com/kbb/base/house/2015/2015-MINI-Convertible-FrontSide_MNCNV151_640x480.jpg?interpolation=high-quality&downsize=391:*'}
 2015,MINI,Countryman,['Hatchback'],{'Hatchback': 'https://file.kelleybluebookimages.com/kbb/base/house/2015/2015-MINI-Countryman-FrontSide_MNCTY151_640x480.jpg?interpolation=high-quality&downsize=391:*'}
-2015,MINI,Coupe,['Coupe'],{'Coupe': 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'}
+2015,MINI,Coupe,['Coupe'],{'Coupe': 'https://file.kbb.com/kbb/vehicleimage/housenew/480x360/2015/2015-mini-coupe-frontside_mncpe151.jpg'}
 2015,MINI,Hardtop 2 Door,['Hatchback'],{'Hatchback': 'https://file.kelleybluebookimages.com/kbb/base/house/2015/2015-MINI-Hardtop%202%20Door-FrontSide_MNHT151_640x480.jpg?interpolation=high-quality&downsize=391:*'}
 2015,MINI,Hardtop 4 Door,['Hatchback'],{'Hatchback': 'https://file.kelleybluebookimages.com/kbb/base/house/2015/2015-MINI-Hardtop%204%20Door-FrontSide_MNHT4151_640x480.jpg?interpolation=high-quality&downsize=391:*'}
 2015,MINI,Paceman,['Hatchback'],{'Hatchback': 'https://file.kelleybluebookimages.com/kbb/base/house/2015/2015-MINI-Paceman-FrontSide_MNPACS151_640x480.jpg?interpolation=high-quality&downsize=391:*'}
@@ -332,7 +332,7 @@ year,make,model,body_style(s),image_source(s)
 2015,Ram,3500 Crew Cab,['Pickup'],{'Pickup': 'https://file.kelleybluebookimages.com/kbb/base/house/2015/2015-Ram-3500%20Crew%20Cab-FrontSide_RACREW151_640x480.jpg?interpolation=high-quality&downsize=391:*'}
 2015,Ram,3500 Mega Cab,['Pickup'],{'Pickup': 'https://file.kelleybluebookimages.com/kbb/base/house/2015/2015-Ram-3500%20Mega%20Cab-FrontSide_RAMEGA151_640x480.jpg?interpolation=high-quality&downsize=391:*'}
 2015,Ram,3500 Regular Cab,['Pickup'],{'Pickup': 'https://file.kelleybluebookimages.com/kbb/base/house/2015/2015-Ram-3500%20Regular%20Cab-FrontSide_RA25R151_640x480.jpg?interpolation=high-quality&downsize=391:*'}
-2015,Ram,C/V Tradesman,['Van/Minivan'],{'Van/Minivan': 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'}
+2015,Ram,C/V Tradesman,['Van/Minivan'],{'Van/Minivan': 'https://file.kelleybluebookimages.com/kbb/base/house/2012/2012-Ram-C/V-FrontSide_RACV121_640x480.jpg?interpolation=high-quality&downsize=391:*'}
 2015,Ram,ProMaster Cargo Van,['Van/Minivan'],{'Van/Minivan': 'https://file.kelleybluebookimages.com/kbb/base/house/2015/2015-Ram-ProMaster%20Cargo%20Van-FrontSide_RAPML151_640x480.jpg?interpolation=high-quality&downsize=391:*'}
 2015,Ram,ProMaster City,['Van/Minivan'],{'Van/Minivan': 'https://file.kelleybluebookimages.com/kbb/base/house/2015/2015-Ram-ProMaster%20City-FrontSide_RAPMCW151_640x480.jpg?interpolation=high-quality&downsize=391:*'}
 2015,Ram,ProMaster Window Van,['Van/Minivan'],{'Van/Minivan': 'https://file.kelleybluebookimages.com/kbb/base/house/2015/2015-Ram-ProMaster%20Window%20Van-FrontSide_RAPMW151_640x480.jpg?interpolation=high-quality&downsize=391:*'}

@@ -205,13 +205,7 @@ def handleFiles(oldFilePath, newFilePath):
                 # Need to update the last few vehicles without an image
                 '''
                 Blank imgs:
-                92 - 16 chrysler town & country
-
-                02 kia rio == https://file.kelleybluebookimages.com/kbb/base/house/2002/2002-Kia-Rio-FrontSide_KIRIO021_505x375.jpg?interpolation=high-quality&downsize=391:*
-                02 gmc yukin xl 1500 == https://file.kelleybluebookimages.com/kbb/base/house/2002/2002-GMC-Yukon-FrontSide_GMYUK021_505x375.jpg?interpolation=high-quality&downsize=391:*
-
-                06 maserati coupe == https://file.kbb.com/kbb/vehicleimage/housenew/480x360/2006/2006-maserati-coupe-frontside_mrgtcpe061.jpg
-
+    
                 12 ram c/v == https://file.kelleybluebookimages.com/kbb/base/house/2012/2012-Ram-C/V-FrontSide_RACV121_640x480.jpg?interpolation=high-quality&downsize=391:*
                 13 -15 ram c/v tradesman = https://file.kelleybluebookimages.com/kbb/base/house/2012/2012-Ram-C/V-FrontSide_RACV121_640x480.jpg?interpolation=high-quality&downsize=391:*
 
