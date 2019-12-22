@@ -242,7 +242,7 @@ def readForBlanks(filename):
             # print(res)
             # print(row[4])
     return None
-# ----------------------
+
 ''' Run script to check for any defaults '''
 '''
 count = 1992
