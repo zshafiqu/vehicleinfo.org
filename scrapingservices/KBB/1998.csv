@@ -155,8 +155,8 @@ year,make,model,body_style(s),image_source(s)
 1998,Jeep,Wrangler,['SUV'],{'SUV': 'https://file.kelleybluebookimages.com/kbb/base/house/1998/1998-Jeep-Wrangler-FrontSide_JEWRN981_505x368.jpg?interpolation=high-quality&downsize=391:*'}
 1998,Kia,Sephia,['Sedan'],{'Sedan': 'https://file.kelleybluebookimages.com/kbb/base/house/1998/1998-Kia-Sephia-FrontSide_KISEP981_505x375.jpg?interpolation=high-quality&downsize=391:*'}
 1998,Kia,Sportage,['SUV'],{'SUV': 'https://file.kelleybluebookimages.com/kbb/base/house/1998/1998-Kia-Sportage-FrontSide_KTSPT981_505x375.jpg?interpolation=high-quality&downsize=391:*'}
-1998,Land Rover,Discovery,['SUV'],{'SUV': 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'}
-1998,Land Rover,Range Rover,['SUV'],{'SUV': 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'}
+1998,Land Rover,Discovery,['SUV'],{'SUV': 'https://file.kelleybluebookimages.com/kbb/base/house/1998/1998-Land%20Rover-Discovery-FrontSide_RODSC981_505x375.jpg?interpolation=high-quality&downsize=391:*'}
+1998,Land Rover,Range Rover,['SUV'],{'SUV': 'https://file.kelleybluebookimages.com/kbb/base/house/1998/1998-Land%20Rover-Range%20Rover-FrontSide_ROROV981_505x375.jpg?interpolation=high-quality&downsize=391:*'}
 1998,Lexus,ES,['Sedan'],{'Sedan': 'https://file.kelleybluebookimages.com/kbb/base/house/1998/1998-Lexus-ES-FrontSide_LEES-981_505x375.jpg?interpolation=high-quality&downsize=391:*'}
 1998,Lexus,GS,['Sedan'],{'Sedan': 'https://file.kelleybluebookimages.com/kbb/base/house/1998/1998-Lexus-GS-FrontSide_LEGS3981_498x369.jpg?interpolation=high-quality&downsize=391:*'}
 1998,Lexus,LS,['Sedan'],{'Sedan': 'https://file.kelleybluebookimages.com/kbb/base/house/1998/1998-Lexus-LS-FrontSide_LELS4981_505x375.jpg?interpolation=high-quality&downsize=391:*'}

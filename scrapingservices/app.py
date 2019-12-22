@@ -135,11 +135,11 @@ def getSoup(url):
 def scrapeKBB(year, make, model, bodystyles):
     # build KBB url
     map = dict()
-    makeAsStr = make[0]+'-'+make[1]
+    # makeAsStr = make[0]+'-'+make[1]
 
     if (len(bodystyles) == 1):
         # try:
-        url = 'https://www.kbb.com/'+makeAsStr+'/'+model+'/'+year+'/'
+        url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
         soup = getSoup(url)
         try:
             imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
@@ -154,7 +154,7 @@ def scrapeKBB(year, make, model, bodystyles):
         index = 0
         for style in bodystyles:
             # try:
-            url = 'https://www.kbb.com/'+makeAsStr+'/'+model+'/'+year+'/'+'?bodystyle='+style
+            url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'+'?bodystyle='+style
             soup = getSoup(url)
             try:
                 imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
@@ -209,9 +209,13 @@ def handleFiles(oldFilePath, newFilePath):
 
                 if len(makeAsList) is 2: # if list is of size 2
                     print('MAKE AND MODEL WE ARE ABOUT TO UPDATE: '+row[1]+' '+row[2]+' \n')
+
                     res = ast.literal_eval(row[3])
-                    imgs = scrapeKBB(row[0], makeAsList, row[2], res)
+                    makeAsStr = makeAsList[0]+'-'+makeAsList[1]
+
+                    imgs = scrapeKBB(row[0], makeAsStr, row[2], res)
                     writer.writerow([row[0], row[1], row[2], res, imgs])
+                    
                     print('\n')
                 else:
                     # We already have the data, rewrite the row

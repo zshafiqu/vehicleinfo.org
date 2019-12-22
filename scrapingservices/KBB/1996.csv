@@ -165,8 +165,8 @@ year,make,model,body_style(s),image_source(s)
 1996,Jeep,Grand Cherokee,['SUV'],{'SUV': 'https://file.kelleybluebookimages.com/kbb/base/house/1996/1996-Jeep-Grand%20Cherokee-FrontSide_JEGCH961_506x361.jpg?interpolation=high-quality&downsize=391:*'}
 1996,Kia,Sephia,['Sedan'],{'Sedan': 'https://file.kelleybluebookimages.com/kbb/base/house/1996/1996-Kia-Sephia-FrontSide_KISEP961_506x369.jpg?interpolation=high-quality&downsize=391:*'}
 1996,Kia,Sportage,['SUV'],{'SUV': 'https://file.kelleybluebookimages.com/kbb/base/house/1996/1996-Kia-Sportage-FrontSide_KTSPT961_506x374.jpg?interpolation=high-quality&downsize=391:*'}
-1996,Land Rover,Discovery,['SUV'],{'SUV': 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'}
-1996,Land Rover,Range Rover,['SUV'],{'SUV': 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'}
+1996,Land Rover,Discovery,['SUV'],{'SUV': 'https://file.kelleybluebookimages.com/kbb/base/house/1996/1996-Land%20Rover-Discovery-FrontSide_RODSC961_506x353.jpg?interpolation=high-quality&downsize=391:*'}
+1996,Land Rover,Range Rover,['SUV'],{'SUV': 'https://file.kelleybluebookimages.com/kbb/base/house/1996/1996-Land%20Rover-Range%20Rover-FrontSide_ROROV961_506x338.jpg?interpolation=high-quality&downsize=391:*'}
 1996,Lexus,ES,['Sedan'],{'Sedan': 'https://file.kelleybluebookimages.com/kbb/base/house/1996/1996-Lexus-ES-FrontSide_LEES3962_506x374.jpg?interpolation=high-quality&downsize=391:*'}
 1996,Lexus,GS,['Sedan'],{'Sedan': 'https://file.kelleybluebookimages.com/kbb/base/house/1996/1996-Lexus-GS-FrontSide_LEGS3961_506x352.jpg?interpolation=high-quality&downsize=391:*'}
 1996,Lexus,LS,['Sedan'],{'Sedan': 'https://file.kelleybluebookimages.com/kbb/base/house/1996/1996-Lexus-LS-FrontSide_LELS4961_506x374.jpg?interpolation=high-quality&downsize=391:*'}
