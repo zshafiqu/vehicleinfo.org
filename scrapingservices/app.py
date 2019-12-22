@@ -105,17 +105,23 @@ def getHeader():
     return list[curr]
 # ----------------------
 def getSoup(url):
-    # required to emulate broswer user agent
-    # headers = getHeader() # generate a random header
-
+    # Get soup via URL
     print('About to make request')
     i = 0
-    # for i in range (0, 3):
+
+    # Continually try to make this request until its successful
+    # OR until 15 times, at which point stop wasting time and break
     while True:
+        if i is 15:
+            page = ''
+            break
         try:
+            # Generate a new header [required to emulate browser behavior]
             headers = getHeader()
+            # Request for the resource, timeout after 20 seconds (for hanging requests)
             page = requests.get(url, headers=headers, timeout=20).text
         except:
+            # If the request fails, log it, and try again
             print('Fail on request #'+str(i)+', trying again')
             i += 1
             continue
@@ -124,7 +130,6 @@ def getSoup(url):
     # page = page.text
     print('Finished request')
     onlyImgTags = SoupStrainer(class_="css-4g6ai3")
-
 
 
     soup = BeautifulSoup(page, 'lxml', parse_only=onlyImgTags)
@@ -215,7 +220,7 @@ def handleFiles(oldFilePath, newFilePath):
 
                     imgs = scrapeKBB(row[0], makeAsStr, row[2], res)
                     writer.writerow([row[0], row[1], row[2], res, imgs])
-                    
+
                     print('\n')
                 else:
                     # We already have the data, rewrite the row
@@ -235,20 +240,13 @@ def handleFiles(oldFilePath, newFilePath):
 
     return None
 # ----------------------
-# getSoup()
-# year = '1992'
-# make = 'honhahahahahda'
-# model = 'civic'
-# bodystyles = ['sedan', 'hatchback']
-# scrapeKBB(year, make, model, bodystyles)
-
 # handleFiles('kbb/new_1992.csv', '1992.csv')
 ''' Run script for make and models from 1992 -> 2020 '''
 yearCount = 1992
 
-while (yearCount <= 2020):
+while (yearCount <= 1992):
     stringYear = str(yearCount)
-    old = 'kbb/new_'+stringYear+'.csv'
+    old = 'kbb/'+stringYear+'.csv'
     new = stringYear+'.csv'
     # new = stringYear+'.csv'
 
