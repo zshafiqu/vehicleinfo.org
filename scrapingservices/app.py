@@ -110,9 +110,9 @@ def getSoup(url):
     i = 0
 
     # Continually try to make this request until its successful
-    # OR until 15 times, at which point stop wasting time and break
     while True:
         if i is 15:
+            # OR until 15 times, at which point stop wasting time and break
             page = ''
             break
         try:
@@ -125,57 +125,63 @@ def getSoup(url):
             print('Fail on request #'+str(i)+', trying again')
             i += 1
             continue
-        break
-    # print('STATUS CODE: ' + page.status_code)
-    # page = page.text
+        break # Break out of while loop here on success of the try block
+
+    # Log that the request has been completed
     print('Finished request')
+    # SoupStrainer sets it such that we only parse the response for items with this class tag
+    # Helps reduce time spent doing unneccesary work
     onlyImgTags = SoupStrainer(class_="css-4g6ai3")
-
-
+    # BeautifulSoup parses the page as xml for us
     soup = BeautifulSoup(page, 'lxml', parse_only=onlyImgTags)
 
     # return the soup'd data
     return soup
 # ----------------------
 def scrapeKBB(year, make, model, bodystyles):
-    # build KBB url
+    # Scrape KBB for image sources
     map = dict()
-    # makeAsStr = make[0]+'-'+make[1]
 
+    # If there is only one body type, no need to worry about searching for multiple images
     if (len(bodystyles) == 1):
-        # try:
+        # Build URL & get soup
         url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
         soup = getSoup(url)
+
+        # Attempt to parse for an image item from the soup'd data
         try:
             imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
-
             map[bodystyles[0]] = imgSource[0]['src']
-            # print(map)
+        # If the soup'd HTML does not contain any image tags with that class, resort to a default img value
         except:
             print("Error on scraping KBB, single body style")
             map[bodystyles[0]] = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
 
+    # If there are multiple body styles, we need to get an image for each style
     else:
         index = 0
         for style in bodystyles:
-            # try:
+            # Build unique URL for each body style & then get Soup
             url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'+'?bodystyle='+style
             soup = getSoup(url)
+
+            # Attempt to parse for an image item from the soup'd data
             try:
                 imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
-
                 map[style] = imgSource[0]['src']
+
+            # If the soup'd HTML does not contain any image tags with that class, resort to a default img value FOR CURRENT bodystyle
             except:
                 print('Error on scraping KBB, multiple body type')
                 map[bodystyles[index]] = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
-            index += 1
 
+            # Increment loop counter
+            index += 1
 
     print(map)
     return map
 # ----------------------
 def handleFiles(oldFilePath, newFilePath):
-    # count = 1.0
     # Does file reading & writing
     with open(oldFilePath) as oldFile:
         reader = csv.reader(oldFile) # create reader object from old file / path
@@ -185,76 +191,56 @@ def handleFiles(oldFilePath, newFilePath):
             writer.writerow(['year', 'make', 'model', 'body_style(s)', 'image_source(s)']) # write the headers on the first row of new file
             next(reader) # skip the first row of the old file
 
-
-            for row in reader: # for each row in the old file
-
+            # for each row in the old file
+            for row in reader:
                 '''
                 In this schema,
                     year = row[0]
                     make = row[1]
                     model = row[2]
                     body_style = row[3] { str() literal representation of a list object }
-                    src = scrapeKBB(year, make, model, body_style)
+                    imgs = scrapeKBB(year, make, model, body_style)
 
                 '''
+                # Convert the make to a string list, we use this to handle case where make is two words
+                makeAsList = list(row[1].split(" "))
+                # Convert our bodystyles item from string list to list list so we can access len()
+                bodylist = ast.literal_eval(row[3])
 
-                '''
-                Making an update after observing the previous scraper's behavior
-                There are some manuf's that have two words in their name
-                Following KBB's semantics, two word manuf names MUST have a '-' in between
-
-                ex) Land Rover ---> Land-Rover
-
-                To patch some of the make/models without photos, we need to add this dash in its make
-                '''
-                # print(row)
-                # print(row[0], row[1], row[2], row[3])
-                # res = ast.literal_eval(row[3])
-                makeAsList = list(row[1].split(" ")) # String to list
-
-                if len(makeAsList) is 2: # if list is of size 2
-                    print('MAKE AND MODEL WE ARE ABOUT TO UPDATE: '+row[1]+' '+row[2]+' \n')
-
-                    res = ast.literal_eval(row[3])
+                # If make is of size 2, meaning it contains two words, for example Land Rover || Aston Martin
+                if len(makeAsList) is 2:
+                    # Convert back to a string with a dash in between the words
                     makeAsStr = makeAsList[0]+'-'+makeAsList[1]
+                    # Scrape for image sources / retrieve ke/value mapping for body style : img url
+                    imgs = scrapeKBB(row[0], makeAsStr, row[2], bodylist)
+                    # Write { year , make , model, body_styles, image_sources }
+                    writer.writerow([row[0], row[1], row[2], bodylist, imgs])
 
-                    imgs = scrapeKBB(row[0], makeAsStr, row[2], res)
-                    writer.writerow([row[0], row[1], row[2], res, imgs])
-
-                    print('\n')
+                # If make is of size 1, something like Ford || Honda
                 else:
-                    # We already have the data, rewrite the row
-                    writer.writerow([ row[0], row[1], row[2], row[3], row[4] ])
+                    # Pass it to scrapeKBB func, referencing the first item in the list { makeAsList[0] }
+                    imgs = scrapeKBB(row[0], makeAsList[0], row[2], bodylist)
+                    # Write { year , make , model, body_styles, image_sources }
+                    writer.writerow([row[0], row[1], row[2], bodylist, imgs])
 
-                # We can comment out the below part for now
-                '''
-                res = ast.literal_eval(row[3]) # convert from string list to list list
-                src = scrapeKBB(row[0], row[1], row[2], res) # retrieve ke/value mapping for body style : img url
-
-                writer.writerow([row[0], row[1], row[2], res, src]) # write to result file
-                '''
-
-                # print(src)
-                # print '*' * int(count)
-                # count += .22
 
     return None
 # ----------------------
-# handleFiles('kbb/new_1992.csv', '1992.csv')
+handleFiles('KBB/1992.csv', '1992.csv')
 ''' Run script for make and models from 1992 -> 2020 '''
-yearCount = 1992
-
-while (yearCount <= 1992):
-    stringYear = str(yearCount)
-    old = 'kbb/'+stringYear+'.csv'
-    new = stringYear+'.csv'
-    # new = stringYear+'.csv'
-
-    print(new)
-    print("<------------------------------>")
-    print('\n')
-    handleFiles(old, new)
-
-    yearCount += 1
+# yearCount = 1992
+#
+# while (yearCount <= 1992):
+#     stringYear = str(yearCount)
+#     old = 'kbb/'+stringYear+'.csv'
+#     new = stringYear+'.csv'
+#     # new = stringYear+'.csv'
+#
+#     print(new)
+#     print("<------------------------------>")
+#     print('\n')
+#     handleFiles(old, new)
+#
+#     yearCount += 1
 
 # ----------------------
