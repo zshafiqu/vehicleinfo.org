@@ -226,6 +226,22 @@ def handleFiles(oldFilePath, newFilePath):
 
     return None
 # ----------------------
+def readForBlanks(filename):
+    with open(filename) as oldFile:
+        reader = csv.reader(oldFile)
+        next(reader)
+
+        for row in reader:
+            res = ast.literal_eval(row[4])
+            for key in res:
+                if (res[key] == 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'):
+                    print(row[0] + ' ' + row[1] + ' ' + row[2])
+
+            # print(res)
+            # print(row[4])
+    return None
+# ----------------------
+readForBlanks('KBB_data/1992.csv')
 # handleFiles('KBB/1992.csv', '1992.csv')
 ''' Run script for make and models from 1992 -> 2020 '''
 # yearCount = 1992
