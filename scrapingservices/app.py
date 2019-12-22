@@ -241,7 +241,17 @@ def readForBlanks(filename):
             # print(row[4])
     return None
 # ----------------------
-readForBlanks('KBB_data/1992.csv')
+''' Run script to check for any defaults '''
+count = 1992
+while count <= 2020:
+    stryr = str(count)
+    path = 'KBB_data/'+stryr+'.csv'
+
+    print("Reading from: "+path)
+    readForBlanks(path)
+    print('\n')
+
+    count += 1
 # handleFiles('KBB/1992.csv', '1992.csv')
 ''' Run script for make and models from 1992 -> 2020 '''
 # yearCount = 1992
