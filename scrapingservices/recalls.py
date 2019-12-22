@@ -1,4 +1,4 @@
-import requests, json, csv
+import requests, json, csv, os, multiprocessing
 # ----------------------
 def getRecalls(year, make, model):
     url = 'https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/'+year+'/make/'+make+'/model/'+model+'?format=json'
@@ -68,3 +68,6 @@ def createOldPath(year):
 def createNewPath(year):
     return str(year)+'.csv'
 # ----------------------
+old = createOldPath(1992)
+new = createNewPath(1992)
+handleFilesForRecalls(old, new) 
