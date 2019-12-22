@@ -58,7 +58,7 @@ year,make,model,body_style(s),image_source(s)
 1994,Chrysler,LeBaron,"['Sedan', 'Convertible']","{'Sedan': 'https://file.kelleybluebookimages.com/kbb/base/house/1994/1994-Chrysler-LeBaron-FrontSide_CRLEBLAND931_505x293.jpg?interpolation=high-quality&downsize=391:*', 'Convertible': 'https://file.kelleybluebookimages.com/kbb/base/house/1994/1994-Chrysler-LeBaron-Side_CRLEB942_376x120.jpg?interpolation=high-quality&downsize=391:*'}"
 1994,Chrysler,LHS,['Sedan'],{'Sedan': 'https://file.kelleybluebookimages.com/kbb/base/house/1994/1994-Chrysler-LHS-FrontSide_CRLHS941_376x138.jpg?interpolation=high-quality&downsize=391:*'}
 1994,Chrysler,New Yorker,['Sedan'],{'Sedan': 'https://file.kelleybluebookimages.com/kbb/base/house/1994/1994-Chrysler-New%20Yorker-Front_CRNEW951_375x249.jpg?interpolation=high-quality&downsize=391:*'}
-1994,Chrysler,Town & Country,['Van/Minivan'],{'Van/Minivan': 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'}
+1994,Chrysler,Town & Country,['Van/Minivan'],{'Van/Minivan': 'https://file.kelleybluebookimages.com/kbb/base/house/1994/1994-Chrysler-Town%20&%20Country-Side_CVTWN941_505x375.jpg?interpolation=high-quality&downsize=391:*'}
 1994,Dodge,Caravan Cargo,['Van/Minivan'],{'Van/Minivan': 'https://file.kelleybluebookimages.com/kbb/base/house/1994/1994-Dodge-Caravan%20Cargo-Front_DTCVNCRGO942_376x168.jpg?interpolation=high-quality&downsize=391:*'}
 1994,Dodge,Caravan Passenger,['Van/Minivan'],{'Van/Minivan': 'https://file.kelleybluebookimages.com/kbb/base/house/1994/1994-Dodge-Caravan%20Passenger-Front_DTCVNES941_376x155.jpg?interpolation=high-quality&downsize=391:*'}
 1994,Dodge,Colt,['Sedan'],{'Sedan': 'https://static.kbb.com/ymm/master/static/media/coming-soon.62520a79.png'}

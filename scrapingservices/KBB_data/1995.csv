@@ -61,7 +61,7 @@ year,make,model,body_style(s),image_source(s)
 1995,Chrysler,LHS,['Sedan'],{'Sedan': 'https://file.kelleybluebookimages.com/kbb/base/house/1995/1995-Chrysler-LHS-Front_CRLHS951_375x249.jpg?interpolation=high-quality&downsize=391:*'}
 1995,Chrysler,New Yorker,['Sedan'],{'Sedan': 'https://file.kelleybluebookimages.com/kbb/base/house/1995/1995-Chrysler-New%20Yorker-Front_CRNEW951_375x249.jpg?interpolation=high-quality&downsize=391:*'}
 1995,Chrysler,Sebring,['Coupe'],{'Coupe': 'https://file.kelleybluebookimages.com/kbb/base/house/1995/1995-Chrysler-Sebring-Front_CRSEB952_375x249.jpg?interpolation=high-quality&downsize=391:*'}
-1995,Chrysler,Town & Country,['Van/Minivan'],{'Van/Minivan': 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'}
+1995,Chrysler,Town & Country,['Van/Minivan'],{'Van/Minivan': 'https://file.kelleybluebookimages.com/kbb/base/house/1995/1995-Chrysler-Town%20&%20Country-Front_CVTWN951_375x250.jpg?interpolation=high-quality&downsize=391:*'}
 1995,Dodge,Avenger,['Coupe'],{'Coupe': 'https://file.kelleybluebookimages.com/kbb/base/house/1995/1995-Dodge-Avenger-Front_DOAVN951_375x250.jpg?interpolation=high-quality&downsize=391:*'}
 1995,Dodge,Caravan Cargo,['Van/Minivan'],{'Van/Minivan': 'https://file.kelleybluebookimages.com/kbb/base/house/1995/1995-Dodge-Caravan%20Cargo-Front_DTCVNCRGO942_376x168.jpg?interpolation=high-quality&downsize=391:*'}
 1995,Dodge,Caravan Passenger,['Van/Minivan'],{'Van/Minivan': 'https://file.kelleybluebookimages.com/kbb/base/house/1995/1995-Dodge-Caravan%20Passenger-Side_DTCVN951_375x251.jpg?interpolation=high-quality&downsize=391:*'}
