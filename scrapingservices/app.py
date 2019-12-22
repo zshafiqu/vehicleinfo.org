@@ -135,10 +135,11 @@ def getSoup(url):
 def scrapeKBB(year, make, model, bodystyles):
     # build KBB url
     map = dict()
+    makeAsStr = make[0]+'-'+make[1]
 
     if (len(bodystyles) == 1):
         # try:
-        url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
+        url = 'https://www.kbb.com/'+makeAsStr+'/'+model+'/'+year+'/'
         soup = getSoup(url)
         try:
             imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
@@ -153,7 +154,7 @@ def scrapeKBB(year, make, model, bodystyles):
         index = 0
         for style in bodystyles:
             # try:
-            url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'+'?bodystyle='+style
+            url = 'https://www.kbb.com/'+makeAsStr+'/'+model+'/'+year+'/'+'?bodystyle='+style
             soup = getSoup(url)
             try:
                 imgSource = soup.findAll("img", {"class":"css-4g6ai3"})
@@ -191,13 +192,37 @@ def handleFiles(oldFilePath, newFilePath):
                     src = scrapeKBB(year, make, model, body_style)
 
                 '''
-                # print(row)
-                print(row[0], row[1], row[2], row[3])
 
+                '''
+                Making an update after observing the previous scraper's behavior
+                There are some manuf's that have two words in their name
+                Following KBB's semantics, two word manuf names MUST have a '-' in between
+
+                ex) Land Rover ---> Land-Rover
+
+                To patch some of the make/models without photos, we need to add this dash in its make
+                '''
+                # print(row)
+                # print(row[0], row[1], row[2], row[3])
+                # res = ast.literal_eval(row[3])
+                makeAsList = list(row[1].split(" ")) # String to list
+
+                if len(makeAsList) is 2: # if list is of size 2
+                    res = ast.literal_eval(row[3])
+                    imgs = scrapeKBB(row[0], makeAsList, row[2], res)
+                    writer.writerow([row[0], row[1], row[2], res, imgs])
+                else:
+                    # We already have the data, rewrite the row
+                    writer.writerow([ row[0], row[1], row[2], row[3], row[4] ])
+
+                # We can comment out the below part for now
+                '''
                 res = ast.literal_eval(row[3]) # convert from string list to list list
                 src = scrapeKBB(row[0], row[1], row[2], res) # retrieve ke/value mapping for body style : img url
 
                 writer.writerow([row[0], row[1], row[2], res, src]) # write to result file
+                '''
+
                 # print(src)
                 # print '*' * int(count)
                 # count += .22
@@ -211,7 +236,7 @@ def handleFiles(oldFilePath, newFilePath):
 # bodystyles = ['sedan', 'hatchback']
 # scrapeKBB(year, make, model, bodystyles)
 
-# handleFiles('car_data/19921.csv', 'new_1992.csv')
+handleFiles('kbb/new_1992.csv', '1992.csv')
 # ''' Run script for make and models from 1992 -> 2000 '''
 # yearCount = 2001
 #
