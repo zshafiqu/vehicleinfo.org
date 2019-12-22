@@ -138,7 +138,7 @@ def getSoup(url):
     # return the soup'd data
     return soup
 # ----------------------
-def scrapeKBB(year, make, model, bodystyles):
+def scrapeKBBImages(year, make, model, bodystyles):
     # Scrape KBB for image sources
     map = dict()
 
@@ -212,21 +212,21 @@ def handleFiles(oldFilePath, newFilePath):
                     # Convert back to a string with a dash in between the words
                     makeAsStr = makeAsList[0]+'-'+makeAsList[1]
                     # Scrape for image sources / retrieve ke/value mapping for body style : img url
-                    imgs = scrapeKBB(row[0], makeAsStr, row[2], bodylist)
+                    imgs = scrapeKBBImages(row[0], makeAsStr, row[2], bodylist)
                     # Write { year , make , model, body_styles, image_sources }
                     writer.writerow([row[0], row[1], row[2], bodylist, imgs])
 
                 # If make is of size 1, something like Ford || Honda
                 else:
                     # Pass it to scrapeKBB func, referencing the first item in the list { makeAsList[0] }
-                    imgs = scrapeKBB(row[0], makeAsList[0], row[2], bodylist)
+                    imgs = scrapeKBBImages(row[0], makeAsList[0], row[2], bodylist)
                     # Write { year , make , model, body_styles, image_sources }
                     writer.writerow([row[0], row[1], row[2], bodylist, imgs])
 
 
     return None
 # ----------------------
-handleFiles('KBB/1992.csv', '1992.csv')
+# handleFiles('KBB/1992.csv', '1992.csv')
 ''' Run script for make and models from 1992 -> 2020 '''
 # yearCount = 1992
 #
