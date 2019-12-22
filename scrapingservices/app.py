@@ -242,5 +242,4 @@ def handleFiles(oldFilePath, newFilePath):
 #     handleFiles(old, new)
 #
 #     yearCount += 1
-
 # ----------------------
