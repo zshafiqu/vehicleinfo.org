@@ -213,9 +213,9 @@ def handleFiles(oldFilePath, newFilePath):
 
 # handleFiles('car_data/19921.csv', 'new_1992.csv')
 ''' Run script for make and models from 1992 -> 2000 '''
-yearCount = 1992
+yearCount = 2000
 
-while (yearCount <= 2000):
+while (yearCount <= 2020):
     stringYear = str(yearCount)
     old = 'car_data/'+stringYear+'.csv'
     new = 'new_'+stringYear+'.csv'
