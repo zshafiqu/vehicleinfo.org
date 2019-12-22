@@ -203,27 +203,7 @@ def handleFiles(oldFilePath, newFilePath):
 
                 '''
                 # Need to update the last few vehicles without an image
-                '''
-                Blank imgs:
-    
-                12 ram c/v == https://file.kelleybluebookimages.com/kbb/base/house/2012/2012-Ram-C/V-FrontSide_RACV121_640x480.jpg?interpolation=high-quality&downsize=391:*
-                13 -15 ram c/v tradesman = https://file.kelleybluebookimages.com/kbb/base/house/2012/2012-Ram-C/V-FrontSide_RACV121_640x480.jpg?interpolation=high-quality&downsize=391:*
 
-                15 mini coupe == https://file.kbb.com/kbb/vehicleimage/housenew/480x360/2015/2015-mini-coupe-frontside_mncpe151.jpg
-                19 mini convertible == https://file.kbb.com/kbb/vehicleimage/evoxseo/xl/12925/2019-mini-convertible-front-angle3_12925_089_480x360.jpg
-
-
-                '''
-
-                if (row[2] == 'Town & Country'):
-                    bodylist = ast.literal_eval(row[3])
-                    imgs = scrapeKBBImages(row[0], row[1], 'towncountry', bodylist)
-                    writer.writerow([row[0], row[1], row[2], bodylist, imgs])
-                else:
-                    # Dont patch if not chrysler town and country
-                    writer.writerow([row[0], row[1], row[2], row[3], row[4]])
-
-                '''
                 # Convert the make to a string list, we use this to handle case where make is two words
                 makeAsList = list(row[1].split(" "))
                 # Convert our bodystyles item from string list to list list so we can access len()
@@ -244,7 +224,7 @@ def handleFiles(oldFilePath, newFilePath):
                     imgs = scrapeKBBImages(row[0], makeAsList[0], row[2], bodylist)
                     # Write { year , make , model, body_styles, image_sources }
                     writer.writerow([row[0], row[1], row[2], bodylist, imgs])
-                '''
+
 
     return None
 # ----------------------
@@ -264,6 +244,7 @@ def readForBlanks(filename):
     return None
 # ----------------------
 ''' Run script to check for any defaults '''
+'''
 count = 1992
 while count <= 2020:
     stryr = str(count)
@@ -274,22 +255,24 @@ while count <= 2020:
     print('\n')
 
     count += 1
-
+'''
 
 # handleFiles('KBB/1992.csv', '1992.csv')
-# ''' Run script for make and models from 1992 -> 2020 '''
-# yearCount = 1992
-#
-# while (yearCount <= 2020):
-#     stringYear = str(yearCount)
-#     old = 'KBB_data/'+stringYear+'.csv'
-#     new = stringYear+'.csv'
-#     # new = stringYear+'.csv'
-#
-#     print(new)
-#     print("<------------------------------>")
-#     print('\n')
-#     handleFiles(old, new)
-#
-#     yearCount += 1
+''' Run script for make and models from 1992 -> 2020 '''
+'''
+yearCount = 1992
+
+while (yearCount <= 2020):
+    stringYear = str(yearCount)
+    old = 'KBB_data/'+stringYear+'.csv'
+    new = stringYear+'.csv'
+    # new = stringYear+'.csv'
+
+    print(new)
+    print("<------------------------------>")
+    print('\n')
+    handleFiles(old, new)
+
+    yearCount += 1
+'''
 # ----------------------
