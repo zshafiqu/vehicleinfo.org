@@ -202,16 +202,17 @@ def handleFiles(oldFilePath, newFilePath):
 
                 To patch some of the make/models without photos, we need to add this dash in its make
                 '''
-                print(row)
+                # print(row)
                 # print(row[0], row[1], row[2], row[3])
                 # res = ast.literal_eval(row[3])
                 makeAsList = list(row[1].split(" ")) # String to list
 
                 if len(makeAsList) is 2: # if list is of size 2
-                    print('MAKE AND MODEL WE ARE ABOUT TO UPDATE'+row[1]+' '+row[2]+' \n')
+                    print('MAKE AND MODEL WE ARE ABOUT TO UPDATE: '+row[1]+' '+row[2]+' \n')
                     res = ast.literal_eval(row[3])
                     imgs = scrapeKBB(row[0], makeAsList, row[2], res)
                     writer.writerow([row[0], row[1], row[2], res, imgs])
+                    print('\n')
                 else:
                     # We already have the data, rewrite the row
                     writer.writerow([ row[0], row[1], row[2], row[3], row[4] ])
@@ -237,21 +238,21 @@ def handleFiles(oldFilePath, newFilePath):
 # bodystyles = ['sedan', 'hatchback']
 # scrapeKBB(year, make, model, bodystyles)
 
-handleFiles('kbb/new_1992.csv', '1992.csv')
-# ''' Run script for make and models from 1992 -> 2000 '''
-# yearCount = 2001
-#
-# while (yearCount <= 2010):
-#     stringYear = str(yearCount)
-#     old = 'car_data/'+stringYear+'.csv'
-#     new = 'new_'+stringYear+'.csv'
-#     # new = stringYear+'.csv'
-#
-#     print(new)
-#     print("<------------------------------>")
-#     print('\n')
-#     handleFiles(old, new)
-#
-#     yearCount += 1
+# handleFiles('kbb/new_1992.csv', '1992.csv')
+''' Run script for make and models from 1992 -> 2020 '''
+yearCount = 1992
+
+while (yearCount <= 2020):
+    stringYear = str(yearCount)
+    old = 'kbb/new_'+stringYear+'.csv'
+    new = stringYear+'.csv'
+    # new = stringYear+'.csv'
+
+    print(new)
+    print("<------------------------------>")
+    print('\n')
+    handleFiles(old, new)
+
+    yearCount += 1
 
 # ----------------------
