@@ -1,4 +1,6 @@
 import requests, json, csv, os, multiprocessing
+# try global list
+bunches = []
 # ----------------------
 def getRecalls(year, make, model):
     url = 'https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/'+year+'/make/'+make+'/model/'+model+'?format=json'
@@ -8,16 +10,26 @@ def getRecalls(year, make, model):
     #     print(item)
     # print( str(items['Results']) )
     # print(items)
-    return items['Results']
+    return items
+    # return str(items['Results'])
 
 # ----------------------
-def row_operations(row, writer_object):
+def row_operations(row):
     print('Beginning row operations for '+row[0]+' '+row[1]+' '+row[2])
     # We need to retrieve the list of recalls
     recalls = getRecalls(row[0], row[1], row[2])
+
+    # try:
+    #     recalls = getRecalls(row[0], row[1], row[2])
+    # except:
+    #     # print("Error on getRecalls(), likely due to vehicle model naming converntion")
+    #     recalls = []
+    # print recalls
     print(recalls)
     # Write what we already have + newly retrieved recalls item
-    writer_object.writerow([row[0], row[1], row[2], row[3], row[4], recalls])
+    # writer_object.writerow([row[0], row[1], row[2], row[3], row[4], recalls])
+    # writer_object.flush()
+    bunches.append(recalls)
 
     print('Finished row operations for '+row[0]+' '+row[1]+' '+row[2])
     return None
@@ -58,7 +70,7 @@ def handleFilesForRecalls(oldFilePath, newFilePath):
             jobs = []
             for row in reader:
                 ''' we have a 'reader obj', and a 'writer' obj that we instantiated inside here '''
-                p = multiprocessing.Process(target=row_operations, args=(row, writer))
+                p = multiprocessing.Process(target=row_operations, args=(row,))
                 jobs.append(p)
                 p.start()
                 # row_operations(row, writer)
@@ -66,6 +78,8 @@ def handleFilesForRecalls(oldFilePath, newFilePath):
                 # recalls = getRecalls(row[0], row[1], row[2])
                 # # Write what we already have + newly retrieved recalls item
                 # writer.writerow([row[0], row[1], row[2], row[3], row[4], recalls])
+            # After row object completes
+            # bunches contains our data
 
         return None
 # ----------------------
@@ -78,3 +92,6 @@ def createNewPath(year):
 old = createOldPath(1992)
 new = createNewPath(1992)
 handleFilesForRecalls(old, new)
+# for recall in bunches:
+    # print (recall)
+print(len(bunches))
