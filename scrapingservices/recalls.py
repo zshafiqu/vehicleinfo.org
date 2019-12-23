@@ -2,10 +2,22 @@ import requests, json, csv, multiprocessing
 import images
 # try global list
 # bunches = []
+def sanitizeModelInput(model):
+    ''' this will suffice for now, on next pass generate list of keywords and search string for keywords '''
+    model = model.replace('&', '')
+    model = model.replace('/', '')
+
+    temp = list(model.split(" "))
+    if len(temp) > 1 and temp[0].isdigit() is False:
+        model = temp[0]
+
+    return model
 # ----------------------
 def getRecalls(year, make, model):
     # print(model)
-    model = model.replace('&', '')
+
+    model = sanitizeModelInput(model)
+    print(model)
     # model = model.replace('  ', ' ')
     # print(model)
 
