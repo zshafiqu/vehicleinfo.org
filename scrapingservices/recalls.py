@@ -1,7 +1,7 @@
 import requests, json, csv, multiprocessing
 import images
 # try global list
-bunches = []
+# bunches = []
 # ----------------------
 def getRecalls(year, make, model):
     # print(model)
@@ -14,7 +14,7 @@ def getRecalls(year, make, model):
     header = images.getHeader()
     response = requests.get(url, headers=header)
     empty = []
-    # print(response)
+    print('STATUS CODE:' + str(response.status_code))
     if response.status_code is 200:
         response = response.json()
         if response['Count'] is 0:
@@ -29,9 +29,9 @@ def row_operations(row, writer_object):
     # We need to retrieve the list of recalls
     recalls = getRecalls(row[0], row[1], row[2])
 
-    bunches.append(recalls)
+    # bunches.append(recalls)
     # print recalls
-    print(recalls)
+    # print(recalls)
 
     # Write what we already have + newly retrieved recalls item
     writer_object.writerow([row[0], row[1], row[2], row[3], row[4], recalls])
@@ -72,13 +72,13 @@ def handleFilesForRecalls(oldFilePath, newFilePath):
                 year | make | model | body_styles | image_sources | recalls
                 ------------------------------------------------------------
             '''
-            jobs = []
+            # jobs = []
             for row in reader:
                 ''' we have a 'reader obj', and a 'writer' obj that we instantiated inside here '''
-                p = multiprocessing.Process(target=row_operations, args=(row, writer))
-                jobs.append(p)
-                p.start()
-                # row_operations(row, writer)
+                # p = multiprocessing.Process(target=row_operations, args=(row, writer))
+                # jobs.append(p)
+                # p.start()
+                row_operations(row, writer)
                 # # We need to retrieve the list of recalls
                 # recalls = getRecalls(row[0], row[1], row[2])
                 # # Write what we already have + newly retrieved recalls item
@@ -94,11 +94,21 @@ def createOldPath(year):
 def createNewPath(year):
     return str(year)+'.csv'
 # ----------------------
-old = createOldPath(1992)
-new = createNewPath(1992)
-handleFilesForRecalls(old, new)
+count = 1992
+while count <= 2020:
+    old = createOldPath(count)
+    new = createNewPath(count)
+    print('Currently working on: ' +new)
+    handleFilesForRecalls(old, new)
+    print('Finished: '+new)
+
+    count += 1
+
+# old = createOldPath(1992)
+# new = createNewPath(1992)
+# handleFilesForRecalls(old, new)
 # getRecalls('1992', 'Chrysler', 'Town & Country')
 # for recall in bunches:
     # print (recall)
-print('THE LENGTH OF BUNCHES IS' + str(len(bunches)))
+# print('THE LENGTH OF BUNCHES IS' + str(len(bunches)))
 #
