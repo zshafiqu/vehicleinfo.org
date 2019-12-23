@@ -1,25 +1,35 @@
-import requests, json, csv
+import requests, json, csv, multiprocessing
+import images
 # try global list
-# bunches = []
+bunches = []
 # ----------------------
 def getRecalls(year, make, model):
-    if "&" in model:
-        model.replace('&', '')
+    # print(model)
+    model = model.replace('&', '')
+    # model = model.replace('  ', ' ')
+    # print(model)
 
     url = 'https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/'+year+'/make/'+make+'/model/'+model+'?format=json'
-    items = requests.get(url).json()
+    # print(url)
+    header = images.getHeader()
+    response = requests.get(url, headers=header)
     empty = []
-
-    if items['Count'] is 0:
-        return empty
+    # print(response)
+    if response.status_code is 200:
+        response = response.json()
+        if response['Count'] is 0:
+            return empty
+        else:
+            return response['Results']
     else:
-        return items['Results']
+        return empty
 # ----------------------
 def row_operations(row, writer_object):
     print('Beginning row operations for '+row[0]+' '+row[1]+' '+row[2])
     # We need to retrieve the list of recalls
     recalls = getRecalls(row[0], row[1], row[2])
 
+    bunches.append(recalls)
     # print recalls
     print(recalls)
 
@@ -62,13 +72,13 @@ def handleFilesForRecalls(oldFilePath, newFilePath):
                 year | make | model | body_styles | image_sources | recalls
                 ------------------------------------------------------------
             '''
-            # jobs = []
+            jobs = []
             for row in reader:
                 ''' we have a 'reader obj', and a 'writer' obj that we instantiated inside here '''
-                # p = multiprocessing.Process(target=row_operations, args=(row,))
-                # jobs.append(p)
-                # p.start()
-                row_operations(row, writer)
+                p = multiprocessing.Process(target=row_operations, args=(row, writer))
+                jobs.append(p)
+                p.start()
+                # row_operations(row, writer)
                 # # We need to retrieve the list of recalls
                 # recalls = getRecalls(row[0], row[1], row[2])
                 # # Write what we already have + newly retrieved recalls item
@@ -87,6 +97,8 @@ def createNewPath(year):
 old = createOldPath(1992)
 new = createNewPath(1992)
 handleFilesForRecalls(old, new)
+# getRecalls('1992', 'Chrysler', 'Town & Country')
 # for recall in bunches:
     # print (recall)
-# print(len(bunches))
+print('THE LENGTH OF BUNCHES IS' + str(len(bunches)))
+#
