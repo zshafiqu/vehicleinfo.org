@@ -74,13 +74,34 @@ def getSoup(url):
     # print('\n')
     # print(attributes)
 
-    i = 0
-    while i < len(attributes)
+    # i = 0
+    # while i < len(attributes)
 
+    for heading in headings:
+        print(heading.text)
+        print('\n')
 
     for attribute in attributes:
-        print(attribute)
+        print(attribute.text)
         print('\n')
+
+    outermap = dict()
+
+    ''' 0 , 1 '''
+
+    while i < len(headings):
+        z = 0
+        innermap = dict()
+        while j < len(attributes):
+            if z > 7:
+                break
+            else:
+                innermap[attributes[j].text] = attributes[j+1].text
+            j += 2
+            z += 2
+        outermap[headings[i].text] = innermap
+        i += 1
+
 
     # All style headings within h3 tags with class = 'css-lg2ecn-StyledHeading3-defaultStyles-h3 e1jv8h5t2'
 
@@ -90,5 +111,5 @@ def getSoup(url):
     return None
 # ----------------------
 # all info boxes are <div> tags with class = css-130z0y1-StyledBox-default emf8dez0
-url = 'https://www.kbb.com/acura/integra/1992/?bodystyle=sedan'
+url = 'https://www.kbb.com/bmw/3-series/1992/'
 getSoup(url)
