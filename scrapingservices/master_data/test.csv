@@ -1,5 +1,0 @@
-year,make,model,body_style(s),image_source(s)
-1992,Acura,Integra,"['Sedan', 'Hatchback']","{'Sedan': 'https://file.kelleybluebookimages.com/kbb/base/house/1992/1992-Acura-Integra-RearSide_ACINTSEDLS923_505x368.jpg?interpolation=high-quality&downsize=391:*', 'Hatchback': 'https://file.kelleybluebookimages.com/kbb/base/house/1992/1992-Acura-Integra-FrontSide_ACINTHBRS921_505x346.jpg?interpolation=high-quality&downsize=391:*'}"
-1992,Acura,Legend,"['Sedan', 'Coupe']","{'Sedan': 'https://file.kelleybluebookimages.com/kbb/base/house/1992/1992-Acura-Legend-RearSide_ACLEGSED923_505x353.jpg?interpolation=high-quality&downsize=391:*', 'Coupe': 'https://file.kelleybluebookimages.com/kbb/base/house/1992/1992-Acura-Legend-FrontSide_ACLEGCPEL921_505x357.jpg?interpolation=high-quality&downsize=391:*'}"
-1992,Acura,NSX,['Coupe'],{'Coupe': 'https://file.kelleybluebookimages.com/kbb/base/house/1992/1992-Acura-NSX-FrontSide_ACNSX921_505x375.jpg?interpolation=high-quality&downsize=391:*'}
-1992,Acura,Vigor,['Sedan'],{'Sedan': 'https://file.kelleybluebookimages.com/kbb/base/house/1992/1992-Acura-Vigor-RearSide_ACVIGLS923_505x350.jpg?interpolation=high-quality&downsize=391:*'}
