@@ -20,7 +20,7 @@ def getSoup(url):
             page = requests.get(url, headers=headers, timeout=20).text
         except:
             # If the request fails, log it, and try again
-            print('Fail on request #'+str(i)+', trying again')
+            print('Fail on request #'+str(iter)+', trying again')
             iter += 1
             continue
         break # Break out of while loop here on success of the try block
@@ -84,7 +84,7 @@ def parseSoupToMap(soup):
         outermap[str(headings[i].text)] = innermap
         i += 1
 
-    print(outermap)
+    # print(outermap)
     # All style headings within h3 tags with class = 'css-lg2ecn-StyledHeading3-defaultStyles-h3 e1jv8h5t2'
     # <p class="css-35ezg3" is the key, ex) -> Fuel Economy
     # <p> that follows is the value
@@ -93,6 +93,10 @@ def parseSoupToMap(soup):
 # ----------------------
 def scrapeTrimData(year, make, model, bodystyles):
     # Cleanse input
+    # print('\n')
+    print(bodystyles)
+    print('\n')
+    # print('\n')
     model = model.replace('&', '')
     model = model.replace('/', '')
     trims = dict()
@@ -123,8 +127,9 @@ def scrapeTrimData(year, make, model, bodystyles):
 
             trims[bodystyles[index]] = result
             # i++
-            i += 1
+            index += 1
 
+    print('\n')
     print(trims)
     return trims
 # ----------------------
@@ -163,6 +168,8 @@ def handleFilesForStyles(oldFilePath, newFilePath):
             '''
             # jobs = []
             for row in reader:
+                # print('\n')
+                print('\n-------------------------------------------------------------')
                 print('Beginning row operations for '+row[0]+' '+row[1]+' '+row[2])
 
                 # Convert the make to a string list, we use this to handle case where make is two words
@@ -174,17 +181,20 @@ def handleFilesForStyles(oldFilePath, newFilePath):
                     # Convert back to a string with a dash in between the words
                     makeAsStr = makeAsList[0]+'-'+makeAsList[1]
                     trims = scrapeTrimData(row[0], makeAsStr, row[2], bodylist)
-                    # Write { year , make , model, body_styles, image_sources }
+                    # Write { year , make , model, body_styles, trims,  image_sources }
                     writer.writerow([row[0], row[1], row[2], bodylist, trims, row[4]])
 
                 # If make is of size 1, something like Ford || Honda
                 else:
                     # Pass it to scrapeKBB func, referencing the first item in the list { makeAsList[0] }
                     trims = scrapeTrimData(row[0], makeAsList[0], row[2], bodylist)
-                    # Write { year , make , model, body_styles, image_sources }
+                    # Write { year , make , model, body_styles, trims,  image_sources }
                     writer.writerow([row[0], row[1], row[2], bodylist, trims, row[4]])
 
-                print('Finished row operations for '+row[0]+' '+row[1]+' '+row[2])
+                # print(s)
+                print('\nFinished row operations for '+row[0]+' '+row[1]+' '+row[2])
+                # print('-------------------------------------------------------------')
+                # print('\n')
 
         return None
 # ----------------------
@@ -194,12 +204,15 @@ def createOldPath(year):
 def createNewPath(year):
     return str(year)+'.csv'
 # ----------------------
-count = 1992
-while count <= 1992:
-    old = createOldPath(count)
-    new = createNewPath(count)
-    print('Currently working on: ' +new)
-    handleFilesForStyles(old, new)
-    print('Finished: '+new)
-
-    count += 1
+old = createOldPath('test')
+new = createNewPath('test')
+handleFilesForStyles(old, new)
+# count = 1992
+# while count <= 1992:
+#     old = createOldPath(count)
+#     new = createNewPath(count)
+#     print('Currently working on: ' +new)
+#     handleFilesForStyles(old, new)
+#     print('Finished: '+new)
+#
+#     count += 1
