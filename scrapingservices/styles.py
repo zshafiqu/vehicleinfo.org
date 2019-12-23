@@ -31,6 +31,9 @@ def getSoup(url):
     onlyBoxes = SoupStrainer("div", class_="css-130z0y1-StyledBox-default emf8dez0")
     soup = BeautifulSoup(page, 'lxml', parse_only=onlyBoxes)
 
+    return soup
+# ----------------------
+def parseSoupToMap(soup):
     '''
     Every vehicle follows the same pattern with four attributes per trim {
         Fuel Economy,
@@ -61,33 +64,10 @@ def getSoup(url):
 
 
     '''
-
-    # print(soup.prettify())
     headings = soup.findAll("h3")
     attributes = soup.findAll("p")
-    # attributes = attributes.text
-    #
-    # for attribute in attributes:
-    #     print()
-
-    # print(headings)
-    # print('\n')
-    # print(attributes)
-
-    # i = 0
-    # while i < len(attributes)
-
-    # for heading in headings:
-    #     print(heading.text)
-    #     print('\n')
-    #
-    # for attribute in attributes:
-    #     print(attribute.text)
-    #     print('\n')
-
     outermap = dict()
 
-    ''' 0 , 1 '''
     i = 0
     j = 0
 
@@ -106,12 +86,47 @@ def getSoup(url):
 
     print(outermap)
     # All style headings within h3 tags with class = 'css-lg2ecn-StyledHeading3-defaultStyles-h3 e1jv8h5t2'
-
     # <p class="css-35ezg3" is the key, ex) -> Fuel Economy
     # <p> that follows is the value
 
     return outermap
 # ----------------------
+def scrapeTrimData(year, make, model, bodystyles):
+    # Cleanse input
+    model = model.replace('&', '')
+    model = model.replace('/', '')
+    trims = dict()
+
+    if len(bodystyles) is 1:
+        url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
+        soup = getSoup(url)
+
+        try:
+            result = parseSoupToMap(soup)
+        except:
+            print("Error on parsing soup to map / single bodystyle / inside of scrape trim data")
+            result = dict()
+
+        trims[bodystyles[0]] = result
+
+    else:
+        index = 0
+        for style in bodystyles:
+            url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'+'?bodystyle='+style
+            soup = getSoup(url)
+
+            try:
+                result = parseSoupToMap(soup)
+            except:
+                print("Error on parsing soup to map / multiple bodystyle / inside of scrape trim data")
+                result = dict()
+
+            trims[bodystyles[index]] = result
+            # i++
+            i += 1
+
+    print(trims)
+    return trims
 # ----------------------
 def handleFilesForStyles(oldFilePath, newFilePath):
     # Does file reading & writing
@@ -123,7 +138,7 @@ def handleFilesForStyles(oldFilePath, newFilePath):
             # create writer object with new file / path
             writer = csv.writer(newFile)
             # write the headers on the first row of new file
-            writer.writerow(['year', 'make', 'model', 'body_style(s)', 'image_source(s)', 'recall(s)'])
+            writer.writerow(['year', 'make', 'model', 'body_style(s)', 'trim(s)', 'image_source(s)'])
             # skip the first row of the old file
             next(reader)
 
@@ -148,17 +163,28 @@ def handleFilesForStyles(oldFilePath, newFilePath):
             '''
             # jobs = []
             for row in reader:
-                ''' we have a 'reader obj', and a 'writer' obj that we instantiated inside here '''
-                # p = multiprocessing.Process(target=row_operations, args=(row, writer))
-                # jobs.append(p)
-                # p.start()
-                row_operations(row, writer)
-                # # We need to retrieve the list of recalls
-                # recalls = getRecalls(row[0], row[1], row[2])
-                # # Write what we already have + newly retrieved recalls item
-                # writer.writerow([row[0], row[1], row[2], row[3], row[4], recalls])
-            # After row object completes
-            # bunches contains our data
+                print('Beginning row operations for '+row[0]+' '+row[1]+' '+row[2])
+
+                # Convert the make to a string list, we use this to handle case where make is two words
+                makeAsList = list(row[1].split(" "))
+                # Convert our bodystyles item from string list to list list so we can access len()
+                bodylist = ast.literal_eval(row[3])
+
+                if len(makeAsList) is 2:
+                    # Convert back to a string with a dash in between the words
+                    makeAsStr = makeAsList[0]+'-'+makeAsList[1]
+                    trims = scrapeTrimData(row[0], makeAsStr, row[2], bodylist)
+                    # Write { year , make , model, body_styles, image_sources }
+                    writer.writerow([row[0], row[1], row[2], bodylist, trims, row[4]])
+
+                # If make is of size 1, something like Ford || Honda
+                else:
+                    # Pass it to scrapeKBB func, referencing the first item in the list { makeAsList[0] }
+                    trims = scrapeTrimData(row[0], makeAsList[0], row[2], bodylist)
+                    # Write { year , make , model, body_styles, image_sources }
+                    writer.writerow([row[0], row[1], row[2], bodylist, trims, row[4]])
+
+                print('Finished row operations for '+row[0]+' '+row[1]+' '+row[2])
 
         return None
 # ----------------------
@@ -167,6 +193,13 @@ def createOldPath(year):
 # ----------------------
 def createNewPath(year):
     return str(year)+'.csv'
-# all info boxes are <div> tags with class = css-130z0y1-StyledBox-default emf8dez0
-# url = 'https://www.kbb.com/bmw/3-series/1992/'
-# getSoup(url)
+# ----------------------
+count = 1992
+while count <= 1992:
+    old = createOldPath(count)
+    new = createNewPath(count)
+    print('Currently working on: ' +new)
+    handleFilesForStyles(old, new)
+    print('Finished: '+new)
+
+    count += 1
