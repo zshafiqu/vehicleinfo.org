@@ -204,15 +204,15 @@ def createOldPath(year):
 def createNewPath(year):
     return str(year)+'.csv'
 # ----------------------
-old = createOldPath('test')
-new = createNewPath('test')
-handleFilesForStyles(old, new)
-# count = 1992
-# while count <= 1992:
-#     old = createOldPath(count)
-#     new = createNewPath(count)
-#     print('Currently working on: ' +new)
-#     handleFilesForStyles(old, new)
-#     print('Finished: '+new)
-#
-#     count += 1
+# old = createOldPath('test')
+# new = createNewPath('test')
+# handleFilesForStyles(old, new)
+count = 1992
+while count <= 1992:
+    old = createOldPath(count)
+    new = createNewPath(count)
+    print('Currently working on: ' +new)
+    handleFilesForStyles(old, new)
+    print('Finished: '+new)
+
+    count += 1
