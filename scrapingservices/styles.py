@@ -229,7 +229,7 @@ def patchWithNull(oldFilePath, newFilePath):
                 # print('Beginning row operations for '+row[0]+' '+row[1]+' '+row[2])
 
                 trimStr = str(row[4])
-                if "{}" in trimStr:
+                if trimStr == "NULL":
                     print('Error found in: '+row[0]+' '+row[1]+' '+row[2])
                     writer.writerow([row[0], row[1], row[2], row[3], 'NULL', row[5]])
                 else:
