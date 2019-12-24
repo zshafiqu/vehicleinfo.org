@@ -251,7 +251,7 @@ def createNewPath(year):
 # new = createNewPath('test')
 # handleFilesForStyles(old, new)
 count = 1992
-while count <= 1992:
+while count <= 2020:
     old = createOldPath(count)
     new = createNewPath(count)
     print('Currently working on: ' +new)
