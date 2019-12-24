@@ -109,7 +109,7 @@ def scrapeTrimData(year, make, model, bodystyles):
             result = parseSoupToMap(soup)
         except:
             print("Error on parsing soup to map / single bodystyle / inside of scrape trim data")
-            result = dict()
+            result = 'NULL'
 
         trims[bodystyles[0]] = result
 
@@ -123,7 +123,7 @@ def scrapeTrimData(year, make, model, bodystyles):
                 result = parseSoupToMap(soup)
             except:
                 print("Error on parsing soup to map / multiple bodystyle / inside of scrape trim data")
-                result = dict()
+                result = 'NULL'
 
             trims[bodystyles[index]] = result
             # i++
