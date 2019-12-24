@@ -198,6 +198,49 @@ def handleFilesForStyles(oldFilePath, newFilePath):
 
         return None
 # ----------------------
+def patchWithNull(oldFilePath, newFilePath):
+    # Does file reading & writing
+    with open(oldFilePath) as oldFile:
+        # create reader object from old file / path
+        reader = csv.reader(oldFile)
+
+        with open(newFilePath, 'w') as newFile:
+            # create writer object with new file / path
+            writer = csv.writer(newFile)
+            # write the headers on the first row of new file
+            writer.writerow(['year', 'make', 'model', 'body_styles', 'trims', 'image_sources'])
+            # skip the first row of the old file
+            next(reader)
+
+            '''
+            This time, we have the following info {
+                year = row[0]
+                make = row[1]
+                model = row[2]
+                bodystyles = row[3]
+                trim_data = row[4]
+                image_sources = row[5]
+            }
+            '''
+            # jobs = []
+            for row in reader:
+                # print('\n')
+                # print('\n-------------------------------------------------------------')
+                # print('Beginning row operations for '+row[0]+' '+row[1]+' '+row[2])
+
+                trimStr = str(row[4])
+                if "{}" in trimStr:
+                    print('Error found in: '+row[0]+' '+row[1]+' '+row[2])
+                    writer.writerow([row[0], row[1], row[2], row[3], 'NULL', row[5]])
+                else:
+                    writer.writerow([row[0], row[1], row[2], row[3], row[4], row[5]])
+
+                # print('\nFinished row operations for '+row[0]+' '+row[1]+' '+row[2])
+                # print('-------------------------------------------------------------')
+                # print('\n')
+
+        return None
+# ----------------------
 def createOldPath(year):
     return 'master_data/'+str(year)+'.csv'
 # ----------------------
@@ -207,12 +250,12 @@ def createNewPath(year):
 # old = createOldPath('test')
 # new = createNewPath('test')
 # handleFilesForStyles(old, new)
-count = 2003
-while count <= 2006:
+count = 1992
+while count <= 1992:
     old = createOldPath(count)
     new = createNewPath(count)
     print('Currently working on: ' +new)
-    handleFilesForStyles(old, new)
+    patchWithNull(old, new)
     print('Finished: '+new)
 
     count += 1
