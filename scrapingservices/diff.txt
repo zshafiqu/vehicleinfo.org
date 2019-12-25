@@ -1,26 +1,3 @@
-Currently working on: 1992.csv
-Finished: 1992.csv
-
-Currently working on: 1993.csv
-Finished: 1993.csv
-
-Currently working on: 1994.csv
-Finished: 1994.csv
-
-Currently working on: 1995.csv
-Error found in: 1995 HUMMER H1
-Finished: 1995.csv
-
-Currently working on: 1996.csv
-Error found in: 1996 HUMMER H1
-Finished: 1996.csv
-
-Currently working on: 1997.csv
-Finished: 1997.csv
-
-Currently working on: 1998.csv
-Error found in: 1998 Mercedes-Benz SL-Class
-Finished: 1998.csv
 
 Currently working on: 1999.csv
 Error found in: 1999 Porsche 911
