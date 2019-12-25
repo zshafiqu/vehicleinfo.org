@@ -1,8 +1,4 @@
 
-Currently working on: 1999.csv
-Error found in: 1999 Porsche 911
-Finished: 1999.csv
-
 Currently working on: 2000.csv
 Error found in: 2000 HUMMER H1
 Finished: 2000.csv
