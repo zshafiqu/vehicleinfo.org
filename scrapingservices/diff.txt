@@ -1,200 +1,6 @@
 
-Currently working on: 2004.csv
-Error found in: 2004 Chevrolet Express 3500 Passenger
-Error found in: 2004 Chevrolet Silverado 2500 Extended Cab
-Error found in: 2004 Chevrolet Silverado 2500 HD Crew Cab
-
-Error found in: 2004 Chevrolet Silverado 2500 HD Extended Cab
-Error found in: 2004 Chevrolet Silverado 3500 Crew Cab
-Error found in: 2004 Chevrolet Silverado 3500 Extended Cab
-
-Error found in: 2004 Dodge Ram 2500 Quad Cab
-Error found in: 2004 Dodge Ram 3500 Quad Cab
-Error found in: 2004 Dodge Sprinter 2500 Cargo
-Error found in: 2004 Dodge Sprinter 2500 Passenger
-Error found in: 2004 Ford E350 Super Duty Passenger
-Error found in: 2004 Ford Excursion
-Error found in: 2004 Ford F150 (Heritage) Regular Cab
-Error found in: 2004 Ford F250 Super Duty Crew Cab
-Error found in: 2004 Ford F250 Super Duty Super Cab
-Error found in: 2004 Ford F350 Super Duty Crew Cab
-Error found in: 2004 Ford F350 Super Duty Super Cab
-Error found in: 2004 Ford Ranger Super Cab
-Error found in: 2004 GMC Savana 3500 Passenger
-Error found in: 2004 GMC Sierra 2500 Extended Cab
-Error found in: 2004 GMC Sierra 2500 HD Crew Cab
-Error found in: 2004 GMC Sierra 2500 HD Extended Cab
-Error found in: 2004 GMC Sierra 3500 Crew Cab
-Error found in: 2004 GMC Sierra 3500 Extended Cab
-
-
-Finished: 2004.csv
-
-Currently working on: 2005.csv
-Error found in: 2005 Chevrolet Express 3500 Passenger
-Error found in: 2005 Chevrolet Silverado 3500 Crew Cab
-Error found in: 2005 Chevrolet Silverado 3500 Extended Cab
-Error found in: 2005 Dodge Ram 2500 Quad Cab
-Error found in: 2005 Dodge Ram 3500 Quad Cab
-Error found in: 2005 Dodge Sprinter 2500 Cargo
-Error found in: 2005 Dodge Sprinter 2500 Passenger
-Error found in: 2005 Ford E350 Super Duty Passenger
-Error found in: 2005 Ford Excursion
-Error found in: 2005 Ford F250 Super Duty Crew Cab
-Error found in: 2005 Ford F250 Super Duty Super Cab
-Error found in: 2005 Ford F350 Super Duty Crew Cab
-Error found in: 2005 Ford F350 Super Duty Super Cab
-Error found in: 2005 Ford Freestar Passenger
-Error found in: 2005 GMC Savana 3500 Passenger
-Error found in: 2005 GMC Sierra 3500 Crew Cab
-Error found in: 2005 GMC Sierra 3500 Extended Cab
-
-Finished: 2005.csv
-
-Currently working on: 2006.csv
-Error found in: 2006 Chevrolet Express 3500 Passenger
-Error found in: 2006 Chevrolet Silverado 2500 HD Extended Cab
-Error found in: 2006 Dodge Ram 2500 Quad Cab
-Error found in: 2006 Dodge Ram 3500 Quad Cab
-Error found in: 2006 Dodge Sprinter 2500 Cargo
-Error found in: 2006 Dodge Sprinter 2500 Passenger
-Error found in: 2006 Ford E350 Super Duty Passenger
-Error found in: 2006 Ford F250 Super Duty Crew Cab
-Error found in: 2006 Ford F250 Super Duty Super Cab
-Error found in: 2006 Ford F350 Super Duty Crew Cab
-Error found in: 2006 Ford F350 Super Duty Super Cab
-Error found in: 2006 GMC Savana 3500 Passenger
-Error found in: 2006 GMC Sierra 2500 HD Crew Cab
-Error found in: 2006 GMC Sierra 2500 HD Extended Cab
-Error found in: 2006 GMC Sierra 3500 Crew Cab
-Error found in: 2006 GMC Sierra 3500 Extended Cab
-
-Finished: 2006.csv
-
-Currently working on: 2007.csv
-Error found in: 2007 Chevrolet Express 3500 Passenger
-Error found in: 2007 Chevrolet Silverado (Classic) 2500 HD Crew Cab
-Error found in: 2007 Chevrolet Silverado (Classic) 2500 HD Extended Cab
-Error found in: 2007 Chevrolet Silverado (Classic) 3500 Crew Cab
-Error found in: 2007 Chevrolet Silverado (Classic) 3500 Extended Cab
-Error found in: 2007 Chevrolet Silverado 2500 HD Crew Cab
-Error found in: 2007 Chevrolet Silverado 2500 HD Extended Cab
-Error found in: 2007 Dodge Ram 2500 Quad Cab
-Error found in: 2007 Dodge Ram 3500 Quad Cab
-Error found in: 2007 Ford E350 Super Duty Passenger
-Error found in: 2007 Ford F250 Super Duty Crew Cab
-Error found in: 2007 Ford F250 Super Duty Super Cab
-Error found in: 2007 Ford F350 Super Duty Crew Cab
-Error found in: 2007 Ford F350 Super Duty Super Cab
-Error found in: 2007 GMC Sierra (Classic) 2500 HD Crew Cab
-Error found in: 2007 GMC Sierra (Classic) 2500 HD Extended Cab
-Error found in: 2007 GMC Sierra (Classic) 3500 Crew Cab
-Error found in: 2007 GMC Sierra (Classic) 3500 Extended Cab
-Error found in: 2007 GMC Sierra (Classic) 3500 Regular Cab
-Error found in: 2007 GMC Sierra 2500 HD Crew Cab
-Error found in: 2007 GMC Sierra 2500 HD Extended Cab
-
-Finished: 2007.csv
-
-Currently working on: 2008.csv
-
-Error found in: 2008 Chevrolet Express 3500 Passenger
-Error found in: 2008 Chevrolet Silverado 2500 HD Crew Cab
-Error found in: 2008 Chevrolet Silverado 2500 HD Extended Cab
-Error found in: 2008 Dodge Ram 2500 Quad Cab
-Error found in: 2008 Dodge Ram 3500 Mega Cab
-Error found in: 2008 Dodge Ram 3500 Quad Cab
-Error found in: 2008 Ford E350 Super Duty Passenger
-Error found in: 2008 Ford F150 SuperCrew Cab
-Error found in: 2008 Ford F250 Super Duty Crew Cab
-Error found in: 2008 Ford F250 Super Duty Super Cab
-Error found in: 2008 Ford F350 Super Duty Crew Cab
-Error found in: 2008 Ford F350 Super Duty Super Cab
-Error found in: 2008 Ford F450 Super Duty Crew Cab
-Error found in: 2008 GMC Savana 3500 Passenger
-Error found in: 2008 GMC Sierra 2500 HD Crew Cab
-Error found in: 2008 GMC Sierra 2500 HD Extended Cab
-
-Finished: 2008.csv
-
-Currently working on: 2009.csv
-Error found in: 2009 Chevrolet Express 3500 Passenger
-Error found in: 2009 Chevrolet Silverado 2500 HD Crew Cab
-Error found in: 2009 Chevrolet Silverado 2500 HD Extended Cab
-Error found in: 2009 Dodge Ram 2500 Quad Cab
-Error found in: 2009 Dodge Ram 3500 Quad Cab
-Error found in: 2009 Ford F250 Super Duty Crew Cab
-Error found in: 2009 Ford F250 Super Duty Super Cab
-Error found in: 2009 Ford F350 Super Duty Crew Cab
-Error found in: 2009 Ford F350 Super Duty Super Cab
-Error found in: 2009 Ford F450 Super Duty Crew Cab
-Error found in: 2009 GMC Savana 3500 Passenger
-Error found in: 2009 GMC Sierra 2500 HD Crew Cab
-Error found in: 2009 GMC Sierra 2500 HD Extended Cab
-
-Finished: 2009.csv
-
-Currently working on: 2010.csv
-Error found in: 2010 Chevrolet Express 2500 Cargo
-Error found in: 2010 Chevrolet Express 3500 Cargo
-Error found in: 2010 Chevrolet Express 3500 Passenger
-Error found in: 2010 Chevrolet Silverado 2500 HD Crew Cab
-Error found in: 2010 Chevrolet Silverado 2500 HD Extended Cab
-Error found in: 2010 Dodge Ram 2500 Crew Cab
-Error found in: 2010 Dodge Ram 3500 Crew Cab
-Error found in: 2010 Ford F250 Super Duty Crew Cab
-Error found in: 2010 Ford F250 Super Duty Super Cab
-Error found in: 2010 Ford F350 Super Duty Crew Cab
-Error found in: 2010 Ford F350 Super Duty Super Cab
-Error found in: 2010 Ford F450 Super Duty Crew Cab
-Error found in: 2010 GMC Savana 2500 Cargo
-Error found in: 2010 GMC Savana 3500 Cargo
-Error found in: 2010 GMC Sierra 2500 HD Crew Cab
-Error found in: 2010 GMC Sierra 2500 HD Extended Cab
-Finished: 2010.csv
-
-Currently working on: 2011.csv
-Error found in: 2011 Chevrolet Express 3500 Passenger
-Error found in: 2011 Chevrolet Silverado 2500 HD Crew Cab
-Error found in: 2011 Chevrolet Silverado 2500 HD Extended Cab
-Error found in: 2011 Chevrolet Silverado 3500 HD Crew Cab
-Error found in: 2011 Ford F250 Super Duty Crew Cab
-Error found in: 2011 Ford F250 Super Duty Super Cab
-Error found in: 2011 Ford F350 Super Duty Crew Cab
-Error found in: 2011 Ford F350 Super Duty Super Cab
-Error found in: 2011 Ford F450 Super Duty Crew Cab
-Error found in: 2011 GMC Savana 3500 Passenger
-Error found in: 2011 GMC Sierra 2500 HD Crew Cab
-Error found in: 2011 GMC Sierra 2500 HD Extended Cab
-Error found in: 2011 GMC Sierra 3500 HD Crew Cab
-Error found in: 2011 Ram 2500 Crew Cab
-Error found in: 2011 Ram 3500 Crew Cab
-Finished: 2011.csv
-
-Currently working on: 2012.csv
-Error found in: 2012 Chevrolet Express 3500 Passenger
-Error found in: 2012 Chevrolet Silverado 2500 HD Crew Cab
-Error found in: 2012 Chevrolet Silverado 2500 HD Extended Cab
-Error found in: 2012 Chevrolet Silverado 3500 HD Crew Cab
-
-Error found in: 2012 Ford F250 Super Duty Crew Cab
-Error found in: 2012 Ford F250 Super Duty Super Cab
-Error found in: 2012 Ford F350 Super Duty Crew Cab
-Error found in: 2012 Ford F350 Super Duty Super Cab
-Error found in: 2012 Ford F450 Super Duty Crew Cab
-Error found in: 2012 GMC Savana 3500 Passenger
-Error found in: 2012 GMC Sierra 2500 HD Crew Cab
-Error found in: 2012 GMC Sierra 2500 HD Extended Cab
-Error found in: 2012 GMC Sierra 3500 HD Crew Cab
-Error found in: 2012 Ram 2500 Crew Cab
-Error found in: 2012 Ram 2500 Mega Cab
-Error found in: 2012 Ram 3500 Crew Cab
-Error found in: 2012 Ram 3500 Mega Cab
-Error found in: 2012 Volkswagen Passat
-Finished: 2012.csv
 
 Currently working on: 2013.csv
-Error found in: 2013 BMW 3 Series
 Error found in: 2013 Chevrolet Express 3500 Passenger
 Error found in: 2013 Chevrolet Silverado 2500 HD Crew Cab
 Error found in: 2013 Chevrolet Silverado 2500 HD Extended Cab
@@ -209,17 +15,21 @@ Error found in: 2013 GMC Savana 3500 Passenger
 Error found in: 2013 GMC Sierra 2500 HD Crew Cab
 Error found in: 2013 GMC Sierra 2500 HD Extended Cab
 Error found in: 2013 GMC Sierra 3500 HD Crew Cab
+
 Error found in: 2013 Honda Insight
 Error found in: 2013 Nissan Altima
+
 Error found in: 2013 Ram 2500 Crew Cab
 Error found in: 2013 Ram 2500 Mega Cab
 Error found in: 2013 Ram 3500 Crew Cab
 Error found in: 2013 Ram 3500 Mega Cab
+
 Error found in: 2013 Volkswagen Passat
 Finished: 2013.csv
 
 Currently working on: 2014.csv
 Error found in: 2014 Cadillac CTS
+
 Error found in: 2014 Chevrolet Express 3500 Passenger
 Error found in: 2014 Chevrolet Silverado 2500 HD Crew Cab
 Error found in: 2014 Chevrolet Silverado 3500 HD Crew Cab
@@ -233,8 +43,7 @@ Error found in: 2014 GMC Savana 3500 Cargo
 Error found in: 2014 GMC Savana 3500 Passenger
 Error found in: 2014 GMC Sierra 2500 HD Crew Cab
 Error found in: 2014 GMC Sierra 3500 HD Crew Cab
-Error found in: 2014 Honda Accord
-Error found in: 2014 Mercedes-Benz E-Class
+
 Error found in: 2014 Mercedes-Benz Sprinter 2500 Cargo
 Error found in: 2014 Ram 2500 Crew Cab
 Error found in: 2014 Ram 2500 Mega Cab
