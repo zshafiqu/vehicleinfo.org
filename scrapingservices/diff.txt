@@ -132,8 +132,6 @@ Error found in: 2009 GMC Savana 3500 Passenger
 Error found in: 2009 GMC Sierra 2500 HD Crew Cab
 Error found in: 2009 GMC Sierra 2500 HD Extended Cab
 
-Error found in: 2009 INFINITI G
-Error found in: 2009 Pontiac G6
 Finished: 2009.csv
 
 Currently working on: 2010.csv
