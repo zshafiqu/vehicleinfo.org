@@ -154,7 +154,6 @@ Error found in: 2010 GMC Sierra 2500 HD Extended Cab
 Finished: 2010.csv
 
 Currently working on: 2011.csv
-Error found in: 2011 BMW 3 Series
 Error found in: 2011 Chevrolet Express 3500 Passenger
 Error found in: 2011 Chevrolet Silverado 2500 HD Crew Cab
 Error found in: 2011 Chevrolet Silverado 2500 HD Extended Cab
@@ -177,7 +176,7 @@ Error found in: 2012 Chevrolet Express 3500 Passenger
 Error found in: 2012 Chevrolet Silverado 2500 HD Crew Cab
 Error found in: 2012 Chevrolet Silverado 2500 HD Extended Cab
 Error found in: 2012 Chevrolet Silverado 3500 HD Crew Cab
-Error found in: 2012 Ferrari FF
+
 Error found in: 2012 Ford F250 Super Duty Crew Cab
 Error found in: 2012 Ford F250 Super Duty Super Cab
 Error found in: 2012 Ford F350 Super Duty Crew Cab
