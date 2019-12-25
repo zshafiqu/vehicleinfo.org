@@ -22,6 +22,7 @@ Finished: 2014.csv
 Currently working on: 2015.csv
 Error found in: 2015 Audi A3
 Error found in: 2015 BMW 3 Series
+
 Error found in: 2015 Chevrolet Express 3500 Cargo
 Error found in: 2015 Chevrolet Express 3500 Passenger
 Error found in: 2015 Chevrolet Silverado 2500 HD Crew Cab
@@ -42,15 +43,18 @@ Error found in: 2015 GMC Savana 3500 Passenger
 Error found in: 2015 GMC Sierra 2500 HD Crew Cab
 Error found in: 2015 GMC Sierra 2500 HD Double Cab
 Error found in: 2015 GMC Sierra 3500 HD Crew Cab
+
 Error found in: 2015 Jaguar XK
 Error found in: 2015 Mercedes-Benz C-Class
 Error found in: 2015 Mercedes-Benz E-Class
+
 Error found in: 2015 Mercedes-Benz Sprinter 2500 Cargo
 Error found in: 2015 Ram 2500 Crew Cab
 Error found in: 2015 Ram 2500 Mega Cab
 Error found in: 2015 Ram 3500 Crew Cab
 Error found in: 2015 Ram 3500 Mega Cab
 Error found in: 2015 Ram ProMaster Cargo Van
+
 Error found in: 2015 Volkswagen Jetta
 Finished: 2015.csv
 
