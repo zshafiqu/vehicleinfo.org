@@ -1,30 +1,4 @@
 
-
-Currently working on: 2003.csv
-Error found in: 2003 Chevrolet Express 2500 Passenger
-Error found in: 2003 Chevrolet Express 3500 Passenger
-Error found in: 2003 Chevrolet Silverado 2500 HD Crew Cab
-Error found in: 2003 Dodge Grand Caravan Passenger
-Error found in: 2003 Dodge Ram 2500 Quad Cab
-Error found in: 2003 Dodge Ram 3500 Quad Cab
-Error found in: 2003 Dodge Sprinter 2500 Cargo
-Error found in: 2003 Dodge Sprinter 2500 Passenger
-Error found in: 2003 Ford E350 Super Duty Passenger
-Error found in: 2003 Ford F250 Super Duty Crew Cab
-Error found in: 2003 Ford F250 Super Duty Super Cab
-Error found in: 2003 Ford F350 Super Duty Crew Cab
-Error found in: 2003 Ford F350 Super Duty Super Cab
-Error found in: 2003 Ford Focus
-
-Error found in: 2003 GMC Savana 2500 Passenger
-Error found in: 2003 GMC Savana 3500 Passenger
-
-Error found in: 2003 GMC Sierra 2500 HD Crew Cab
-Error found in: 2003 GMC Sierra 2500 HD Extended Cab
-
-Error found in: 2003 Subaru Outback
-Finished: 2003.csv
-
 Currently working on: 2004.csv
 Error found in: 2004 Chevrolet Express 3500 Passenger
 Error found in: 2004 Chevrolet Silverado 2500 Extended Cab
