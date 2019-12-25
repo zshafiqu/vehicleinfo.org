@@ -3,9 +3,11 @@ Currently working on: 2004.csv
 Error found in: 2004 Chevrolet Express 3500 Passenger
 Error found in: 2004 Chevrolet Silverado 2500 Extended Cab
 Error found in: 2004 Chevrolet Silverado 2500 HD Crew Cab
+
 Error found in: 2004 Chevrolet Silverado 2500 HD Extended Cab
 Error found in: 2004 Chevrolet Silverado 3500 Crew Cab
 Error found in: 2004 Chevrolet Silverado 3500 Extended Cab
+
 Error found in: 2004 Dodge Ram 2500 Quad Cab
 Error found in: 2004 Dodge Ram 3500 Quad Cab
 Error found in: 2004 Dodge Sprinter 2500 Cargo
@@ -24,7 +26,8 @@ Error found in: 2004 GMC Sierra 2500 HD Crew Cab
 Error found in: 2004 GMC Sierra 2500 HD Extended Cab
 Error found in: 2004 GMC Sierra 3500 Crew Cab
 Error found in: 2004 GMC Sierra 3500 Extended Cab
-Error found in: 2004 Volkswagen Jetta
+
+
 Finished: 2004.csv
 
 Currently working on: 2005.csv
@@ -45,8 +48,7 @@ Error found in: 2005 Ford Freestar Passenger
 Error found in: 2005 GMC Savana 3500 Passenger
 Error found in: 2005 GMC Sierra 3500 Crew Cab
 Error found in: 2005 GMC Sierra 3500 Extended Cab
-Error found in: 2005 Mercedes-Benz CL-Class
-Error found in: 2005 Saturn Ion
+
 Finished: 2005.csv
 
 Currently working on: 2006.csv
@@ -66,7 +68,7 @@ Error found in: 2006 GMC Sierra 2500 HD Crew Cab
 Error found in: 2006 GMC Sierra 2500 HD Extended Cab
 Error found in: 2006 GMC Sierra 3500 Crew Cab
 Error found in: 2006 GMC Sierra 3500 Extended Cab
-Error found in: 2006 Mercedes-Benz CL-Class
+
 Finished: 2006.csv
 
 Currently working on: 2007.csv
@@ -91,11 +93,11 @@ Error found in: 2007 GMC Sierra (Classic) 3500 Extended Cab
 Error found in: 2007 GMC Sierra (Classic) 3500 Regular Cab
 Error found in: 2007 GMC Sierra 2500 HD Crew Cab
 Error found in: 2007 GMC Sierra 2500 HD Extended Cab
-Error found in: 2007 Honda Odyssey
+
 Finished: 2007.csv
 
 Currently working on: 2008.csv
-Error found in: 2008 BMW 3 Series
+
 Error found in: 2008 Chevrolet Express 3500 Passenger
 Error found in: 2008 Chevrolet Silverado 2500 HD Crew Cab
 Error found in: 2008 Chevrolet Silverado 2500 HD Extended Cab
@@ -112,11 +114,7 @@ Error found in: 2008 Ford F450 Super Duty Crew Cab
 Error found in: 2008 GMC Savana 3500 Passenger
 Error found in: 2008 GMC Sierra 2500 HD Crew Cab
 Error found in: 2008 GMC Sierra 2500 HD Extended Cab
-Error found in: 2008 Hyundai Tiburon
-Error found in: 2008 INFINITI G
-Error found in: 2008 MAZDA MAZDA6
-Error found in: 2008 Nissan Frontier King Cab
-Error found in: 2008 Nissan Titan Crew Cab
+
 Finished: 2008.csv
 
 Currently working on: 2009.csv
@@ -133,6 +131,7 @@ Error found in: 2009 Ford F450 Super Duty Crew Cab
 Error found in: 2009 GMC Savana 3500 Passenger
 Error found in: 2009 GMC Sierra 2500 HD Crew Cab
 Error found in: 2009 GMC Sierra 2500 HD Extended Cab
+
 Error found in: 2009 INFINITI G
 Error found in: 2009 Pontiac G6
 Finished: 2009.csv
