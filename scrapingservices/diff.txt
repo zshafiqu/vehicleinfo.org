@@ -1,7 +1,4 @@
 
-Currently working on: 2000.csv
-Error found in: 2000 HUMMER H1
-Finished: 2000.csv
 
 Currently working on: 2001.csv
 Error found in: 2001 HUMMER H1
