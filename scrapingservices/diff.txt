@@ -1,12 +1,5 @@
 
 
-Currently working on: 2001.csv
-Error found in: 2001 HUMMER H1
-Finished: 2001.csv
-
-Currently working on: 2002.csv
-Finished: 2002.csv
-
 Currently working on: 2003.csv
 Error found in: 2003 Chevrolet Express 2500 Passenger
 Error found in: 2003 Chevrolet Express 3500 Passenger
@@ -22,10 +15,13 @@ Error found in: 2003 Ford F250 Super Duty Super Cab
 Error found in: 2003 Ford F350 Super Duty Crew Cab
 Error found in: 2003 Ford F350 Super Duty Super Cab
 Error found in: 2003 Ford Focus
+
 Error found in: 2003 GMC Savana 2500 Passenger
 Error found in: 2003 GMC Savana 3500 Passenger
+
 Error found in: 2003 GMC Sierra 2500 HD Crew Cab
 Error found in: 2003 GMC Sierra 2500 HD Extended Cab
+
 Error found in: 2003 Subaru Outback
 Finished: 2003.csv
 
