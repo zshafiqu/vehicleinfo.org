@@ -102,7 +102,12 @@ def scrapeTrimData(year, make, model, bodystyles):
     trims = dict()
 
     if len(bodystyles) is 1:
-        url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
+
+        if model == "Lumina":
+            url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'+'?bodystyle=sedan'
+        else:
+            url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
+
         soup = getSoup(url)
 
         try:
@@ -231,10 +236,10 @@ def patchWithNull(oldFilePath, newFilePath):
                 trimStr = str(row[4])
                 if "{}" in trimStr:
                     print('Error found in: '+row[0]+' '+row[1]+' '+row[2])
-                    writer.writerow([row[0], row[1], row[2], row[3], 'NULL', row[5]])
-                else:
-                    writer.writerow([row[0], row[1], row[2], row[3], row[4], row[5]])
-
+                    # writer.writerow([row[0], row[1], row[2], row[3], 'NULL', row[5]])
+                # else:
+                #     writer.writerow([row[0], row[1], row[2], row[3], row[4], row[5]])
+                writer.writerow([row[0], row[1], row[2], row[3], row[4], row[5]])
                 # print('\nFinished row operations for '+row[0]+' '+row[1]+' '+row[2])
                 # print('-------------------------------------------------------------')
                 # print('\n')
@@ -276,6 +281,12 @@ def handleFilesForStyles_v2(oldFilePath, newFilePath):
                     print('\n-------------------------------------------------------------')
                     print('Beginning row operations for '+row[0]+' '+row[1]+' '+row[2])
 
+                    model = row[2]
+
+                    if row[1] == "Saab" and "-Sep" in model:
+                        model = '9-'+model[0]
+
+
                     # Convert the make to a string list, we use this to handle case where make is two words
                     makeAsList = list(row[1].split(" "))
                     # Convert our bodystyles item from string list to list list so we can access len()
@@ -284,24 +295,24 @@ def handleFilesForStyles_v2(oldFilePath, newFilePath):
                     if len(makeAsList) is 2:
                         # Convert back to a string with a dash in between the words
                         makeAsStr = makeAsList[0]+'-'+makeAsList[1]
-                        trims = scrapeTrimData(row[0], makeAsStr, row[2], bodylist)
+                        trims = scrapeTrimData(row[0], makeAsStr, model, bodylist)
                         # Write { year , make , model, body_styles, trim_data,  image_sources }
-                        writer.writerow([row[0], row[1], row[2], row[3], trims, row[5]])
+                        writer.writerow([row[0], row[1], model, row[3], trims, row[5]])
 
                     # If make is of size 1, something like Ford || Honda
                     else:
                         # Pass it to scrapeKBB func, referencing the first item in the list { makeAsList[0] }
-                        trims = scrapeTrimData(row[0], makeAsList[0], row[2], bodylist)
+                        trims = scrapeTrimData(row[0], makeAsList[0], model, bodylist)
                         # Write { year , make , model, body_styles, trim_data,  image_sources }
-                        writer.writerow([row[0], row[1], row[2], row[3], trims, row[5]])
+                        writer.writerow([row[0], row[1], model, row[3], trims, row[5]])
 
                     print('\nFinished row operations for '+row[0]+' '+row[1]+' '+row[2])
 
         return None
 # ----------------------
 def createOldPath(year):
-    # return 'master_data/'+str(year)+'.csv'
-    return 'utld/'+str(year)+'.csv'
+    return 'master_data/'+str(year)+'.csv'
+    # return 'utld/'+str(year)+'.csv'
 # ----------------------
 def createNewPath(year):
     return str(year)+'.csv'

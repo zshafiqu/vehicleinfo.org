@@ -2,25 +2,20 @@ Currently working on: 1992.csv
 Finished: 1992.csv
 
 Currently working on: 1993.csv
-Error found in: 1993 HUMMER H1
 Finished: 1993.csv
 
 Currently working on: 1994.csv
 Finished: 1994.csv
 
 Currently working on: 1995.csv
-Error found in: 1995 Chevrolet Lumina
 Error found in: 1995 HUMMER H1
-Error found in: 1995 Toyota Tacoma Xtracab
 Finished: 1995.csv
 
 Currently working on: 1996.csv
-Error found in: 1996 Chevrolet Lumina
 Error found in: 1996 HUMMER H1
 Finished: 1996.csv
 
 Currently working on: 1997.csv
-Error found in: 1997 Ford F250 Super Cab
 Finished: 1997.csv
 
 Currently working on: 1998.csv
@@ -36,13 +31,10 @@ Error found in: 2000 HUMMER H1
 Finished: 2000.csv
 
 Currently working on: 2001.csv
-Error found in: 2001 Dodge Grand Caravan Passenger
 Error found in: 2001 HUMMER H1
 Finished: 2001.csv
 
 Currently working on: 2002.csv
-Error found in: 2002 Saab 3-Sep
-Error found in: 2002 Saab 5-Sep
 Finished: 2002.csv
 
 Currently working on: 2003.csv
@@ -135,8 +127,6 @@ Error found in: 2006 GMC Sierra 2500 HD Extended Cab
 Error found in: 2006 GMC Sierra 3500 Crew Cab
 Error found in: 2006 GMC Sierra 3500 Extended Cab
 Error found in: 2006 Mercedes-Benz CL-Class
-Error found in: 2006 Saab 3-Sep
-Error found in: 2006 Saab 5-Sep
 Finished: 2006.csv
 
 Currently working on: 2007.csv
@@ -426,7 +416,6 @@ Error found in: 2017 Ram ProMaster Cargo Van
 Error found in: 2017 Tesla Model S
 Error found in: 2017 Toyota Highlander Hybrid
 Finished: 2017.csv
-
 Currently working on: 2018.csv
 Error found in: 2018 Alfa Romeo Stelvio
 Error found in: 2018 Audi A3 Sportback e-tron
