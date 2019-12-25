@@ -109,7 +109,7 @@ def scrapeTrimData(year, make, model, bodystyles):
             result = parseSoupToMap(soup)
         except:
             print("Error on parsing soup to map / single bodystyle / inside of scrape trim data")
-            result = 'NULL'
+            result = dict()
 
         trims[bodystyles[0]] = result
 
@@ -123,7 +123,7 @@ def scrapeTrimData(year, make, model, bodystyles):
                 result = parseSoupToMap(soup)
             except:
                 print("Error on parsing soup to map / multiple bodystyle / inside of scrape trim data")
-                result = 'NULL'
+                result = dict()
 
             trims[bodystyles[index]] = result
             # i++
@@ -133,72 +133,7 @@ def scrapeTrimData(year, make, model, bodystyles):
     print(trims)
     return trims
 # ----------------------
-def handleFilesForStyles(oldFilePath, newFilePath):
-    # Does file reading & writing
-    with open(oldFilePath) as oldFile:
-        # create reader object from old file / path
-        reader = csv.reader(oldFile)
-
-        with open(newFilePath, 'w') as newFile:
-            # create writer object with new file / path
-            writer = csv.writer(newFile)
-            # write the headers on the first row of new file
-            writer.writerow(['year', 'make', 'model', 'body_style(s)', 'trim(s)', 'image_source(s)'])
-            # skip the first row of the old file
-            next(reader)
-
-            '''
-            This time, we have the following info {
-                year = row[0]
-                make = row[1]
-                model = row[2]
-                bodystyles = row[3]
-                image_sources = row[4]
-            }
-
-            Goal:
-                For each row, get its list of recalls as a json object
-                by making a call to getRecalls(year, make, model)
-
-            Results:
-                the CSV table should look like ->
-                ------------------------------------------------------------
-                year | make | model | body_styles | image_sources | recalls
-                ------------------------------------------------------------
-            '''
-            # jobs = []
-            for row in reader:
-                # print('\n')
-                print('\n-------------------------------------------------------------')
-                print('Beginning row operations for '+row[0]+' '+row[1]+' '+row[2])
-
-                # Convert the make to a string list, we use this to handle case where make is two words
-                makeAsList = list(row[1].split(" "))
-                # Convert our bodystyles item from string list to list list so we can access len()
-                bodylist = ast.literal_eval(row[3])
-
-                if len(makeAsList) is 2:
-                    # Convert back to a string with a dash in between the words
-                    makeAsStr = makeAsList[0]+'-'+makeAsList[1]
-                    trims = scrapeTrimData(row[0], makeAsStr, row[2], bodylist)
-                    # Write { year , make , model, body_styles, trims,  image_sources }
-                    writer.writerow([row[0], row[1], row[2], bodylist, trims, row[4]])
-
-                # If make is of size 1, something like Ford || Honda
-                else:
-                    # Pass it to scrapeKBB func, referencing the first item in the list { makeAsList[0] }
-                    trims = scrapeTrimData(row[0], makeAsList[0], row[2], bodylist)
-                    # Write { year , make , model, body_styles, trims,  image_sources }
-                    writer.writerow([row[0], row[1], row[2], bodylist, trims, row[4]])
-
-                # print(s)
-                print('\nFinished row operations for '+row[0]+' '+row[1]+' '+row[2])
-                # print('-------------------------------------------------------------')
-                # print('\n')
-
-        return None
-# ----------------------
-# def patchWithNull(oldFilePath, newFilePath):
+# def handleFilesForStyles(oldFilePath, newFilePath):
 #     # Does file reading & writing
 #     with open(oldFilePath) as oldFile:
 #         # create reader object from old file / path
@@ -208,7 +143,7 @@ def handleFilesForStyles(oldFilePath, newFilePath):
 #             # create writer object with new file / path
 #             writer = csv.writer(newFile)
 #             # write the headers on the first row of new file
-#             writer.writerow(['year', 'make', 'model', 'body_styles', 'trims', 'image_sources'])
+#             writer.writerow(['year', 'make', 'model', 'body_style(s)', 'trim(s)', 'image_source(s)'])
 #             # skip the first row of the old file
 #             next(reader)
 #
@@ -218,28 +153,93 @@ def handleFilesForStyles(oldFilePath, newFilePath):
 #                 make = row[1]
 #                 model = row[2]
 #                 bodystyles = row[3]
-#                 trim_data = row[4]
-#                 image_sources = row[5]
+#                 image_sources = row[4]
 #             }
+#
+#             Goal:
+#                 For each row, get its list of recalls as a json object
+#                 by making a call to getRecalls(year, make, model)
+#
+#             Results:
+#                 the CSV table should look like ->
+#                 ------------------------------------------------------------
+#                 year | make | model | body_styles | image_sources | recalls
+#                 ------------------------------------------------------------
 #             '''
 #             # jobs = []
 #             for row in reader:
 #                 # print('\n')
-#                 # print('\n-------------------------------------------------------------')
-#                 # print('Beginning row operations for '+row[0]+' '+row[1]+' '+row[2])
+#                 print('\n-------------------------------------------------------------')
+#                 print('Beginning row operations for '+row[0]+' '+row[1]+' '+row[2])
 #
-#                 trimStr = str(row[4])
-#                 if trimStr == "NULL":
-#                     print('Error found in: '+row[0]+' '+row[1]+' '+row[2])
-#                     writer.writerow([row[0], row[1], row[2], row[3], 'NULL', row[5]])
+#                 # Convert the make to a string list, we use this to handle case where make is two words
+#                 makeAsList = list(row[1].split(" "))
+#                 # Convert our bodystyles item from string list to list list so we can access len()
+#                 bodylist = ast.literal_eval(row[3])
+#
+#                 if len(makeAsList) is 2:
+#                     # Convert back to a string with a dash in between the words
+#                     makeAsStr = makeAsList[0]+'-'+makeAsList[1]
+#                     trims = scrapeTrimData(row[0], makeAsStr, row[2], bodylist)
+#                     # Write { year , make , model, body_styles, trims,  image_sources }
+#                     writer.writerow([row[0], row[1], row[2], bodylist, trims, row[4]])
+#
+#                 # If make is of size 1, something like Ford || Honda
 #                 else:
-#                     writer.writerow([row[0], row[1], row[2], row[3], row[4], row[5]])
+#                     # Pass it to scrapeKBB func, referencing the first item in the list { makeAsList[0] }
+#                     trims = scrapeTrimData(row[0], makeAsList[0], row[2], bodylist)
+#                     # Write { year , make , model, body_styles, trims,  image_sources }
+#                     writer.writerow([row[0], row[1], row[2], bodylist, trims, row[4]])
 #
-#                 # print('\nFinished row operations for '+row[0]+' '+row[1]+' '+row[2])
+#                 # print(s)
+#                 print('\nFinished row operations for '+row[0]+' '+row[1]+' '+row[2])
 #                 # print('-------------------------------------------------------------')
 #                 # print('\n')
 #
 #         return None
+# ----------------------
+def patchWithNull(oldFilePath, newFilePath):
+    # Does file reading & writing
+    with open(oldFilePath) as oldFile:
+        # create reader object from old file / path
+        reader = csv.reader(oldFile)
+
+        with open(newFilePath, 'w') as newFile:
+            # create writer object with new file / path
+            writer = csv.writer(newFile)
+            # write the headers on the first row of new file
+            writer.writerow(['year', 'make', 'model', 'body_styles', 'trims', 'image_sources'])
+            # skip the first row of the old file
+            next(reader)
+
+            '''
+            This time, we have the following info {
+                year = row[0]
+                make = row[1]
+                model = row[2]
+                bodystyles = row[3]
+                trim_data = row[4]
+                image_sources = row[5]
+            }
+            '''
+            # jobs = []
+            for row in reader:
+                # print('\n')
+                # print('\n-------------------------------------------------------------')
+                # print('Beginning row operations for '+row[0]+' '+row[1]+' '+row[2])
+
+                trimStr = str(row[4])
+                if "{}" in trimStr:
+                    print('Error found in: '+row[0]+' '+row[1]+' '+row[2])
+                    writer.writerow([row[0], row[1], row[2], row[3], 'NULL', row[5]])
+                else:
+                    writer.writerow([row[0], row[1], row[2], row[3], row[4], row[5]])
+
+                # print('\nFinished row operations for '+row[0]+' '+row[1]+' '+row[2])
+                # print('-------------------------------------------------------------')
+                # print('\n')
+
+        return None
 # ----------------------
 def handleFilesForStyles_v2(oldFilePath, newFilePath):
     # Does file reading & writing
@@ -300,7 +300,8 @@ def handleFilesForStyles_v2(oldFilePath, newFilePath):
         return None
 # ----------------------
 def createOldPath(year):
-    return 'master_data/'+str(year)+'.csv'
+    # return 'master_data/'+str(year)+'.csv'
+    return 'utld/'+str(year)+'.csv'
 # ----------------------
 def createNewPath(year):
     return str(year)+'.csv'
@@ -313,7 +314,7 @@ while count <= 2020:
     old = createOldPath(count)
     new = createNewPath(count)
     print('Currently working on: ' +new)
-    handleFilesForStyles_v2(old, new)
+    patchWithNull(old, new)
     print('Finished: '+new)
 
     count += 1

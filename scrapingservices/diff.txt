@@ -1,0 +1,495 @@
+Currently working on: 1992.csv
+Finished: 1992.csv
+
+Currently working on: 1993.csv
+Error found in: 1993 HUMMER H1
+Finished: 1993.csv
+
+Currently working on: 1994.csv
+Finished: 1994.csv
+
+Currently working on: 1995.csv
+Error found in: 1995 Chevrolet Lumina
+Error found in: 1995 HUMMER H1
+Error found in: 1995 Toyota Tacoma Xtracab
+Finished: 1995.csv
+
+Currently working on: 1996.csv
+Error found in: 1996 Chevrolet Lumina
+Error found in: 1996 HUMMER H1
+Finished: 1996.csv
+
+Currently working on: 1997.csv
+Error found in: 1997 Ford F250 Super Cab
+Finished: 1997.csv
+
+Currently working on: 1998.csv
+Error found in: 1998 Mercedes-Benz SL-Class
+Finished: 1998.csv
+
+Currently working on: 1999.csv
+Error found in: 1999 Porsche 911
+Finished: 1999.csv
+
+Currently working on: 2000.csv
+Error found in: 2000 HUMMER H1
+Finished: 2000.csv
+
+Currently working on: 2001.csv
+Error found in: 2001 Dodge Grand Caravan Passenger
+Error found in: 2001 HUMMER H1
+Finished: 2001.csv
+
+Currently working on: 2002.csv
+Error found in: 2002 Saab 3-Sep
+Error found in: 2002 Saab 5-Sep
+Finished: 2002.csv
+
+Currently working on: 2003.csv
+Error found in: 2003 Chevrolet Express 2500 Passenger
+Error found in: 2003 Chevrolet Express 3500 Passenger
+Error found in: 2003 Chevrolet Silverado 2500 HD Crew Cab
+Error found in: 2003 Dodge Grand Caravan Passenger
+Error found in: 2003 Dodge Ram 2500 Quad Cab
+Error found in: 2003 Dodge Ram 3500 Quad Cab
+Error found in: 2003 Dodge Sprinter 2500 Cargo
+Error found in: 2003 Dodge Sprinter 2500 Passenger
+Error found in: 2003 Ford E350 Super Duty Passenger
+Error found in: 2003 Ford F250 Super Duty Crew Cab
+Error found in: 2003 Ford F250 Super Duty Super Cab
+Error found in: 2003 Ford F350 Super Duty Crew Cab
+Error found in: 2003 Ford F350 Super Duty Super Cab
+Error found in: 2003 Ford Focus
+Error found in: 2003 GMC Savana 2500 Passenger
+Error found in: 2003 GMC Savana 3500 Passenger
+Error found in: 2003 GMC Sierra 2500 HD Crew Cab
+Error found in: 2003 GMC Sierra 2500 HD Extended Cab
+Error found in: 2003 Subaru Outback
+Finished: 2003.csv
+
+Currently working on: 2004.csv
+Error found in: 2004 Chevrolet Express 3500 Passenger
+Error found in: 2004 Chevrolet Silverado 2500 Extended Cab
+Error found in: 2004 Chevrolet Silverado 2500 HD Crew Cab
+Error found in: 2004 Chevrolet Silverado 2500 HD Extended Cab
+Error found in: 2004 Chevrolet Silverado 3500 Crew Cab
+Error found in: 2004 Chevrolet Silverado 3500 Extended Cab
+Error found in: 2004 Dodge Ram 2500 Quad Cab
+Error found in: 2004 Dodge Ram 3500 Quad Cab
+Error found in: 2004 Dodge Sprinter 2500 Cargo
+Error found in: 2004 Dodge Sprinter 2500 Passenger
+Error found in: 2004 Ford E350 Super Duty Passenger
+Error found in: 2004 Ford Excursion
+Error found in: 2004 Ford F150 (Heritage) Regular Cab
+Error found in: 2004 Ford F250 Super Duty Crew Cab
+Error found in: 2004 Ford F250 Super Duty Super Cab
+Error found in: 2004 Ford F350 Super Duty Crew Cab
+Error found in: 2004 Ford F350 Super Duty Super Cab
+Error found in: 2004 Ford Ranger Super Cab
+Error found in: 2004 GMC Savana 3500 Passenger
+Error found in: 2004 GMC Sierra 2500 Extended Cab
+Error found in: 2004 GMC Sierra 2500 HD Crew Cab
+Error found in: 2004 GMC Sierra 2500 HD Extended Cab
+Error found in: 2004 GMC Sierra 3500 Crew Cab
+Error found in: 2004 GMC Sierra 3500 Extended Cab
+Error found in: 2004 Volkswagen Jetta
+Finished: 2004.csv
+
+Currently working on: 2005.csv
+Error found in: 2005 Chevrolet Express 3500 Passenger
+Error found in: 2005 Chevrolet Silverado 3500 Crew Cab
+Error found in: 2005 Chevrolet Silverado 3500 Extended Cab
+Error found in: 2005 Dodge Ram 2500 Quad Cab
+Error found in: 2005 Dodge Ram 3500 Quad Cab
+Error found in: 2005 Dodge Sprinter 2500 Cargo
+Error found in: 2005 Dodge Sprinter 2500 Passenger
+Error found in: 2005 Ford E350 Super Duty Passenger
+Error found in: 2005 Ford Excursion
+Error found in: 2005 Ford F250 Super Duty Crew Cab
+Error found in: 2005 Ford F250 Super Duty Super Cab
+Error found in: 2005 Ford F350 Super Duty Crew Cab
+Error found in: 2005 Ford F350 Super Duty Super Cab
+Error found in: 2005 Ford Freestar Passenger
+Error found in: 2005 GMC Savana 3500 Passenger
+Error found in: 2005 GMC Sierra 3500 Crew Cab
+Error found in: 2005 GMC Sierra 3500 Extended Cab
+Error found in: 2005 Mercedes-Benz CL-Class
+Error found in: 2005 Saturn Ion
+Finished: 2005.csv
+
+Currently working on: 2006.csv
+Error found in: 2006 Chevrolet Express 3500 Passenger
+Error found in: 2006 Chevrolet Silverado 2500 HD Extended Cab
+Error found in: 2006 Dodge Ram 2500 Quad Cab
+Error found in: 2006 Dodge Ram 3500 Quad Cab
+Error found in: 2006 Dodge Sprinter 2500 Cargo
+Error found in: 2006 Dodge Sprinter 2500 Passenger
+Error found in: 2006 Ford E350 Super Duty Passenger
+Error found in: 2006 Ford F250 Super Duty Crew Cab
+Error found in: 2006 Ford F250 Super Duty Super Cab
+Error found in: 2006 Ford F350 Super Duty Crew Cab
+Error found in: 2006 Ford F350 Super Duty Super Cab
+Error found in: 2006 GMC Savana 3500 Passenger
+Error found in: 2006 GMC Sierra 2500 HD Crew Cab
+Error found in: 2006 GMC Sierra 2500 HD Extended Cab
+Error found in: 2006 GMC Sierra 3500 Crew Cab
+Error found in: 2006 GMC Sierra 3500 Extended Cab
+Error found in: 2006 Mercedes-Benz CL-Class
+Error found in: 2006 Saab 3-Sep
+Error found in: 2006 Saab 5-Sep
+Finished: 2006.csv
+
+Currently working on: 2007.csv
+Error found in: 2007 Chevrolet Express 3500 Passenger
+Error found in: 2007 Chevrolet Silverado (Classic) 2500 HD Crew Cab
+Error found in: 2007 Chevrolet Silverado (Classic) 2500 HD Extended Cab
+Error found in: 2007 Chevrolet Silverado (Classic) 3500 Crew Cab
+Error found in: 2007 Chevrolet Silverado (Classic) 3500 Extended Cab
+Error found in: 2007 Chevrolet Silverado 2500 HD Crew Cab
+Error found in: 2007 Chevrolet Silverado 2500 HD Extended Cab
+Error found in: 2007 Dodge Ram 2500 Quad Cab
+Error found in: 2007 Dodge Ram 3500 Quad Cab
+Error found in: 2007 Ford E350 Super Duty Passenger
+Error found in: 2007 Ford F250 Super Duty Crew Cab
+Error found in: 2007 Ford F250 Super Duty Super Cab
+Error found in: 2007 Ford F350 Super Duty Crew Cab
+Error found in: 2007 Ford F350 Super Duty Super Cab
+Error found in: 2007 GMC Sierra (Classic) 2500 HD Crew Cab
+Error found in: 2007 GMC Sierra (Classic) 2500 HD Extended Cab
+Error found in: 2007 GMC Sierra (Classic) 3500 Crew Cab
+Error found in: 2007 GMC Sierra (Classic) 3500 Extended Cab
+Error found in: 2007 GMC Sierra (Classic) 3500 Regular Cab
+Error found in: 2007 GMC Sierra 2500 HD Crew Cab
+Error found in: 2007 GMC Sierra 2500 HD Extended Cab
+Error found in: 2007 Honda Odyssey
+Finished: 2007.csv
+
+Currently working on: 2008.csv
+Error found in: 2008 BMW 3 Series
+Error found in: 2008 Chevrolet Express 3500 Passenger
+Error found in: 2008 Chevrolet Silverado 2500 HD Crew Cab
+Error found in: 2008 Chevrolet Silverado 2500 HD Extended Cab
+Error found in: 2008 Dodge Ram 2500 Quad Cab
+Error found in: 2008 Dodge Ram 3500 Mega Cab
+Error found in: 2008 Dodge Ram 3500 Quad Cab
+Error found in: 2008 Ford E350 Super Duty Passenger
+Error found in: 2008 Ford F150 SuperCrew Cab
+Error found in: 2008 Ford F250 Super Duty Crew Cab
+Error found in: 2008 Ford F250 Super Duty Super Cab
+Error found in: 2008 Ford F350 Super Duty Crew Cab
+Error found in: 2008 Ford F350 Super Duty Super Cab
+Error found in: 2008 Ford F450 Super Duty Crew Cab
+Error found in: 2008 GMC Savana 3500 Passenger
+Error found in: 2008 GMC Sierra 2500 HD Crew Cab
+Error found in: 2008 GMC Sierra 2500 HD Extended Cab
+Error found in: 2008 Hyundai Tiburon
+Error found in: 2008 INFINITI G
+Error found in: 2008 MAZDA MAZDA6
+Error found in: 2008 Nissan Frontier King Cab
+Error found in: 2008 Nissan Titan Crew Cab
+Finished: 2008.csv
+
+Currently working on: 2009.csv
+Error found in: 2009 Chevrolet Express 3500 Passenger
+Error found in: 2009 Chevrolet Silverado 2500 HD Crew Cab
+Error found in: 2009 Chevrolet Silverado 2500 HD Extended Cab
+Error found in: 2009 Dodge Ram 2500 Quad Cab
+Error found in: 2009 Dodge Ram 3500 Quad Cab
+Error found in: 2009 Ford F250 Super Duty Crew Cab
+Error found in: 2009 Ford F250 Super Duty Super Cab
+Error found in: 2009 Ford F350 Super Duty Crew Cab
+Error found in: 2009 Ford F350 Super Duty Super Cab
+Error found in: 2009 Ford F450 Super Duty Crew Cab
+Error found in: 2009 GMC Savana 3500 Passenger
+Error found in: 2009 GMC Sierra 2500 HD Crew Cab
+Error found in: 2009 GMC Sierra 2500 HD Extended Cab
+Error found in: 2009 INFINITI G
+Error found in: 2009 Pontiac G6
+Finished: 2009.csv
+
+Currently working on: 2010.csv
+Error found in: 2010 Chevrolet Express 2500 Cargo
+Error found in: 2010 Chevrolet Express 3500 Cargo
+Error found in: 2010 Chevrolet Express 3500 Passenger
+Error found in: 2010 Chevrolet Silverado 2500 HD Crew Cab
+Error found in: 2010 Chevrolet Silverado 2500 HD Extended Cab
+Error found in: 2010 Dodge Ram 2500 Crew Cab
+Error found in: 2010 Dodge Ram 3500 Crew Cab
+Error found in: 2010 Ford F250 Super Duty Crew Cab
+Error found in: 2010 Ford F250 Super Duty Super Cab
+Error found in: 2010 Ford F350 Super Duty Crew Cab
+Error found in: 2010 Ford F350 Super Duty Super Cab
+Error found in: 2010 Ford F450 Super Duty Crew Cab
+Error found in: 2010 GMC Savana 2500 Cargo
+Error found in: 2010 GMC Savana 3500 Cargo
+Error found in: 2010 GMC Sierra 2500 HD Crew Cab
+Error found in: 2010 GMC Sierra 2500 HD Extended Cab
+Finished: 2010.csv
+
+Currently working on: 2011.csv
+Error found in: 2011 BMW 3 Series
+Error found in: 2011 Chevrolet Express 3500 Passenger
+Error found in: 2011 Chevrolet Silverado 2500 HD Crew Cab
+Error found in: 2011 Chevrolet Silverado 2500 HD Extended Cab
+Error found in: 2011 Chevrolet Silverado 3500 HD Crew Cab
+Error found in: 2011 Ford F250 Super Duty Crew Cab
+Error found in: 2011 Ford F250 Super Duty Super Cab
+Error found in: 2011 Ford F350 Super Duty Crew Cab
+Error found in: 2011 Ford F350 Super Duty Super Cab
+Error found in: 2011 Ford F450 Super Duty Crew Cab
+Error found in: 2011 GMC Savana 3500 Passenger
+Error found in: 2011 GMC Sierra 2500 HD Crew Cab
+Error found in: 2011 GMC Sierra 2500 HD Extended Cab
+Error found in: 2011 GMC Sierra 3500 HD Crew Cab
+Error found in: 2011 Ram 2500 Crew Cab
+Error found in: 2011 Ram 3500 Crew Cab
+Finished: 2011.csv
+
+Currently working on: 2012.csv
+Error found in: 2012 Chevrolet Express 3500 Passenger
+Error found in: 2012 Chevrolet Silverado 2500 HD Crew Cab
+Error found in: 2012 Chevrolet Silverado 2500 HD Extended Cab
+Error found in: 2012 Chevrolet Silverado 3500 HD Crew Cab
+Error found in: 2012 Ferrari FF
+Error found in: 2012 Ford F250 Super Duty Crew Cab
+Error found in: 2012 Ford F250 Super Duty Super Cab
+Error found in: 2012 Ford F350 Super Duty Crew Cab
+Error found in: 2012 Ford F350 Super Duty Super Cab
+Error found in: 2012 Ford F450 Super Duty Crew Cab
+Error found in: 2012 GMC Savana 3500 Passenger
+Error found in: 2012 GMC Sierra 2500 HD Crew Cab
+Error found in: 2012 GMC Sierra 2500 HD Extended Cab
+Error found in: 2012 GMC Sierra 3500 HD Crew Cab
+Error found in: 2012 Ram 2500 Crew Cab
+Error found in: 2012 Ram 2500 Mega Cab
+Error found in: 2012 Ram 3500 Crew Cab
+Error found in: 2012 Ram 3500 Mega Cab
+Error found in: 2012 Volkswagen Passat
+Finished: 2012.csv
+
+Currently working on: 2013.csv
+Error found in: 2013 BMW 3 Series
+Error found in: 2013 Chevrolet Express 3500 Passenger
+Error found in: 2013 Chevrolet Silverado 2500 HD Crew Cab
+Error found in: 2013 Chevrolet Silverado 2500 HD Extended Cab
+Error found in: 2013 Chevrolet Silverado 3500 HD Crew Cab
+Error found in: 2013 Ford F250 Super Duty Crew Cab
+Error found in: 2013 Ford F250 Super Duty Super Cab
+Error found in: 2013 Ford F350 Super Duty Crew Cab
+Error found in: 2013 Ford F350 Super Duty Super Cab
+Error found in: 2013 Ford F450 Super Duty Crew Cab
+Error found in: 2013 Freightliner Sprinter 2500 Cargo
+Error found in: 2013 GMC Savana 3500 Passenger
+Error found in: 2013 GMC Sierra 2500 HD Crew Cab
+Error found in: 2013 GMC Sierra 2500 HD Extended Cab
+Error found in: 2013 GMC Sierra 3500 HD Crew Cab
+Error found in: 2013 Honda Insight
+Error found in: 2013 Nissan Altima
+Error found in: 2013 Ram 2500 Crew Cab
+Error found in: 2013 Ram 2500 Mega Cab
+Error found in: 2013 Ram 3500 Crew Cab
+Error found in: 2013 Ram 3500 Mega Cab
+Error found in: 2013 Volkswagen Passat
+Finished: 2013.csv
+
+Currently working on: 2014.csv
+Error found in: 2014 Cadillac CTS
+Error found in: 2014 Chevrolet Express 3500 Passenger
+Error found in: 2014 Chevrolet Silverado 2500 HD Crew Cab
+Error found in: 2014 Chevrolet Silverado 3500 HD Crew Cab
+Error found in: 2014 Ford F250 Super Duty Crew Cab
+Error found in: 2014 Ford F250 Super Duty Super Cab
+Error found in: 2014 Ford F350 Super Duty Crew Cab
+Error found in: 2014 Ford F350 Super Duty Super Cab
+Error found in: 2014 Ford F450 Super Duty Crew Cab
+Error found in: 2014 Freightliner Sprinter 2500 Cargo
+Error found in: 2014 GMC Savana 3500 Cargo
+Error found in: 2014 GMC Savana 3500 Passenger
+Error found in: 2014 GMC Sierra 2500 HD Crew Cab
+Error found in: 2014 GMC Sierra 3500 HD Crew Cab
+Error found in: 2014 Honda Accord
+Error found in: 2014 Mercedes-Benz E-Class
+Error found in: 2014 Mercedes-Benz Sprinter 2500 Cargo
+Error found in: 2014 Ram 2500 Crew Cab
+Error found in: 2014 Ram 2500 Mega Cab
+Error found in: 2014 Ram 3500 Crew Cab
+Error found in: 2014 Ram 3500 Mega Cab
+Finished: 2014.csv
+
+Currently working on: 2015.csv
+Error found in: 2015 Audi A3
+Error found in: 2015 BMW 3 Series
+Error found in: 2015 Chevrolet Express 3500 Cargo
+Error found in: 2015 Chevrolet Express 3500 Passenger
+Error found in: 2015 Chevrolet Silverado 2500 HD Crew Cab
+Error found in: 2015 Chevrolet Silverado 2500 HD Double Cab
+Error found in: 2015 Chevrolet Silverado 3500 HD Crew Cab
+Error found in: 2015 Ford F250 Super Duty Crew Cab
+Error found in: 2015 Ford F250 Super Duty Super Cab
+Error found in: 2015 Ford F350 Super Duty Crew Cab
+Error found in: 2015 Ford F350 Super Duty Super Cab
+Error found in: 2015 Ford F450 Super Duty Crew Cab
+Error found in: 2015 Ford Transit 150 Van
+Error found in: 2015 Ford Transit 250 Van
+Error found in: 2015 Ford Transit 350 HD Van
+Error found in: 2015 Ford Transit 350 Van
+Error found in: 2015 Freightliner Sprinter 2500 Cargo
+Error found in: 2015 GMC Savana 3500 Cargo
+Error found in: 2015 GMC Savana 3500 Passenger
+Error found in: 2015 GMC Sierra 2500 HD Crew Cab
+Error found in: 2015 GMC Sierra 2500 HD Double Cab
+Error found in: 2015 GMC Sierra 3500 HD Crew Cab
+Error found in: 2015 Jaguar XK
+Error found in: 2015 Mercedes-Benz C-Class
+Error found in: 2015 Mercedes-Benz E-Class
+Error found in: 2015 Mercedes-Benz Sprinter 2500 Cargo
+Error found in: 2015 Ram 2500 Crew Cab
+Error found in: 2015 Ram 2500 Mega Cab
+Error found in: 2015 Ram 3500 Crew Cab
+Error found in: 2015 Ram 3500 Mega Cab
+Error found in: 2015 Ram ProMaster Cargo Van
+Error found in: 2015 Volkswagen Jetta
+Finished: 2015.csv
+
+Currently working on: 2016.csv
+Error found in: 2016 Audi A3
+Error found in: 2016 Bentley Continental
+Error found in: 2016 Chevrolet Express 3500 Cargo
+Error found in: 2016 Chevrolet Express 3500 Passenger
+Error found in: 2016 Chevrolet Silverado 2500 HD Crew Cab
+Error found in: 2016 Chevrolet Silverado 2500 HD Double Cab
+Error found in: 2016 Chevrolet Silverado 3500 HD Crew Cab
+Error found in: 2016 Chevrolet Suburban
+Error found in: 2016 Ford F250 Super Duty Crew Cab
+Error found in: 2016 Ford F250 Super Duty Super Cab
+Error found in: 2016 Ford F350 Super Duty Crew Cab
+Error found in: 2016 Ford F350 Super Duty Super Cab
+Error found in: 2016 Ford F450 Super Duty Crew Cab
+Error found in: 2016 Ford Mustang
+Error found in: 2016 Ford Transit 150 Van
+Error found in: 2016 Ford Transit 250 Van
+Error found in: 2016 Ford Transit 350 HD Van
+Error found in: 2016 Ford Transit 350 Van
+Error found in: 2016 Ford Transit 350 Wagon
+Error found in: 2016 Freightliner Sprinter 2500 Cargo
+Error found in: 2016 GMC Savana 2500 Cargo
+Error found in: 2016 GMC Savana 3500 Cargo
+Error found in: 2016 GMC Savana 3500 Passenger
+Error found in: 2016 GMC Sierra 2500 HD Crew Cab
+Error found in: 2016 GMC Sierra 2500 HD Double Cab
+Error found in: 2016 GMC Sierra 3500 HD Crew Cab
+Error found in: 2016 Mercedes-Benz E-Class
+Error found in: 2016 Mercedes-Benz Sprinter 2500 Cargo
+Error found in: 2016 Nissan TITAN XD Crew Cab
+Error found in: 2016 Ram 2500 Crew Cab
+Error found in: 2016 Ram 2500 Mega Cab
+Error found in: 2016 Ram 3500 Crew Cab
+Error found in: 2016 Ram 3500 Mega Cab
+Error found in: 2016 Ram ProMaster Cargo Van
+Finished: 2016.csv
+
+Currently working on: 2017.csv
+Error found in: 2017 Audi A3 Sportback e-tron
+Error found in: 2017 Bentley Continental
+Error found in: 2017 BMW 4 Series
+Error found in: 2017 Chevrolet Silverado 2500 HD Crew Cab
+Error found in: 2017 Chevrolet Silverado 2500 HD Double Cab
+Error found in: 2017 Chevrolet Silverado 3500 HD Crew Cab
+Error found in: 2017 Ford F250 Super Duty Crew Cab
+Error found in: 2017 Ford F250 Super Duty Super Cab
+Error found in: 2017 Ford F350 Super Duty Crew Cab
+Error found in: 2017 Ford F350 Super Duty Super Cab
+Error found in: 2017 Ford F450 Super Duty Crew Cab
+Error found in: 2017 Ford Transit 150 Van
+Error found in: 2017 Ford Transit 250 Van
+Error found in: 2017 Ford Transit 350 HD Van
+Error found in: 2017 Ford Transit 350 Van
+Error found in: 2017 Ford Transit 350 Wagon
+Error found in: 2017 Freightliner Sprinter 2500 Crew
+Error found in: 2017 Freightliner Sprinter 2500 Passenger
+Error found in: 2017 GMC Sierra 2500 HD Crew Cab
+Error found in: 2017 GMC Sierra 2500 HD Double Cab
+Error found in: 2017 GMC Sierra 3500 HD Crew Cab
+Error found in: 2017 Jaguar F-TYPE
+Error found in: 2017 Lincoln MKZ
+Error found in: 2017 Mercedes-Benz C-Class
+Error found in: 2017 Mercedes-Benz S-Class
+Error found in: 2017 Mercedes-Benz Sprinter 2500 Crew
+Error found in: 2017 Mercedes-Benz Sprinter 2500 Passenger
+Error found in: 2017 MINI Hardtop 2 Door
+Error found in: 2017 Porsche 911
+Error found in: 2017 Ram 2500 Crew Cab
+Error found in: 2017 Ram 2500 Mega Cab
+Error found in: 2017 Ram 3500 Crew Cab
+Error found in: 2017 Ram 3500 Mega Cab
+Error found in: 2017 Ram ProMaster Cargo Van
+Error found in: 2017 Tesla Model S
+Error found in: 2017 Toyota Highlander Hybrid
+Finished: 2017.csv
+
+Currently working on: 2018.csv
+Error found in: 2018 Alfa Romeo Stelvio
+Error found in: 2018 Audi A3 Sportback e-tron
+Error found in: 2018 Audi RS 3
+Error found in: 2018 BMW 4 Series
+Error found in: 2018 Chevrolet Silverado 2500 HD Crew Cab
+Error found in: 2018 Chevrolet Silverado 2500 HD Double Cab
+Error found in: 2018 Chevrolet Silverado 3500 HD Crew Cab
+Error found in: 2018 Dodge Challenger
+Error found in: 2018 Ford F250 Super Duty Crew Cab
+Error found in: 2018 Ford F250 Super Duty Super Cab
+Error found in: 2018 Ford F350 Super Duty Crew Cab
+Error found in: 2018 Ford F450 Super Duty Crew Cab
+Error found in: 2018 Ford Transit 150 Van
+Error found in: 2018 Ford Transit 250 Van
+Error found in: 2018 Ford Transit 350 HD Van
+Error found in: 2018 Ford Transit 350 Van
+Error found in: 2018 Ford Transit 350 Wagon
+Error found in: 2018 GMC Sierra 2500 HD Crew Cab
+Error found in: 2018 GMC Sierra 2500 HD Double Cab
+Error found in: 2018 GMC Sierra 3500 HD Crew Cab
+Error found in: 2018 Jaguar F-TYPE
+Error found in: 2018 Jeep Compass
+Error found in: 2018 Lexus LS
+Error found in: 2018 Lincoln MKZ
+Error found in: 2018 Mercedes-Benz GLC
+Error found in: 2018 Ram 2500 Crew Cab
+Error found in: 2018 Ram 2500 Mega Cab
+Error found in: 2018 Ram 3500 Crew Cab
+Error found in: 2018 Ram 3500 Mega Cab
+Error found in: 2018 Ram ProMaster Cargo Van
+Error found in: 2018 Tesla Model 3
+Error found in: 2018 Tesla Model S
+Finished: 2018.csv
+
+Currently working on: 2019.csv
+Error found in: 2019 Audi e-tron
+Error found in: 2019 BMW M2
+Error found in: 2019 BMW X6 M
+Error found in: 2019 Chevrolet Silverado 2500 HD Crew Cab
+Error found in: 2019 Chevrolet Silverado 3500 HD Crew Cab
+Error found in: 2019 Ford F250 Super Duty Crew Cab
+Error found in: 2019 Ford F350 Super Duty Crew Cab
+Error found in: 2019 Ford Transit 250 Van
+Error found in: 2019 Ford Transit 350 Wagon
+Error found in: 2019 Ford Transit Connect Passenger
+Error found in: 2019 GMC Sierra 2500 HD Crew Cab
+Error found in: 2019 GMC Sierra 3500 HD Crew Cab
+Error found in: 2019 Jeep Compass
+Error found in: 2019 Lincoln MKZ
+Error found in: 2019 MINI Convertible
+Error found in: 2019 Nissan TITAN XD Crew Cab
+Error found in: 2019 Subaru Legacy
+Error found in: 2019 Tesla Model 3
+Error found in: 2019 Tesla Model S
+Finished: 2019.csv
+
+Currently working on: 2020.csv
+Error found in: 2020 Chevrolet Silverado 2500 HD Crew Cab
+Error found in: 2020 Chevrolet Silverado 3500 HD Crew Cab
+Error found in: 2020 Ford Explorer
+Error found in: 2020 GMC Sierra 2500 HD Crew Cab
+Error found in: 2020 Land Rover Range Rover
+Error found in: 2020 Lincoln Aviator
+Error found in: 2020 Subaru Legacy
+Finished: 2020.csv
