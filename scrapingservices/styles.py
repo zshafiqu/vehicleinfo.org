@@ -217,16 +217,16 @@ def patchWithNull(oldFilePath, newFilePath):
         #     # skip the first row of the old file
         #     next(reader)
 
-            '''
-            This time, we have the following info {
-                year = row[0]
-                make = row[1]
-                model = row[2]
-                bodystyles = row[3]
-                trim_data = row[4]
-                image_sources = row[5]
-            }
-            '''
+        '''
+        This time, we have the following info {
+            year = row[0]
+            make = row[1]
+            model = row[2]
+            bodystyles = row[3]
+            trim_data = row[4]
+            image_sources = row[5]
+        }
+        '''
         # jobs = []
         for row in reader:
             # print('\n')
