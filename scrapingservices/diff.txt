@@ -38,46 +38,30 @@ Currently working on: 2004.csv
 Finished: 2004.csv
 
 Currently working on: 2005.csv
-
-Error found in: 2005 Chevrolet Express 3500 Passenger
-Error found in: 2005 Chevrolet Silverado 3500 Crew Cab
-Error found in: 2005 Chevrolet Silverado 3500 Extended Cab
-
-Error found in: 2005 Dodge Ram 2500 Quad Cab
-Error found in: 2005 Dodge Ram 3500 Quad Cab
-Error found in: 2005 Dodge Sprinter 2500 Cargo
-Error found in: 2005 Dodge Sprinter 2500 Passenger
-
-Error found in: 2005 Ford E350 Super Duty Passenger
-Error found in: 2005 Ford Excursion
-Error found in: 2005 Ford F250 Super Duty Crew Cab
-Error found in: 2005 Ford F250 Super Duty Super Cab
-Error found in: 2005 Ford F350 Super Duty Crew Cab
-Error found in: 2005 Ford F350 Super Duty Super Cab
-Error found in: 2005 Ford Freestar Passenger
-
-Error found in: 2005 GMC Savana 3500 Passenger
-Error found in: 2005 GMC Sierra 3500 Crew Cab
-Error found in: 2005 GMC Sierra 3500 Extended Cab
 Finished: 2005.csv
 
 Currently working on: 2006.csv
+
 Error found in: 2006 Chevrolet Express 3500 Passenger
 Error found in: 2006 Chevrolet Silverado 2500 HD Extended Cab
+
 Error found in: 2006 Dodge Ram 2500 Quad Cab
 Error found in: 2006 Dodge Ram 3500 Quad Cab
 Error found in: 2006 Dodge Sprinter 2500 Cargo
 Error found in: 2006 Dodge Sprinter 2500 Passenger
+
 Error found in: 2006 Ford E350 Super Duty Passenger
 Error found in: 2006 Ford F250 Super Duty Crew Cab
 Error found in: 2006 Ford F250 Super Duty Super Cab
 Error found in: 2006 Ford F350 Super Duty Crew Cab
 Error found in: 2006 Ford F350 Super Duty Super Cab
+
 Error found in: 2006 GMC Savana 3500 Passenger
 Error found in: 2006 GMC Sierra 2500 HD Crew Cab
 Error found in: 2006 GMC Sierra 2500 HD Extended Cab
 Error found in: 2006 GMC Sierra 3500 Crew Cab
 Error found in: 2006 GMC Sierra 3500 Extended Cab
+
 Finished: 2006.csv
 
 Currently working on: 2007.csv
