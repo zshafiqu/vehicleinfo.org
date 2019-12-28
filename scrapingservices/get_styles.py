@@ -205,8 +205,8 @@ def patchWithNull(oldFilePath, newFilePath):
         '''
         for row in reader:
 
-            trimStr = str(row[4])
-            if "{}" in trimStr:
+            trimStr = str(row[3])
+            if "{" in trimStr:
                 print('Error found in: '+row[0]+' '+row[1]+' '+row[2])
 
         return None
