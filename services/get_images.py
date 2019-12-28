@@ -2,17 +2,6 @@ from bs4 import BeautifulSoup, SoupStrainer
 import requests, json, os, mysql.connector, csv, ast, random
 # Script to scrape images for each vehicle in our list
 ''' The goal of this script is to store the source for each image in our database '''
-
-# username = os.environ.get('DB_USER')
-# dbname = os.environ.get('DB_NAME')
-# passwd = os.environ.get('DB_PASS')
-# server = os.environ.get('DB_SERVER')
-# port = os.environ.get('DB_PORT')
-
-# mydb = mysql.connector.connect(host=server, port=port, user=username, password=passwd, database=dbname)
-# print('databse connected')
-
-# mysql://scott:tiger@localhost/mydatabase
 # ----------------------
 # def scrapeEdmunds(year, make, model):
 #     # URL to scrape from
