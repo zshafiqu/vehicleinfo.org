@@ -1,42 +1,4 @@
 
-Currently working on: 2016.csv
-Error found in: 2016 Chevrolet Express 3500 Cargo
-Error found in: 2016 Chevrolet Express 3500 Passenger
-Error found in: 2016 Chevrolet Silverado 2500 HD Crew Cab
-Error found in: 2016 Chevrolet Silverado 2500 HD Double Cab
-Error found in: 2016 Chevrolet Silverado 3500 HD Crew Cab
-Error found in: 2016 Chevrolet Suburban
-
-Error found in: 2016 Ford F250 Super Duty Crew Cab
-Error found in: 2016 Ford F250 Super Duty Super Cab
-Error found in: 2016 Ford F350 Super Duty Crew Cab
-Error found in: 2016 Ford F350 Super Duty Super Cab
-Error found in: 2016 Ford F450 Super Duty Crew Cab
-Error found in: 2016 Ford Transit 150 Van
-Error found in: 2016 Ford Transit 250 Van
-Error found in: 2016 Ford Transit 350 HD Van
-Error found in: 2016 Ford Transit 350 Van
-Error found in: 2016 Ford Transit 350 Wagon
-
-Error found in: 2016 Freightliner Sprinter 2500 Cargo
-Error found in: 2016 GMC Savana 2500 Cargo
-Error found in: 2016 GMC Savana 3500 Cargo
-Error found in: 2016 GMC Savana 3500 Passenger
-Error found in: 2016 GMC Sierra 2500 HD Crew Cab
-Error found in: 2016 GMC Sierra 2500 HD Double Cab
-Error found in: 2016 GMC Sierra 3500 HD Crew Cab
-
-Error found in: 2016 Mercedes-Benz Sprinter 2500 Cargo
-
-Error found in: 2016 Nissan TITAN XD Crew Cab
-
-Error found in: 2016 Ram 2500 Crew Cab
-Error found in: 2016 Ram 2500 Mega Cab
-Error found in: 2016 Ram 3500 Crew Cab
-Error found in: 2016 Ram 3500 Mega Cab
-Error found in: 2016 Ram ProMaster Cargo Van
-Finished: 2016.csv
-
 Currently working on: 2017.csv
 Error found in: 2017 Audi A3 Sportback e-tron
 
