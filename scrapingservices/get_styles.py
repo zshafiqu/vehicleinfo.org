@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup, SoupStrainer
 import requests, json, os, mysql.connector, csv, ast, random
-import images
+import get_images
 # ----------------------
 def getSoup(url):
     # Entered getSoup method
@@ -15,7 +15,7 @@ def getSoup(url):
             break
         try:
             # Generate a new header [required to emulate browser behavior]
-            headers = images.getHeader()
+            headers = get_images.getHeader()
             # Request for the resource, timeout after 20 seconds (for hanging requests)
             page = requests.get(url, headers=headers, timeout=20).text
         except:

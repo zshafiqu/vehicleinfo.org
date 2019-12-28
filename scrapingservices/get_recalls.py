@@ -1,5 +1,5 @@
 import requests, json, csv, multiprocessing
-import images
+import get_images
 # try global list
 # bunches = []
 def sanitizeModelInput(model):
@@ -23,7 +23,7 @@ def getRecalls(year, make, model):
 
     url = 'https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/'+year+'/make/'+make+'/model/'+model+'?format=json'
     # print(url)
-    header = images.getHeader()
+    header = get_images.getHeader()
     response = requests.get(url, headers=header)
     empty = []
     print('STATUS CODE:' + str(response.status_code))
@@ -115,12 +115,3 @@ while count <= 2020:
     print('Finished: '+new)
 
     count += 1
-
-# old = createOldPath(1992)
-# new = createNewPath(1992)
-# handleFilesForRecalls(old, new)
-# getRecalls('1992', 'Chrysler', 'Town & Country')
-# for recall in bunches:
-    # print (recall)
-# print('THE LENGTH OF BUNCHES IS' + str(len(bunches)))
-#
