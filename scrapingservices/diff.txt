@@ -1,40 +1,4 @@
 
-
-Currently working on: 2015.csv
-Error found in: 2015 Chevrolet Express 3500 Cargo
-Error found in: 2015 Chevrolet Express 3500 Passenger
-Error found in: 2015 Chevrolet Silverado 2500 HD Crew Cab
-Error found in: 2015 Chevrolet Silverado 2500 HD Double Cab
-Error found in: 2015 Chevrolet Silverado 3500 HD Crew Cab
-
-Error found in: 2015 Ford F250 Super Duty Crew Cab
-Error found in: 2015 Ford F250 Super Duty Super Cab
-Error found in: 2015 Ford F350 Super Duty Crew Cab
-Error found in: 2015 Ford F350 Super Duty Super Cab
-Error found in: 2015 Ford F450 Super Duty Crew Cab
-
-Error found in: 2015 Ford Transit 150 Van
-Error found in: 2015 Ford Transit 250 Van
-Error found in: 2015 Ford Transit 350 HD Van
-Error found in: 2015 Ford Transit 350 Van
-
-Error found in: 2015 Freightliner Sprinter 2500 Cargo
-
-Error found in: 2015 GMC Savana 3500 Cargo
-Error found in: 2015 GMC Savana 3500 Passenger
-Error found in: 2015 GMC Sierra 2500 HD Crew Cab
-Error found in: 2015 GMC Sierra 2500 HD Double Cab
-Error found in: 2015 GMC Sierra 3500 HD Crew Cab
-
-Error found in: 2015 Mercedes-Benz Sprinter 2500 Cargo
-
-Error found in: 2015 Ram 2500 Crew Cab
-Error found in: 2015 Ram 2500 Mega Cab
-Error found in: 2015 Ram 3500 Crew Cab
-Error found in: 2015 Ram 3500 Mega Cab
-Error found in: 2015 Ram ProMaster Cargo Van
-Finished: 2015.csv
-
 Currently working on: 2016.csv
 Error found in: 2016 Chevrolet Express 3500 Cargo
 Error found in: 2016 Chevrolet Express 3500 Passenger
