@@ -27,14 +27,14 @@ def file_to_database(vehicles_year, database_object):
     tablename = str(vehicles_year)+'_vehicles'
 
     # Before doing anything, check to see if the table exists & drop it if so
-    curr.execute("DROP TABLE IF EXISTS "+tableName)
+    curr.execute("DROP TABLE IF EXISTS "+tablename)
 
     # Create the table otherwise, scheme follows:
     # --------------------------------------------------------------------
     # ID | Year | Make | Model | Body-Styles | Trim-Data | Images-Sources
     # --------------------------------------------------------------------
     curr.execute(
-        "CREATE TABLE "+tableName+" (id INT AUTO_INCREMENT PRIMARY KEY, year INT, make TEXT, model TEXT, body_styles TEXT, trim_data JSON, image_sources JSON)"
+        "CREATE TABLE "+tablename+" (id INT AUTO_INCREMENT PRIMARY KEY, year INT, make TEXT, model TEXT, body_styles TEXT, trim_data JSON, image_sources JSON)"
         )
 
     # Traverse the file to do the operations on it
@@ -44,7 +44,7 @@ def file_to_database(vehicles_year, database_object):
 
         for row in reader:
 
-            sql = "INSERT INTO "+tableName+" (year, make, model, body_styles, trim_data, image_sources) VALUES (%s, %s, %s, %s, %s, %s)"
+            sql = "INSERT INTO "+tablename+" (year, make, model, body_styles, trim_data, image_sources) VALUES (%s, %s, %s, %s, %s, %s)"
 
             # json_conversion ->
             trim_data = json_conversion(row[4])
