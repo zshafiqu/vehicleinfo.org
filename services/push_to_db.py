@@ -2,6 +2,15 @@
 import os, mysql.connector, csv, json, ast
 from flask import jsonify
 # USAGE: to create or update our database with information from any csv file
+'''
+    NOTE: This script probably isn't as robust as it should be, but thats
+    because I have been strict on outputs up until this point with the
+    scraping services I was writing.
+
+    As a result of being strict on outputs prior, I don't need to be THAT
+    strict on inputs NOW. However – this script will be modified in the future
+    to reflect the principles of abstraction & modularity for complex applications
+'''
 # ----------------------
 # Establish connection to our database using info stored locally on machine
 username = os.environ.get('DB_USER')
@@ -38,7 +47,7 @@ def file_to_database(vehicles_year, database_object):
         )
 
     # Traverse the file to do the operations on it
-    with open(filename) as file:
+    with open(fileroute) as file:
         reader = csv.reader(file)
         next(reader)
 
