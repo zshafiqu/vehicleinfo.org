@@ -90,7 +90,7 @@ def patch_range(min, max):
     mydb = connect_to_db(server, port, username, passwd, dbname)
     # Go thru range b/w HI & LOW
     counter = min
-    
+
     while counter <= max:
         name = file_pathify(counter)
         print('BEGINNING FILE: '+name+'\n')
@@ -100,3 +100,4 @@ def patch_range(min, max):
 
         counter += 1
 # ----------------------
+patch_range(1992, 1992)
