@@ -58,6 +58,7 @@ mysql.init_app(app)
 def index():
     return render_template('home.html')
 # ----------------------
+''' ALL API ROUTES LIVE BELOW THIS LINE !!! '''
 # Route 1, get all vehicles for a given year
 @app.route('/api/<year>', methods=['GET'])
 def get_by_year(year):
