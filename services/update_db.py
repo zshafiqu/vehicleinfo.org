@@ -21,6 +21,7 @@ port = os.environ.get('DB_PORT')
 # ----------------------
 def json_conversion(somestring):
     try:
+        somestring = somestring.replace('"', "'")
         # Literal
         somestring = ast.literal_eval(somestring)
         # To json
