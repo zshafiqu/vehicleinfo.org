@@ -41,8 +41,11 @@ ID (int) | Year (int) | Make (text) | Model (text) | Body-Styles (text) | Trim-D
 
 }
 '''
+# curr.execute("CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))")
 
-# curr.execute("CREATE TABLE 1992 (id INT AUTO_INCREMENT PRIMARY KEY, year INT, make TEXT, model TEXT, body-styles TEXT, trim-data TEXT, image-sources TEXT)")
+
+# curr.execute("CREATE TABLE zain (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255))")
+curr.execute("CREATE TABLE testtwo (id INT, year INT, make TEXT, model TEXT, body_styles TEXT, trim_data JSON, image_sources JSON)")
 
 # curr.execute("CREATE TABLE '"+dbname+".1992' ( `id` INT NOT NULL AUTO_INCREMENT , `year` INT NOT NULL , `make` TEXT NOT NULL , `model` TEXT NOT NULL , `body-styles` TEXT NOT NULL , `trim-data` JSON NOT NULL , `image-sources` JSON NOT NULL , PRIMARY KEY (`id`))")
 
