@@ -50,6 +50,7 @@ def file_to_database(vehicles_year, database_object):
     with open(fileroute) as file:
         reader = csv.reader(file)
         next(reader)
+        id = 0
 
         for row in reader:
 
@@ -69,12 +70,13 @@ def file_to_database(vehicles_year, database_object):
             list.append(image_sources) # Image_sources
 
             # Execute query
-            print(row[0]+' '+row[1]+' '+row[2]+' being inserted.')
+            print('Row ID: '+id+' Vehicle: '+row[0]+' '+row[1]+' '+row[2]+' being inserted.')
             curr.execute(sql, list)
 
             # Commit change
             database_object.commit()
             print(curr.rowcount, "record inserted.")
+            id += 1
 
     return None
 # ----------------------
