@@ -20,14 +20,15 @@ server = os.environ.get('DB_SERVER')
 port = os.environ.get('DB_PORT')
 # ----------------------
 def json_conversion(somestring):
+    temp = somestring
     try:
-        somestring = somestring.replace('"', "'")
+        # somestring = somestring.replace('"', "'")
         # Literal
         somestring = ast.literal_eval(somestring)
         # To json
         somestring = json.dumps(somestring)
     except:
-        return somestring
+        return temp
     # return
     return somestring
 # ----------------------
@@ -115,4 +116,4 @@ def patch_range(min, max):
 
         counter += 1
 # ----------------------
-patch_range(1992, 2020)
+patch_range(2015, 2020)
