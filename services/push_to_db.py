@@ -24,14 +24,6 @@ mydb = mysql.connector.connect(
 
 curr = mydb.cursor()
 
-# curr.execute("CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))")
-#
-# curr.execute("SHOW TABLES")
-#
-# for x in curr:
-#   print(x)
-year = 1992
-filename = 'master_data/'+str(year)+'.csv'
 
 '''
 Create a table for cars of a specific year that looks like {
@@ -41,29 +33,31 @@ ID (int) | Year (int) | Make (text) | Model (text) | Body-Styles (text) | Trim-D
 
 }
 '''
-# curr.execute("CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))")
+year = 1992
 
+filename = 'master_data/'+str(year)+'.csv'
+tableName = str(year)+'_vehicles'
 
-# curr.execute("CREATE TABLE zain (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), address VARCHAR(255))")
-curr.execute("CREATE TABLE testtwo (id INT, year INT, make TEXT, model TEXT, body_styles TEXT, trim_data JSON, image_sources JSON)")
+curr.execute("CREATE TABLE "+tableName+" (id INT, year INT, make TEXT, model TEXT, body_styles TEXT, trim_data JSON, image_sources JSON)")
 
-# curr.execute("CREATE TABLE '"+dbname+".1992' ( `id` INT NOT NULL AUTO_INCREMENT , `year` INT NOT NULL , `make` TEXT NOT NULL , `model` TEXT NOT NULL , `body-styles` TEXT NOT NULL , `trim-data` JSON NOT NULL , `image-sources` JSON NOT NULL , PRIMARY KEY (`id`))")
+with open(filename) as file:
+    reader = csv.reader(file)
+    next(reader)
 
-# ( `id` INT NOT NULL AUTO_INCREMENT , `year` INT NOT NULL , `make` TEXT NOT NULL , `model` TEXT NOT NULL , `body-styles` TEXT NOT NULL , `trim-data` JSON NOT NULL , `image-sources` JSON NOT NULL , PRIMARY KEY (`id`))
+    for row in reader:
 
-curr.execute("SHOW TABLES")
+        # year = row[0]
+        # make = row[1]
+        # model = row[2]
+        # bodystyles = row[3]
+        # trim_data = row[4]
+        # image_sources = row[5]
+        sql = "INSERT INTO "+tableName" (year, make, model, body_styles, trim_data, image_sources) VALUES (%s, %s, %s, %s, %s, %s)"
+        curr.execute(sql, row)
 
-for x in curr:
-  print(x)
+        mydb.commit()
+        print(curr.rowcount, "record inserted.")
 
-# # print('databse connected')
-# # if mydb.is_connected():
-# #     print('open')
-# # else:
-# #     print('close')
-# mycursor = mydb.cursor()
-
-# print(mycursor.execute('SELECT * FROM `Test_Table`;'))
 # ----------------------
 # def connect_to_db(host, port, user, password, database):
 #     # Establish connection to our database using info stored locally on machine
