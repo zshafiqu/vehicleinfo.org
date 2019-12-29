@@ -70,7 +70,7 @@ def file_to_database(vehicles_year, database_object):
             list.append(image_sources) # Image_sources
 
             # Execute query
-            print('Row ID: '+id+' Vehicle: '+row[0]+' '+row[1]+' '+row[2]+' being inserted.')
+            print('Row ID: '+str(id)+' Vehicle: '+row[0]+' '+row[1]+' '+row[2]+' being inserted.')
             curr.execute(sql, list)
 
             # Commit change
