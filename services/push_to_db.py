@@ -38,7 +38,7 @@ year = 1992
 filename = 'master_data/'+str(year)+'.csv'
 tableName = str(year)+'_vehicles'
 
-curr.execute("CREATE TABLE "+tableName+" (id INT, year INT, make TEXT, model TEXT, body_styles TEXT, trim_data JSON, image_sources JSON)")
+curr.execute("CREATE TABLE "+tableName+" (id INT, year INT, make TEXT, model TEXT, body_styles TEXT, trim_data VARCHAR(MAX), image_sources VARCHAR(MAX))")
 
 with open(filename) as file:
     reader = csv.reader(file)
@@ -52,7 +52,7 @@ with open(filename) as file:
         # bodystyles = row[3]
         # trim_data = row[4]
         # image_sources = row[5]
-        sql = "INSERT INTO "+tableName" (year, make, model, body_styles, trim_data, image_sources) VALUES (%s, %s, %s, %s, %s, %s)"
+        sql = "INSERT INTO "+tableName+" (year, make, model, body_styles, trim_data, image_sources) VALUES (%s, %s, %s, %s, %s, %s)"
         curr.execute(sql, row)
 
         mydb.commit()
