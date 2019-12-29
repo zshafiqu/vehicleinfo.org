@@ -20,10 +20,13 @@ server = os.environ.get('DB_SERVER')
 port = os.environ.get('DB_PORT')
 # ----------------------
 def json_conversion(somestring):
-    # Literal
-    somestring = ast.literal_eval(somestring)
-    # To json
-    somestring = json.dumps(somestring)
+    try:
+        # Literal
+        somestring = ast.literal_eval(somestring)
+        # To json
+        somestring = json.dumps(somestring)
+    except:
+        return somestring
     # return
     return somestring
 # ----------------------
