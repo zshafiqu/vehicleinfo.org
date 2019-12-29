@@ -59,7 +59,7 @@ def index():
     return render_template('home.html')
 # ----------------------
 # Route 1, get all vehicles for a given year
-@app.route('/api/<int:year>', methods=['GET'])
+@app.route('/api/<year>', methods=['GET'])
 def get_all_for_year(year):
     # Define table name for lookup
     tableName = str(year)+'_vehicles'
@@ -76,32 +76,24 @@ def get_all_for_year(year):
 
     return jsonify(list)
 # ----------------------
-@app.route('/api')
-def random():
-    # recalls = getRecalls('2003', 'chevrolet', 'corvette')
-    # cur = db_object.cursor()
+# Route 2, get all vehicles for a given year and make
+@app.route('/api/<year>/<make>', methods=['GET'])
+def get_all_for_year_and_make(year, make):
+    # Define table name for lookup
+    tableName = str(year)+'_vehicles'
+    # Prepare query
+    query = "SELECT * FROM "+tableName+" WHERE make LIKE '"+make+"'"
+    print(query)
+    # Get cursor & execute query
+    cursor = mysql.get_db().cursor()
+    cursor.execute(query)
+    results = cursor.fetchall()
+    # Parse results
+    list = []
+    for result in results:
+        list.append(str(result))
 
-    # cursor = mysql.get_db().cursor()
-    # cursor.execute("SELECT * FROM 1992_vehicles")
-    # results = cursor.fetchall()
-    # # print(results)
-    # list = []
-    # for result in results:
-    #     # print(result)
-    #     list.append(str(result))
-    #
-    # return jsonify(list)
-    return ''
-    # return 'Done'
-
-    # cur.execute("SELECT * FROM 1992_vehicles WHERE make LIKE 'ACURA'")
-    # list = []
-    # for row in cur:
-    #     list.append(row)
-    # return list
-
-    # recalls = get_recalls('2003', 'chevrolet', 'corvette')
-    # return recalls
+    return jsonify(list)
 # ----------------------
 if __name__ == '__main__':
     app.run(debug=True)
