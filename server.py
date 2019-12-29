@@ -60,7 +60,7 @@ def index():
 # ----------------------
 # Route 1, get all vehicles for a given year
 @app.route('/api/<year>', methods=['GET'])
-def get_all_for_year(year):
+def get_by_year(year):
     # Define table name for lookup
     tableName = str(year)+'_vehicles'
     # Prepare query
@@ -78,11 +78,30 @@ def get_all_for_year(year):
 # ----------------------
 # Route 2, get all vehicles for a given year and make
 @app.route('/api/<year>/<make>', methods=['GET'])
-def get_all_for_year_and_make(year, make):
+def get_by_year_and_make(year, make):
     # Define table name for lookup
     tableName = str(year)+'_vehicles'
     # Prepare query
     query = "SELECT * FROM "+tableName+" WHERE make LIKE '"+make+"'"
+    print(query)
+    # Get cursor & execute query
+    cursor = mysql.get_db().cursor()
+    cursor.execute(query)
+    results = cursor.fetchall()
+    # Parse results
+    list = []
+    for result in results:
+        list.append(str(result))
+
+    return jsonify(list)
+# ----------------------
+# Route 3, get all vehicles for a given year and make
+@app.route('/api/<year>/<make>/<model>', methods=['GET'])
+def get_by_year_make_and_model(year, make, model):
+    # Define table name for lookup
+    tableName = str(year)+'_vehicles'
+    # Prepare query
+    query = "SELECT * FROM "+tableName+" WHERE make LIKE '"+make+"'"+"AND model LIKE'"+model+"'"
     print(query)
     # Get cursor & execute query
     cursor = mysql.get_db().cursor()
