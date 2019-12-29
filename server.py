@@ -34,7 +34,7 @@ port = os.environ.get('DB_PORT')
 # ----------------------
 
 # Make an API call to the NHTSA page for recall Information
-def getRecalls(year, make, model):
+def get_recalls(year, make, model):
     # Build URL for call to JSON response
     url = 'https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/'+year+'/make/'+make+'/model/'+model+'?format=json'
     # Make request
@@ -74,7 +74,7 @@ def random():
     # for row in cur:
     #     list.append(row)
     # return list
-    recalls = getRecalls('2003', 'chevrolet', 'corvette')
+    recalls = get_recalls('2003', 'chevrolet', 'corvette')
     return recalls
 # ----------------------
 if __name__ == '__main__':
