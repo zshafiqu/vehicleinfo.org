@@ -74,7 +74,8 @@ def random():
     # for row in cur:
     #     list.append(row)
     # return list
-    return ''
+    recalls = getRecalls('2003', 'chevrolet', 'corvette')
+    return recalls
 # ----------------------
 if __name__ == '__main__':
     app.run(debug=True)
