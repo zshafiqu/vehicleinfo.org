@@ -69,10 +69,16 @@ def random():
     # cur = db_object.cursor()
 
     cursor = mysql.get_db().cursor()
-    cursor.execute(''' SELECT * FROM 1992_vehicles WHERE make LIKE 'Acura' ''')
+    cursor.execute('''SELECT * FROM 1992_vehicles''')
     results = cursor.fetchall()
-    print(results)
-    return 'Done'
+    # print(results)
+    # list = []
+    # for result in results:
+        # print(result)
+        # list.append(str(result))
+
+    return str(results)
+    # return 'Done'
 
     # cur.execute("SELECT * FROM 1992_vehicles WHERE make LIKE 'ACURA'")
     # list = []
