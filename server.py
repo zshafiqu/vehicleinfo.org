@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, jsonify
 from flaskext.mysql import MySQL
 import requests, json, os
 '''
@@ -72,12 +72,12 @@ def random():
     cursor.execute('''SELECT * FROM 1992_vehicles''')
     results = cursor.fetchall()
     # print(results)
-    # list = []
-    # for result in results:
+    list = []
+    for result in results:
         # print(result)
-        # list.append(str(result))
+        list.append(str(result))
 
-    return str(results)
+    return jsonify(list)
     # return 'Done'
 
     # cur.execute("SELECT * FROM 1992_vehicles WHERE make LIKE 'ACURA'")
