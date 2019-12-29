@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from flaskext.mysql import MySQL
+# from flaskext.mysql import MySQL
 import requests, json, os, mysql.connector
 # ----------------------
 # Initialize flask app
@@ -68,12 +68,13 @@ def index():
 @app.route('/api')
 def random():
     # recalls = getRecalls('2003', 'chevrolet', 'corvette')
-    cur = db_object.cursor()
-    cur.execute("SELECT * FROM 1992_vehicles WHERE make LIKE 'ACURA'")
-    list = []
-    for row in cur:
-        list.append(row)
-    return list
+    # cur = db_object.cursor()
+    # cur.execute("SELECT * FROM 1992_vehicles WHERE make LIKE 'ACURA'")
+    # list = []
+    # for row in cur:
+    #     list.append(row)
+    # return list
+    return ''
 # ----------------------
 if __name__ == '__main__':
     app.run(debug=True)

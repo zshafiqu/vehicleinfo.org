@@ -100,7 +100,7 @@ def getSoup(url):
 
     # Continually try to make this request until its successful
     while True:
-        if i is 15:
+        if i == 15:
             # OR until 15 times, at which point stop wasting time and break
             page = ''
             break
@@ -199,7 +199,7 @@ def handleFiles(oldFilePath, newFilePath):
                 bodylist = ast.literal_eval(row[3])
 
                 # If make is of size 2, meaning it contains two words, for example Land Rover || Aston Martin
-                if len(makeAsList) is 2:
+                if len(makeAsList) == 2:
                     # Convert back to a string with a dash in between the words
                     makeAsStr = makeAsList[0]+'-'+makeAsList[1]
                     # Scrape for image sources / retrieve ke/value mapping for body style : img url

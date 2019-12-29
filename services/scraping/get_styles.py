@@ -9,7 +9,7 @@ def getSoup(url):
 
     # Continually try to make this request until its successful
     while True:
-        if iter is 15:
+        if iter == 15:
             # OR until 15 times, at which point stop wasting time and break
             page = ''
             break
@@ -85,7 +85,7 @@ def scrapeTrimData(year, make, model, bodystyles):
     model = model.replace('/', '')
     trims = dict()
 
-    if len(bodystyles) is 1:
+    if len(bodystyles) == 1:
 
         if model == "Lumina":
             url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'+'?bodystyle=sedan'
@@ -166,7 +166,7 @@ def handleFilesForStyles(oldFilePath, newFilePath):
                 # Convert our bodystyles item from string list to list list so we can access len()
                 bodylist = ast.literal_eval(row[3])
 
-                if len(makeAsList) is 2:
+                if len(makeAsList) == 2:
                     # Convert back to a string with a dash in between the words
                     makeAsStr = makeAsList[0]+'-'+makeAsList[1]
                     trims = scrapeTrimData(row[0], makeAsStr, row[2], bodylist)
@@ -257,7 +257,7 @@ def handleFilesForStyles_v2(oldFilePath, newFilePath):
                     # Convert our bodystyles item from string list to list list so we can access len()
                     bodylist = ast.literal_eval(row[3])
 
-                    if len(makeAsList) is 2:
+                    if len(makeAsList) == 2:
                         # Convert back to a string with a dash in between the words
                         makeAsStr = makeAsList[0]+'-'+makeAsList[1]
                         trims = scrapeTrimData(row[0], makeAsStr, model, bodylist)
@@ -282,12 +282,12 @@ def createOldPath(year):
 def createNewPath(year):
     return str(year)+'.csv'
 # ----------------------
-count = 1992
-while count <= 2020:
-    old = createOldPath(count)
-    new = createNewPath(count)
-    print('Currently working on: ' +new)
-    patchWithNull(old, new)
-    print('Finished: '+new)
-
-    count += 1
+# count = 1992
+# while count <= 2020:
+#     old = createOldPath(count)
+#     new = createNewPath(count)
+#     print('Currently working on: ' +new)
+#     patchWithNull(old, new)
+#     print('Finished: '+new)
+#
+#     count += 1

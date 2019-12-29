@@ -41,15 +41,15 @@ def file_to_database(vehicles_year, database_object):
     tablename = str(vehicles_year)+'_vehicles'
 
     # Before doing anything, check to see if the table exists & drop it if so
-    curr.execute("DROP TABLE IF EXISTS "+tablename)
+    ''' curr.execute("DROP TABLE IF EXISTS "+tablename) '''
 
     # Create the table otherwise, scheme follows:
     # --------------------------------------------------------------------
     # ID | Year | Make | Model | Body-Styles | Trim-Data | Images-Sources
     # --------------------------------------------------------------------
-    curr.execute(
+    ''' curr.execute(
         "CREATE TABLE "+tablename+" (id INT AUTO_INCREMENT PRIMARY KEY, year INT, make TEXT, model TEXT, body_styles TEXT, trim_data JSON, image_sources JSON)"
-        )
+        ) '''
 
     # Traverse the file to do the operations on it
     with open(fileroute) as file:
@@ -76,10 +76,10 @@ def file_to_database(vehicles_year, database_object):
 
             # Execute query
             print('Row ID: '+str(id)+' Vehicle: '+row[0]+' '+row[1]+' '+row[2]+' being inserted.')
-            curr.execute(sql, list)
+            ''' curr.execute(sql, list) '''
 
             # Commit change
-            database_object.commit()
+            ''' database_object.commit() '''
             print(curr.rowcount, "record inserted.")
             id += 1
 
@@ -116,4 +116,4 @@ def patch_range(min, max):
 
         counter += 1
 # ----------------------
-patch_range(2019, 2020)
+# patch_range(2019, 2020)

@@ -27,9 +27,9 @@ def getRecalls(year, make, model):
     response = requests.get(url, headers=header)
     empty = []
     print('STATUS CODE:' + str(response.status_code))
-    if response.status_code is 200:
+    if response.status_code == 200:
         response = response.json()
-        if response['Count'] is 0:
+        if response['Count'] == 0:
             return empty
         else:
             return response['Results']
@@ -106,12 +106,12 @@ def createOldPath(year):
 def createNewPath(year):
     return str(year)+'.csv'
 # ----------------------
-count = 1992
-while count <= 2020:
-    old = createOldPath(count)
-    new = createNewPath(count)
-    print('Currently working on: ' +new)
-    handleFilesForRecalls(old, new)
-    print('Finished: '+new)
-
-    count += 1
+# count = 1992
+# while count <= 2020:
+#     old = createOldPath(count)
+#     new = createNewPath(count)
+#     print('Currently working on: ' +new)
+#     handleFilesForRecalls(old, new)
+#     print('Finished: '+new)
+#
+#     count += 1
