@@ -116,4 +116,4 @@ def patch_range(min, max):
 
         counter += 1
 # ----------------------
-patch_range(2018, 2020)
+patch_range(2019, 2020)
