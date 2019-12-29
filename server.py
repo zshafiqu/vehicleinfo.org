@@ -1,36 +1,34 @@
 from flask import Flask, render_template, request
-# from flaskext.mysql import MySQL
-import requests, json, os, mysql.connector
+from flaskext.mysql import MySQL
+import requests, json, os
+'''
+Server Requirements:
+    - flask
+    - requests
+    - flask-mysql
+'''
 # ----------------------
 # Initialize flask app
 app = Flask(__name__)
 # ----------------------
 # Get info stored locally on machine
-username = os.environ.get('DB_USER')
-dbname = os.environ.get('DB_NAME')
-passwd = os.environ.get('DB_PASS')
-host = os.environ.get('DB_SERVER')
+host_name= os.environ.get('DB_SERVER')
 port = os.environ.get('DB_PORT')
+username = os.environ.get('DB_USER')
+passwd = os.environ.get('DB_PASS')
+dbname = os.environ.get('DB_NAME')
 # ----------------------
 # Configure flask app with db connection
-# app.config['MYSQL_HOST'] = host
-# app.config['MYSQL_PORT'] = port
-# app.config['MYSQL_USER'] = username
-# app.config['MYSQL_PASSWORD'] = passwd
-# app.config['MYSQL_DB'] = dbname
-
-# Establish connection to our database using info stored locally on machine
-# db_object = mysql.connector.connect(
-#     host=host,
-#     port=port,
-#     user=username,
-#     password=passwd,
-#     database=dbname
-#     )
+app.config['MYSQL_DATABASE_HOST'] = host_name
+app.config['MYSQL_DATABASE_PORT'] = int(port)
+app.config['MYSQL_DATABASE_USER'] = username
+app.config['MYSQL_DATABASE_PASSWORD'] = passwd
+app.config['MYSQL_DATABASE_DB'] = dbname
 # ----------------------
 # Bind app to db obj
-# mysql = MySQL()
-# mysql.init_app(app)
+mysql = MySQL()
+mysql.init_app(app)
+# cursor = mysql.get_db().cursor()
 # ----------------------
 
 # Make an API call to the NHTSA page for recall Information
@@ -69,13 +67,21 @@ def index():
 def random():
     # recalls = getRecalls('2003', 'chevrolet', 'corvette')
     # cur = db_object.cursor()
+
+    cursor = mysql.get_db().cursor()
+    cursor.execute(''' SELECT * FROM 1992_vehicles WHERE make LIKE 'Acura' ''')
+    results = cursor.fetchall()
+    print(results)
+    return 'Done'
+
     # cur.execute("SELECT * FROM 1992_vehicles WHERE make LIKE 'ACURA'")
     # list = []
     # for row in cur:
     #     list.append(row)
     # return list
-    recalls = get_recalls('2003', 'chevrolet', 'corvette')
-    return recalls
+
+    # recalls = get_recalls('2003', 'chevrolet', 'corvette')
+    # return recalls
 # ----------------------
 if __name__ == '__main__':
     app.run(debug=True)
