@@ -8,7 +8,7 @@ from flask import jsonify
     scraping services I was writing.
 
     As a result of being strict on outputs prior, I don't need to be THAT
-    strict on inputs NOW. However – this script will be modified in the future
+    strict on inputs NOW. However - this script will be modified in the future
     to reflect the principles of abstraction & modularity for complex applications
 '''
 # ----------------------
