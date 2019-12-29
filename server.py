@@ -32,13 +32,13 @@ mysql.init_app(app)
 # ----------------------
 
 # Make an API call to the NHTSA page for recall Information
-def get_recalls(year, make, model):
-    # Build URL for call to JSON response
-    url = 'https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/'+year+'/make/'+make+'/model/'+model+'?format=json'
-    # Make request
-    items = requests.get(url).json()
-
-    return items
+# def get_recalls(year, make, model):
+#     # Build URL for call to JSON response
+#     url = 'https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/'+year+'/make/'+make+'/model/'+model+'?format=json'
+#     # Make request
+#     items = requests.get(url).json()
+#
+#     return items
 # ----------------------
 # @app.route('/handleRequest', methods=['POST'])
 # def process():
@@ -58,26 +58,40 @@ def get_recalls(year, make, model):
 def index():
     return render_template('home.html')
 # ----------------------
-# @app.route('/jsonTest')
-# def random():
-#     recalls = getRecalls('2007', 'lexus', 'es')
-#     return recalls
+# Route 1, get all vehicles for a given year
+@app.route('/api/<int:year>', methods=['GET'])
+def get_all_for_year(year):
+    # Define table name for lookup
+    tableName = str(year)+'_vehicles'
+    # Prepare query
+    query = "SELECT * FROM "+tableName
+    # Get cursor & execute query
+    cursor = mysql.get_db().cursor()
+    cursor.execute(query)
+    results = cursor.fetchall()
+    # Parse results
+    list = []
+    for result in results:
+        list.append(str(result))
+
+    return jsonify(list)
 # ----------------------
 @app.route('/api')
 def random():
     # recalls = getRecalls('2003', 'chevrolet', 'corvette')
     # cur = db_object.cursor()
 
-    cursor = mysql.get_db().cursor()
-    cursor.execute('''SELECT * FROM 1992_vehicles''')
-    results = cursor.fetchall()
-    # print(results)
-    list = []
-    for result in results:
-        # print(result)
-        list.append(str(result))
-
-    return jsonify(list)
+    # cursor = mysql.get_db().cursor()
+    # cursor.execute("SELECT * FROM 1992_vehicles")
+    # results = cursor.fetchall()
+    # # print(results)
+    # list = []
+    # for result in results:
+    #     # print(result)
+    #     list.append(str(result))
+    #
+    # return jsonify(list)
+    return ''
     # return 'Done'
 
     # cur.execute("SELECT * FROM 1992_vehicles WHERE make LIKE 'ACURA'")
