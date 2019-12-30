@@ -72,6 +72,14 @@ def mappify_row(row):
     # Return a dictionary for a result object
     return map
 # ----------------------
+def parse_results(results):
+    # Parse results
+    list = []
+    for result in results:
+        map = mappify_row(result)
+        list.append(map)
+    return list
+# ----------------------
 def compile_response(list):
     response = dict()
     response['Count'] = len(list)
@@ -103,11 +111,8 @@ def get_by_year(year):
     if len(results) == 0:
         return jsonify(response=default_response())
 
-    # Parse results
-    list = []
-    for result in results:
-        map = mappify_row(result)
-        list.append(map)
+    # Verified, now parse all rows in results to a list
+    list = parse_results(results)
 
     # Aggregate data in map for count, response, results
     response = compile_response(list)
@@ -131,11 +136,8 @@ def get_by_year_and_make(year, make):
     if len(results) == 0:
         return jsonify(response=default_response())
 
-    # Parse results
-    list = []
-    for result in results:
-        map = mappify_row(result)
-        list.append(map)
+    # Verified, now parse all rows in results to a list
+    list = parse_results(results)
 
     # Aggregate data in map for count, response, results
     response = compile_response(list)
@@ -159,11 +161,8 @@ def get_by_year_make_and_model(year, make, model):
     if len(results) == 0:
         return jsonify(response=default_response())
 
-    # Parse results
-    list = []
-    for result in results:
-        map = mappify_row(result)
-        list.append(map)
+    # Verified, now parse all rows in results to a list
+    list = parse_results(results)
 
     # Aggregate data in map for count, response, results
     response = compile_response(list)
