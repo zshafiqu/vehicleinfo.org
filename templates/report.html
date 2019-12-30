@@ -1,56 +1,37 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="content">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="card ">
-        <div class="card-header">
-          <p>{{ res['Message'] }}</p>
-          <p>Im a paragraph</p>
-          <!-- <h4 class="card-title">{{ res['Message'] }}</h4> -->
-        </div>
-        <div class="card-content">
-          <div class="row">
-            <div>
-              <div style="padding:2rem 4rem;">
-                <img src="https://file.kelleybluebookimages.com/kbb/base/house/1995/1995-BMW-3%20Series-Front_BM318CONV952_376x246.jpg?interpolation=high-quality&downsize=391:*" alt="">
-              </div>
-              <!-- <div class="table-responsive">
-                <table class="table">
-                  <tbody>
-                    <tr>
-                      <td><div class="flag"><img src=""></div></td>
-                      <td>USA</td>
-                      <td class="text-right">2.920</td>
-                      <td class="text-right">53.23%</td>
-                    </tr>
-                    <tr>
-                      <td><div class="flag"><img src=""></div></td>
-                      <td>USA</td>
-                      <td class="text-right">2.920</td>
-                      <td class="text-right">53.23%</td>
-                    </tr>
-                    <tr>
-                      <td><div class="flag"><img src=""></div></td>
-                      <td>USA</td>
-                      <td class="text-right">2.920</td>
-                      <td class="text-right">53.23%</td>
-                    </tr>
-                    <tr>
-                      <td><div class="flag"><img src=""></div></td>
-                      <td>USA</td>
-                      <td class="text-right">2.920</td>
-                      <td class="text-right">53.23%</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                  </div> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="row">
+  <div class="col-md-12">
+                        <div class="card" style="padding:1rem;">
+                            <div class="">
+                                <h4 class="title" style="margin:0px;">Search By Year Make and Model</h4>
+                            </div>
+                            <div class="content">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Year</label>
+                                                <input type="text" class="form-control border-input" disabled="" placeholder="2002" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Make</label>
+                                                <input type="text" class="form-control border-input" placeholder="BMW" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Model</label>
+                                                <input type="email" class="form-control border-input" placeholder="3 Series">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
 
+</div>
 {% endblock content %}

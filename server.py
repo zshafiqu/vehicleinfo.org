@@ -48,18 +48,11 @@ def get_complaints_from_NHTSA(year, make, model):
 @app.route('/')
 def index():
     # Can use methods without decorator like below
-    res = get_by_year_make_and_model(1995, 'bmw', 'm3')
-
-    # res = str(res.data)
-    # res = ast.literal_eval(res)
-    # res = res.data.replace('\n', '')
-    res = res.get_json()
-    # res = jsonify(res.data)
-    # res = res.data
-    # print(ast.literal_eval(res.data))
-    # print(res.data)
-    print(res)
-    return render_template('report.html', res=res)
+    # res = get_by_year_make_and_model(1995, 'bmw', 'm3')
+    # Res contains a response with status code, to get the data, use get_json()
+    # res = res.get_json()
+    # print(res)
+    return render_template('report.html')
 
 # ----------------------
 ''' ------------- HELPER FUNCTIONS FOR API ROUTES BELOW THIS LINE ------------- '''
