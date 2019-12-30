@@ -58,6 +58,7 @@ mysql.init_app(app)
 def index():
     return render_template('home.html')
 # ----------------------
+''' ------------- HELPER FUNCTIONS FOR API ROUTES BELOW THIS LINE ------------- '''
 def mappify_row(row):
     # Parse row object to return a dictionary with {key : value} mapping
     map = dict()
@@ -73,11 +74,16 @@ def mappify_row(row):
 # ----------------------
 def compile_response(list):
     response = dict()
-
     response['Count'] = len(list)
     response['Message'] = 'Results returned successfully'
     response['Results'] = list
-
+    return response
+# ----------------------
+def default_response():
+    response = dict()
+    response['Count'] = 0
+    response['Message'] = 'No results found for this request'
+    response['Results'] = []
     return response
 # ----------------------
 ''' ------------- ALL API ROUTES LIVE BELOW THIS LINE ------------- '''
@@ -92,6 +98,10 @@ def get_by_year(year):
     cursor = mysql.get_db().cursor()
     cursor.execute(query)
     results = cursor.fetchall()
+
+    # Check for validity
+    if len(results) == 0:
+        return jsonify(response=default_response())
 
     # Parse results
     list = []
@@ -117,6 +127,10 @@ def get_by_year_and_make(year, make):
     cursor.execute(query)
     results = cursor.fetchall()
 
+    # Check for validity
+    if len(results) == 0:
+        return jsonify(response=default_response())
+
     # Parse results
     list = []
     for result in results:
@@ -140,6 +154,10 @@ def get_by_year_make_and_model(year, make, model):
     cursor = mysql.get_db().cursor()
     cursor.execute(query)
     results = cursor.fetchall()
+
+    # Check for validity
+    if len(results) == 0:
+        return jsonify(response=default_response())
 
     # Parse results
     list = []
