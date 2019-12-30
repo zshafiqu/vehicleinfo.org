@@ -71,6 +71,15 @@ def mappify_row(row):
     # Return a dictionary for a result object
     return map
 # ----------------------
+def compile_response(list):
+    response = dict()
+
+    response['Count'] = len(list)
+    response['Message'] = 'Results returned successfully'
+    response['Results'] = list
+
+    return response
+# ----------------------
 ''' ------------- ALL API ROUTES LIVE BELOW THIS LINE ------------- '''
 # Route 1, get all vehicles for a given year
 @app.route('/api/<year>/', methods=['GET'])
@@ -90,8 +99,11 @@ def get_by_year(year):
         map = mappify_row(result)
         list.append(map)
 
+    # Aggregate data in map for count, response, results
+    response = compile_response(list)
+
     # Return JSON object
-    return jsonify(list)
+    return jsonify(response)
 # ----------------------
 # Route 2, get all vehicles for a given year and make
 @app.route('/api/<year>/<make>/', methods=['GET'])
@@ -111,8 +123,11 @@ def get_by_year_and_make(year, make):
         map = mappify_row(result)
         list.append(map)
 
+    # Aggregate data in map for count, response, results
+    response = compile_response(list)
+
     # Return JSON object
-    return jsonify(list)
+    return jsonify(response)
 # ----------------------
 # Route 3, get all vehicles for a given year and make
 @app.route('/api/<year>/<make>/<model>/', methods=['GET'])
@@ -132,8 +147,11 @@ def get_by_year_make_and_model(year, make, model):
         map = mappify_row(result)
         list.append(map)
 
+    # Aggregate data in map for count, response, results
+    response = compile_response(list)
+
     # Return JSON object
-    return jsonify(list)
+    return jsonify(response)
 # ----------------------
 if __name__ == '__main__':
     app.run(debug=True)
