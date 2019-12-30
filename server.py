@@ -112,9 +112,8 @@ def get_by_year(year):
         return jsonify(response=default_response())
 
     # Verified, now parse all rows in results to a list
+    # And aggregate data in map for count, response, results
     list = parse_results(results)
-
-    # Aggregate data in map for count, response, results
     response = compile_response(list)
 
     # Return JSON object
@@ -137,9 +136,8 @@ def get_by_year_and_make(year, make):
         return jsonify(response=default_response())
 
     # Verified, now parse all rows in results to a list
+    # And aggregate data in map for count, response, results
     list = parse_results(results)
-
-    # Aggregate data in map for count, response, results
     response = compile_response(list)
 
     # Return JSON object
@@ -162,9 +160,8 @@ def get_by_year_make_and_model(year, make, model):
         return jsonify(response=default_response())
 
     # Verified, now parse all rows in results to a list
+    # And aggregate data in map for count, response, results
     list = parse_results(results)
-
-    # Aggregate data in map for count, response, results
     response = compile_response(list)
 
     # Return JSON object
