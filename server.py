@@ -28,31 +28,6 @@ app.config['MYSQL_DATABASE_DB'] = dbname
 # Bind app to db obj
 mysql = MySQL()
 mysql.init_app(app)
-# cursor = mysql.get_db().cursor()
-# ----------------------
-
-# Make an API call to the NHTSA page for recall Information
-# def get_recalls(year, make, model):
-#     # Build URL for call to JSON response
-#     url = 'https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/'+year+'/make/'+make+'/model/'+model+'?format=json'
-#     # Make request
-#     items = requests.get(url).json()
-#
-#     return items
-# ----------------------
-# @app.route('/handleRequest', methods=['POST'])
-# def process():
-#     query = request.form['searchparameter']
-#     parameter = query.split()
-#     year = parameter[0]
-#     make = parameter[1]
-#     model = parameter[2]
-#
-#     recalls = getRecalls(year, make, model)
-#     # imagesrc = scrapeEdmunds(year, make, model)
-#
-#     # return render_template('dashboard.html', recalls=recalls)
-#     return recalls
 # ----------------------
 @app.route('/')
 def index():
