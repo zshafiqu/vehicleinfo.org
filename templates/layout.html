@@ -4,7 +4,6 @@
   <!-- BEGIN HEAD -->
   <head>
     <meta charset="utf-8">
-    <!-- <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/apple-icon.png') }}"> -->
     <link rel="icon" href="{{ url_for('static', filename='img/car.png') }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>VehicleInfo.org</title>
@@ -35,11 +34,11 @@
         </div>
         <div class="sidebar-wrapper">
           <ul class="nav">
-            <li class=""><a href=""><i class="nc-icon nc-bank"></i><p>Home</p></a></li>
-            <li class=""><a href=""><i class="nc-icon nc-align-center"></i><p>Vehicle Report</p></a></li>
-            <li class=""><a href=""><i class="nc-icon nc-atom"></i><p>Open Source API</p></a></li>
-            <li class=""><a href=""><i class="nc-icon nc-bell-55"></i><p>Versions</p></a></li>
-            <li class=""><a href=""><i class="nc-icon nc-badge"></i><p>About</p></a></li>
+            <li id="select" class="active"><a href="#"><i class="nc-icon nc-bank"></i><p>Home</p></a></li>
+            <li id="select" class=""><a href="#"><i class="nc-icon nc-align-center"></i><p>Vehicle Report</p></a></li>
+            <li id="select" class=""><a href="#"><i class="nc-icon nc-atom"></i><p>Open Source API</p></a></li>
+            <li id="select" class=""><a href="#"><i class="nc-icon nc-bell-55"></i><p>Versions</p></a></li>
+            <li id="select" class=""><a href="#"><i class="nc-icon nc-badge"></i><p>About</p></a></li>
           </ul>
         </div>
       </div>
@@ -58,7 +57,7 @@
                   <span class="navbar-toggler-bar bar3"></span>
                 </button>
               </div>
-              <a class="navbar-brand" href="#pablo">Home</a>
+              <a class="navbar-brand" href="">Home</a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -120,6 +119,11 @@
   <script src="{{url_for('static', filename='js/plugins/chartjs.min.js')}}"></script>
   <script src="{{url_for('static', filename='js/plugins/bootstrap-notify.js')}}"></script>
   <script src="{{url_for('static', filename='js/paper-dashboard.min.js')}}"></script>
+  <!-- <script type="text/javascript">
+  $('#select').click(function(){
+    $(this).toggleClass('active');
+  });
+  </script> -->
   <!-- SCRIPTS! -->
 </body>
 
