@@ -59,7 +59,7 @@ def index():
     return render_template('home.html')
 # ----------------------
 def mappify_row(row):
-    # Parse row object as dictionary with key : value mapping
+    # Parse row object to return a dictionary with {key : value} mapping
     map = dict()
     map['Year'] = row[1]
     map['Make'] = row[2]
@@ -70,68 +70,69 @@ def mappify_row(row):
 
     # Return a dictionary for a result object
     return map
+# ----------------------
 ''' ------------- ALL API ROUTES LIVE BELOW THIS LINE ------------- '''
 # Route 1, get all vehicles for a given year
 @app.route('/api/<year>/', methods=['GET'])
 def get_by_year(year):
-    # Define table name for lookup
+    # Define table name for lookup and prepare query
     tableName = str(year)+'_vehicles'
-    # Prepare query
     query = "SELECT * FROM "+tableName
+
     # Get cursor & execute query
     cursor = mysql.get_db().cursor()
     cursor.execute(query)
     results = cursor.fetchall()
+
     # Parse results
     list = []
     for result in results:
         map = mappify_row(result)
         list.append(map)
 
+    # Return JSON object
     return jsonify(list)
 # ----------------------
 # Route 2, get all vehicles for a given year and make
 @app.route('/api/<year>/<make>/', methods=['GET'])
 def get_by_year_and_make(year, make):
-    # Define table name for lookup
+    # Define table name for lookup and prepare query
     tableName = str(year)+'_vehicles'
-    # Prepare query
     query = "SELECT * FROM "+tableName+" WHERE make LIKE '"+make+"'"
-    print(query)
+
     # Get cursor & execute query
     cursor = mysql.get_db().cursor()
     cursor.execute(query)
     results = cursor.fetchall()
+
     # Parse results
-    # headers = ['year', 'make', 'model', 'styles', 'trims', 'images']
     list = []
-    # print(results.count())
     for result in results:
         map = mappify_row(result)
         list.append(map)
-        # list.append(ast.literal_eval(result))
 
+    # Return JSON object
     return jsonify(list)
 # ----------------------
 # Route 3, get all vehicles for a given year and make
 @app.route('/api/<year>/<make>/<model>/', methods=['GET'])
 def get_by_year_make_and_model(year, make, model):
-    # Define table name for lookup
+    # Define table name for lookup and prepare query
     tableName = str(year)+'_vehicles'
-    # Prepare query
     query = "SELECT * FROM "+tableName+" WHERE make LIKE '"+make+"'"+" AND model LIKE '"+model+"'"
-    print(query)
+
     # Get cursor & execute query
     cursor = mysql.get_db().cursor()
     cursor.execute(query)
     results = cursor.fetchall()
-    print(results)
+
     # Parse results
     list = []
     for result in results:
         map = mappify_row(result)
         list.append(map)
 
+    # Return JSON object
     return jsonify(list)
 # ----------------------
 if __name__ == '__main__':
