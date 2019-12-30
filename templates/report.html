@@ -1,37 +1,78 @@
 {% extends "layout.html" %}
 {% block content %}
+<!-- BEGIN SEARCH FORM -->
 <div class="row">
-  <div class="col-md-12">
-                        <div class="card" style="padding:1rem;">
-                            <div class="">
-                                <h4 class="title" style="margin:0px;">Search By Year Make and Model</h4>
+    <div class="col-md-12">
+        <div class="card" style="padding:1rem;">
+            <div class="">
+                <h4 class="title" style="margin:0rem;">Search By Year Make and Model</h4>
+            </div>
+            <div class="content">
+                <form>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Year</label>
+                                <input type="text" class="form-control border-input" disabled="" placeholder="1995" value="">
                             </div>
-                            <div class="content">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Year</label>
-                                                <input type="text" class="form-control border-input" disabled="" placeholder="2002" value="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Make</label>
-                                                <input type="text" class="form-control border-input" placeholder="BMW" value="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label>Model</label>
-                                                <input type="email" class="form-control border-input" placeholder="3 Series">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Make</label>
+                                <input type="text" class="form-control border-input" placeholder="BMW" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Model</label>
+                                <input type="email" class="form-control border-input" placeholder="3 Series">
                             </div>
                         </div>
                     </div>
-
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
+<!-- END SEARCH FORM -->
+<!-- BEGIN ROW 1 -->
+<div class="row">
+  <!-- BEGIN LEFT CARD -->
+    <div class="col-md-6">
+        <div class="card" style="padding:1rem;">
+            <div class="header" style="margin:0rem;">
+                <h4 class="title" style="margin-top:0rem;">1995 BMW M3</h4>
+            </div>
+            <div class="content" style="padding:.5rem;">
+                <img style="padding-left:1.2rem;" src="https://file.kelleybluebookimages.com/kbb/base/house/1995/1995-BMW-M3-Front_BMM3-951_376x237.jpg?interpolation=high-quality&downsize=391:" alt="">
+            </div>
+            <div class="footer">
+                <hr>
+                <div class="stats">
+                    <strong>Available Style(s): Coupe</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END LEFT CARD -->
+    <!-- BEGIN RIGHT CARD -->
+    <div class="col-md-6">
+        <div class="card" style="padding:1rem;">
+            <div class="header" style="margin:0rem;">
+                <h4 class="title" style="margin-top:0rem;">1995 BMW M3</h4>
+            </div>
+            <div class="content" style="padding:.5rem;">
+                <img style="padding-left:1.2rem;" src="https://file.kelleybluebookimages.com/kbb/base/house/1995/1995-BMW-M3-Front_BMM3-951_376x237.jpg?interpolation=high-quality&downsize=391:" alt="">
+            </div>
+            <div class="footer">
+                <hr>
+                <div class="stats">
+                    <strong>Available Style(s): Coupe</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END RIGHT CARD -->
+</div>
+<!-- END ROW 1 -->
 {% endblock content %}
