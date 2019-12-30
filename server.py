@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, make_response
 from flaskext.mysql import MySQL
 import requests, json, os, ast
 '''
@@ -48,11 +48,19 @@ def get_complaints_from_NHTSA(year, make, model):
 @app.route('/')
 def index():
     # Can use methods without decorator like below
-    # res = get_by_year_make_and_model(2002, 'toyota', 'corolla')
-    # return res
-    return render_template('report.html')
-    # res=get_complaints_NHTSA('1999', 'honda', 'civic')
-    # return res
+    res = get_by_year_make_and_model(1995, 'bmw', 'm3')
+
+    # res = str(res.data)
+    # res = ast.literal_eval(res)
+    # res = res.data.replace('\n', '')
+    res = res.get_json()
+    # res = jsonify(res.data)
+    # res = res.data
+    # print(ast.literal_eval(res.data))
+    # print(res.data)
+    print(res)
+    return render_template('report.html', res=res)
+
 # ----------------------
 ''' ------------- HELPER FUNCTIONS FOR API ROUTES BELOW THIS LINE ------------- '''
 def mappify_row(row):
@@ -160,6 +168,7 @@ def get_by_year_make_and_model(year, make, model):
     list = parse_results(results)
     response = compile_response(list)
 
+    # print(response)
     # Return JSON object
     return jsonify(response)
 # ----------------------
