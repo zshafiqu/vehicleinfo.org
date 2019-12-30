@@ -29,9 +29,30 @@ app.config['MYSQL_DATABASE_DB'] = dbname
 mysql = MySQL()
 mysql.init_app(app)
 # ----------------------
+def get_recalls_from_NHTSA(year, make, model):
+    # Build URL for call to NHTSA API and typecast incase year input is int
+    year = str(year) # typecast incase input is int
+    url = 'https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/'+year+'/make/'+make+'/model/'+model+'?format=json'
+    # Make request
+    items = requests.get(url).json()
+    return items
+# ----------------------
+def get_complaints_from_NHTSA(year, make, model):
+    # Build URL for call to NHTSA API and typecast incase year input is int
+    year = str(year)
+    url = 'https://one.nhtsa.gov/webapi/api/Complaints/vehicle/modelyear/'+year+'/make/'+make+'/model/'+model+'?format=json'
+    # Make request
+    items = requests.get(url).json()
+    return items
+# ----------------------
 @app.route('/')
 def index():
+    # Can use methods without decorator like below
+    # res = get_by_year_make_and_model(2002, 'toyota', 'corolla')
+    # return res
     return render_template('home.html')
+    # res=get_complaints_NHTSA('1999', 'honda', 'civic')
+    # return res
 # ----------------------
 ''' ------------- HELPER FUNCTIONS FOR API ROUTES BELOW THIS LINE ------------- '''
 def mappify_row(row):
