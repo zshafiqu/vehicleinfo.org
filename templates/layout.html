@@ -4,91 +4,123 @@
   <!-- BEGIN HEAD -->
   <head>
     <meta charset="utf-8">
-    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    <!-- <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/apple-icon.png') }}"> -->
+    <!-- <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}"> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Tell Me About This Car</title>
+    <title>VehicleInfo.org</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
     <meta name="viewport" content="width=device-width" />
     <!-- Import CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/light-bootstrap-dashboard.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/demo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/paper-dashboard.css') }}">
     <!-- Import Fonts -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Roboto.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/pe-icon-7-stroke.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   </head>
   <!-- END HEAD -->
+
   <body>
-    <!-- Exterior Wrapper -->
+    <!-- BEGIN OUTER WRAPPER -->
     <div class="wrapper">
-      <!-- Main Panel -->
-      <div class="main-panel" style="min-width: 100%">
-        <!-- BEGIN NAVBAR -->
-        <nav class="navbar navbar-default navbar-fixed">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <!-- Home -->
-                    <a class="navbar-brand" href="/">Vehicle Report</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li>
-                          <div style="padding: 10px 15px; margin: 10px 3px; position: relative;">
-                            <i class="fa fa-search"></i>
-                            <p class="hidden-lg hidden-md">Search</p>
-                          </div>
-                        </li>
-                        <li>
-                          <form class="navbar-form" role="search" method="post" action="/handleRequest">
-                            <div class="input-group">
-                              <input class="form-control" placeholder="Search..." type="text" value="" name="searchparameter" style="color:black;">
-                            </div>
-                          </form>
-                        </li>
-                    </ul>
-                </div>
+      <!-- BEGIN SIDEBAR -->
+      <div class="sidebar" data-color="white" data-active-color="danger">
+        <!-- change the color of the sidebar using: data-color="blue | green | orange | red | yellow" -->
+        <div class="logo">
+          <a href="" class="simple-text logo-mini">
+            <div class="logo-image-small">
+              <img src="{{ url_for('static', filename='img/car.png') }}">
             </div>
+          </a>
+          <a href="" class="simple-text logo-normal">VehicleInfo.org</a>
+        </div>
+        <div class="sidebar-wrapper">
+          <ul class="nav">
+            <li class=""><a href=""><i class="nc-icon nc-bank"></i><p>Home</p></a></li>
+            <li class=""><a href=""><i class="nc-icon nc-bank"></i><p>Vehicle Report</p></a></li>
+            <li class=""><a href=""><i class="nc-icon nc-bank"></i><p>Open Source API</p></a></li>
+            <li class=""><a href=""><i class="nc-icon nc-bank"></i><p>Versions</p></a></li>
+            <li class=""><a href=""><i class="nc-icon nc-bank"></i><p>About</p></a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- END SIDEBAR -->
+
+      <!-- BEGIN MAIN PANEL -->
+      <div class="main-panel">
+        <!-- BEGIN NAVBAR -->
+        <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+          <div class="container-fluid">
+            <div class="navbar-wrapper">
+              <div class="navbar-toggle">
+                <button type="button" class="navbar-toggler">
+                  <span class="navbar-toggler-bar bar1"></span>
+                  <span class="navbar-toggler-bar bar2"></span>
+                  <span class="navbar-toggler-bar bar3"></span>
+                </button>
+              </div>
+              <a class="navbar-brand" href="#pablo">Home</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-bar navbar-kebab"></span>
+              <span class="navbar-toggler-bar navbar-kebab"></span>
+              <span class="navbar-toggler-bar navbar-kebab"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation">
+              <form style="display:none;">
+                <div class="input-group no-border">
+                  <input type="text" value="" class="form-control" placeholder="Search...">
+                  <div class="input-group-append">
+                    <div class="input-group-text">
+                      <i class="nc-icon nc-zoom-split"></i>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <ul class="navbar-nav">
+              </ul>
+            </div>
+          </div>
         </nav>
         <!-- END NAVBAR -->
 
-        <!-- BEGIN DASHBOARD CONTENT -->
-        {% block dashboard %} {% endblock %}
-        <!-- END DASHBOARD CONTENT -->
+        <!-- BEGIN CONTENT -->
+        <div class="content">
+          <div class="container-fluid">
+            {% block content %} {% endblock %}
+          </div>
+        </div>
+        <!-- END CONTENT -->
 
         <!-- BEGIN FOOTER -->
         <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-                      <li><a href="#">Home</a></li>
-                      <li><a href="#">Portfolio</a></li>
-                      <li><a href="#">Github</a></li>
-                      <li><a href="#">Misc</a></li>
-                    </ul>
-                </nav>
+          <div class="container-fluid">
+            <nav class="pull-left">
+                <ul>
+                  <li><a href="">GitHub</a></li>
+                  <li><a href="">Portfolio</a></li>
+                  <li><a href="">LinkedIn</a></li>
+                </ul>
+            </nav>
+            <div class="copyright pull-right">
+                © <script>document.write(new Date().getFullYear())</script>
             </div>
+          </div>
         </footer>
         <!-- END FOOTER -->
       </div>
       <!-- END MAIN PANEL -->
     </div>
-    <!-- END EXTERIOR WRAPPER -->
-  </body>
+    <!-- END OUTER WRAPPER -->
 
   <!-- SCRIPTS! -->
-  <script src="{{url_for('static', filename='js/jquery.3.2.1.min.js')}}"></script>
-  <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
-  <script src="{{url_for('static', filename='js/chartist.min.js')}}"></script>
-  <script src="{{url_for('static', filename='js/bootstrap-notify.js')}}"></script>
-  <script src="{{url_for('static', filename='js/light-bootstrap-dashboard.js')}}"></script>
+  <script src="{{url_for('static', filename='js/core/jquery.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/core/popper.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/core/bootstrap.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/plugins/chartjs.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/plugins/bootstrap-notify.js')}}"></script>
+  <script src="{{url_for('static', filename='js/paper-dashboard.min.js')}}"></script>
   <!-- SCRIPTS! -->
+</body>
 
 </html>
