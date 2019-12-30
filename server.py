@@ -1,6 +1,6 @@
 from flask import Flask, render_template, jsonify
 from flaskext.mysql import MySQL
-import requests, json, os
+import requests, json, os, ast
 '''
 Server Requirements:
     - flask
@@ -58,9 +58,21 @@ mysql.init_app(app)
 def index():
     return render_template('home.html')
 # ----------------------
-''' ALL API ROUTES LIVE BELOW THIS LINE !!! '''
+def mappify_row(row):
+    # Parse row object as dictionary with key : value mapping
+    map = dict()
+    map['Year'] = row[1]
+    map['Make'] = row[2]
+    map['Model'] = row[3]
+    map['Styles'] = ast.literal_eval(row[4])
+    map['Trims'] = ast.literal_eval(row[5])
+    map['Images'] = ast.literal_eval(row[6])
+
+    # Return a dictionary for a result object
+    return map
+''' ------------- ALL API ROUTES LIVE BELOW THIS LINE ------------- '''
 # Route 1, get all vehicles for a given year
-@app.route('/api/<year>', methods=['GET'])
+@app.route('/api/<year>/', methods=['GET'])
 def get_by_year(year):
     # Define table name for lookup
     tableName = str(year)+'_vehicles'
@@ -73,12 +85,13 @@ def get_by_year(year):
     # Parse results
     list = []
     for result in results:
-        list.append(str(result))
+        map = mappify_row(result)
+        list.append(map)
 
     return jsonify(list)
 # ----------------------
 # Route 2, get all vehicles for a given year and make
-@app.route('/api/<year>/<make>', methods=['GET'])
+@app.route('/api/<year>/<make>/', methods=['GET'])
 def get_by_year_and_make(year, make):
     # Define table name for lookup
     tableName = str(year)+'_vehicles'
@@ -90,28 +103,34 @@ def get_by_year_and_make(year, make):
     cursor.execute(query)
     results = cursor.fetchall()
     # Parse results
+    # headers = ['year', 'make', 'model', 'styles', 'trims', 'images']
     list = []
+    # print(results.count())
     for result in results:
-        list.append(str(result))
+        map = mappify_row(result)
+        list.append(map)
+        # list.append(ast.literal_eval(result))
 
     return jsonify(list)
 # ----------------------
 # Route 3, get all vehicles for a given year and make
-@app.route('/api/<year>/<make>/<model>', methods=['GET'])
+@app.route('/api/<year>/<make>/<model>/', methods=['GET'])
 def get_by_year_make_and_model(year, make, model):
     # Define table name for lookup
     tableName = str(year)+'_vehicles'
     # Prepare query
-    query = "SELECT * FROM "+tableName+" WHERE make LIKE '"+make+"'"+"AND model LIKE'"+model+"'"
+    query = "SELECT * FROM "+tableName+" WHERE make LIKE '"+make+"'"+" AND model LIKE '"+model+"'"
     print(query)
     # Get cursor & execute query
     cursor = mysql.get_db().cursor()
     cursor.execute(query)
     results = cursor.fetchall()
+    print(results)
     # Parse results
     list = []
     for result in results:
-        list.append(str(result))
+        map = mappify_row(result)
+        list.append(map)
 
     return jsonify(list)
 # ----------------------
