@@ -50,7 +50,7 @@ def index():
     # Can use methods without decorator like below
     # res = get_by_year_make_and_model(2002, 'toyota', 'corolla')
     # return res
-    return render_template('home.html')
+    return render_template('index.html')
     # res=get_complaints_NHTSA('1999', 'honda', 'civic')
     # return res
 # ----------------------
