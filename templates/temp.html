@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- BEGIN SEARCH FORM -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card" style="padding:1rem;">
+            <div class="">
+                <h4 class="title" style="margin:0rem;">Search By Year Make and Model</h4>
+            </div>
+            <div class="content">
+                <form method="post" action="/handlerequest">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Year</label>
+                                <input name="year" type="text" class="form-control border-input" placeholder="1995">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Make</label>
+                                <input name="make" type="text" class="form-control border-input" placeholder="BMW">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Model</label>
+                                <input name="model" type="email" class="form-control border-input" placeholder="3 Series">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

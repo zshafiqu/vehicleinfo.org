@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, make_response
+from flask import Flask, render_template, jsonify, make_response, request
 from flaskext.mysql import MySQL
 import requests, json, os, ast, datetime
 # ----------------------
@@ -159,13 +159,21 @@ def get_by_year_make_and_model(year, make, model):
     # Return JSON object
     return jsonify(response)
 # ----------------------
+@app.route('/handlerequest', methods=['POST'])
+def handle_request():
+    year = request.form['year']
+    make = request.form['make']
+    model = request.form['model']
+
+    data = get_by_year_make_and_model(year, make, model).get_json()
+    recalls = get_recalls_from_NHTSA(year, make, model)
+    complaints = get_complaints_from_NHTSA(year, make, model)
+
+    return render_template('report.html', data=data, recalls=recalls, complaints=complaints)
+# ----------------------
 @app.route('/')
 def index():
-    # Can use methods without decorator like below
-    data = get_by_year_make_and_model(2002, 'honda', 'accord').get_json()
-    recalls = get_recalls_from_NHTSA(2002, 'honda', 'accord')
-    complaints = get_complaints_from_NHTSA(2002, 'honda', 'accord')
-    return render_template('report.html', data=data, recalls=recalls, complaints=complaints)
+    return render_template('temp.html')
 # ----------------------
 if __name__ == '__main__':
     app.run(debug=True)
