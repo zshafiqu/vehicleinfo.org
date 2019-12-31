@@ -49,6 +49,7 @@ def get_complaints_from_NHTSA(year, make, model):
 def index():
     # Can use methods without decorator like below
     data = get_by_year_make_and_model(1995, 'bmw', '3 series').get_json()
+    
     # Res contains a response with status code, to get the data, use get_json()
     # data = data.get_json()
     # print(res)
