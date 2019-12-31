@@ -1,12 +1,6 @@
 from flask import Flask, render_template, jsonify, make_response
 from flaskext.mysql import MySQL
 import requests, json, os, ast, datetime
-'''
-Server Requirements:
-    - flask
-    - requests
-    - flask-mysql
-'''
 # ----------------------
 # Initialize flask app
 app = Flask(__name__)
