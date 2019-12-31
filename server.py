@@ -166,7 +166,7 @@ def index():
 # ----------------------
 @app.route('/report')
 def report():
-    return render_template('temp.html')
+    return render_template('report.html')
     # return render_template('temp.html')
 # ----------------------
 @app.route('/handlerequest', methods=['POST'])
@@ -180,7 +180,22 @@ def handle_request():
     recalls = get_recalls_from_NHTSA(year, make, model)
     complaints = get_complaints_from_NHTSA(year, make, model)
 
-    return render_template('report.html', data=data, recalls=recalls, complaints=complaints)
+    return render_template('process_report.html', data=data, recalls=recalls, complaints=complaints)
+# ----------------------
+@app.route('/api')
+def report():
+    return render_template('api.html')
+    # return render_template('temp.html')
+# ----------------------
+@app.route('/versions')
+def report():
+    return render_template('versions.html')
+    # return render_template('temp.html')
+# ----------------------
+@app.route('/about')
+def report():
+    return render_template('about.html')
+    # return render_template('temp.html')
 # ----------------------
 if __name__ == '__main__':
     app.run(debug=True)
