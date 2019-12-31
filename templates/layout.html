@@ -36,11 +36,11 @@
         </div>
         <div class="sidebar-wrapper">
           <ul class="nav">
-            <li class="active"><a href="/"><i class="nc-icon nc-bank"></i><p>Home</p></a></li>
-            <li class=""><a href="/report"><i class="nc-icon nc-align-center"></i><p>Vehicle Report</p></a></li>
-            <li class=""><a href="/api"><i class="nc-icon nc-atom"></i><p>Open Source API</p></a></li>
-            <li class=""><a href="/versions"><i class="nc-icon nc-bell-55"></i><p>Versions</p></a></li>
-            <li class=""><a href="about"><i class="nc-icon nc-badge"></i><p>About</p></a></li>
+            <li {% if page == 'index' %}class="active"{% endif %}><a href="/"><i class="nc-icon nc-bank"></i><p>Home</p></a></li>
+            <li {% if page == 'report' %}class="active"{% endif %}><a href="/report"><i class="nc-icon nc-align-center"></i><p>Vehicle Report</p></a></li>
+            <li {% if page == 'api' %}class="active"{% endif %}><a href="/api"><i class="nc-icon nc-atom"></i><p>Open Source API</p></a></li>
+            <li {% if page == 'versions' %}class="active"{% endif %}><a href="/versions"><i class="nc-icon nc-bell-55"></i><p>Versions</p></a></li>
+            <li {% if page == 'about' %}class="active"{% endif %}><a href="about"><i class="nc-icon nc-badge"></i><p>About</p></a></li>
           </ul>
         </div>
       </div>
@@ -115,12 +115,6 @@
   <script src="{{url_for('static', filename='js/paper-dashboard.min.js')}}"></script>
   <script src="{{url_for('static', filename='js/bootstrap-table.js')}}"></script>
   <script>
-  $(document).ready(function(){
-    $('.nav li').click(function() {
-        $(this).siblings('li').removeClass('active');
-        $(this).addClass('active');
-    });
-  });
   </script>
   <!-- SCRIPTS! -->
 </body>
