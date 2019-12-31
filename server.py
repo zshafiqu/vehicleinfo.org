@@ -174,7 +174,16 @@ def handle_request():
 # ----------------------
 @app.route('/')
 def index():
-    return render_template('temp.html')
+    year = 1995
+    make = 'bmw'
+    model = '3 series'
+
+    data = get_by_year_make_and_model(year, make, model).get_json()
+    recalls = get_recalls_from_NHTSA(year, make, model)
+    complaints = get_complaints_from_NHTSA(year, make, model)
+
+    return render_template('report.html', data=data, recalls=recalls, complaints=complaints)
+    # return render_template('temp.html')
 # ----------------------
 if __name__ == '__main__':
     app.run(debug=True)
