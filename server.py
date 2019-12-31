@@ -54,12 +54,7 @@ def index():
     # Can use methods without decorator like below
     data = get_by_year_make_and_model(2002, 'honda', 'accord').get_json()
     recalls = get_recalls_from_NHTSA(2002, 'honda', 'accord')
-    # print(data['Results'][0]['Trims']['Convertible']['318i Convertible 2D']['Combined Fuel Economy'])
-    # Res contains a response with status code, to get the data, use get_json()
-    # data = data.get_json()
-    # print(res)
     return render_template('report.html', data=data, recalls=recalls)
-
 # ----------------------
 ''' ------------- HELPER FUNCTIONS FOR API ROUTES BELOW THIS LINE ------------- '''
 def mappify_row(row):
