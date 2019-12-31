@@ -8,28 +8,30 @@
                 <h4 class="title" style="margin:0rem;">Search By Year Make and Model</h4>
             </div>
             <div class="content">
-              <form class="form-group" role="search" method="post" action="/handlerequest">
+
+              <form role="search" method="post" action="/handlerequest">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Year</label>
-                                <input name="year" type="text" class="form-control border-input" placeholder="1995">
+                                <input name="year" type="text" class="form-control border-input" placeholder="" required>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Make</label>
-                                <input name="make" type="text" class="form-control border-input" placeholder="BMW">
+                                <input name="make" type="text" class="form-control border-input" placeholder="" required>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Model</label>
-                                <input name="model" type="email" class="form-control border-input" placeholder="3 Series">
+                                <input name="model" type="email" class="form-control border-input" placeholder="" required>
                             </div>
                         </div>
                     </div>
                 </form>
+                
             </div>
         </div>
     </div>
