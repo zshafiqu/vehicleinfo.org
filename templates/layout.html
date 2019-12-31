@@ -37,7 +37,7 @@
         <div class="sidebar-wrapper">
           <ul class="nav">
             <li {% if request.endpoint == 'index' %}class="active"{% endif %}><a href="/"><i class="nc-icon nc-bank"></i><p>Home</p></a></li>
-            <li {% if request.endpoint == 'report' %}class="active"{% endif %}><a href="/report"><i class="nc-icon nc-align-center"></i><p>Vehicle Report</p></a></li>
+            <li {% if request.endpoint == 'report' %}class="active" {% endif %} ><a href="/report"><i class="nc-icon nc-align-center"></i><p>Vehicle Report</p></a></li>
             <li {% if request.endpoint == 'api' %}class="active"{% endif %}><a href="/api"><i class="nc-icon nc-atom"></i><p>Open Source API</p></a></li>
             <li {% if request.endpoint == 'versions' %}class="active"{% endif %}><a href="/versions"><i class="nc-icon nc-bell-55"></i><p>Versions</p></a></li>
             <li {% if request.endpoint == 'about' %}class="active"{% endif %}><a href="about"><i class="nc-icon nc-badge"></i><p>About</p></a></li>
