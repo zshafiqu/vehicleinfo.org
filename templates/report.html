@@ -84,7 +84,7 @@
   <div class="col-md-5">
       <div class="card" style="padding:1rem;">
           <div class="header" style="margin:0rem;">
-              <h4 class="title" style="margin-top:0rem;">1995 BMW 3 Series</h4>
+              <h4 class="title" style="margin-top:0rem;">{{data['Results'][0]['Year']}} {{data['Results'][0]['Make']}} {{data['Results'][0]['Model']}}</h4>
           </div>
           <div class="content" style="padding:.5rem;">
               <img style="padding-left:0rem;" src="https://file.kelleybluebookimages.com/kbb/base/house/1995/1995-BMW-3%20Series-Front_BM318951_376x248.jpg?interpolation=high-quality&downsize=391:*" alt="">
@@ -92,7 +92,15 @@
           <div class="footer">
               <hr>
               <div class="stats">
-                  <strong><b>Available Style(s):</b> Hatchback, Sedan, Coupe, Convertible</strong>
+                  <strong><b>Available Style(s):</b>
+                    {% for style in data['Results'][0]['Styles'] %}
+                      {% if style == data['Results'][0]['Styles'][-1] %}
+                        {{ style }}
+                      {% else %}
+                        {{ style }},
+                      {% endif %}
+                    {% endfor %}
+                  </strong>
               </div>
           </div>
       </div>
