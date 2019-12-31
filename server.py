@@ -159,19 +159,6 @@ def get_by_year_make_and_model(year, make, model):
     # Return JSON object
     return jsonify(response)
 # ----------------------
-@app.route('/handlerequest', methods=['POST'])
-def handle_request():
-    print(request)
-    year = request.form['year']
-    make = request.form['make']
-    model = request.form['model']
-
-    data = get_by_year_make_and_model(year, make, model).get_json()
-    recalls = get_recalls_from_NHTSA(year, make, model)
-    complaints = get_complaints_from_NHTSA(year, make, model)
-
-    return render_template('report.html', data=data, recalls=recalls, complaints=complaints)
-# ----------------------
 @app.route('/')
 def index():
     year = 1995
@@ -184,6 +171,19 @@ def index():
 
     return render_template('temp.html')
     # return render_template('temp.html')
+# ----------------------
+@app.route('/handlerequest', methods=['POST'])
+def handle_request():
+    print(request)
+    year = request.form['year']
+    make = request.form['make']
+    model = request.form['model']
+
+    data = get_by_year_make_and_model(year, make, model).get_json()
+    recalls = get_recalls_from_NHTSA(year, make, model)
+    complaints = get_complaints_from_NHTSA(year, make, model)
+
+    return render_template('report.html', data=data, recalls=recalls, complaints=complaints)
 # ----------------------
 if __name__ == '__main__':
     app.run(debug=True)
