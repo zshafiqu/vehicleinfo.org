@@ -90,7 +90,7 @@
                     <div id="{{style}}" class="panel-collapse collapse">
                         <div class="panel-body">
                             <!-- BEGIN TABLE WITH INFO -->
-                            <div class="card card-plain">
+                            <div class="card card-plain" style="margin-bottom:0em;">
                                 <div class="content table-responsive table-full-width">
                                     <table class="table table-hover">
                                         <thead>
@@ -108,7 +108,9 @@
                                             {% for trim in data['Results'][0]['Trims'][style] %}
                                             <tr>
                                               <td>{{trim}}</td>
-                                              
+                                              {% for value in data['Results'][0]['Trims'][style][trim] %}
+                                              <td>{{data['Results'][0]['Trims'][style][trim][value]}}</td>
+                                              {% endfor %}
                                             </tr>
                                             {% endfor %}
                                         </tbody>
