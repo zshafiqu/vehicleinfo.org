@@ -154,7 +154,6 @@
           {{data['Results'][0]['Year']}}
           {{data['Results'][0]['Make']}}
           {{data['Results'][0]['Model']}}
-          (maximum of 5)
         </h4>
       </div>
       <div class="content" style="padding:.5rem;">
@@ -171,7 +170,7 @@
             </thead>
             <tbody>
               {% for info in recalls['Results']|reverse %}
-                <tr>
+                <tr id="{{loop.index}}">
                   <td><small>{{ info['NHTSACampaignNumber'] }}</small></td>
                   <td><small>{{ info['ReportReceivedDate']|strftime }}</small></td>
                   <td><small>{{ info['Summary']|capitalize }}</small></td>
@@ -197,37 +196,43 @@
 <!-- BEGIN ROW 3 -->
 <div class="row">
   <div class="col-md-12">
-      <div class="card" style="padding:1rem;">
-          <div class="header" style="margin:0rem;">
-              <h4 class="title" style="margin-top:0rem;">Consumer complaints for the 1995 BMW 3 Series</h4>
-          </div>
-          <div class="content" style="padding:.5rem;">
-            <div class="content table-responsive table-full-width">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Incident Date</th>
-                            <th>Affected Component</th>
-                            <th>Summary</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><small>1396324800000-0400</small></td>
-                            <td><small>ELECTRICAL SYSTEM | ENGINE AND ENGINE COOLING | VEHICLE SPEED CONTROL</small></td>
-                            <td><small>WHILE COMING TO A STOP AT A BUSY INTERSECTION, THE ENGINE SUDDENLY ACCELERATED UP TO 5,000 TO 6,000 RPM WITH MY FOOT ON THE BRAKE AND THE TRANSMISSION IN DRIVE. THE BRAKE WAS NOT HOLDING AND I STARTED MOVING CLOSER TO THE CAR STOPPED FOR THE RED LIGHT IN FRONT OF ME. I THEN PUT THE TRANSMISSION IN NEUTRAL WHILE THE ENGINE WAS STILL AT 5,000 RPM AND GETTING FASTER. FINALLY, THE ENGINE CAME DOWN TO ABOUT 1,000 RPM AND I CONTINUED THROUGH THE INTERSECTION ON THE GREEN LIGHT AFTER PLACING THE CAR IN DRIVE. I DROVE TO WORK AND CALLED THE ACURA DEALER THAT I PURCHASED THIS \"CERTIFIED USED CAR\" FROM AND THEY CAME TO MY WORK AND HAULED THE ACURA RDX TO THE DEALER LOCATION. THEY INFORMED ME THAT A \"SPECIAL ACURA INVESTIGATING TEAM\" WILL COME AND LOOK AT THE CAR ON TUESDAY, APRIL 1, 2014. \r\nTHIS IS MY WIFE'S CAR I DON'T EVEN KNOW WHAT WOULD HAVE HAPPENED IF SHE WAS DRIVING. THIS INSTANT ACCELERATION, WITHOUT PLACING THE CAR IN NEUTRAL, WOULD HAVE PUSHED THE CAR IN FRONT OF ME AND MYSELF DIRECTLY INTO A BUSY INTERSECTION WITHOUT STOPPING UNTIL THE ENGINE QUIT! THIS FAILURE COULD RESULT IN A VERY TRAGIC ACCIDENT. I AND ESPECIALLY MY WIFE ARE VERY VERY CONCERNED WITH WHAT CAUSED THIS PROBLEM AND WE ARE AWAITING WORD FROM THE ACURA DEALER SPECIFIC TO WHAT THEY FOUND DURING THEIR INVESTIGATION.\r\n\r\nMY WIFE DOES NOT WANT TO DRIVE THIS CAR IF THEY INDICATE THEY CAN NOT FIND OUT WHAT CAUSED THE CAR TO SUDDENLY ACCELERATE. THIS COULD HAPPEN TO ANYONE DRIVING THIS CAR AND NEEDS TO BE INVESTIGATED ASAP SO NO ONE WILL SUFFER. WE WERE VERY LUCKY THIS TIME</small></td>
-                    </tbody>
-                </table>
-            </div>
-          </div>
-          <div class="footer">
-              <hr>
-              <div class="stats">
-                  <strong><b>Source:</b> NHTSA</strong>
-              </div>
-          </div>
+    <div class="card" style="padding:1rem;">
+      <div class="header" style="margin:0rem;">
+        <h4 class="title" style="margin-top:0rem;">Consumer complaints for the
+          {{data['Results'][0]['Year']}}
+          {{data['Results'][0]['Make']}}
+          {{data['Results'][0]['Model']}}
+        </h4>
       </div>
+      <div class="content" style="padding:.5rem;">
+        <div class="content table-responsive table-full-width">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Incident Date</th>
+                <th>Affected Component</th>
+                <th>Summary</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for info in complaints['Results']|reverse %}
+                <tr id="{{loop.index}}">
+                  <td><small>{{ info['DateComplaintFiled']|strftime }}</small></td>
+                  <td><small>{{ info['Component']|capitalize }}</small></td>
+                  <td><small>{{ info['Summary']|capitalize }}</small></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="footer">
+        <hr>
+        <div class="stats">
+          <strong><b>Source:</b> NHTSA</strong>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock content %}

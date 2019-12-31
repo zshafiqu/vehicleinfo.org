@@ -164,7 +164,8 @@ def index():
     # Can use methods without decorator like below
     data = get_by_year_make_and_model(2002, 'honda', 'accord').get_json()
     recalls = get_recalls_from_NHTSA(2002, 'honda', 'accord')
-    return render_template('report.html', data=data, recalls=recalls)
+    complaints = get_complaints_from_NHTSA(2002, 'honda', 'accord')
+    return render_template('report.html', data=data, recalls=recalls, complaints=complaints)
 # ----------------------
 if __name__ == '__main__':
     app.run(debug=True)
