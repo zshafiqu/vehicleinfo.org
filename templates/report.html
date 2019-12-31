@@ -81,10 +81,9 @@
                 <!-- BEGIN PANEL ITEM -->
                 {% for style in data['Results'][0]['Trims'] %}
                 <div class="panel panel-border panel-default">
-                    <!-- Set href on style here -->
                     <a data-toggle="collapse" href="#{{style}}">
                         <div class="panel-heading">
-                            <h4 class="panel-title">{{style}}<i class="ti-angle-down"></i></h4>
+                            <h4 class="panel-title">{{style}}</h4>
                         </div>
                     </a>
 
@@ -95,29 +94,30 @@
                                 <div class="content table-responsive table-full-width">
                                     <table class="table table-hover">
                                         <thead>
-                                            <tr>
-                                              <th>Trim</th>
-                                              {% for header in style[0] %}
-                                                <th>{{header}}</th>
+                                          <tr>
+                                            <th>Trim</th>
+                                            {% for trim in data['Results'][0]['Trims'][style] %}
+                                              {% for detail in data['Results'][0]['Trims'][style][trim] if loop.first %}
+                                                <th>{{detail}}</th>
                                               {% endfor %}
-                                            </tr>
+                                            {% endfor %}
+                                          </tr>
                                         </thead>
+
                                         <tbody>
-                                            {% for trim in style %}
+                                            {% for trim in data['Results'][0]['Trims'][style] %}
                                             <tr>
-                                                <td>{{trim}}</td>
-                                                {% for detail in trim %}
-                                                <td>{{detail}}</td>
-                                                {% endfor %}
-                                              {% endfor %}
+                                              <td>{{trim}}</td>
+                                              
                                             </tr>
+                                            {% endfor %}
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                            <!-- END TABLE WITH INFO -->
                         </div>
                     </div>
+
                 </div>
                 {% endfor %}
                 <!-- END PANEL ITEM -->
