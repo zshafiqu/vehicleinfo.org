@@ -161,6 +161,7 @@ def get_by_year_make_and_model(year, make, model):
 # ----------------------
 @app.route('/handlerequest', methods=['POST'])
 def handle_request():
+    print(request)
     year = request.form['year']
     make = request.form['make']
     model = request.form['model']
