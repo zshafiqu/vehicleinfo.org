@@ -1,0 +1,38 @@
+small {
+  color:black;
+  font-weight:500 !important;
+}
+.panel-group .panel {
+    margin-bottom: 0;
+    border-radius: 4px;
+}
+.panel {
+    background-color: #F9F7F3;
+    border: 0 none;
+    border-radius: 3px;
+    font-size: 18;
+    font-weight: 300;
+    line-height: 1.6em;
+    margin-top: 10px;
+    padding: 7px 10px;
+}
+.panel-group {
+    margin-bottom: 20px;
+}
+.panel-default .panel-heading {
+    background-color: #F9F7F3;
+    border: 0 none;
+    border-radius: 3px;
+}
+.panel-heading {
+    padding: 10px 15px;
+}
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: black;
+}
+.panel-body {
+  padding: 15px;
+}
