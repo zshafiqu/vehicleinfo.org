@@ -183,17 +183,17 @@ def handle_request():
     return render_template('process_report.html', data=data, recalls=recalls, complaints=complaints)
 # ----------------------
 @app.route('/api')
-def report():
+def api():
     return render_template('api.html')
     # return render_template('temp.html')
 # ----------------------
 @app.route('/versions')
-def report():
+def versions():
     return render_template('versions.html')
     # return render_template('temp.html')
 # ----------------------
 @app.route('/about')
-def report():
+def about():
     return render_template('about.html')
     # return render_template('temp.html')
 # ----------------------
