@@ -68,7 +68,6 @@
       </div>
   </div>
   <!-- END LEFT CARD -->
-  <!-- ------------------------------------------------------------------------------------------------------------------------- -->
   <!-- BEGIN RIGHT CARD -->
   <div class="col-md-7">
     <div class="card" style="padding:1rem;">
@@ -77,61 +76,72 @@
         </div>
         <!-- Card Content -->
         <div class="card-content">
-            <div class="panel-group">
-                <!-- BEGIN PANEL ITEM -->
-                {% for style in data['Results'][0]['Trims'] %}
-                <div class="panel panel-border panel-default">
-                    <a data-toggle="collapse" href="#{{style}}">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">{{style}}</h4>
-                        </div>
-                    </a>
-
-                    <div id="{{style}}" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <!-- BEGIN TABLE WITH INFO -->
-                            <div class="card card-plain" style="margin-bottom:0em;">
-                                <div class="content table-responsive table-full-width">
-                                    <table class="table table-hover">
-                                        <thead>
-                                          <tr>
-                                            <th>Trim</th>
-                                            {% for trim in data['Results'][0]['Trims'][style] %}
-                                              {% for detail in data['Results'][0]['Trims'][style][trim] if loop.first %}
-                                                <th>{{detail}}</th>
-                                              {% endfor %}
-                                            {% endfor %}
-                                          </tr>
-                                        </thead>
-
-                                        <tbody>
-                                            {% for trim in data['Results'][0]['Trims'][style] %}
-                                            <tr>
-                                              <td>{{trim}}</td>
-                                              {% for value in data['Results'][0]['Trims'][style][trim] %}
-                                              <td>{{data['Results'][0]['Trims'][style][trim][value]}}</td>
-                                              {% endfor %}
-                                            </tr>
-                                            {% endfor %}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+          <div class="panel-group">
+            <!-- BEGIN PANEL ITEM -->
+            <!-- For each body style in Trims object -->
+            {% for style in data['Results'][0]['Trims'] %}
+              <div class="panel panel-border panel-default">
+                <!-- Need to set hypertext ref based on style so dropdown knows where to point to -->
+                <a data-toggle="collapse" href="#{{style}}">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">{{style}}</h4>
+                  </div>
+                </a>
+                <!-- Set ID for dropdown according to style too -->
+                <div id="{{style}}" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <!-- HTML for dynamic table -->
+                    <div class="card card-plain" style="margin-bottom:0em;">
+                      <div class="content table-responsive table-full-width">
+                        <table class="table table-hover">
+                          <!-- START HEAD -->
+                          <!-- Set data for table HEADER based on available attributes -->
+                          <thead>
+                            <tr>
+                              <!-- Leftmost is trim by default -->
+                              <th>Trim</th>
+                              <!-- For each trim -->
+                              {% for trim in data['Results'][0]['Trims'][style] %}
+                              <!-- For each available attribute in the first instance of this style (hence the loop.first exit condition )-->
+                                {% for attribute in data['Results'][0]['Trims'][style][trim] if loop.first %}
+                                  <!-- Add this attribute to our header -->
+                                  <th>{{attribute}}</th>
+                                <!-- End inner loop -->
+                                {% endfor %}
+                              <!-- End outer loop -->
+                              {% endfor %}
+                            </tr>
+                          </thead>
+                          <!-- END HEAD -->
+                          <!-- START BODY -->
+                          <tbody>
+                            <!-- For each trim in each style -->
+                            {% for trim in data['Results'][0]['Trims'][style] %}
+                            <tr>
+                              <!-- Leftmost is the trim by default -->
+                              <td>{{trim}}</td>
+                              <!-- For each attribute, get its value -->
+                              {% for value in data['Results'][0]['Trims'][style][trim] %}
+                                <td>{{data['Results'][0]['Trims'][style][trim][value]}}</td>
+                              {% endfor %}
+                            </tr>
+                            {% endfor %}
+                          </tbody>
+                          <!-- END BODY -->
+                        </table>
+                      </div>
                     </div>
-
+                  </div>
                 </div>
-                {% endfor %}
-                <!-- END PANEL ITEM -->
-            </div>
-          <div>
-              <hr>
+              </div>
+            {% endfor %}
+            <!-- END PANEL ITEM -->
           </div>
+        <div><hr></div>
       </div>
     </div>
- <!-- ------------------------------------------------------------------------------------------------------------------------- -->
-
   </div>
+  <!-- END RIGHT CARD -->
 </div>
 <!-- END ROW 1 -->
 <!-- BEGIN ROW 2 -->
