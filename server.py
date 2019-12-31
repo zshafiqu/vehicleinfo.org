@@ -1,6 +1,6 @@
 from flask import Flask, render_template, jsonify, make_response
 from flaskext.mysql import MySQL
-import requests, json, os, ast
+import requests, json, os, ast, datetime
 '''
 Server Requirements:
     - flask
@@ -29,6 +29,16 @@ app.config['MYSQL_DATABASE_DB'] = dbname
 mysql = MySQL()
 mysql.init_app(app)
 # ----------------------
+''' Template filter converter for JSON formatted time '''
+@app.template_filter('strftime')
+def parse_date(datestring):
+    timepart = datestring.split('(')[1].split(')')[0]
+    milliseconds = int(timepart[:-5])
+    hours = int(timepart[-5:]) / 100
+    time = milliseconds / 1000
+    dt = datetime.datetime.utcfromtimestamp(time + hours * 3600)
+    return dt.strftime("%Y-%m-%d")
+# ----------------------
 def get_recalls_from_NHTSA(year, make, model):
     # Build URL for call to NHTSA API and typecast incase year input is int
     year = str(year) # typecast incase input is int
@@ -48,8 +58,8 @@ def get_complaints_from_NHTSA(year, make, model):
 @app.route('/')
 def index():
     # Can use methods without decorator like below
-    data = get_by_year_make_and_model(1995, 'bmw', 'm3').get_json()
-    recalls = get_recalls_from_NHTSA(1995, 'bmw', 'm3')
+    data = get_by_year_make_and_model(2002, 'honda', 'accord').get_json()
+    recalls = get_recalls_from_NHTSA(2002, 'honda', 'accord')
     # print(data['Results'][0]['Trims']['Convertible']['318i Convertible 2D']['Combined Fuel Economy'])
     # Res contains a response with status code, to get the data, use get_json()
     # data = data.get_json()
