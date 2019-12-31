@@ -1,5 +1,41 @@
 {% extends "layout.html" %}
 {% block content %}
+<!-- STYLE -->
+<style>
+  .panel-group .panel {
+      margin-bottom: 0;
+      border-radius: 4px;
+ }
+  .panel {
+      background-color: #F9F7F3;
+      border: 0 none;
+      border-radius: 3px;
+      font-size: 18;
+      font-weight: 300;
+      line-height: 1.6em;
+      margin-top: 10px;
+      padding: 7px 10px;
+ }
+  .panel-group {
+      margin-bottom: 20px;
+ }
+  .panel-default .panel-heading {
+      background-color: #F9F7F3;
+      border: 0 none;
+      border-radius: 3px;
+ }
+  .panel-heading {
+      padding: 10px 15px;
+ }
+  .panel-title {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 16px;
+      color: black;
+ }
+</style>
+
+<!--  STYLE -->
 <!-- BEGIN SEARCH FORM -->
 <div class="row">
     <div class="col-md-12">
@@ -41,15 +77,15 @@
     <div class="col-md-6">
         <div class="card" style="padding:1rem;">
             <div class="header" style="margin:0rem;">
-                <h4 class="title" style="margin-top:0rem;">1995 BMW M3</h4>
+                <h4 class="title" style="margin-top:0rem;">1995 BMW 3 Series</h4>
             </div>
             <div class="content" style="padding:.5rem;">
-                <img style="padding-left:1.2rem;" src="https://file.kelleybluebookimages.com/kbb/base/house/1995/1995-BMW-M3-Front_BMM3-951_376x237.jpg?interpolation=high-quality&downsize=391:" alt="">
+                <img style="padding-left:1.2rem;" src="https://file.kelleybluebookimages.com/kbb/base/house/1995/1995-BMW-3%20Series-Front_BM318951_376x248.jpg?interpolation=high-quality&downsize=391:*" alt="">
             </div>
             <div class="footer">
                 <hr>
                 <div class="stats">
-                    <strong>Available Style(s): Coupe</strong>
+                    <strong><b>Available Style(s):</b> Hatchback, Sedan, Coupe, Convertible</strong>
                 </div>
             </div>
         </div>
@@ -59,16 +95,32 @@
     <div class="col-md-6">
         <div class="card" style="padding:1rem;">
             <div class="header" style="margin:0rem;">
-                <h4 class="title" style="margin-top:0rem;">1995 BMW M3</h4>
+                <h4 class="title" style="margin-top:0rem;">Style & Trims</h4>
             </div>
-            <div class="content" style="padding:.5rem;">
-                <img style="padding-left:1.2rem;" src="https://file.kelleybluebookimages.com/kbb/base/house/1995/1995-BMW-M3-Front_BMM3-951_376x237.jpg?interpolation=high-quality&downsize=391:" alt="">
+            <div class="card-content">
+
+                <div class="panel-group">
+
+                    <div class="panel panel-border panel-default">
+                        <a data-toggle="collapse" href="#collapseThreePlain">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                	    	                                        	Default Collapsible Item 1
+                	    	                                        	<i class="ti-angle-down"></i>
+                	    	                                        </h4>
+                            </div>
+                        </a>
+                        <div id="collapseThreePlain" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="footer">
                 <hr>
-                <div class="stats">
-                    <strong>Available Style(s): Coupe</strong>
-                </div>
             </div>
         </div>
     </div>
