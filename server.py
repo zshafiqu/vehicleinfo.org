@@ -161,7 +161,7 @@ def get_by_year_make_and_model(year, make, model):
 # ----------------------
 @app.route('/')
 def index():
-    return render_template('temp.html')
+    return render_template('home.html')
     # return render_template('temp.html')
 # ----------------------
 @app.route('/handlerequest', methods=['POST'])
