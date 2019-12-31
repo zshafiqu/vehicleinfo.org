@@ -2,37 +2,37 @@
 {% block content %}
 <!-- BEGIN SEARCH FORM -->
 <div class="row">
-    <div class="col-md-12">
-        <div class="card" style="padding:1rem;">
-            <div class="">
-                <h4 class="title" style="margin:0rem;">Search By Year Make and Model</h4>
-            </div>
-            <div class="content">
-                <form class="form-group" method="post" action="/handlerequest" enctype="multipart/form-data">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label>Year</label>
-                                <input name="year" type="text" class="form-control border-input" placeholder="1995">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label>Make</label>
-                                <input name="make" type="text" class="form-control border-input" placeholder="BMW">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label>Model</label>
-                                <input name="model" type="email" class="form-control border-input" placeholder="3 Series">
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+	<div class="col-md-12">
+		<div class="card" style="padding:1rem;">
+			<div class="">
+				<h4 class="title" style="margin:0rem;">Search By Year Make and Model</h4>
+			</div>
+			<div class="content">
+				<form action="/handlerequest" method="post">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>Year</label> <input autofocus="" class="form-control border-input" name="year" placeholder="" type="text">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>Make</label> <input class="form-control border-input" name="make" placeholder="" type="text">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>Model</label> <input class="form-control border-input" name="model" placeholder="" type="text">
+							</div>
+						</div>
+						<div class="col-md-3" style="display:flex; align-items:center; justify-content:center; padding-top:.75rem">
+							<button class="btn btn-wd btn-warning btn-fill btn-magnify" type="submit" value="submit"><span class="btn-label"></span>Search</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- END SEARCH FORM -->
 <!-- BEGIN ROW 1 -->
