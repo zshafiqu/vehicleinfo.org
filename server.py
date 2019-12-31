@@ -161,23 +161,15 @@ def get_by_year_make_and_model(year, make, model):
 # ----------------------
 @app.route('/')
 def index():
-    year = 1995
-    make = 'bmw'
-    model = '3 series'
-
-    # data = get_by_year_make_and_model(year, make, model).get_json()
-    # recalls = get_recalls_from_NHTSA(year, make, model)
-    # complaints = get_complaints_from_NHTSA(year, make, model)
-
     return render_template('temp.html')
     # return render_template('temp.html')
 # ----------------------
 @app.route('/handlerequest', methods=['POST'])
 def handle_request():
     print(request)
-    year = request.form['year']
-    make = request.form['make']
-    model = request.form['model']
+    year = request.form['year'].strip()
+    make = request.form['make'].strip()
+    model = request.form['model'].strip()
 
     data = get_by_year_make_and_model(year, make, model).get_json()
     recalls = get_recalls_from_NHTSA(year, make, model)
