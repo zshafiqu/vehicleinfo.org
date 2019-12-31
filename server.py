@@ -49,13 +49,6 @@ def get_complaints_from_NHTSA(year, make, model):
     items = requests.get(url).json()
     return items
 # ----------------------
-@app.route('/')
-def index():
-    # Can use methods without decorator like below
-    data = get_by_year_make_and_model(2002, 'honda', 'accord').get_json()
-    recalls = get_recalls_from_NHTSA(2002, 'honda', 'accord')
-    return render_template('report.html', data=data, recalls=recalls)
-# ----------------------
 ''' ------------- HELPER FUNCTIONS FOR API ROUTES BELOW THIS LINE ------------- '''
 def mappify_row(row):
     # Parse row object to return a dictionary with {key : value} mapping
@@ -165,6 +158,13 @@ def get_by_year_make_and_model(year, make, model):
     # print(response)
     # Return JSON object
     return jsonify(response)
+# ----------------------
+@app.route('/')
+def index():
+    # Can use methods without decorator like below
+    data = get_by_year_make_and_model(2002, 'honda', 'accord').get_json()
+    recalls = get_recalls_from_NHTSA(2002, 'honda', 'accord')
+    return render_template('report.html', data=data, recalls=recalls)
 # ----------------------
 if __name__ == '__main__':
     app.run(debug=True)

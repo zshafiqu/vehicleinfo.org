@@ -162,7 +162,7 @@
           <table class="table table-hover">
             <thead>
               <tr>
-                <th>Campaign Number</th>
+                <th>Recall Number</th>
                 <th>Report Date</th>
                 <th>Summary</th>
                 <th>Consequence</th>
@@ -170,7 +170,7 @@
               </tr>
             </thead>
             <tbody>
-              {% for info in recalls['Results'] %}
+              {% for info in recalls['Results']|reverse %}
                 <tr>
                   <td><small>{{ info['NHTSACampaignNumber'] }}</small></td>
                   <td><small>{{ info['ReportReceivedDate']|strftime }}</small></td>
