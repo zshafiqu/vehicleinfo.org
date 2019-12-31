@@ -92,7 +92,7 @@
                   <div class="panel-body">
                     <!-- HTML for dynamic table -->
                     <div class="card card-plain" style="margin-bottom:0em;">
-                      <div class="content table-responsive table-full-width">
+                      <div class="content table-responsive table-full-width" style="padding-bottom:0em;">
                         <table class="table table-hover">
                           <!-- START HEAD -->
                           <!-- Set data for table HEADER based on available attributes -->
@@ -148,44 +148,49 @@
 <div class="row">
   <!-- BEGIN RECALLS CARD -->
   <div class="col-md-12">
-      <div class="card" style="padding:1rem;">
-          <div class="header" style="margin:0rem;">
-              <h4 class="title" style="margin-top:0rem;">Recent recalls for the 1995 BMW 3 Series</h4>
-          </div>
-          <div class="content" style="padding:.5rem;">
-            <div class="content table-responsive table-full-width">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>NHTSA Campaign Number</th>
-                            <th>Report Received Date</th>
-                            <th>Summary</th>
-                            <th>Consequence</th>
-                            <th>Remedy</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><small>08V635000</small></td>
-                            <td><small>1228280400000-0500</small></td>
-                            <td><small>LAND ROVER IS RECALLING 19,168 MY 2003-2005 RANGE ROVER VEHICLES.  THE FRONT DIFFERENTIAL COUPLING SLEEVE AND THE PROPELLER SHAFT MAY BE MISALIGNED, RESULTING IN SPLINE WEAR OVER A PERIOD OF TIME.  AS THE WEAR BETWEEN THE PROPELLER SHAFT AND THE DIFFERENTIAL SPLINE COUPLING PROGRESSES, NOISE AND VIBRATION ARE EXPECTED.</small></td>
-                            <td><small>CONTINUED VEHICLE OPERATION CAN EVENTUALLY RESULT IN THE SPLINES SHEARING AND A LOSS OF DRIVE, INCREASING THE RISK OF A CRASH</small></td>
-                            <td><small>DEALERS WILL INSTALL A REVISED DESIGN OF THE PROPELLER SHAFT, THE FLANGE KIT AND HEAT SHIELD KIT.  THE RECALL BEGAN ON JANUARY 6, 2009.  OWNERS MAY CONTACT LAND ROVER AT 1-800- 637-6837.</small></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-          </div>
-          <div class="footer">
-              <hr>
-              <div class="stats">
-                  <strong><b>Source:</b> NHTSA</strong>
-              </div>
-          </div>
+    <div class="card" style="padding:1rem;">
+      <div class="header" style="margin:0rem;">
+        <h4 class="title" style="margin-top:0rem;">Recent recalls for the
+          {{data['Results'][0]['Year']}}
+          {{data['Results'][0]['Make']}}
+          {{data['Results'][0]['Model']}}
+        </h4>
       </div>
+      <div class="content" style="padding:.5rem;">
+        <div class="content table-responsive table-full-width">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Campaign Number</th>
+                <th>Report Date</th>
+                <th>Summary</th>
+                <th>Consequence</th>
+                <th>Remedy</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for info in recalls['Results'] %}
+                <tr>
+                  <td><small>{{ info['NHTSACampaignNumber'] }}</small></td>
+                  <td><small>{{ info['ReportReceivedDate'] }}</small></td>
+                  <td><small>{{ info['Summary']|capitalize }}</small></td>
+                  <td><small>{{ info['Conequence']|capitalize }}</small></td>
+                  <td><small>{{ info['Remedy']|capitalize }}</small></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="footer">
+        <hr>
+        <div class="stats">
+          <strong><b>Source:</b> NHTSA</strong>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- END RECALLS CARD -->
-
 </div>
 <!-- END ROW 2 -->
 <!-- BEGIN ROW 3 -->
