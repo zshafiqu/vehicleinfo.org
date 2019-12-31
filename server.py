@@ -161,12 +161,12 @@ def get_by_year_make_and_model(year, make, model):
 # ----------------------
 @app.route('/')
 def index():
-    return render_template('home.html', page='index')
+    return render_template('home.html')
     # return render_template('temp.html')
 # ----------------------
 @app.route('/report')
 def report():
-    return render_template('report.html', page='report')
+    return render_template('report.html')
     # return render_template('temp.html')
 # ----------------------
 @app.route('/handlerequest', methods=['POST'])
@@ -180,21 +180,21 @@ def handle_request():
     recalls = get_recalls_from_NHTSA(year, make, model)
     complaints = get_complaints_from_NHTSA(year, make, model)
 
-    return render_template('process_report.html', data=data, recalls=recalls, complaints=complaints, page='report')
+    return render_template('process_report.html', data=data, recalls=recalls, complaints=complaints)
 # ----------------------
 @app.route('/api')
 def api():
-    return render_template('api.html', page='api')
+    return render_template('api.html')
     # return render_template('temp.html')
 # ----------------------
 @app.route('/versions')
 def versions():
-    return render_template('versions.html', page='versions')
+    return render_template('versions.html')
     # return render_template('temp.html')
 # ----------------------
 @app.route('/about')
 def about():
-    return render_template('about.html', page='about')
+    return render_template('about.html')
     # return render_template('temp.html')
 # ----------------------
 if __name__ == '__main__':
