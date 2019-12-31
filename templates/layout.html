@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/paper-dashboard.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/panels.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/icons.css') }}"> -->
     <!-- Import Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
@@ -35,11 +36,11 @@
         </div>
         <div class="sidebar-wrapper">
           <ul class="nav">
-            <li id="select" class=""><a href="#"><i class="nc-icon nc-bank"></i><p>Home</p></a></li>
-            <li id="select" class="active"><a href="#"><i class="nc-icon nc-align-center"></i><p>Vehicle Report</p></a></li>
-            <li id="select" class=""><a href="#"><i class="nc-icon nc-atom"></i><p>Open Source API</p></a></li>
-            <li id="select" class=""><a href="#"><i class="nc-icon nc-bell-55"></i><p>Versions</p></a></li>
-            <li id="select" class=""><a href="#"><i class="nc-icon nc-badge"></i><p>About</p></a></li>
+            <li id="select" class="active"><a href="/"><i class="nc-icon nc-bank"></i><p>Home</p></a></li>
+            <li id="select" class=""><a href="/report"><i class="nc-icon nc-align-center"></i><p>Vehicle Report</p></a></li>
+            <li id="select" class=""><a href="/api"><i class="nc-icon nc-atom"></i><p>Open Source API</p></a></li>
+            <li id="select" class=""><a href="/versions"><i class="nc-icon nc-bell-55"></i><p>Versions</p></a></li>
+            <li id="select" class=""><a href="about"><i class="nc-icon nc-badge"></i><p>About</p></a></li>
           </ul>
         </div>
       </div>

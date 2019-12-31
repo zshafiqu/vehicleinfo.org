@@ -164,6 +164,11 @@ def index():
     return render_template('home.html')
     # return render_template('temp.html')
 # ----------------------
+@app.route('/report')
+def report():
+    return render_template('temp.html')
+    # return render_template('temp.html')
+# ----------------------
 @app.route('/handlerequest', methods=['POST'])
 def handle_request():
     print(request)
