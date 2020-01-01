@@ -2,11 +2,11 @@
 {% block content %}
 <style>
   .card-extended {
-    min-height:95%
+    min-height:80%
     /* padding-bottom:10px; !important */
   }
   .card-info {
-    padding: 40px 15px 0px 15px;
+    padding: 15px 15px 0px 15px;
   }
   .col-pad {
     padding-bottom:10px;
@@ -25,13 +25,29 @@
     font-size:1.2rem;
     font-weight:bold;
     margin-bottom:0px;
+    word-wrap: normal;
+  }
+  .text-sub {
+    word-wrap: normal;
+    font-size: .8rem;
+  }
+  .info-title {
+    font-size:1.2rem;
+    font-weight:bold;
+    padding: 1rem;
+    margin-bottom:0px;
+    word-wrap: normal;
+  }
+  .info-desc {
+    word-wrap: normal;
+    padding: 0rem 1rem;
   }
 </style>
-
 <div class="container-fluid">
+  <!-- ROW 1 ! -->
   <div class="row">
-
-    <div class="col-md-3">
+    <!-- COLUMN 1 -->
+    <div class="col-sm-3">
     	<div class="card card-extended">
     		<div class="card-info">
     			<div class="row">
@@ -39,63 +55,80 @@
     				<div class="col-md-6 shift-left">
     					<div class="text-content">
     						<p class="text-title">9300+</p>
-    						<p>Unique vehicles</p>
+    						<p class="text-sub">Unique vehicles</p>
     					</div>
     				</div>
     			</div>
     		</div>
     	</div>
     </div>
-
-    <div class="col-md-3">
+    <!-- COLUMN 2 -->
+    <div class="col-sm-3">
       <div class="card card-extended">
         <div class="card-info">
           <div class="row">
-            <div class="col-md-6 shift-right"><img src="https://image.flaticon.com/icons/svg/1814/1814513.svg"></div>
+            <div class="col-md-6 shift-right"><img src="https://image.flaticon.com/icons/svg/805/805865.svg"></div>
             <div class="col-md-6 shift-left">
               <div class="text-content">
                 <p class="text-title">60+</p>
-                <p>Unique manufacturers</p>
+                <p class="text-sub">Unique makes</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="col-md-3">
+    <!-- COLUMN 3 -->
+    <div class="col-sm-3">
       <div class="card card-extended">
         <div class="card-info">
           <div class="row">
-            <div class="col-md-6 shift-right"><img src="https://image.flaticon.com/icons/svg/741/741407.svg"></div>
+            <div class="col-md-6 shift-right"><img src="https://image.flaticon.com/icons/svg/1312/1312279.svg"></div>
             <div class="col-md-6 shift-left">
               <div class="text-content">
-                <p class="text-title">9000+</p>
-                <p>Unique vehicles</p>
+                <p class="text-title">29</p>
+                <p class="text-sub">Model years available</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="col-md-3">
+    <!-- COLUMN 4 -->
+    <div class="col-sm-3">
       <div class="card card-extended">
         <div class="card-info">
           <div class="row">
-            <div class="col-md-6 shift-right"><img src="https://image.flaticon.com/icons/svg/741/741407.svg"></div>
+            <div class="col-md-6 shift-right"><img src="https://image.flaticon.com/icons/svg/1394/1394932.svg"></div>
             <div class="col-md-6 shift-left">
               <div class="text-content">
-                <p class="text-title">9000+</p>
-                <p>Unique vehicles</p>
+                <p class="text-title">5+</p>
+                <p class="text-sub">Attributes for each vehicle</p>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <!-- END ROW 1 ! -->
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+          <div class="col-md-4>">
+            <p class="info-title">Welcome</p>
+           <p class="info-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+          </div>
+          <div class="col-md-8>">
+            <p class="info-title">Objective</p>
+            <p class="info-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+          </div>
+
+      </div>
+
     </div>
 
   </div>
 </div>
-
 {% endblock content %}
