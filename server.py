@@ -161,17 +161,21 @@ def get_by_year_make_and_model(year, make, model):
 # ----------------------
 @app.route('/')
 def index():
-    return render_template('home.html')
+    page = 'Home'
+    return render_template('home.html', page=page)
+
     # return render_template('temp.html')
 # ----------------------
 @app.route('/report')
 def report():
-    return render_template('report.html')
+    page = 'Vehicle Report'
+    return render_template('report.html', page=page)
     # return render_template('temp.html')
 # ----------------------
 @app.route('/handlerequest', methods=['POST'])
 def handle_request():
-    print(request)
+    # print(request)
+    page = 'Vehicle Report'
     year = request.form['year'].strip()
     make = request.form['make'].strip()
     model = request.form['model'].strip()
@@ -180,21 +184,24 @@ def handle_request():
     recalls = get_recalls_from_NHTSA(year, make, model)
     complaints = get_complaints_from_NHTSA(year, make, model)
 
-    return render_template('process_report.html', data=data, recalls=recalls, complaints=complaints)
+    return render_template('process_report.html', data=data, recalls=recalls, complaints=complaints, page=page)
 # ----------------------
 @app.route('/api')
 def api():
-    return render_template('api.html')
+    page = 'API Documentation'
+    return render_template('api.html', page=page)
     # return render_template('temp.html')
 # ----------------------
 @app.route('/versions')
 def versions():
-    return render_template('versions.html')
+    page = 'Version History'
+    return render_template('versions.html', page=page)
     # return render_template('temp.html')
 # ----------------------
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    page = 'About This Project'
+    return render_template('about.html', page=page)
     # return render_template('temp.html')
 # ----------------------
 if __name__ == '__main__':
