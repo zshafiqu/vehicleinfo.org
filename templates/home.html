@@ -1,15 +1,36 @@
 {% extends "layout.html" %}
 {% block content %}
+<style>
+  .card-info {
+    padding: 15px 15px 0px 15px;
+  }
+  .shift-right {
+    padding-right: 5px;
+  }
+  .shift-left {
+    padding-left: 5px;
+  }
+  .text-content {
+    text-align:center;
+    padding-top:10px;
+  }
+  .text-title {
+    font-size:1.2rem;
+    font-weight:bold;
+    margin-bottom:0px;
+  }
+</style>
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-3">
     	<div class="card">
-    		<div style="padding: 15px 15px 0px 15px;">
+    		<div class="card-info">
     			<div class="row">
-    				<div class="col-md-6" style="padding-right:5px"><img src="https://image.flaticon.com/icons/svg/741/741407.svg"></div>
-    				<div class="col-md-6" style="padding-left:5px">
-    					<div style="text-align:center; padding-top:10px">
-    						<p style="font-size:1.2rem; font-weight:bold; margin-bottom:0px;">9000+</p>
+    				<div class="col-md-6 shift-right"><img src="https://image.flaticon.com/icons/svg/741/741407.svg"></div>
+    				<div class="col-md-6 shift-left">
+    					<div class="text-content">
+    						<p class="text-title">9000+</p>
     						<p>Unique vehicles</p>
     					</div>
     				</div>
