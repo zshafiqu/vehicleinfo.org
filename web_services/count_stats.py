@@ -1,7 +1,6 @@
 import csv
 # ----------------------
 ''' Script to count things like - unique vehicles, makes, models, etc '''
-# Global counter
 count = 0
 makes = set()
 # ----------------------
@@ -10,6 +9,8 @@ def file_pathify(year):
     return 'master_data/'+str(year)+'.csv'
 # ----------------------
 def read_file(filename):
+    global count
+    global makes
 
     with open(filename) as file:
         reader = csv.reader(file)
@@ -19,11 +20,17 @@ def read_file(filename):
         for row in reader:
             count += 1 # increase count of unique vehicles
             makes.add(str(row[1])) # add makes to set (unique values only)
+    return None
 # ----------------------
+# Global counter
+# count = 0
+# makes = set()
+
 min = 1992
 max = 2020
 
 while min <= max:
+    print(min)
     name = file_pathify(min)
     read_file(name)
     min += 1
