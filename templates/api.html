@@ -113,11 +113,11 @@
       <div class="card">
         <p class="info-title">GET /year/make/model</p>
         <hr>
-        <p class="info-desc">Next, a client can make a <strong>GET</strong> request for a specific year and make, and the server will return JSON response of a list of all vehicles produced by a manufacturer in that year. Example:</p>
+                <p class="info-desc">Finally, a client can make a <strong>GET</strong> request for a specific year, make, and model resulting in a JSON response of the attributes for that specific vehicle. Example:</p>
         <p class="api-ex"><strong>https://vehicleinfo.org/api/2002/acura/tl</strong></p>
         <p class="info-desc">The response would look like:</p>
         <div class="img-json" style="">
-          <img src="{{ url_for('static', filename='img/GETACURA.svg') }}">
+          <img src="{{ url_for('static', filename='img/GETTL.svg') }}">
         </div>
         <p class="info-desc">From the JSON response, the client can get data on any of the vehicles from this specific manufacturer by accessing the results column</p>
       </div>
