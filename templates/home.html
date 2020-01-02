@@ -1,9 +1,12 @@
 {% extends "layout.html" %}
 {% block content %}
 <style>
-  @media screen and (max-width: 600px) {
-    #title_message {
+  @media screen and (max-width: 576px) {
+    #bigimg {
       display: none;
+    }
+    #objgoal {
+      flex-wrap:wrap !important;
     }
   }
   .card-extended {
@@ -58,7 +61,7 @@
     	<div class="card card-extended">
     		<div class="card-info">
     			<div class="row">
-    				<div class="col-md-6 shift-right"><img src="https://image.flaticon.com/icons/svg/741/741407.svg"></div>
+    				<div class="col-md-6 shift-right"><img id="bigimg" src="https://image.flaticon.com/icons/svg/741/741407.svg"></div>
     				<div class="col-md-6 shift-left">
     					<div class="text-content">
     						<p class="text-title">9300+</p>
@@ -74,7 +77,7 @@
       <div class="card card-extended">
         <div class="card-info">
           <div class="row">
-            <div class="col-md-6 shift-right"><img src="https://image.flaticon.com/icons/svg/805/805865.svg"></div>
+            <div class="col-md-6 shift-right"><img id="bigimg" src="https://image.flaticon.com/icons/svg/805/805865.svg"></div>
             <div class="col-md-6 shift-left">
               <div class="text-content">
                 <p class="text-title">60+</p>
@@ -90,7 +93,7 @@
       <div class="card card-extended">
         <div class="card-info">
           <div class="row">
-            <div class="col-md-6 shift-right"><img src="https://image.flaticon.com/icons/svg/1312/1312279.svg"></div>
+            <div class="col-md-6 shift-right"><img id="bigimg" src="https://image.flaticon.com/icons/svg/1312/1312279.svg"></div>
             <div class="col-md-6 shift-left">
               <div class="text-content">
                 <p class="text-title">29</p>
@@ -106,7 +109,7 @@
       <div class="card card-extended">
         <div class="card-info">
           <div class="row">
-            <div class="col-md-6 shift-right"><img src="https://image.flaticon.com/icons/svg/1394/1394932.svg"></div>
+            <div class="col-md-6 shift-right"><img id="bigimg" src="https://image.flaticon.com/icons/svg/1394/1394932.svg"></div>
             <div class="col-md-6 shift-left">
               <div class="text-content">
                 <p class="text-title">5+</p>
@@ -121,7 +124,7 @@
   <!-- END ROW 1 ! -->
 
   <div class="row">
-    <div class="col-md-12" style="padding:10px;">
+    <div class="col-xs-12" style="padding:10px;">
       <div class="card">
         <p class="info-title">Welcome!</p>
         <p class="info-desc">Welcome to the Vehicle Information project! This web application is a tool that can be used to access various details about vehicles. At the moment, the tool supports all vehicles (cars, trucks, vans, etc.) that were produced in the United States from 1992 until now.
@@ -130,17 +133,17 @@
     </div>
   </div>
 
-  <div class="row" style="flex-wrap:nowrap;">
+  <div id="objgoal" class="row" style="flex-wrap:nowrap;">
 
-    <div class="col-xs-6" style="padding:10px">
+    <div class="col-md-6" style="padding:10px">
       <div class="card">
         <p class="info-title">Objective</p>
         <p class="info-desc">The objective of this tool is to be a public resource for anyone interested in accessing a specific vehicle’s information. Information can be accessed through the Vehicle Report interface on this website, or through an API call to the web server here.
-          Accessing the information through the web interface also compiles information from NHSTA web resources and generates a comprehensive report.</p>
+          Accessing the information through the web interface also compiles information from <strong>NHTSA</strong> web resources and generates a comprehensive report.</p>
       </div>
     </div>
 
-    <div class="co-xs-6" style="padding:10px">
+    <div class="co-md-6" style="padding:10px">
       <div class="card">
         <p class="info-title">Goal</p>
         <p class="info-desc">For each vehicle available, the tool has aggregated attributes such as body styles, images for each body style, available trims, and other details such as engine size, MPG, and more.</p>
