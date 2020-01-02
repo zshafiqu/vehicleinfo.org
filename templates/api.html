@@ -18,6 +18,9 @@
     word-wrap: normal;
     text-align: center;
   }
+  .route {
+    font-family: "Courier New", Courier, monospace;
+  }
   .info-desc {
     word-wrap: normal;
     padding: 0rem 1rem;
@@ -57,7 +60,7 @@
 
     <div class="col-md-4" style="padding:5px">
       <div class="card card-extended">
-        <p class="info-title">GET /year</p>
+        <p class="info-title route">GET /year</p>
         <hr>
         <p class="info-desc">A client can make a <strong>GET</strong> request for a specific year within range, and the server will return a JSON response of every vehicle for that year, including its individual attributes. Here is an example request:</p>
         <p class="api-ex"><strong>https://vehicleinfo.org/api/2002</strong></p>
@@ -70,7 +73,7 @@
 
     <div class="co-md-4" style="padding:5px">
       <div class="card card-extended">
-        <p class="info-title">GET /year/make/</p>
+        <p class="info-title route">GET /year/make/</p>
         <hr>
         <p class="info-desc">Next, a client can make a <strong>GET</strong> request for a specific year and make, and the server will return JSON response of a list of all vehicles produced by a manufacturer in that year. Here is another example request:</p>
         <p class="api-ex"><strong>https://vehicleinfo.org/api/2002/acura</strong></p>
@@ -83,7 +86,7 @@
 
     <div class="co-md-4" style="padding:5px">
       <div class="card card-extended">
-        <p class="info-title">GET /year/make/model</p>
+        <p class="info-title route">GET /year/make/model</p>
         <hr>
         <p class="info-desc">Finally, a client can make a <strong>GET</strong> request for a specific year, make, and model resulting in a JSON response of the attributes for that specific vehicle. Here is an additional example request:</p>
         <p class="api-ex"><strong>https://vehicleinfo.org/api/2002/acura/tl</strong></p>
