@@ -7,34 +7,8 @@
     }
   }
   .card-extended {
-    min-height:90%
+    min-height:100%
     /* padding-bottom:10px; !important */
-  }
-  .card-info {
-    padding: 15px 15px 0px 15px;
-  }
-  .col-pad {
-    padding-bottom:10px;
-  }
-  .shift-right {
-    padding-right: 5px;
-  }
-  .shift-left {
-    padding-left: 5px;
-  }
-  .text-content {
-    text-align:center;
-    padding-top:10px;
-  }
-  .text-title {
-    font-size:1.2rem;
-    font-weight:bold;
-    margin-bottom:0px;
-    word-wrap: normal;
-  }
-  .text-sub {
-    word-wrap: normal;
-    font-size: .8rem;
   }
   .info-title {
     font-size:1.2rem;
@@ -51,7 +25,7 @@
     text-align:center;
   }
   .img-json {
-    max-width:90%;
+    max-width:70%;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -82,44 +56,41 @@
   <div id="objgoal" class="row" style="flex-wrap:nowrap;">
 
     <div class="col-md-4" style="padding:5px">
-      <div class="card">
+      <div class="card card-extended">
         <p class="info-title">GET /year</p>
         <hr>
         <p class="info-desc">A client can make a <strong>GET</strong> request for a specific year within range, and the server will return a JSON response of every vehicle for that year, including its individual attributes. Example:</p>
         <p class="api-ex"><strong>https://vehicleinfo.org/api/2002</strong></p>
-        <p class="info-desc">The response would look like:</p>
+        <p class="info-desc">The JSON response would yield:</p>
         <div class="img-json">
           <img src="{{ url_for('static', filename='img/GET2002.svg') }}">
         </div>
-        <p class="info-desc">From the JSON response, the client can get data on any of the vehicles by accessing the results column</p>
       </div>
     </div>
 
     <div class="co-md-4" style="padding:5px">
-      <div class="card">
+      <div class="card card-extended">
         <p class="info-title">GET /year/make/</p>
         <hr>
         <p class="info-desc">Next, a client can make a <strong>GET</strong> request for a specific year and make, and the server will return JSON response of a list of all vehicles produced by a manufacturer in that year. Example:</p>
         <p class="api-ex"><strong>https://vehicleinfo.org/api/2002/acura</strong></p>
-        <p class="info-desc">The response would look like:</p>
+        <p class="info-desc">The JSON response would yield:</p>
         <div class="img-json" style="">
           <img src="{{ url_for('static', filename='img/GETACURA.svg') }}">
         </div>
-        <p class="info-desc">From the JSON response, the client can get data on any of the vehicles from this specific manufacturer by accessing the results column</p>
       </div>
     </div>
 
     <div class="co-md-4" style="padding:5px">
-      <div class="card">
+      <div class="card card-extended">
         <p class="info-title">GET /year/make/model</p>
         <hr>
-                <p class="info-desc">Finally, a client can make a <strong>GET</strong> request for a specific year, make, and model resulting in a JSON response of the attributes for that specific vehicle. Example:</p>
+        <p class="info-desc">Finally, a client can make a <strong>GET</strong> request for a specific year, make, and model resulting in a JSON response of the attributes for that specific vehicle. Example:</p>
         <p class="api-ex"><strong>https://vehicleinfo.org/api/2002/acura/tl</strong></p>
-        <p class="info-desc">The response would look like:</p>
+        <p class="info-desc">The JSON response would yield:</p>
         <div class="img-json" style="">
           <img src="{{ url_for('static', filename='img/GETTL.svg') }}">
         </div>
-        <p class="info-desc">From the JSON response, the client can get data on any of the vehicles from this specific manufacturer by accessing the results column</p>
       </div>
     </div>
 
