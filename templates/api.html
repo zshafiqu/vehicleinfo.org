@@ -102,11 +102,10 @@
         <p class="info-desc">Next, a client can make a <strong>GET</strong> request for a specific year and make, and the server will return JSON response of a list of all vehicles produced by a manufacturer in that year. Example:</p>
         <p class="api-ex"><strong>https://vehicleinfo.org/api/2002/acura</strong></p>
         <p class="info-desc">The response would look like:</p>
-        <div class="img-json" style="max-width:80%">
+        <div class="img-json" style="">
           <img src="{{ url_for('static', filename='img/GETACURA.svg') }}">
         </div>
         <p class="info-desc">From the JSON response, the client can get data on any of the vehicles from this specific manufacturer by accessing the results column</p>
-
       </div>
     </div>
 
@@ -114,9 +113,13 @@
       <div class="card">
         <p class="info-title">GET /year/make/model</p>
         <hr>
-        <p class="info-desc">For each vehicle available, the tool has aggregated attributes such as body styles, images for each body style, available trims, and other details such as engine size, MPG, and more.</p>
-        <p class="info-desc">The ongoing goal for this project is to continually add support for more vehicles, and to write robust scripts gather more information for the existing vehicles in the database.</p>
-        <p class="info-desc">This project is intended to always be open source and public, so any contributions are always welcome!</p>
+        <p class="info-desc">Next, a client can make a <strong>GET</strong> request for a specific year and make, and the server will return JSON response of a list of all vehicles produced by a manufacturer in that year. Example:</p>
+        <p class="api-ex"><strong>https://vehicleinfo.org/api/2002/acura/tl</strong></p>
+        <p class="info-desc">The response would look like:</p>
+        <div class="img-json" style="">
+          <img src="{{ url_for('static', filename='img/GETACURA.svg') }}">
+        </div>
+        <p class="info-desc">From the JSON response, the client can get data on any of the vehicles from this specific manufacturer by accessing the results column</p>
       </div>
     </div>
 
