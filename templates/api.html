@@ -38,7 +38,7 @@
 </style>
 <div class="container-fluid">
 
-  <!-- BEGIN ROW 2 ! -->
+  <!-- BEGIN ROW 1 ! -->
   <div class="row">
     <div class="col-md-12" style="padding:5px;">
       <div class="card">
@@ -50,9 +50,9 @@
       </div>
     </div>
   </div>
-  <!-- END ROW 2 ! -->
+  <!-- END ROW 1 ! -->
 
-  <!-- BEGIN ROW 3 ! -->
+  <!-- BEGIN ROW 2 ! -->
   <div id="objgoal" class="row" style="flex-wrap:nowrap;">
 
     <div class="col-md-4" style="padding:5px">
@@ -62,7 +62,7 @@
         <p class="info-desc">A client can make a <strong>GET</strong> request for a specific year within range, and the server will return a JSON response of every vehicle for that year, including its individual attributes. Example:</p>
         <p class="api-ex"><strong>https://vehicleinfo.org/api/2002</strong></p>
         <p class="info-desc">The JSON response would yield:</p>
-        <div class="img-json">
+        <div class="img-json" style="padding-top:2.3rem;">
           <img src="{{ url_for('static', filename='img/GET2002.svg') }}">
         </div>
       </div>
@@ -75,7 +75,7 @@
         <p class="info-desc">Next, a client can make a <strong>GET</strong> request for a specific year and make, and the server will return JSON response of a list of all vehicles produced by a manufacturer in that year. Example:</p>
         <p class="api-ex"><strong>https://vehicleinfo.org/api/2002/acura</strong></p>
         <p class="info-desc">The JSON response would yield:</p>
-        <div class="img-json" style="">
+        <div class="img-json" style="padding-top:1.8em">
           <img src="{{ url_for('static', filename='img/GETACURA.svg') }}">
         </div>
       </div>
@@ -95,7 +95,7 @@
     </div>
 
   </div>
-  <!-- END ROW 3 ! -->
+  <!-- END ROW 2 ! -->
 
 
 </div>
