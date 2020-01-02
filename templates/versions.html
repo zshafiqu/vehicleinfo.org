@@ -44,16 +44,75 @@
       <div class="card">
         <p class="info-title">Versioning and Change Log</p>
         <hr>
-        <p class="info-desc">This page serves to document the version history of the online web interface as well as the public API. All changes that are reviewed and pushed to production will be logged here under its respective tab.</p>
+        <p class="info-desc">This page serves to document the version history of the online web interface as well as the public API. All updates and changes that are pushed to production will be reviewd and logged here under its respective tab.</p>
       </div>
     </div>
   </div>
   <!-- END ROW 1 ! -->
 
   <!-- BEGIN ROW 2 ! -->
-
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card" style="padding:5p;">
+        <div class="header" style="margin:0rem;">
+          <p class="info-title">Vehicle Report Change Log</p>
+        </div>
+        <div class="content" style="padding:.5rem;">
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover" style="text-align:start">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Version</th>
+                  <th>Change</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><small>01-02-2019</small></td>
+                    <td><small>1.0</small></td>
+                    <td><small>Initial version, webpage accepts year, make, and model and returns a report with info including an image, available body styles, available trims, recalls, and consumer complaints</small></td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- END ROW 2 ! -->
 
+  <!-- BEGIN ROW 2 ! -->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card" style="padding:5p;">
+        <div class="header" style="margin:0rem;">
+          <p class="info-title">API Change Log</p>
+        </div>
+        <div class="content" style="padding:.5rem;">
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover" style="text-align:start">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Version</th>
+                  <th>Change</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><small>01-02-2019</small></td>
+                    <td><small>1.0</small></td>
+                    <td><small>Initial version, the API has three routes; <strong>GET /year</strong>, <strong>GET /year/make</strong>, and <strong>GET /year/make/model</strong>. All responses are returned in JSON format.</small></td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END ROW 2 ! -->
 
 </div>
 {% endblock content %}
