@@ -1,4 +1,116 @@
 {% extends "layout.html" %}
 {% block content %}
-<<h1>ABOUT</h1>
+<style>
+  @media screen and (max-width: 790px) {
+    #objgoal {
+      flex-wrap:wrap !important;
+    }
+  }
+  .card-extended {
+    /* Used to make the tables be the same height regardless of content */
+    min-height:100%
+    /* padding-bottom:10px; !important */
+  }
+  .info-title {
+    font-size:1.2rem;
+    font-weight:bold;
+    padding-top: 1rem;
+    margin-bottom:0px;
+    word-wrap: normal;
+    text-align: center;
+  }
+  .info-desc {
+    word-wrap: normal;
+    padding: 0rem 1rem;
+    font-size:.9rem;
+    text-align:center;
+  }
+  .img-json {
+    max-width:70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-bottom:10px;
+  }
+  .api-ex {
+    font-size:.8rem;
+    text-align:center;
+  }
+</style>
+<div class="container-fluid">
+
+  <!-- BEGIN ROW 1 ! -->
+  <div class="row">
+    <div class="col-md-12" style="padding:5px;">
+      <div class="card">
+        <p class="info-title">Versioning and Change Log</p>
+        <hr>
+        <p class="info-desc">This page serves to document the version history of the online web interface as well as the public API. All updates and changes that are pushed to production will be reviewed and logged here under its respective table.</p>
+      </div>
+    </div>
+  </div>
+  <!-- END ROW 1 ! -->
+
+  <!-- BEGIN ROW 2 ! -->
+  <div id="objgoal" class="row" style="flex-wrap:nowrap;">
+
+    <div class="col-md-6" style="padding:5px;">
+      <div class="card card-extended">
+        <div class="header" style="margin:0rem;">
+          <p class="info-title">Vehicle Report Change Log</p>
+        </div>
+        <div class="content" style="padding:.5rem;">
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover" style="text-align:start">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Version</th>
+                  <th>Change</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><small>01-02-2019</small></td>
+                    <td><small>1.0</small></td>
+                    <td><small>Initial version, webpage accepts year, make, and model and returns a report with info including an image, available body styles, available trims, recalls, and consumer complaints</small></td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6" style="padding:5px;">
+      <div class="card card-extended">
+        <div class="header" style="margin:0rem;">
+          <p class="info-title">API Change Log</p>
+        </div>
+        <div class="content" style="padding:.5rem;">
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover" style="text-align:start">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Version</th>
+                  <th>Change</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><small>01-02-2019</small></td>
+                    <td><small>1.0</small></td>
+                    <td><small>Initial version, the API has three routes; <strong>GET /year</strong>, <strong>GET /year/make</strong>, and <strong>GET /year/make/model</strong>. All responses are returned in JSON format.</small></td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- END ROW 2 ! -->
+</div>
 {% endblock content %}
