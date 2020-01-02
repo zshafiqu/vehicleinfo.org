@@ -1,4 +1,59 @@
 {% extends "layout.html" %}
 {% block content %}
-<<h1>VERSIONS</h1>
+<style>
+  @media screen and (max-width: 790px) {
+    #objgoal {
+      flex-wrap:wrap !important;
+    }
+  }
+  .card-extended {
+    min-height:100%
+    /* padding-bottom:10px; !important */
+  }
+  .info-title {
+    font-size:1.2rem;
+    font-weight:bold;
+    padding-top: 1rem;
+    margin-bottom:0px;
+    word-wrap: normal;
+    text-align: center;
+  }
+  .info-desc {
+    word-wrap: normal;
+    padding: 0rem 1rem;
+    font-size:.9rem;
+    text-align:center;
+  }
+  .img-json {
+    max-width:70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-bottom:10px;
+  }
+  .api-ex {
+    font-size:.8rem;
+    text-align:center;
+  }
+</style>
+<div class="container-fluid">
+
+  <!-- BEGIN ROW 1 ! -->
+  <div class="row">
+    <div class="col-md-12" style="padding:5px;">
+      <div class="card">
+        <p class="info-title">Versioning and Change Log</p>
+        <hr>
+        <p class="info-desc">This page serves to document the version history of the online web interface as well as the public API. All changes that are reviewed and pushed to production will be logged here under its respective tab.</p>
+      </div>
+    </div>
+  </div>
+  <!-- END ROW 1 ! -->
+
+  <!-- BEGIN ROW 2 ! -->
+
+  <!-- END ROW 2 ! -->
+
+
+</div>
 {% endblock content %}
