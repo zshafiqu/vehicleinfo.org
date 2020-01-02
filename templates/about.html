@@ -58,7 +58,7 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
-    padding-bottom:10px;
+    padding:2rem;;
   }
   .api-ex {
     font-size:.8rem;
@@ -75,7 +75,7 @@
   <div class="row" style="">
 
     <div class="col-md-3">
-      <div id="zain" class="card" style="margin-top:40px;">
+      <div id="zain" class="card" style="margin-top:50px;">
           <div class="content">
             <p class="info-head">Founder & Developer:</p>
             <hr style="margin-top:5px;">
@@ -92,8 +92,9 @@
           <p class="info-head">About Me!</p>
           <hr style="margin-top:5px;">
           <p class="info-desc">Hello there, thanks for checking out my project! My name is Zain Shafique, and I am the founder and creator of <strong>vehicleinfo.org</strong> (also known as the Vehicle Information Project).</p>
-          <p class="info-desc">I am currently a fourth year student at the University of California, Santa Cruz where I study computer science. Motivation for this project came from the fact that I am a HUGE car enthusiast, and me trying to find accessible APIs online that would allow me to access information about cars.<p>
-          <p class="info-desc">Searching online gave me no results for open source or public APIs offering vehicle data, as most of them had been commercialized and only available B2B. I found a need, and decided to develop this web application. I spent a few days aggregating the data and storing it in CSV files that I eventually pushed to a database. Following this, I built out a Python app to serve the data through a web interface and an API. This project will always be public and open source, and I will continue to add to it. If anyone is interested in contributing, the source code is published via GitHub and I am always happy to help get you set up!</p>
+          <p class="info-desc">I am currently a fourth year student at the University of California, Santa Cruz where I study computer science. Motivation for this project came from the fact that I am a <strong>HUGE</strong> car enthusiast, and me trying to find accessible APIs online that would allow me to access information about cars.<p>
+          <p class="info-desc">Searching online gave me no results for open source or public APIs offering vehicle data, <u>as most of them had been commercialized and only available B2B</u>. I found a need, and decided to develop this web application. I spent a few days aggregating various data and storing it into CSV files that I eventually pushed to a database. Following this, I built out a Python based web server to make the data accessible via a web interface and an API.</p>
+          <p class="info-desc">This project will always be public and open source, and I will continue to add to it. If anyone is interested in contributing, the source code is published via <a href="https://github.com/zshafiqu/vehicleinfo.org">GitHub</a> and I am happy to get anyone up to speed!</p>
 
         </div>
       </div>
@@ -102,6 +103,36 @@
 
   </div>
   <!-- ROW -->
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="content">
+          <div class="row" style="flex-wrap:nowrap">
+            <div class="col-md-4">
+              <div class="img-json">
+                <img src="{{ url_for('static', filename='img/JINJA.png') }}" >
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="img-json">
+                <img src="{{ url_for('static', filename='img/FLASK.png') }}" >
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="img-json">
+                <img src="{{ url_for('static', filename='img/MYSQL.svg') }}" >
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
 {% endblock content %}
