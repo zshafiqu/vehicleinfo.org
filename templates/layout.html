@@ -32,12 +32,14 @@
               <img src="{{ url_for('static', filename='img/car.png') }}">
             </div>
           </a>
-          <a href="/" class="simple-text logo-normal" style="color:black">VehicleInfo.org</a>
+          <a href="/" class="simple-text logo-normal" style="color:#9A9A9A">VehicleInfo.org</a>
         </div>
         <div class="sidebar-wrapper">
           <ul class="nav">
             <li {% if request.endpoint == 'index' %}class="active"{% endif %}><a href="/"><i class="nc-icon nc-bank"></i><p>Home</p></a></li>
-            <li {% if request.endpoint == 'report' %}class="active" {% endif %}><a href="/report"><i class="nc-icon nc-align-center"></i><p>Get A Vehicle Report</p></a></li>
+            <li {% if request.endpoint == 'report' %} class="active" {% elif page == 'Vehicle Report' %} class="active" {% endif %}>
+              <a href="/report"><i class="nc-icon nc-align-center"></i><p>Get A Vehicle Report</p></a>
+            </li>
             <li {% if request.endpoint == 'api' %}class="active"{% endif %}><a href="/api"><i class="nc-icon nc-atom"></i><p>Open Source API</p></a></li>
             <li {% if request.endpoint == 'versions' %}class="active"{% endif %}><a href="/versions"><i class="nc-icon nc-bell-55"></i><p>Versions</p></a></li>
             <li {% if request.endpoint == 'about' %}class="active"{% endif %}><a href="about"><i class="nc-icon nc-badge"></i><p>About</p></a></li>
