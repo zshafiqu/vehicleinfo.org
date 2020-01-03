@@ -6,11 +6,11 @@ import requests, json, os, ast, datetime
 app = Flask(__name__)
 # ----------------------
 # Get info stored locally on machine
-host_name= os.environ.get('DB_SERVER')
+host_name= os.environ.get('DB_HOST')
 port = os.environ.get('DB_PORT')
 username = os.environ.get('DB_USER')
-passwd = os.environ.get('DB_PASS')
-dbname = os.environ.get('DB_NAME')
+passwd = os.environ.get('DB_PASSWORD')
+dbname = os.environ.get('DB_DBNAME')
 # ----------------------
 # Configure flask app with db connection
 app.config['MYSQL_DATABASE_HOST'] = host_name
@@ -211,4 +211,4 @@ def about():
     # return render_template('temp.html')
 # ----------------------
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
