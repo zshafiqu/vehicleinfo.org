@@ -6,19 +6,12 @@ import requests, json, os, ast, datetime
 app = Flask(__name__)
 app.secret_key = os.environ.get('KEY')
 # ----------------------
-# Get info stored locally within environment (locally or heroku)
-host_name = os.environ.get('DB_HOST')
-port = os.environ.get('DB_PORT')
-username = os.environ.get('DB_USER')
-passwd = os.environ.get('DB_PASSWORD')
-dbname = os.environ.get('DB_DBNAME')
-# ----------------------
-# Configure flask app with db connection
-app.config['MYSQL_DATABASE_HOST'] = host_name
-app.config['MYSQL_DATABASE_PORT'] = int(port)
-app.config['MYSQL_DATABASE_USER'] = username
-app.config['MYSQL_DATABASE_PASSWORD'] = passwd
-app.config['MYSQL_DATABASE_DB'] = dbname
+# Configure flask app with info stored locally within environment (locally or heroku)
+app.config['MYSQL_DATABASE_HOST'] = os.environ.get('DB_HOST')
+app.config['MYSQL_DATABASE_PORT'] = int(os.environ.get('DB_PORT'))
+app.config['MYSQL_DATABASE_USER'] = os.environ.get('DB_USER')
+app.config['MYSQL_DATABASE_PASSWORD'] = os.environ.get('DB_PASSWORD')
+app.config['MYSQL_DATABASE_DB'] = os.environ.get('DB_DBNAME')
 # ----------------------
 # Bind app to db obj
 mysql = MySQL()
