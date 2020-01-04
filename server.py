@@ -4,9 +4,10 @@ import requests, json, os, ast, datetime
 # ----------------------
 # Initialize flask app
 app = Flask(__name__)
+app.secret_key = os.environ.get('KEY')
 # ----------------------
-# Get info stored locally on machine
-host_name= os.environ.get('DB_HOST')
+# Get info stored locally within environment (locally or heroku)
+host_name = os.environ.get('DB_HOST')
 port = os.environ.get('DB_PORT')
 username = os.environ.get('DB_USER')
 passwd = os.environ.get('DB_PASSWORD')
