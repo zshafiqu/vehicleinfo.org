@@ -208,3 +208,5 @@ def run_app():
     app.run()
     return None
 # ----------------------
+if __name__ == '__main__':
+    app.run()
