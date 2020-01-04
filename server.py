@@ -210,13 +210,13 @@ def about():
     return render_template('about.html', page=page)
     # return render_template('temp.html')
 # ----------------------
-def get_app():
-    return app
+# def get_app():
+#     return app
 # ----------------------
-def run_app(app):
+def run_app():
     app.run()
     return None
 # ----------------------
-run_app(app)
+# run_app(app)
 # if __name__ == '__main__':
 #     app.run()
