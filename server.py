@@ -2,7 +2,7 @@ from flask import Flask, render_template, jsonify, make_response, request
 from flaskext.mysql import MySQL
 import requests, json, os, ast, datetime
 # ----------------------
-# Initialize flask app
+# Initialize flask app, enable auto deploy from master branch for heroku
 app = Flask(__name__)
 app.secret_key = os.environ.get('KEY')
 # ----------------------
