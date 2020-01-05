@@ -181,7 +181,8 @@ def handle_request():
         complaints = get_complaints_from_NHTSA(year, make, model)
 
         return render_template('process_report.html', data=data, recalls=recalls, complaints=complaints, page=page)
-    except:
+    except Exception as e:
+        print(e)
         # 404 not found
         return render_template('error.html', page=page)
 # ----------------------
