@@ -170,20 +170,20 @@ def report():
 def handle_request():
     # print(request)
     page = 'Vehicle Report'
-    # try :
-    year = request.form['year'].strip()
-    make = request.form['make'].strip()
-    model = request.form['model'].strip()
+    try :
+        year = request.form['year'].strip()
+        make = request.form['make'].strip()
+        model = request.form['model'].strip()
 
 
-    data = get_by_year_make_and_model(year, make, model).get_json()
-    recalls = get_recalls_from_NHTSA(year, make, model)
-    complaints = get_complaints_from_NHTSA(year, make, model)
+        data = get_by_year_make_and_model(year, make, model).get_json()
+        recalls = get_recalls_from_NHTSA(year, make, model)
+        complaints = get_complaints_from_NHTSA(year, make, model)
 
-    return render_template('process_report.html', data=data, recalls=recalls, complaints=complaints, page=page)
-    # except:
-    #     # 404 not found
-    #     return render_template('error.html', page=page)
+        return render_template('process_report.html', data=data, recalls=recalls, complaints=complaints, page=page)
+    except:
+        # 404 not found
+        return render_template('error.html', page=page)
 # ----------------------
 @app.route('/api')
 def api():
