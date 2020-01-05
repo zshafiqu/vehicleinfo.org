@@ -177,10 +177,10 @@ def handle_request():
 
 
         data = get_by_year_make_and_model(year, make, model).get_json()
-        recalls = get_recalls_from_NHTSA(year, make, model)
-        complaints = get_complaints_from_NHTSA(year, make, model)
+        # recalls = get_recalls_from_NHTSA(year, make, model)
+        # complaints = get_complaints_from_NHTSA(year, make, model)
 
-        return render_template('process_report.html', data=data, recalls=recalls, complaints=complaints, page=page)
+        return render_template('process_report.html', data=data, page=page)
     except:
         # 404 not found
         return render_template('error.html', page=page)
