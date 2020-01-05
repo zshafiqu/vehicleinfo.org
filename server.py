@@ -169,8 +169,8 @@ def report():
 @app.route('/handlerequest', methods=['POST'])
 def handle_request():
     # print(request)
+    page = 'Vehicle Report'
     try :
-        page = 'Vehicle Report'
         year = request.form['year'].strip()
         make = request.form['make'].strip()
         model = request.form['model'].strip()
@@ -183,7 +183,6 @@ def handle_request():
         return render_template('process_report.html', data=data, recalls=recalls, complaints=complaints, page=page)
     except:
         # 404 not found
-        page = 'Resource Not Found'
         return render_template('error.html', page=page)
 # ----------------------
 @app.route('/api')
