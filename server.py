@@ -1,21 +1,19 @@
 from flask import Flask, render_template, jsonify, make_response, request
-from flaskext.mysql import MySQL
+from flask_sqlalchemy import SQLAlchemy
 import requests, json, os, ast, datetime
 # ----------------------
+# Activate virtual env with - source env/bin/activate
 # Initialize flask app, enable auto deploy from master branch for heroku
 app = Flask(__name__)
 app.secret_key = os.environ.get('KEY')
 # ----------------------
 # Configure flask app with info stored locally within environment (locally or heroku)
-app.config['MYSQL_DATABASE_HOST'] = os.environ.get('DB_HOST')
-app.config['MYSQL_DATABASE_PORT'] = int(os.environ.get('DB_PORT'))
-app.config['MYSQL_DATABASE_USER'] = os.environ.get('DB_USER')
-app.config['MYSQL_DATABASE_PASSWORD'] = os.environ.get('DB_PASSWORD')
-app.config['MYSQL_DATABASE_DB'] = os.environ.get('DB_DBNAME')
+# To install mysqlclient, needed to run brew install mysql
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('BASE_URI')
 # ----------------------
 # Bind app to db obj
-mysql = MySQL()
-mysql.init_app(app)
+db = SQLAlchemy(app)
 # ----------------------
 ''' Template filter converter for JSON formatted time '''
 @app.template_filter('strftime')
@@ -68,7 +66,10 @@ def parse_results(results):
 def compile_response(list):
     response = dict()
     response['Count'] = len(list)
-    response['Message'] = 'Results returned successfully'
+    if len(list) > 0:
+        response['Message'] = 'Results returned successfully'
+    else:
+        response['Message'] = 'No results found for this request'
     response['Results'] = list
     return response
 # ----------------------
@@ -87,22 +88,18 @@ def get_by_year(year):
     tableName = str(year)+'_vehicles'
     query = "SELECT * FROM "+tableName
 
-    # Get cursor & execute query
-    cursor = mysql.get_db().cursor()
-    cursor.execute(query)
-    results = cursor.fetchall()
+    try:
+        # Execute query via SQLAlchemy engine
+        results = db.engine.execute(query)
+    except:
+        # Query did not execute successfully
+        return jsonify(default_response())
 
-    # Check for validity
-    if len(results) == 0:
-        return jsonify(response=default_response())
-
-    # Verified, now parse all rows in results to a list
-    # And aggregate data in map for count, response, results
+    # Parse row items into a list of dictionaries (JSON)
     list = parse_results(results)
-    response = compile_response(list)
 
-    # Return JSON object
-    return jsonify(response)
+    # Aggregate data into a JSON casted response map with count, message, and results
+    return jsonify(compile_response(list))
 # ----------------------
 # Route 2, get all vehicles for a given year and make
 @app.route('/api/<year>/<make>/', methods=['GET'])
@@ -111,22 +108,18 @@ def get_by_year_and_make(year, make):
     tableName = str(year)+'_vehicles'
     query = "SELECT * FROM "+tableName+" WHERE make LIKE '"+make+"'"
 
-    # Get cursor & execute query
-    cursor = mysql.get_db().cursor()
-    cursor.execute(query)
-    results = cursor.fetchall()
+    try:
+        # Execute query via SQLAlchemy engine
+        results = db.engine.execute(query)
+    except:
+        # Query did not execute successfully
+        return jsonify(default_response())
 
-    # Check for validity
-    if len(results) == 0:
-        return jsonify(response=default_response())
-
-    # Verified, now parse all rows in results to a list
-    # And aggregate data in map for count, response, results
+    # Parse row items into a list of dictionaries (JSON)
     list = parse_results(results)
-    response = compile_response(list)
 
-    # Return JSON object
-    return jsonify(response)
+    # Aggregate data into a JSON casted response map with count, message, and results
+    return jsonify(compile_response(list))
 # ----------------------
 # Route 3, get all vehicles for a given year and make
 @app.route('/api/<year>/<make>/<model>/', methods=['GET'])
@@ -135,23 +128,18 @@ def get_by_year_make_and_model(year, make, model):
     tableName = str(year)+'_vehicles'
     query = "SELECT * FROM "+tableName+" WHERE make LIKE '"+make+"'"+" AND model LIKE '"+model+"'"
 
-    # Get cursor & execute query
-    cursor = mysql.get_db().cursor()
-    cursor.execute(query)
-    results = cursor.fetchall()
+    try:
+        # Execute query via SQLAlchemy engine
+        results = db.engine.execute(query)
+    except:
+        # Query did not execute successfully
+        return jsonify(default_response())
 
-    # Check for validity
-    if len(results) == 0:
-        return jsonify(response=default_response())
-
-    # Verified, now parse all rows in results to a list
-    # And aggregate data in map for count, response, results
+    # Parse row items into a list of dictionaries (JSON)
     list = parse_results(results)
-    response = compile_response(list)
 
-    # print(response)
-    # Return JSON object
-    return jsonify(response)
+    # Aggregate data into a JSON casted response map with count, message, and results
+    return jsonify(compile_response(list))
 # ----------------------
 @app.route('/')
 def index():
@@ -174,7 +162,6 @@ def handle_request():
         year = request.form['year'].strip()
         make = request.form['make'].strip()
         model = request.form['model'].strip()
-
 
         data = get_by_year_make_and_model(year, make, model).get_json()
         recalls = get_recalls_from_NHTSA(year, make, model)
