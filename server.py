@@ -8,8 +8,9 @@ app = Flask(__name__)
 app.secret_key = os.environ.get('KEY')
 # ----------------------
 # Configure flask app with info stored locally within environment (locally or heroku)
+# To install mysqlclient, needed to run brew install mysql
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('MODIFIED_URI')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('BASE_URI')
 # app.config['MYSQL_DATABASE_HOST'] = os.environ.get('DB_HOST')
 # app.config['MYSQL_DATABASE_PORT'] = int(os.environ.get('DB_PORT'))
 # app.config['MYSQL_DATABASE_USER'] = os.environ.get('DB_USER')
@@ -92,10 +93,16 @@ def get_by_year(year):
     tableName = str(year)+'_vehicles'
     query = "SELECT * FROM "+tableName
 
-    result = db.engine.execute(query)
+    results = db.engine.execute(query)
 
-    for i in results:
-        print(i)
+    list = parse_results(results)
+    # response = compile_response(list)
+    # return jsonify(list)
+    response = compile_response(list)
+    return jsonify(response)
+
+    # Return JSON object
+    # return ''
 
     '''
     # Define table name for lookup and prepare query
@@ -119,7 +126,7 @@ def get_by_year(year):
     # Return JSON object
     return jsonify(response)
     '''
-    return ''
+    # return ''
 # ----------------------
 # Route 2, get all vehicles for a given year and make
 @app.route('/api/<year>/<make>/', methods=['GET'])
