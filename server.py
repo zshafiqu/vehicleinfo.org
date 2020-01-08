@@ -168,9 +168,7 @@ def handle_request():
         complaints = get_complaints_from_NHTSA(year, make, model)
 
         return render_template('process_report.html', data=data, recalls=recalls, complaints=complaints, page=page)
-    except Exception as e:
-        print(e)
-        # 404 not found
+    except:
         return render_template('error.html', page=page)
 # ----------------------
 @app.route('/api')
@@ -196,4 +194,4 @@ def run_app():
     return None
 # ----------------------
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
