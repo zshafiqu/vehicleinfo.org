@@ -1,5 +1,4 @@
 from flask import Flask, render_template, jsonify, make_response, request
-# from flaskext.mysql import MySQL
 from flask_sqlalchemy import SQLAlchemy
 import requests, json, os, ast, datetime
 # ----------------------
@@ -11,16 +10,9 @@ app.secret_key = os.environ.get('KEY')
 # To install mysqlclient, needed to run brew install mysql
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('BASE_URI')
-# app.config['MYSQL_DATABASE_HOST'] = os.environ.get('DB_HOST')
-# app.config['MYSQL_DATABASE_PORT'] = int(os.environ.get('DB_PORT'))
-# app.config['MYSQL_DATABASE_USER'] = os.environ.get('DB_USER')
-# app.config['MYSQL_DATABASE_PASSWORD'] = os.environ.get('DB_PASSWORD')
-# app.config['MYSQL_DATABASE_DB'] = os.environ.get('DB_DBNAME')
 # ----------------------
 # Bind app to db obj
 db = SQLAlchemy(app)
-# mysql = MySQL()
-# mysql.init_app(app)
 # ----------------------
 ''' Template filter converter for JSON formatted time '''
 @app.template_filter('strftime')
