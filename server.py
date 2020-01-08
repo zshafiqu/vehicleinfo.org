@@ -65,7 +65,10 @@ def parse_results(results):
 def compile_response(list):
     response = dict()
     response['Count'] = len(list)
-    response['Message'] = 'Results returned successfully'
+    if len(list) > 0:
+        response['Message'] = 'Results returned successfully'
+    else:
+        response['Message'] = 'No results found for this request'
     response['Results'] = list
     return response
 # ----------------------
