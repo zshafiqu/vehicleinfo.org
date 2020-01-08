@@ -175,7 +175,6 @@ def handle_request():
         make = request.form['make'].strip()
         model = request.form['model'].strip()
 
-
         data = get_by_year_make_and_model(year, make, model).get_json()
         recalls = get_recalls_from_NHTSA(year, make, model)
         complaints = get_complaints_from_NHTSA(year, make, model)
