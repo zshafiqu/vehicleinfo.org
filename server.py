@@ -128,30 +128,22 @@ def get_by_year_and_make(year, make):
 # Route 3, get all vehicles for a given year and make
 @app.route('/api/<year>/<make>/<model>/', methods=['GET'])
 def get_by_year_make_and_model(year, make, model):
-
-    '''
     # Define table name for lookup and prepare query
     tableName = str(year)+'_vehicles'
     query = "SELECT * FROM "+tableName+" WHERE make LIKE '"+make+"'"+" AND model LIKE '"+model+"'"
 
-    # Get cursor & execute query
-    cursor = mysql.get_db().cursor()
-    cursor.execute(query)
-    results = cursor.fetchall()
+    try:
+        # Execute query via SQLAlchemy engine
+        results = db.engine.execute(query)
+    except:
+        # Query did not execute successfully
+        return jsonify(default_response())
 
-    # Check for validity
-    if len(results) == 0:
-        return jsonify(response=default_response())
-
-    # Verified, now parse all rows in results to a list
-    # And aggregate data in map for count, response, results
+    # Parse row items into a list of dictionaries (JSON)
     list = parse_results(results)
-    response = compile_response(list)
 
-    # print(response)
-    # Return JSON object
-    return jsonify(response)
-    '''
+    # Aggregate data into a JSON casted response map with count, message, and results
+    return jsonify(compile_response(list))
 # ----------------------
 @app.route('/')
 def index():
