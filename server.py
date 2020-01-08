@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify, make_response, request
-from flaskext.mysql import MySQL
+# from flaskext.mysql import MySQL
+from flask_sqlalchemy import SQLAlchemy
 import requests, json, os, ast, datetime
 # ----------------------
 # Initialize flask app, enable auto deploy from master branch for heroku
@@ -7,15 +8,18 @@ app = Flask(__name__)
 app.secret_key = os.environ.get('KEY')
 # ----------------------
 # Configure flask app with info stored locally within environment (locally or heroku)
-app.config['MYSQL_DATABASE_HOST'] = os.environ.get('DB_HOST')
-app.config['MYSQL_DATABASE_PORT'] = int(os.environ.get('DB_PORT'))
-app.config['MYSQL_DATABASE_USER'] = os.environ.get('DB_USER')
-app.config['MYSQL_DATABASE_PASSWORD'] = os.environ.get('DB_PASSWORD')
-app.config['MYSQL_DATABASE_DB'] = os.environ.get('DB_DBNAME')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('MODIFIED_URI')
+# app.config['MYSQL_DATABASE_HOST'] = os.environ.get('DB_HOST')
+# app.config['MYSQL_DATABASE_PORT'] = int(os.environ.get('DB_PORT'))
+# app.config['MYSQL_DATABASE_USER'] = os.environ.get('DB_USER')
+# app.config['MYSQL_DATABASE_PASSWORD'] = os.environ.get('DB_PASSWORD')
+# app.config['MYSQL_DATABASE_DB'] = os.environ.get('DB_DBNAME')
 # ----------------------
 # Bind app to db obj
-mysql = MySQL()
-mysql.init_app(app)
+db = SQLAlchemy(app)
+# mysql = MySQL()
+# mysql.init_app(app)
 # ----------------------
 ''' Template filter converter for JSON formatted time '''
 @app.template_filter('strftime')
@@ -83,6 +87,17 @@ def default_response():
 # Route 1, get all vehicles for a given year
 @app.route('/api/<year>/', methods=['GET'])
 def get_by_year(year):
+
+    # Define table name for lookup and prepare query
+    tableName = str(year)+'_vehicles'
+    query = "SELECT * FROM "+tableName
+
+    result = db.engine.execute(query)
+
+    for i in results:
+        print(i)
+
+    '''
     # Define table name for lookup and prepare query
     tableName = str(year)+'_vehicles'
     query = "SELECT * FROM "+tableName
@@ -103,10 +118,14 @@ def get_by_year(year):
 
     # Return JSON object
     return jsonify(response)
+    '''
+    return ''
 # ----------------------
 # Route 2, get all vehicles for a given year and make
 @app.route('/api/<year>/<make>/', methods=['GET'])
 def get_by_year_and_make(year, make):
+
+    '''
     # Define table name for lookup and prepare query
     tableName = str(year)+'_vehicles'
     query = "SELECT * FROM "+tableName+" WHERE make LIKE '"+make+"'"
@@ -127,10 +146,14 @@ def get_by_year_and_make(year, make):
 
     # Return JSON object
     return jsonify(response)
+    '''
+    return ''
 # ----------------------
 # Route 3, get all vehicles for a given year and make
 @app.route('/api/<year>/<make>/<model>/', methods=['GET'])
 def get_by_year_make_and_model(year, make, model):
+
+    '''
     # Define table name for lookup and prepare query
     tableName = str(year)+'_vehicles'
     query = "SELECT * FROM "+tableName+" WHERE make LIKE '"+make+"'"+" AND model LIKE '"+model+"'"
@@ -152,6 +175,7 @@ def get_by_year_make_and_model(year, make, model):
     # print(response)
     # Return JSON object
     return jsonify(response)
+    '''
 # ----------------------
 @app.route('/')
 def index():
@@ -208,4 +232,4 @@ def run_app():
     return None
 # ----------------------
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
