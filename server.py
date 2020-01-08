@@ -2,6 +2,7 @@ from flask import Flask, render_template, jsonify, make_response, request
 from flask_sqlalchemy import SQLAlchemy
 import requests, json, os, ast, datetime
 # ----------------------
+# Activate virtual env with - source env/bin/activate
 # Initialize flask app, enable auto deploy from master branch for heroku
 app = Flask(__name__)
 app.secret_key = os.environ.get('KEY')
@@ -195,4 +196,4 @@ def run_app():
     return None
 # ----------------------
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
