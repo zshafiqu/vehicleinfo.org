@@ -88,45 +88,22 @@ def default_response():
 # Route 1, get all vehicles for a given year
 @app.route('/api/<year>/', methods=['GET'])
 def get_by_year(year):
-
     # Define table name for lookup and prepare query
     tableName = str(year)+'_vehicles'
     query = "SELECT * FROM "+tableName
 
-    results = db.engine.execute(query)
+    try:
+        # Execute query via SQLAlchemy engine
+        results = db.engine.execute(query)
+    except:
+        # Query did not execute successfully
+        return jsonify(default_response())
 
+    # Parse row items into a list of dictionaries (JSON)
     list = parse_results(results)
-    # response = compile_response(list)
-    # return jsonify(list)
-    response = compile_response(list)
-    return jsonify(response)
 
-    # Return JSON object
-    # return ''
-
-    '''
-    # Define table name for lookup and prepare query
-    tableName = str(year)+'_vehicles'
-    query = "SELECT * FROM "+tableName
-
-    # Get cursor & execute query
-    cursor = mysql.get_db().cursor()
-    cursor.execute(query)
-    results = cursor.fetchall()
-
-    # Check for validity
-    if len(results) == 0:
-        return jsonify(response=default_response())
-
-    # Verified, now parse all rows in results to a list
-    # And aggregate data in map for count, response, results
-    list = parse_results(results)
-    response = compile_response(list)
-
-    # Return JSON object
-    return jsonify(response)
-    '''
-    # return ''
+    # Aggregate data into a JSON casted response map with count, message, and results
+    return jsonify(compile_response(list))
 # ----------------------
 # Route 2, get all vehicles for a given year and make
 @app.route('/api/<year>/<make>/', methods=['GET'])
