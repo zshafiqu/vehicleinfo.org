@@ -189,9 +189,5 @@ def about():
     return render_template('about.html', page=page)
     # return render_template('temp.html')
 # ----------------------
-def run_app():
-    app.run()
-    return None
-# ----------------------
 if __name__ == '__main__':
     app.run()
