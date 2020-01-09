@@ -1,23 +1,40 @@
 {% extends "layout.html" %}
 {% block content %}
 <main class="page contact-us-page">
-    <section class="clean-block clean-form dark" style="padding-bottom: 10px;">
-        <div class="container">
-            <div class="pulse animated block-heading" style="padding-top: 50px;">
-                <h2 class="text-info">Vehicle Report</h2>
-                <p>Enter a year, make, and model to get a vehicle report. The reports include vehicle information, as well as other information such as recalls and consumer complaints.</p>
-            </div>
+  <!-- SECTION 1 -->
+  <section class="clean-block clean-form dark" style="padding-bottom: 10px;">
+    <div class="container">
+      <div class="pulse animated block-heading" style="padding-top: 50px;">
+        <h2 class="text-info">Vehicle Report</h2>
+        <p>Enter a year, make, and model to get a vehicle report. The reports include vehicle information, as well as other information such as recalls and consumer complaints.</p>
+      </div>
+    </div>
+  </section>
+  <!-- SECTION 2 -->
+  <section class="clean-block clean-form" style="padding-top: 50px;">
+    <div class="container">
+      <form class="text-center" action="/handlerequest" method="post">
+        <!-- YEAR -->
+        <div class="form-group">
+          <label>Year</label>
+          <input input autofocus="" class="form-control" name="year" placeholder="" type="text">
         </div>
-    </section>
-    <section class="clean-block clean-form" style="padding-top: 50px;">
-        <div class="container">
-            <form class="text-center" action="/handlerequest" method="post">
-                <div class="form-group"><label>Year</label><input input autofocus="" class="form-control" name="year" placeholder="" type="text"></div>
-                <div class="form-group"><label>Make</label><input input autofocus="" class="form-control border-input" name="make" placeholder="" type="text"></div>
-                <div class="form-group"><label>Model</label><input input autofocus="" class="form-control border-input" name="model" placeholder="" type="text"></div>
-                <div class="form-group"><button class="btn btn-primary btn-block" type="submit" value="submit">Submit</button></div>
-            </form>
+        <!-- MAKE -->
+        <div class="form-group">
+          <label>Make</label>
+          <input input autofocus="" class="form-control border-input" name="make" placeholder="" type="text">
         </div>
-    </section>
+        <!-- MODEL -->
+        <div class="form-group">
+          <label>Model</label>
+          <input input autofocus="" class="form-control border-input" name="model" placeholder="" type="text">
+        </div>
+        <!-- SUBMIT -->
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit" value="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
 </main>
 {% endblock content %}
