@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block content %}
+<main class="page">
+    <section class="clean-block features dark" style="padding-bottom: 10px;">
+        <div class="container">
+            <div class="pulse animated block-heading" style="padding-top: 50px;">
+                <h2 class="text-info">Change Log and Versioning</h2>
+                <p>All updates and changes that are pushed to production are reviewed and logged here under their respective table.</p>
+            </div>
+        </div>
+    </section>
+    <section class="clean-block features" style="padding-top: 50px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-5 feature-box" style="padding-left: 20px;">
+                    <h4>Vehicle Report Interface</h4>
+                    <p>Log of all updates to the vehicle report web interface</p>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>DATE</th>
+                                    <th>VERSION</th>
+                                    <th>CHANGE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01-02-2020</td>
+                                    <td>1.0</td>
+                                    <td>Initial version, webpage accepts year, make, and model and <br>returns a report with info including an image, available body styles, <br>available trims, recalls, and consumer complaints</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-5 feature-box" style="padding-left: 20px;">
+                    <h4>API Endpoint</h4>
+                    <p>Log of all updates to the vehicleinfo.org API endpoint</p>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>DATE</th>
+                                    <th>VERSION</th>
+                                    <th>CHANGE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01-02-2020</td>
+                                    <td>1.0</td>
+                                    <td>Initial version, the API has three routes; <strong>GET /year</strong>, <strong>GET /year/make</strong>, and <strong>GET /year/make/model</strong>. All responses are returned in JSON format.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}

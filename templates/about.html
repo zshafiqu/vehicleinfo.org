@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+<main class="page">
+    <section class="clean-block about-us dark" style="padding-bottom: 10px;">
+        <div class="container">
+            <div class="pulse animated block-heading" style="padding-top: 50px;margin-bottom: 35px;">
+                <h2 class="text-info">The Vehicle Information Project</h2>
+                <p>Thanks for checking out my project!</p>
+                <p style="padding-top: 5px;">My name is Zain Shafique, and I am the founder and creator of&nbsp;vehicleinfo.org</p>
+            </div>
+        </div>
+    </section>
+    <section class="clean-block about-us" style="padding-top: 50px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-6 col-lg-4 align-self-center">
+                    <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/zain.png">
+                        <div class="card-body info">
+                            <h4 class="card-title">Zain Shafique</h4>
+                            <p class="card-text">Founder &amp; Developer</p>
+                            <div class="icons"><a href="#"><i class="icon-social-linkedin"></i></a><a href="#"><i class="icon-social-github"></i></a><a href="#"><i class="icon-user"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-sm-6 col-lg-8" id="about-info">
+                    <div class="block-heading" style="padding-top: 0px;margin-bottom: 35px;">
+                        <h2 class="text-info">About Me</h2>
+                        <p>I am currently a fourth year student at the University of California, Santa Cruz where I study computer science. Motivation for this project came from the fact that I am a&nbsp;<strong>HUGE</strong>&nbsp;car enthusiast, and
+                            me trying to find accessible APIs online that would allow me to access information about cars.</p>
+                        <p style="padding-top: 10px;padding-bottom: 0px;">Searching online gave me no results for open source or public APIs offering vehicle data,&nbsp;as most of them had been commercialized and only available B2B. I found a need, and decided to develop this web application.<br></p>
+                        <p
+                            style="padding-top: 10px;">I spent a few days aggregating various data and storing it into CSV files that I eventually pushed to a database. Following this, I built out a Python based web server to make the data accessible via a web interface and an
+                            API.<br></p>
+                            <p style="padding-top: 10px;">This project will always be public and open source, and I will continue to add to it. If anyone is interested in contributing, the source code is published via&nbsp;<a href="https://github.com/zshafiqu/vehicleinfo.org">GitHub</a>&nbsp;and
+                                I am happy to get anyone up to speed!<br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}
