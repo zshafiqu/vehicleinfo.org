@@ -24,11 +24,11 @@
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/">HOME</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/report">GET A VEHICLE REPORT</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/api">OPEN SOURCE API</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/versions">CHANGE LOG</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/about">ABOUT</a></li>
+                    <li class="nav-item" role="presentation"><a {% if request.endpoint == 'index' %}class="nav-link active"{% endif %} class="nav-link" href="/">HOME</a></li>
+                    <li class="nav-item" role="presentation"><a {% if request.endpoint == 'report' %}class="nav-link active"{% endif %} class="nav-link" href="/report">GET A VEHICLE REPORT</a></li>
+                    <li class="nav-item" role="presentation"><a {% if request.endpoint == 'api' %}class="nav-link active"{% endif %} class="nav-link" href="/api">OPEN SOURCE API</a></li>
+                    <li class="nav-item" role="presentation"><a {% if request.endpoint == 'versions' %}class="nav-link active"{% endif %} class="nav-link" href="/versions">CHANGE LOG</a></li>
+                    <li class="nav-item" role="presentation"><a {% if request.endpoint == 'about' %}class="nav-link active"{% endif %} class="nav-link" href="/about">ABOUT</a></li>
                 </ul>
             </div>
         </div>
