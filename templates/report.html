@@ -1,37 +1,40 @@
 {% extends "layout.html" %}
 {% block content %}
-<!-- BEGIN SEARCH FORM -->
-<div class="row">
-	<div class="col-md-12">
-		<div class="card" style="padding:1rem;">
-			<div class="">
-				<h4 class="title" style="margin:0rem;">Search By Year Make and Model</h4>
-			</div>
-			<div class="content">
-				<form action="/handlerequest" method="post">
-					<div class="row">
-						<div class="col-md-3">
-							<div class="form-group">
-								<label>Year</label> <input autofocus="" class="form-control border-input" name="year" placeholder="" type="text">
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="form-group">
-								<label>Make</label> <input class="form-control border-input" name="make" placeholder="" type="text">
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="form-group">
-								<label>Model</label> <input class="form-control border-input" name="model" placeholder="" type="text">
-							</div>
-						</div>
-						<div class="col-md-3" style="display:flex; align-items:center; justify-content:center; padding-top:.75rem">
-							<button class="btn btn-wd btn-warning btn-fill btn-magnify" type="submit" value="submit"><span class="btn-label"></span>Search</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
+<main class="page contact-us-page">
+  <!-- SECTION 1 -->
+  <section class="clean-block clean-form dark" style="padding-bottom: 10px;">
+    <div class="container">
+      <div class="pulse animated block-heading" style="padding-top: 50px;">
+        <h2 class="text-info">Vehicle Report</h2>
+        <p>Enter a year, make, and model to get a vehicle report. The reports include vehicle information, as well as other information such as recalls and consumer complaints.</p>
+      </div>
+    </div>
+  </section>
+  <!-- SECTION 2 -->
+  <section class="clean-block clean-form" style="padding-top: 50px;">
+    <div class="container">
+      <form class="text-center" action="/view_report" method="post">
+        <!-- YEAR -->
+        <div class="form-group">
+          <label>Year</label>
+          <input input autofocus="" class="form-control" name="year" placeholder="" type="text">
+        </div>
+        <!-- MAKE -->
+        <div class="form-group">
+          <label>Make</label>
+          <input input autofocus="" class="form-control border-input" name="make" placeholder="" type="text">
+        </div>
+        <!-- MODEL -->
+        <div class="form-group">
+          <label>Model</label>
+          <input input autofocus="" class="form-control border-input" name="model" placeholder="" type="text">
+        </div>
+        <!-- SUBMIT -->
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit" value="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
 {% endblock content %}
