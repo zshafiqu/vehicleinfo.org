@@ -19,6 +19,7 @@ This project is intended to be open source and public, so any and all contributi
     * Only slightly a working web app
 
 ## About Stuff
+See 'requirements.txt' for application dependencies
 
 Zain Shafique – [LinkedIn](https://www.linkedin.com/in/zain-shafique/)
 
