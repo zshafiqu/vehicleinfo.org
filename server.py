@@ -143,22 +143,15 @@ def get_by_year_make_and_model(year, make, model):
 # ----------------------
 @app.route('/')
 def index():
-    page = 'Home'
     return render_template('home.html', page=page)
-
-    # return render_template('temp.html')
 # ----------------------
-@app.route('/report')
+@app.route('/get_report')
 def report():
-    page = 'Vehicle Report'
     return render_template('report.html', page=page)
-    # return render_template('temp.html')
 # ----------------------
-@app.route('/handlerequest', methods=['POST'])
+@app.route('/view_report', methods=['POST'])
 def handle_request():
-    # print(request)
-    page = 'Vehicle Report'
-    try :
+    try:
         year = request.form['year'].strip()
         make = request.form['make'].strip()
         model = request.form['model'].strip()
@@ -167,27 +160,21 @@ def handle_request():
         recalls = get_recalls_from_NHTSA(year, make, model)
         complaints = get_complaints_from_NHTSA(year, make, model)
 
-        return render_template('process_report.html', data=data, recalls=recalls, complaints=complaints, page=page)
+        return render_template('process_report.html', data=data, recalls=recalls, complaints=complaints)
     except:
-        return render_template('error.html', page=page)
+        return render_template('error.html')
 # ----------------------
 @app.route('/api')
 def api():
-    page = 'API Documentation'
-    return render_template('api.html', page=page)
-    # return render_template('temp.html')
+    return render_template('api.html')
 # ----------------------
-@app.route('/versions')
+@app.route('/changelog')
 def versions():
-    page = 'Version History'
-    return render_template('versions.html', page=page)
-    # return render_template('temp.html')
+    return render_template('versions.html')
 # ----------------------
 @app.route('/about')
 def about():
-    page = 'About This Project'
-    return render_template('about.html', page=page)
-    # return render_template('temp.html')
+    return render_template('about.html')
 # ----------------------
 if __name__ == '__main__':
     app.run()
