@@ -1,67 +1,68 @@
 {% extends "layout.html" %}
 {% block content %}
 <main class="page landing-page">
-    <section class="clean-block clean-info dark" style="padding-bottom: 15px;">
-        <div class="container">
-            <div class="pulse animated block-heading">
-                <h2 class="text-info">Welcome to the Vehicle Information Project</h2>
-                <p style="font-size: 18px;">The Vehicle Information Project aims to make vehicle information public and accessible for anyone who needs it</p>
-            </div>
+  <!-- SECTION 1 -->
+  <section class="clean-block clean-info dark" style="padding-bottom: 15px;">
+    <div class="container">
+      <div class="pulse animated block-heading">
+        <h2 class="text-info">Welcome to the Vehicle Information Project</h2>
+        <p style="font-size: 18px;">The Vehicle Information Project aims to make vehicle information public and accessible for anyone who needs it</p>
+      </div>
+    </div>
+  </section>
+  <!-- SECTION 2 -->
+  <section class="clean-block features" style="padding-bottom: 50px;">
+    <div class="container">
+      <div class="block-heading" style="padding-top: 50px;">
+        <h2 class="text-info">Available Data</h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-5 feature-box"><i class="fas fa-car icon"></i>
+          <h4>9300+ Vehicles</h4>
+          <p style="font-size: 16px;">The project has aggregated over 9300 vehicles that were produced in the United States, ranging from cars, trucks, vans, and more.</p>
         </div>
-    </section>
-    <section class="clean-block features" style="padding-bottom: 50px;">
-        <div class="container">
-            <div class="block-heading" style="padding-top: 50px;">
-                <h2 class="text-info">Available Data</h2>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-5 feature-box"><i class="fas fa-car icon"></i>
-                    <h4>9300+ Vehicles</h4>
-                    <p style="font-size: 16px;">The project has aggregated over 9300 vehicles that were produced in the United States, ranging from cars, trucks, vans, and more.</p>
-                </div>
-                <div class="col-md-5 feature-box"><i class="fas fa-flag-checkered icon"></i>
-                    <h4>60+ Makes</h4>
-                    <p style="font-size: 16px;">The dataset includes over 60 unique vehicle manufacturers from all over the world, such as Honda, BMW, and Chevrolet.</p>
-                </div>
-                <div class="col-md-5 feature-box"><i class="far fa-calendar-check icon"></i>
-                    <h4>29 Model Years</h4>
-                    <p style="font-size: 16px;">Currently support vehicles produced from 1992 until 2020, with a growing range as more vehicles are added to the database</p>
-                </div>
-                <div class="col-md-5 feature-box"><i class="fas fa-wrench icon"></i>
-                    <h4>5+ Attributes</h4>
-                    <p style="font-size: 16px;">For each vehicle, there are a minimum of 5 attributes available, this includes but is not limited to available trims, MPG figures, engine size, and more.</p>
-                </div>
-            </div>
+        <div class="col-md-5 feature-box"><i class="fas fa-flag-checkered icon"></i>
+          <h4>60+ Makes</h4>
+          <p style="font-size: 16px;">The dataset includes over 60 unique vehicle manufacturers from all over the world, such as Honda, BMW, and Chevrolet.</p>
         </div>
-    </section>
-    <section class="clean-block slider dark" style="padding-bottom: 50px;">
-        <div class="container">
-            <div class="block-heading" style="padding-top: 50px;">
-                <h2 class="text-info">Highlights</h2>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-5 feature-box">
-                    <h4>Vehicle Report Interface</h4>
-                    <p style="font-size: 16px;">This tool offers an online vehicle report interface where anyone can enter a vehicle's year, make, and model to access a comprehensive report. This report aggregates data from our in-house API, as well as data from the National
-                        Highway Traffic Safety Administration (NHTSA) about recalls and consumer complaints.</p>
-                </div>
-                <div class="col-md-5 feature-box">
-                    <h4>Open Source API</h4>
-                    <p style="font-size: 16px;">This tool also exposes an open source and public API endpoint that gives access to the data through an HTTP request to this web server. The API returns JSON formatted responses to requests for specific years, makes, or models of
-                        vehicles.</p>
-                </div>
-            </div>
+        <div class="col-md-5 feature-box"><i class="far fa-calendar-check icon"></i>
+          <h4>29 Model Years</h4>
+          <p style="font-size: 16px;">Currently support vehicles produced from 1992 until 2020, with a growing range as more vehicles are added to the database</p>
         </div>
-    </section>
-    <section class="clean-block about-us" style="padding-bottom: 50px;">
-        <div class="container">
-            <div class="block-heading">
-                <h2 class="text-info">Mission</h2>
-                <p>The purpose of this tool is to be a public resource for anyone interested in accessing a specific vehicle's information. The ongoing mission is to continually write robust scripts in order to add support for more vehicles and gather
-                    more data about the exisiting vehicles in the database.</p>
-                <p style="padding-top: 15px;"><strong>This project is intended to be open source and public, so any and all contributions are always welcome!</strong></p>
-            </div>
+        <div class="col-md-5 feature-box"><i class="fas fa-wrench icon"></i>
+          <h4>5+ Attributes</h4>
+          <p style="font-size: 16px;">For each vehicle, there are a minimum of 5 attributes available, this includes but is not limited to available trims, MPG figures, engine size, and more.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+  <!-- SECTION 3 -->
+  <section class="clean-block slider dark" style="padding-bottom: 50px;">
+    <div class="container">
+      <div class="block-heading" style="padding-top: 50px;">
+        <h2 class="text-info">Highlights</h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-5 feature-box">
+          <h4>Vehicle Report Interface</h4>
+          <p style="font-size: 16px;">This tool offers an online vehicle report interface where anyone can enter a vehicle's year, make, and model to access a comprehensive report. This report aggregates data from our in-house API, as well as data from the National Highway Traffic Safety Administration (NHTSA) about recalls and consumer complaints.</p>
+        </div>
+        <div class="col-md-5 feature-box">
+          <h4>Open Source API</h4>
+          <p style="font-size: 16px;">This tool also exposes an open source and public API endpoint that gives access to the data through an HTTP request to this web server. The API returns JSON formatted responses to requests for specific years, makes, or models of vehicles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- SECTION 4 -->
+  <section class="clean-block about-us" style="padding-bottom: 50px;">
+    <div class="container">
+      <div class="block-heading">
+        <h2 class="text-info">Mission</h2>
+        <p>The purpose of this tool is to be a public resource for anyone interested in accessing a specific vehicle's information. The ongoing mission is to continually write robust scripts in order to add support for more vehicles and gather more data about the exisiting vehicles in the database.</p>
+        <p style="padding-top: 15px;"><strong>This project is intended to be open source and public, so any and all contributions are always welcome!</strong></p>
+      </div>
+    </div>
+  </section>
 </main>
 {% endblock content %}
