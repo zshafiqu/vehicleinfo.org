@@ -1,165 +1,67 @@
 {% extends "layout.html" %}
 {% block content %}
-<style>
-  @media screen and (max-width: 576px) {
-    #bigimg {
-      display: none;
-    }
-    #objgoal {
-      flex-wrap:wrap !important;
-    }
-  }
-  .card-extended {
-    min-height:90%
-    /* padding-bottom:10px; !important */
-  }
-  .card-info {
-    padding: 15px 15px 0px 15px;
-  }
-  .col-pad {
-    padding-bottom:10px;
-  }
-  .shift-right {
-    padding-right: 5px;
-  }
-  .shift-left {
-    padding-left: 5px;
-  }
-  .text-content {
-    text-align:center;
-    padding-top:10px;
-  }
-  .text-title {
-    font-size:1.2rem;
-    font-weight:bold;
-    margin-bottom:0px;
-    word-wrap: normal;
-  }
-  .text-sub {
-    word-wrap: normal;
-    font-size: .8rem;
-  }
-  .info-title {
-    font-size:1.2rem;
-    font-weight:bold;
-    padding-top: 1rem;
-    margin-bottom:0px;
-    word-wrap: normal;
-    text-align: center;
-  }
-  .info-desc {
-    word-wrap: normal;
-    padding: 0rem 1rem;
-    font-size:.9rem;
-  }
-</style>
-<div class="container-fluid">
-  <!-- BEGIN ROW 1 ! -->
-  <div class="row">
-    <!-- COLUMN 1 -->
-    <div class="col-sm-3">
-    	<div class="card card-extended">
-    		<div class="card-info">
-    			<div class="row">
-    				<div class="col-md-6 shift-right"><img id="bigimg" src="https://image.flaticon.com/icons/svg/741/741407.svg"></div>
-    				<div class="col-md-6 shift-left">
-    					<div class="text-content">
-    						<p class="text-title">9300+</p>
-    						<p class="text-sub">Unique vehicles</p>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    </div>
-    <!-- COLUMN 2 -->
-    <div class="col-sm-3">
-      <div class="card card-extended">
-        <div class="card-info">
-          <div class="row">
-            <div class="col-md-6 shift-right"><img id="bigimg" src="https://image.flaticon.com/icons/svg/805/805865.svg"></div>
-            <div class="col-md-6 shift-left">
-              <div class="text-content">
-                <p class="text-title">60+</p>
-                <p class="text-sub">Unique makes</p>
-              </div>
+<main class="page landing-page">
+    <section class="clean-block clean-info dark" style="padding-bottom: 15px;">
+        <div class="container">
+            <div class="pulse animated block-heading">
+                <h2 class="text-info">Welcome to the Vehicle Information Project</h2>
+                <p style="font-size: 18px;">The Vehicle Information Project aims to make vehicle information public and accessible for anyone who needs it</p>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <!-- COLUMN 3 -->
-    <div class="col-sm-3">
-      <div class="card card-extended">
-        <div class="card-info">
-          <div class="row">
-            <div class="col-md-6 shift-right"><img id="bigimg" src="https://image.flaticon.com/icons/svg/1312/1312279.svg"></div>
-            <div class="col-md-6 shift-left">
-              <div class="text-content">
-                <p class="text-title">29</p>
-                <p class="text-sub">Model years available</p>
-              </div>
+    </section>
+    <section class="clean-block features" style="padding-bottom: 50px;">
+        <div class="container">
+            <div class="block-heading" style="padding-top: 50px;">
+                <h2 class="text-info">Available Data</h2>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- COLUMN 4 -->
-    <div class="col-sm-3">
-      <div class="card card-extended">
-        <div class="card-info">
-          <div class="row">
-            <div class="col-md-6 shift-right"><img id="bigimg" src="https://image.flaticon.com/icons/svg/1394/1394932.svg"></div>
-            <div class="col-md-6 shift-left">
-              <div class="text-content">
-                <p class="text-title">5+</p>
-                <p class="text-sub">Attributes for each vehicle</p>
-              </div>
+            <div class="row justify-content-center">
+                <div class="col-md-5 feature-box"><i class="fas fa-car icon"></i>
+                    <h4>9300+ Vehicles</h4>
+                    <p style="font-size: 16px;">The project has aggregated over 9300 vehicles that were produced in the United States, ranging from cars, trucks, vans, and more.</p>
+                </div>
+                <div class="col-md-5 feature-box"><i class="fas fa-flag-checkered icon"></i>
+                    <h4>60+ Makes</h4>
+                    <p style="font-size: 16px;">The dataset includes over 60 unique vehicle manufacturers from all over the world, such as Honda, BMW, and Chevrolet.</p>
+                </div>
+                <div class="col-md-5 feature-box"><i class="far fa-calendar-check icon"></i>
+                    <h4>29 Model Years</h4>
+                    <p style="font-size: 16px;">Currently support vehicles produced from 1992 until 2020, with a growing range as more vehicles are added to the database</p>
+                </div>
+                <div class="col-md-5 feature-box"><i class="fas fa-wrench icon"></i>
+                    <h4>5+ Attributes</h4>
+                    <p style="font-size: 16px;">For each vehicle, there are a minimum of 5 attributes available, this includes but is not limited to available trims, MPG figures, engine size, and more.</p>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- END ROW 1 ! -->
-
-  <!-- BEGIN ROW 2 ! -->
-  <div class="row">
-    <div class="col-md-12" style="padding:5px;">
-      <div class="card">
-        <p class="info-title">Welcome!</p>
-        <hr>
-        <p class="info-desc">Welcome to the Vehicle Information project! This web application is a tool that can be used to access various details about vehicles. At the moment, the tool supports all vehicles (cars, trucks, vans, etc.) that were produced in the United States from 1992 until now.
-          The dataset was built in-house, and includes over 9,300 vehicles with over 60 makes, and each of these 9,300 vehicles has at least five attributes available, images included.</p>
-      </div>
-    </div>
-  </div>
-  <!-- END ROW 2 ! -->
-
-  <!-- BEGIN ROW 3 ! -->
-  <div id="objgoal" class="row" style="flex-wrap:nowrap;">
-
-    <div class="col-md-6" style="padding:5px">
-      <div class="card">
-        <p class="info-title">Purpose</p>
-        <hr>
-        <p class="info-desc">The purpose of this tool is to be a public resource for anyone interested in accessing a specific vehicle’s information. Information can be accessed through the Vehicle Report interface on this website, or through an API call to the web server here.</p>
-          <p class="info-desc">Accessing the information through the web interface also compiles information about recalls and consumer complaints from <strong>NHTSA</strong> web resources and generates a comprehensive report.</p>
-      </div>
-    </div>
-
-    <div class="co-md-6" style="padding:5px">
-      <div class="card">
-        <p class="info-title">Future</p>
-        <hr>
-        <p class="info-desc">For each vehicle available, the tool has aggregated attributes such as body styles, images for each body style, available trims, and other details such as engine size, MPG, and more.</p>
-        <p class="info-desc">The ongoing goal for this project is to continually add support for more vehicles, and to write robust scripts gather more information for the existing vehicles in the database.</p>
-        <p class="info-desc">This project is intended to always be open source and public, so any contributions are always welcome!</p>
-      </div>
-    </div>
-
-  </div>
-  <!-- END ROW 3 ! -->
-
-</div>
+    </section>
+    <section class="clean-block slider dark" style="padding-bottom: 50px;">
+        <div class="container">
+            <div class="block-heading" style="padding-top: 50px;">
+                <h2 class="text-info">Highlights</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-5 feature-box">
+                    <h4>Vehicle Report Interface</h4>
+                    <p style="font-size: 16px;">This tool offers an online vehicle report interface where anyone can enter a vehicle's year, make, and model to access a comprehensive report. This report aggregates data from our in-house API, as well as data from the National
+                        Highway Traffic Safety Administration (NHTSA) about recalls and consumer complaints.</p>
+                </div>
+                <div class="col-md-5 feature-box">
+                    <h4>Open Source API</h4>
+                    <p style="font-size: 16px;">This tool also exposes an open source and public API endpoint that gives access to the data through an HTTP request to this web server. The API returns JSON formatted responses to requests for specific years, makes, or models of
+                        vehicles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="clean-block about-us" style="padding-bottom: 50px;">
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-info">Mission</h2>
+                <p>The purpose of this tool is to be a public resource for anyone interested in accessing a specific vehicle's information. The ongoing mission is to continually write robust scripts in order to add support for more vehicles and gather
+                    more data about the exisiting vehicles in the database.</p>
+                <p style="padding-top: 15px;"><strong>This project is intended to be open source and public, so any and all contributions are always welcome!</strong></p>
+            </div>
+        </div>
+    </section>
+</main>
 {% endblock content %}
