@@ -1,0 +1,184 @@
+{% extends "layout.html" %}
+{% block content %}
+<main class="page contact-us-page">
+    <!-- BEGIN SECTION 1 -->
+    <section class="clean-block clean-form dark" style="padding-bottom: 10px;">
+        <div class="container">
+            <div class="pulse animated block-heading" style="padding-top: 50px;">
+                <h2 class="text-info">Requested Report</h2>
+            </div>
+        </div>
+    </section>
+    <!-- END SECTION 1 -->
+    <!-- BEGIN SECTION 2 -->
+    <section class="clean-block clean-form" style="padding-top: 50px;">
+        <div class="container">
+
+
+            <div class="row" style="padding-bottom: 15px;">
+                <div class="col align-self-center col-md-5">
+                    <!-- CARD 1 -->
+                    <form class="text-center shadow">
+                        <h2>
+                          {{data['Results'][0]['Year']}}
+                          {{data['Results'][0]['Make']}}
+                          {{data['Results'][0]['Model']}}
+                        </h2>
+                        <hr>
+                        {% set temp = data['Results'][0]['Styles'][0] %}
+                        <img class="img-fluid" src="{{ data['Results'][0]['Images'][temp] }}">
+                        <hr>
+                        <h6><strong>Available Style(s): </strong>
+                          {% for style in data['Results'][0]['Styles'] %}
+                            {% if style == data['Results'][0]['Styles'][-1] %}
+                              {{ style }}
+                            {% else %}
+                              {{ style }},
+                            {% endif %}
+                          {% endfor %}
+                        </h6>
+                    </form>
+                    <!-- CARD 1 -->
+                </div>
+                <div class="col align-self-center col-md-7">
+                  <!-- CARD 2 -->
+                    <form class="text-center shadow" style="max-width: 630px;">
+                        <h2>Styles &amp; Trims</h2>
+                        <hr>
+                        <div role="tablist" id="accordion-1">
+
+
+                          <!-- For each body style in Trims object -->
+                          {% for style in data['Results'][0]['Trims'] %}
+                            <div class="card">
+                                <div class="card-header border rounded-0" role="tab">
+                                    <h5 class="mb-0">
+                                      <!-- Need to set hypertext ref based on style so dropdown knows where to point to -->
+                                      <a data-toggle="collapse" aria-expanded="true" aria-controls="accordion-1" href="#{{style}}" style="color: rgb(0,0,0);">{{style}}</a>
+                                    </h5>
+                                </div>
+                                <div class="collapse show item-1" id="{{style}}" role="tabpanel">
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                              <!-- START HEAD -->
+                                              <!-- Set data for table HEADER based on available attributes -->
+                                                <thead>
+                                                    <tr>
+                                                      <!-- Leftmost is trim by default -->
+                                                      <th>Trim</th>
+                                                      <!-- For each trim -->
+                                                      {% for trim in data['Results'][0]['Trims'][style] %}
+                                                      <!-- For each available attribute in the first instance of this style (hence the loop.first exit condition )-->
+                                                        {% for attribute in data['Results'][0]['Trims'][style][trim] if loop.first %}
+                                                          <!-- Add this attribute to our header -->
+                                                          <th>{{attribute}}</th>
+                                                        <!-- End inner loop -->
+                                                        {% endfor %}
+                                                      <!-- End outer loop -->
+                                                      {% endfor %}
+                                                    </tr>
+                                                </thead>
+                                                <!-- END HEAD -->
+                                                <!-- START BODY -->
+                                                <tbody>
+                                                  <!-- For each trim in each style -->
+                                                  {% for trim in data['Results'][0]['Trims'][style] %}
+                                                  <tr>
+                                                    <!-- Leftmost is the trim by default -->
+                                                    <td>{{trim}}</td>
+                                                    <!-- For each attribute, get its value -->
+                                                    {% for value in data['Results'][0]['Trims'][style][trim] %}
+                                                      <td>{{data['Results'][0]['Trims'][style][trim][value]}}</td>
+                                                    {% endfor %}
+                                                  </tr>
+                                                  {% endfor %}
+                                                </tbody>
+                                                <!-- END BODY -->
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <hr>
+                    </form>
+                    <!-- END CARD 2 -->
+                </div>
+            </div>
+            <!-- END ROW -->
+
+            <div class="row" style="padding-bottom: 15px;">
+                <div class="col">
+                    <form class="text-center shadow" style="max-width: 100%;">
+                        <h2 style="padding-bottom: 15px;">Recalls for the
+                          {{data['Results'][0]['Year']}}
+                          {{data['Results'][0]['Make']}}
+                          {{data['Results'][0]['Model']}}
+                        </h2>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                      <th>Recall Number</th>
+                                      <th>Report Date</th>
+                                      <th>Summary</th>
+                                      <th>Consequence</th>
+                                      <th>Remedy</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  {% for info in recalls['Results']|reverse %}
+                                    <tr id="{{loop.index}}">
+                                      <td><small>{{ info['NHTSACampaignNumber'] }}</small></td>
+                                      <td><small>{{ info['ReportReceivedDate']|strftime }}</small></td>
+                                      <td><small>{{ info['Summary']|capitalize }}</small></td>
+                                      <td><small>{{ info['Conequence']|capitalize }}</small></td>
+                                      <td><small>{{ info['Remedy']|capitalize }}</small></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+
+            <div class="row" style="padding-bottom: 15px;">
+                <div class="col">
+                    <form class="text-center shadow" style="max-width: 100%;">
+                      <h2 style="padding-bottom: 15px;">Consumer complaints for the
+                        {{data['Results'][0]['Year']}}
+                        {{data['Results'][0]['Make']}}
+                        {{data['Results'][0]['Model']}}
+                      </h2>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                      <th>Incident Date</th>
+                                      <th>Affected Component</th>
+                                      <th>Summary</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  {% for info in complaints['Results']|reverse %}
+                                    <tr id="{{loop.index}}">
+                                      <td><small>{{ info['DateComplaintFiled']|strftime }}</small></td>
+                                      <td><small>{{ info['Component']|capitalize }}</small></td>
+                                      <td><small>{{ info['Summary']|capitalize }}</small></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}
