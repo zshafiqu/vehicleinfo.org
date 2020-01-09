@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block content %}
+<main class="page pricing-table-page">
+    <section class="clean-block clean-pricing dark" style="padding-bottom: 10px;">
+        <div class="container">
+            <div class="pulse animated block-heading" style="padding-top: 50px;">
+                <h2 class="text-info">The vehicleinfo.org API</h2>
+                <p>This project exposes a public API endpoint that can be used to get data on any vehicle(s) a client may need. Implementing the API is as simple as making an HTTP request to:</p>
+                <p style="padding-top: 5px;padding-bottom: 5px;"><strong>https://vehicleinfo.org/api/</strong></p>
+                <p>and specifying the resource you would like.</p>
+            </div>
+        </div>
+    </section>
+    <section class="clean-block clean-pricing" style="padding-top: 50px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-5 col-lg-4" style="padding-bottom: 25px;">
+                    <div class="clean-pricing-item">
+                        <div class="heading">
+                            <h4><strong>GET /year</strong></h4>
+                        </div>
+                        <p>The first route accepts&nbsp;<strong>GET</strong>&nbsp;requests for a specific year within range, and the returns a JSON response of every vehicle for that year, including its individual attributes.</p>
+                        <p><strong>Try this route by pressing this link</strong></p>
+                        <p>www.vehicleinfo.org/api/2002/</p>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4" style="padding-bottom: 25px;">
+                    <div class="clean-pricing-item">
+                        <div class="heading">
+                            <h4><strong>GET /year/make</strong></h4>
+                        </div>
+                        <p>The second route for the API accepts&nbsp;<strong>GET</strong>&nbsp;requests for a specific year and make, and returns a JSON response of all vehicles produced by that manufacturer in that year.</p>
+                        <p><strong>Try this route by pressing this link</strong></p>
+                        <p>www.vehicleinfo.org/api/2002/acura</p>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4" style="padding-bottom: 25px;">
+                    <div class="clean-pricing-item">
+                        <div class="heading">
+                            <h4><strong>GET /year/make/model</strong></h4>
+                        </div>
+                        <p>The final route accepts&nbsp;<strong>GET</strong>&nbsp;requests for a specific year, make, and model resulting in a JSON response of the attributes for that specific vehicle.</p>
+                        <p><strong>Try this route by pressing this link</strong></p>
+                        <p>www.vehicleinfo.org/api/2002/acura/tl</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}
