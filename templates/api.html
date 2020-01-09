@@ -16,7 +16,7 @@
   <!-- Section 1 -->
 
   <!-- Section 2 -->
-  <section class="clean-block clean-pricing" style="padding-top: 50px;">
+  <section class="clean-block clean-pricing" style="padding-top: 50px; padding-bottom:0px;">
     <div class="container">
       <div class="row justify-content-center">
         <!-- ROUTE 1 -->
@@ -27,7 +27,7 @@
             </div>
             <p>The first route accepts&nbsp;<strong>GET</strong>&nbsp;requests for a specific year within range, and the returns a JSON response of every vehicle for that year, including its individual attributes.</p>
             <p><strong>Try this route by pressing this link</strong></p>
-            <a target="_blank" href="http://www.vehicleinfo.org/api/2002/"><p>www.vehicleinfo.org/api/2002/</p></a>
+            <a target="_blank" href="http://www.vehicleinfo.org/api/2002/"><p>vehicleinfo.org/api/2002/</p></a>
           </div>
         </div>
         <!-- ROUTE 2 -->
@@ -38,7 +38,7 @@
             </div>
             <p>The second route for the API accepts&nbsp;<strong>GET</strong>&nbsp;requests for a specific year and make, and returns a JSON response of all vehicles produced by that manufacturer in that year.</p>
             <p><strong>Try this route by pressing this link</strong></p>
-            <a target="_blank "href="http://www.vehicleinfo.org/api/2002/acura"><p>www.vehicleinfo.org/api/2002/acura</p></a>
+            <a target="_blank "href="http://www.vehicleinfo.org/api/2002/acura"><p>vehicleinfo.org/api/2002/acura</p></a>
           </div>
         </div>
         <!-- ROUTE 3 -->
@@ -49,7 +49,7 @@
             </div>
             <p>The final route accepts&nbsp;<strong>GET</strong>&nbsp;requests for a specific year, make, and model resulting in a JSON response of the attributes for that specific vehicle.</p>
             <p><strong>Try this route by pressing this link</strong></p>
-            <a target="_blank" href="http://www.vehicleinfo.org/api/2002/acura/tl"><p>www.vehicleinfo.org/api/2002/acura/tl</p></a>
+            <a target="_blank" href="http://www.vehicleinfo.org/api/2002/acura/tl"><p>vehicleinfo.org/api/2002/acura/tl</p></a>
           </div>
         </div>
 
@@ -57,6 +57,17 @@
     </div>
   </section>
   <!-- Section 2 -->
+
+  <!-- Section 1 -->
+  <section class="clean-block clean-pricing dark" style="padding-bottom: 25px;">
+    <div class="container">
+      <div class="block-heading" style="padding-top: 50px;">
+        <p><strong>PLEASE NOTE:</strong> </p>
+        <p>The web server can only handle a certain number of requests at any given time, so <i>sometimes</i> a valid request may return an empty result. While I work to increase reliability, if this occurs, please wait a few seconds and try your request again.</p>
+      </div>
+    </div>
+  </section>
+  <!-- Section 1 -->
 
 </main>
 {% endblock content %}
