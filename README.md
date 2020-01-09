@@ -18,7 +18,7 @@ This project is intended to be open source and public, so any and all contributi
 * 1.0.0
     * Only slightly a working web app
 
-## Stuff
+## About Stuff
 
 Zain Shafique – [LinkedIn](https://www.linkedin.com/in/zain-shafique/)
 
