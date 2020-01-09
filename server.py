@@ -143,11 +143,11 @@ def get_by_year_make_and_model(year, make, model):
 # ----------------------
 @app.route('/')
 def index():
-    return render_template('home.html', page=page)
+    return render_template('home.html')
 # ----------------------
-@app.route('/get_report')
+@app.route('/report')
 def report():
-    return render_template('report.html', page=page)
+    return render_template('report.html')
 # ----------------------
 @app.route('/view_report', methods=['POST'])
 def handle_request():
@@ -160,7 +160,7 @@ def handle_request():
         recalls = get_recalls_from_NHTSA(year, make, model)
         complaints = get_complaints_from_NHTSA(year, make, model)
 
-        return render_template('process_report.html', data=data, recalls=recalls, complaints=complaints)
+        return render_template('view_report.html', data=data, recalls=recalls, complaints=complaints)
     except:
         return render_template('error.html')
 # ----------------------
@@ -169,8 +169,8 @@ def api():
     return render_template('api.html')
 # ----------------------
 @app.route('/changelog')
-def versions():
-    return render_template('versions.html')
+def changelog():
+    return render_template('changelog.html')
 # ----------------------
 @app.route('/about')
 def about():
