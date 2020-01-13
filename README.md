@@ -13,7 +13,7 @@ This project is intended to be open source and public, so any and all contributi
 ## Release History
 
 * 2.0.0
-    * Designed a whole new UI (see pull request)
+    * Designed a whole new UI [(see pull request)](https://github.com/zshafiqu/vehicleinfo.org/pull/2)
     * Significant improvements warranted skipping versions b/w 1.0.1 & 2
 * 1.0.0
     * Only slightly a working web app
@@ -28,7 +28,7 @@ Distributed under the MIT license. See ``LICENSE`` for more information.
 
 ## Contributing
 
-1. Fork it (<https://github.com/yourname/yourproject/fork>)
+1. Fork it (<https://github.com/zshafiqu/vehicleinfo.org/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
