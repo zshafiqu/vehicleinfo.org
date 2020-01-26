@@ -177,6 +177,5 @@ def about():
     return render_template('about.html')
 # ----------------------
 if __name__ == '__main__':
-    app.run()
-    # from waitress import serve
-    # serve(app)
+    from waitress import serve
+    serve(app)
