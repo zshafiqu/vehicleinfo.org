@@ -7,7 +7,7 @@ import requests, json, os, ast, datetime
 # Initialize flask app, enable auto deploy from master branch for heroku
 app = Flask(__name__)
 # SSL wrapper for https
-Talisman(app)
+Talisman(app, content_security_policy=None)
 app.secret_key = os.environ.get('KEY')
 # ----------------------
 # Configure flask app with info stored locally within environment (locally or heroku)
