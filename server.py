@@ -1,10 +1,13 @@
 from flask import Flask, render_template, jsonify, make_response, request
 from flask_sqlalchemy import SQLAlchemy
+from flask_talisman import Talisman
 import requests, json, os, ast, datetime
 # ----------------------
 # Activate virtual env with - source env/bin/activate
 # Initialize flask app, enable auto deploy from master branch for heroku
 app = Flask(__name__)
+# Add talisman wrap for forced SSL 
+Talisman(app)
 app.secret_key = os.environ.get('KEY')
 # ----------------------
 # Configure flask app with info stored locally within environment (locally or heroku)
