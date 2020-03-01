@@ -19,11 +19,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('BASE_URI')
 # Bind app to db obj
 db = SQLAlchemy(app)
 # ----------------------
-# @app.before_request
-# def force_https():
-#     if request.endpoint in app.view_functions and not request.is_secure:
-#         return redirect(request.url.replace('http://', 'https://'))
-# ----------------------
 ''' Template filter converter for JSON formatted time '''
 @app.template_filter('strftime')
 def parse_date(datestring):
