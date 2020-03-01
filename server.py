@@ -1,10 +1,13 @@
-from flask import Flask, render_template, jsonify, make_response, request
+from flask import Flask, render_template, jsonify, make_response, request, redirect
 from flask_sqlalchemy import SQLAlchemy
+from flask_talisman import Talisman
 import requests, json, os, ast, datetime
 # ----------------------
 # Activate virtual env with - source env/bin/activate
 # Initialize flask app, enable auto deploy from master branch for heroku
 app = Flask(__name__)
+# SSL wrapper for https
+Talisman(app)
 app.secret_key = os.environ.get('KEY')
 # ----------------------
 # Configure flask app with info stored locally within environment (locally or heroku)
@@ -14,6 +17,11 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('BASE_URI')
 # ----------------------
 # Bind app to db obj
 db = SQLAlchemy(app)
+# ----------------------
+# @app.before_request
+# def force_https():
+#     if request.endpoint in app.view_functions and not request.is_secure:
+#         return redirect(request.url.replace('http://', 'https://'))
 # ----------------------
 ''' Template filter converter for JSON formatted time '''
 @app.template_filter('strftime')
