@@ -6,7 +6,8 @@ import requests, json, os, ast, datetime
 # Activate virtual env with - source env/bin/activate
 # Initialize flask app, enable auto deploy from master branch for heroku
 app = Flask(__name__)
-# SSL wrapper for https
+# Use Talisman to force any http:// prefixed requests to redirect to https://
+# Edit the CSP in order to serve CSS styles and JavaScript files
 Talisman(app, content_security_policy=None)
 app.secret_key = os.environ.get('KEY')
 # ----------------------
