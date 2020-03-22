@@ -1,6 +1,8 @@
 from flask import Flask, render_template, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_talisman import Talisman
+from flask_wtf import FlaskForm
+from wtforms import SelectField
 import requests, json, os, ast, datetime
 # ----------------------
 # Activate virtual env with - source env/bin/activate
@@ -152,8 +154,18 @@ def get_by_year_make_and_model(year, make, model):
 def index():
     return render_template('home.html')
 # ----------------------
-@app.route('/report')
+# N = 29
+# lis = [iter + 1992 for iter in range(N)]
+class Form(FlaskForm):
+    year = SelectField('year', choices=[('1992', '1992'), ('1993', '1993')])
+    make = SelectField('make', choices=[])
+# ----------------------
+@app.route('/report', methods=['GET', 'POST'])
 def report():
+    byyear = get_by_year(1992)
+
+    form = Form()
+    form.make.choices =
     return render_template('report.html')
 # ----------------------
 @app.route('/view_report', methods=['POST'])
