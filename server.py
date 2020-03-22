@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, make_response, request, redirect
+from flask import Flask, render_template, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_talisman import Talisman
 import requests, json, os, ast, datetime
