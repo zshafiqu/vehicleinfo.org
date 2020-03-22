@@ -86,7 +86,7 @@ def default_response():
 # ----------------------
 ''' ------------- ALL API ROUTES LIVE BELOW THIS LINE ------------- '''
 # Route 1, get all vehicles for a given year
-@app.route('/api/<year>/', methods=['GET'])
+@app.route('/api/<year>', methods=['GET'])
 def get_by_year(year):
     # Define table name for lookup and prepare query
     tableName = str(year)+'_vehicles'
@@ -106,7 +106,7 @@ def get_by_year(year):
     return jsonify(compile_response(list))
 # ----------------------
 # Route 2, get all vehicles for a given year and make
-@app.route('/api/<year>/<make>/', methods=['GET'])
+@app.route('/api/<year>/<make>', methods=['GET'])
 def get_by_year_and_make(year, make):
     # Define table name for lookup and prepare query
     tableName = str(year)+'_vehicles'
@@ -126,7 +126,7 @@ def get_by_year_and_make(year, make):
     return jsonify(compile_response(list))
 # ----------------------
 # Route 3, get all vehicles for a given year and make
-@app.route('/api/<year>/<make>/<model>/', methods=['GET'])
+@app.route('/api/<year>/<make>/<model>', methods=['GET'])
 def get_by_year_make_and_model(year, make, model):
     # Define table name for lookup and prepare query
     tableName = str(year)+'_vehicles'
