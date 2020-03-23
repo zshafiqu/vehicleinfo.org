@@ -162,11 +162,24 @@ class Form(FlaskForm):
 # ----------------------
 @app.route('/report', methods=['GET', 'POST'])
 def report():
-    byyear = get_by_year(1992)
 
-    form = Form()
-    form.make.choices =
-    return render_template('report.html')
+    # form = Form()
+    year = 1992
+    tableName = str(year)+'_vehicles'
+
+    queryForMakesByYear = "SELECT DISTINCT MAKE FROM "+tableName
+    results = db.engine.execute(queryForMakesByYear)
+    # form.make.choices = [(1, )]
+    map = dict()
+
+    i = 0
+    print(type(results))
+    # print(results)
+    for row in results:
+
+        print(str(row[0]))
+    # return render_template('report.html')
+    return map
 # ----------------------
 @app.route('/view_report', methods=['POST'])
 def handle_request():
