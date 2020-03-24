@@ -167,20 +167,12 @@ class Form(FlaskForm):
 @app.route('/report', methods=['GET', 'POST'])
 def report():
     # Initialize some default value for when the page is loaded
-    results = get_distinct_makes_for_year(1992)
+    makes = get_distinct_makes_for_year(1992)
     form = Form()
 
     # Because jsonify() converts a python object to a Flask response, you need to use '.json'
-    form.make.choices = [(make['value'], make['label']) for make in results.json['makes']]
-
-    '''
-    form = Form()
-    year = 1992
-    tableName = get_table_name(year)
-    queryForMakesByYear = "SELECT DISTINCT MAKE FROM "+tableName
-    results = db.engine.execute(queryForMakesByYear)
-    '''
-
+    form.make.choices = [(make['value'], make['label']) for make in get_distinct_makes_for_year(1992).json['makes']]
+    form.model.choices = [(model['value'], model['label']) for model in get_all_models_for_year('Acura', 1992).json['models']]
     '''
     # add to choices
     form.make.choices = [(row[0], row[0]) for row in results]
@@ -190,6 +182,23 @@ def report():
         print(make)
     '''
     return render_template('report.html', form=form)
+# ----------------------
+@app.route('/models/<make>/<year>')
+def get_all_models_for_year(make, year):
+    tableName = get_table_name(year)
+    raw_query = "SELECT MODEL FROM "+tableName+" WHERE make LIKE '"+make+"'"
+    results = db.engine.execute(raw_query)
+
+    model_list = []
+
+    for row in results:
+        model_object = dict()
+        model_object['value'] = row[0]
+        model_object['label'] = row[0]
+        # print(make_object)
+        model_list.append(model_object)
+
+    return jsonify({'models' : model_list})
 # ----------------------
 @app.route('/makes/<year>')
 def get_distinct_makes_for_year(year):
