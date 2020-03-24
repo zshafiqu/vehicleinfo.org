@@ -170,11 +170,8 @@ def report():
     results = get_distinct_makes_for_year(1992)
     form = Form()
 
-    for row in results.json['makes']:
-        print(row)
-    # print(results['makes'])
-
-    # form.make.choices = [(make['value'], make['label']) for make in results['makes']]
+    # Because jsonify() converts a python object to a Flask response, you need to use '.json'
+    form.make.choices = [(make['value'], make['label']) for make in results.json['makes']]
 
     '''
     form = Form()
@@ -204,8 +201,8 @@ def get_distinct_makes_for_year(year):
 
     for row in results:
         make_object = dict()
-        make_object['value'] = str(row[0])
-        make_object['label'] = str(row[0])
+        make_object['value'] = row[0]
+        make_object['label'] = row[0]
         # print(make_object)
         make_list.append(make_object)
 
