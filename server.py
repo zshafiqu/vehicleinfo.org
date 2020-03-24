@@ -176,11 +176,10 @@ def report():
     # add to choices
     form.make.choices = [(row[0], row[0]) for row in results]
 
-    # form.make.choices = [(1, )]
-    map = dict()
+    if request.method == 'POST':
+        make = form.make.data
+        print(make)
 
-    print ('\n')
-    # print(choice)
     return render_template('report.html', form=form)
 # ----------------------
 @app.route('/view_report', methods=['POST'])
