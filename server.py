@@ -179,21 +179,6 @@ def report():
     # form.make.choices = [(1, )]
     map = dict()
 
-    # i = 0
-    # print(type(results))
-    # print(results.first()[2])
-    # print(results)
-    # for row in results:
-    #
-        # print(row)
-        # print(type(row))
-        # print(str(row[0]))
-    # return render_template('report.html')
-
-    # list comprehension below, for some reason you can only modify the row object once otherwise
-    # any manipulations afterwards will result in an empty list
-    # cshoice = [(row[0], row[0]) for row in results]
-
     print ('\n')
     # print(choice)
     return render_template('report.html', form=form)
