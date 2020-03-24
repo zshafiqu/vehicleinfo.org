@@ -157,7 +157,7 @@ def index():
 # N = 29
 # lis = [iter + 1992 for iter in range(N)]
 class Form(FlaskForm):
-    year = SelectField('year', choices=[('1992', '1992'), ('1993', '1993')])
+    year = SelectField('year', choices=[(iter+1992, iter+1992) for iter in range(29)])
     make = SelectField('make', choices=[])
 # ----------------------
 @app.route('/report', methods=['GET', 'POST'])
