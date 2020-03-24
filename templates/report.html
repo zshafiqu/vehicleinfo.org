@@ -45,6 +45,7 @@
   // Define variables for our form selections (by ID)
   let year_select = document.getElementById('year');
   let make_select = document.getElementById('make');
+  let model_select = document.getElementById('model');
 
   // Create a function to track changes on our year value
   year_select.onchange = function() {
@@ -65,6 +66,27 @@
         make_select.innerHTML = makes_HTML;
       });
     });
+
+    // Create a function to track changes on our model value
+    make_select.onchange = function() {
+      // Retrieve value
+      make = make_select.value;
+      // Use fetch() API to access predefined flask route [similar concept to AJAX]
+      fetch('/models/'+make+'/'+year).then(function(response) {
+        // parse response as JSON and return data
+        response.json().then(function(data) {
+          console.table(data)
+          // use string builder to make new HTML objects for the given make
+          let models_HTML = '';
+          // Loop over JSON object, the outermost key was set as 'makes'in flask route
+          for (let model of data.models) {
+            models_HTML += '<option value="'+ model.value + '">' + model.label + '</option>';
+          }
+          // overwrite the old HTML
+          model_select.innerHTML = models_HTML;
+        });
+      });
+    }
   }
 </script>
 {% endblock content %}
