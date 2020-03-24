@@ -182,6 +182,22 @@ def report():
 
     return render_template('report.html', form=form)
 # ----------------------
+@app.route('/makes/<year>')
+def get_distinct_makes_for_year(year):
+    tableName = get_table_name(year)
+    raw_query = "SELECT DISTINCT MAKE FROM "+tableName
+    results = db.engine.execute(raw_query)
+
+    make_list = []
+
+    for row in results:
+        make_object = dict()
+        make_object['name'] = row[0]
+        make_object['value'] = row[0]
+        make_list.append(make_object)
+
+    return jsonify({'Makes' : make_list})
+# ----------------------
 @app.route('/view_report', methods=['POST'])
 def handle_request():
     try:
