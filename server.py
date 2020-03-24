@@ -201,7 +201,7 @@ def get_all_models_for_year(make, year):
 # ----------------------
 @app.route('/makes/<year>')
 def get_distinct_makes_for_year(year):
-    tableName = get_table_name(year)
+    tableName = get_table_name(int(year))
     raw_query = "SELECT DISTINCT MAKE FROM "+tableName
     results = db.engine.execute(raw_query)
 
