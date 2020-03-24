@@ -192,11 +192,11 @@ def get_distinct_makes_for_year(year):
 
     for row in results:
         make_object = dict()
-        make_object['name'] = row[0]
         make_object['value'] = row[0]
+        make_object['label'] = row[0]
         make_list.append(make_object)
 
-    return jsonify({'Makes' : make_list})
+    return jsonify({'makes' : make_list})
 # ----------------------
 @app.route('/view_report', methods=['POST'])
 def handle_request():

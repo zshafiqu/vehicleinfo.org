@@ -61,14 +61,21 @@
   year_select.onchange = function() {
     // Retrieve value
     year = year_select.value;
-
-    // Use fetch() API to access predefined flask route
+    // Use fetch() API to access predefined flask route [similar concept to AJAX]
     fetch('/makes/'+year).then(function(response) {
+      // parse response as JSON and return data
       response.json().then(function(data) {
         console.table(data)
+        // use string builder to make new HTML objects for the given make
+        let makes_HTML = '';
+        // Loop over JSON object, the outermost key was set as 'makes'in flask route
+        for (let make of data.makes) {
+          makes_HTML += '<option value="'+ make.value + '">' + make.label + '</option>';
+        }
+        // overwrite the old HTML
+        make_select.innerHTML = makes_HTML;
       });
     });
   }
-
 </script>
 {% endblock content %}
