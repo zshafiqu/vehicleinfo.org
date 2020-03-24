@@ -16,10 +16,9 @@
       <form class="text-center" action="" method="post">
         <!-- YEAR -->
         <div class="form-group">
-          <label>Year</label>
           {{ form.csrf_token }}
-          {{ form.year }}
-          {{ form.make }}
+          <label>Year</label>
+          {{ form.year (class_="form-control") }}
           <!-- <input autofocus class="form-control" name="year" placeholder="" type="text"> -->
           <!-- <select class="form-control">
             <option value="12" selected>This is item 1</option>
@@ -29,6 +28,7 @@
         <!-- MAKE -->
         <div class="form-group">
           <label>Make</label>
+          {{ form.make (class_="form-control") }}
           <!-- <input class="form-control border-input" name="make" placeholder="" type="text"> -->
           <!-- <select class="form-control">
             <option value="12" selected>This is item 1</option>
