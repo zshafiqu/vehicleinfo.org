@@ -163,18 +163,21 @@ class Form(FlaskForm):
 @app.route('/report', methods=['GET', 'POST'])
 def report():
 
-    # form = Form()
+    form = Form()
     year = 1992
     tableName = str(year)+'_vehicles'
 
     queryForMakesByYear = "SELECT DISTINCT MAKE FROM "+tableName
     results = db.engine.execute(queryForMakesByYear)
 
+    # add to choices
+    form.make.choices = [(row[0], row[0]) for row in results]
+
     # form.make.choices = [(1, )]
     map = dict()
 
-    i = 0
-    print(type(results))
+    # i = 0
+    # print(type(results))
     # print(results.first()[2])
     # print(results)
     # for row in results:
@@ -186,13 +189,11 @@ def report():
 
     # list comprehension below, for some reason you can only modify the row object once otherwise
     # any manipulations afterwards will result in an empty list
-    # items = [row[0] for row in results]
-    choice = [(row[0], row[0]) for row in results]
+    # cshoice = [(row[0], row[0]) for row in results]
 
-    # items = list(row[0] for row in results)
     print ('\n')
-    print(choice)
-    return map
+    # print(choice)
+    return render_template('report.html', form=form)
 # ----------------------
 @app.route('/view_report', methods=['POST'])
 def handle_request():
