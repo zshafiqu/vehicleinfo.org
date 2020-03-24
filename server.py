@@ -157,30 +157,41 @@ def get_by_year_make_and_model(year, make, model):
 def index():
     return render_template('home.html')
 # ----------------------
-# N = 29
-# lis = [iter + 1992 for iter in range(N)]
+# FlaskForm inherited from flask_wtf
 class Form(FlaskForm):
+    # SelectField inherited from wtforms
     year = SelectField('year', choices=[(iter+1992, iter+1992) for iter in range(29)])
     make = SelectField('make', choices=[])
     model = SelectField('model', choices=[])
 # ----------------------
 @app.route('/report', methods=['GET', 'POST'])
 def report():
+    # Initialize some default value for when the page is loaded
+    results = get_distinct_makes_for_year(1992)
+    form = Form()
 
+    for row in results.json['makes']:
+        print(row)
+    # print(results['makes'])
+
+    # form.make.choices = [(make['value'], make['label']) for make in results['makes']]
+
+    '''
     form = Form()
     year = 1992
     tableName = get_table_name(year)
-
     queryForMakesByYear = "SELECT DISTINCT MAKE FROM "+tableName
     results = db.engine.execute(queryForMakesByYear)
+    '''
 
+    '''
     # add to choices
     form.make.choices = [(row[0], row[0]) for row in results]
 
     if request.method == 'POST':
         make = form.make.data
         print(make)
-
+    '''
     return render_template('report.html', form=form)
 # ----------------------
 @app.route('/makes/<year>')
@@ -193,11 +204,17 @@ def get_distinct_makes_for_year(year):
 
     for row in results:
         make_object = dict()
-        make_object['value'] = row[0]
-        make_object['label'] = row[0]
+        make_object['value'] = str(row[0])
+        make_object['label'] = str(row[0])
+        # print(make_object)
         make_list.append(make_object)
 
+
+    # mez = jsonify({'makes' : make_list})
+    # for row in mez['makes'][0]:
+        # print(row)
     return jsonify({'makes' : make_list})
+
 # ----------------------
 @app.route('/view_report', methods=['POST'])
 def handle_request():
