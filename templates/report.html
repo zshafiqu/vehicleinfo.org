@@ -52,4 +52,23 @@
     </div>
   </section>
 </main>
+<script>
+  // Define variables for our form selections (by ID)
+  let year_select = document.getElementById('year');
+  let make_select = document.getElementById('make');
+
+  // Create a function to track changes on our year value
+  year_select.onchange = function() {
+    // Retrieve value
+    year = year_select.value;
+
+    // Use fetch() API to access predefined flask route
+    fetch('/makes/'+year).then(function(response) {
+      response.json().then(function(data) {
+        console.table(data)
+      });
+    });
+  }
+
+</script>
 {% endblock content %}
