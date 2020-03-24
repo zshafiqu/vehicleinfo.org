@@ -162,6 +162,7 @@ def index():
 class Form(FlaskForm):
     year = SelectField('year', choices=[(iter+1992, iter+1992) for iter in range(29)])
     make = SelectField('make', choices=[])
+    model = SelectField('model', choices=[])
 # ----------------------
 @app.route('/report', methods=['GET', 'POST'])
 def report():
