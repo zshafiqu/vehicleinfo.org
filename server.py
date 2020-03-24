@@ -195,7 +195,6 @@ def get_all_models_for_year(make, year):
         model_object = dict()
         model_object['value'] = row[0]
         model_object['label'] = row[0]
-        # print(make_object)
         model_list.append(model_object)
 
     return jsonify({'models' : model_list})
@@ -212,15 +211,9 @@ def get_distinct_makes_for_year(year):
         make_object = dict()
         make_object['value'] = row[0]
         make_object['label'] = row[0]
-        # print(make_object)
         make_list.append(make_object)
 
-
-    # mez = jsonify({'makes' : make_list})
-    # for row in mez['makes'][0]:
-        # print(row)
     return jsonify({'makes' : make_list})
-
 # ----------------------
 @app.route('/view_report', methods=['POST'])
 def handle_request():
