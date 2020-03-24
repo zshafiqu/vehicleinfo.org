@@ -51,6 +51,9 @@ def get_complaints_from_NHTSA(year, make, model):
     return items
 # ----------------------
 ''' ------------- HELPER FUNCTIONS FOR API ROUTES BELOW THIS LINE ------------- '''
+def get_table_name(year):
+    return str(year)+'_vehicles'
+# ----------------------
 def mappify_row(row):
     # Parse row object to return a dictionary with {key : value} mapping
     map = dict()
@@ -94,7 +97,7 @@ def default_response():
 @app.route('/api/<year>', methods=['GET'])
 def get_by_year(year):
     # Define table name for lookup and prepare query
-    tableName = str(year)+'_vehicles'
+    tableName = get_table_name(year)
     query = "SELECT * FROM "+tableName
 
     try:
@@ -114,7 +117,7 @@ def get_by_year(year):
 @app.route('/api/<year>/<make>', methods=['GET'])
 def get_by_year_and_make(year, make):
     # Define table name for lookup and prepare query
-    tableName = str(year)+'_vehicles'
+    tableName = get_table_name(year)
     query = "SELECT * FROM "+tableName+" WHERE make LIKE '"+make+"'"
 
     try:
@@ -134,7 +137,7 @@ def get_by_year_and_make(year, make):
 @app.route('/api/<year>/<make>/<model>', methods=['GET'])
 def get_by_year_make_and_model(year, make, model):
     # Define table name for lookup and prepare query
-    tableName = str(year)+'_vehicles'
+    tableName = get_table_name(year)
     query = "SELECT * FROM "+tableName+" WHERE make LIKE '"+make+"'"+" AND model LIKE '"+model+"'"
 
     try:
@@ -165,7 +168,7 @@ def report():
 
     form = Form()
     year = 1992
-    tableName = str(year)+'_vehicles'
+    tableName = get_table_name(year)
 
     queryForMakesByYear = "SELECT DISTINCT MAKE FROM "+tableName
     results = db.engine.execute(queryForMakesByYear)
