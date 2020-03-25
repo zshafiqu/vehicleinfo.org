@@ -66,6 +66,8 @@
     <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="{{url_for('static', filename='js/script.min.js')}}"></script>
+    <!-- Additional scripts that may be unique to a specific page -->
+    {% block scripts %} {% endblock %}
     <!-- SCRIPTS -->
   </body>
   <!-- End Body -->
