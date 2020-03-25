@@ -4,6 +4,7 @@ Click==7.0
 Flask==1.1.1
 Flask-SQLAlchemy==2.4.1
 flask-talisman==0.7.0
+Flask-WTF==0.14.3
 greenlet==0.4.15
 gunicorn==20.0.4
 idna==2.8
@@ -18,3 +19,4 @@ urllib3==1.25.7
 virtualenv==16.7.9
 waitress==1.4.3
 Werkzeug==0.16.0
+WTForms==2.2.1

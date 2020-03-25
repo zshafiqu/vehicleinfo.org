@@ -1,6 +1,8 @@
-from flask import Flask, render_template, jsonify, make_response, request, redirect
+from flask import Flask, render_template, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_talisman import Talisman
+from flask_wtf import FlaskForm
+from wtforms import SelectField
 import requests, json, os, ast, datetime
 # ----------------------
 # Activate virtual env with - source env/bin/activate
@@ -49,6 +51,9 @@ def get_complaints_from_NHTSA(year, make, model):
     return items
 # ----------------------
 ''' ------------- HELPER FUNCTIONS FOR API ROUTES BELOW THIS LINE ------------- '''
+def get_table_name(year):
+    return str(year)+'_vehicles'
+# ----------------------
 def mappify_row(row):
     # Parse row object to return a dictionary with {key : value} mapping
     map = dict()
@@ -92,7 +97,7 @@ def default_response():
 @app.route('/api/<year>', methods=['GET'])
 def get_by_year(year):
     # Define table name for lookup and prepare query
-    tableName = str(year)+'_vehicles'
+    tableName = get_table_name(year)
     query = "SELECT * FROM "+tableName
 
     try:
@@ -112,7 +117,7 @@ def get_by_year(year):
 @app.route('/api/<year>/<make>', methods=['GET'])
 def get_by_year_and_make(year, make):
     # Define table name for lookup and prepare query
-    tableName = str(year)+'_vehicles'
+    tableName = get_table_name(year)
     query = "SELECT * FROM "+tableName+" WHERE make LIKE '"+make+"'"
 
     try:
@@ -132,7 +137,7 @@ def get_by_year_and_make(year, make):
 @app.route('/api/<year>/<make>/<model>', methods=['GET'])
 def get_by_year_make_and_model(year, make, model):
     # Define table name for lookup and prepare query
-    tableName = str(year)+'_vehicles'
+    tableName = get_table_name(year)
     query = "SELECT * FROM "+tableName+" WHERE make LIKE '"+make+"'"+" AND model LIKE '"+model+"'"
 
     try:
@@ -152,24 +157,90 @@ def get_by_year_make_and_model(year, make, model):
 def index():
     return render_template('home.html')
 # ----------------------
-@app.route('/report')
-def report():
-    return render_template('report.html')
+# FlaskForm inherited from flask_wtf
+class Form(FlaskForm):
+    # SelectField inherited from wtforms
+    # Utilizing list comprehension to hardcode the year range
+    year = SelectField('year', choices=[(iter+1992, iter+1992) for iter in range(29)])
+    make = SelectField('make', choices=[])
+    model = SelectField('model', choices=[])
 # ----------------------
-@app.route('/view_report', methods=['POST'])
-def handle_request():
-    try:
-        year = request.form['year'].strip()
-        make = request.form['make'].strip()
-        model = request.form['model'].strip()
+@app.route('/report', methods=['GET', 'POST'])
+def report():
+    # Initialize some default value for when the page is loaded
+    makes = get_distinct_makes_for_year(1992)
+    form = Form()
 
-        data = get_by_year_make_and_model(year, make, model).get_json()
-        recalls = get_recalls_from_NHTSA(year, make, model)
-        complaints = get_complaints_from_NHTSA(year, make, model)
+    # When I was testing, I'd get an error for 'lost connection to database.'
+    # Using this while loop as a method to ensure two attempts before rendering an error page
+    i = 0
+    while True:
+        if i == 2: # Attempt twice before going to the error page
+            return render_template('error.html')
+        try:
+            # Because jsonify() converts a python object to a Flask response, you need to use '.json' to make references
+            # list comprehension to create tuples with (value, label) given by resulting lists from function calls
+            form.make.choices = [(make['value'], make['label']) for make in get_distinct_makes_for_year(1992).json['makes']]
+            form.model.choices = [(model['value'], model['label']) for model in get_all_models_for_year(form.make.choices[0][0], 1992).json['models']]
+        except:
+            # Lost connection with DB server
+            i += 1
+            continue
+        break # Exit on success
 
-        return render_template('view_report.html', data=data, recalls=recalls, complaints=complaints)
-    except:
-        return render_template('error.html')
+    # If POST request, that means client hit 'submit' and is requesting a report
+    if request.method == "POST":
+        year = form.year.data
+        make = form.make.data
+        model = form.model.data
+
+        try:
+            data = get_by_year_make_and_model(year, make, model).get_json()
+            recalls = get_recalls_from_NHTSA(year, make, model)
+            complaints = get_complaints_from_NHTSA(year, make, model)
+
+            return render_template('view_report.html',
+                                   data=data,
+                                   recalls=recalls,
+                                   complaints=complaints)
+        # 404 Not found or 500 Internal Server Error
+        except:
+            return render_template('error.html')
+
+    # For initial /GET requests
+    return render_template('report.html', form=form)
+# ----------------------
+@app.route('/models/<make>/<year>')
+def get_all_models_for_year(make, year):
+    tableName = get_table_name(year)
+    raw_query = "SELECT MODEL FROM "+tableName+" WHERE make LIKE '"+make+"'"
+    results = db.engine.execute(raw_query)
+
+    model_list = []
+
+    for row in results:
+        model_object = dict()
+        model_object['value'] = row[0]
+        model_object['label'] = row[0]
+        model_list.append(model_object)
+
+    return jsonify({'models' : model_list})
+# ----------------------
+@app.route('/makes/<year>')
+def get_distinct_makes_for_year(year):
+    tableName = get_table_name(int(year))
+    raw_query = "SELECT DISTINCT MAKE FROM "+tableName
+    results = db.engine.execute(raw_query)
+
+    make_list = []
+
+    for row in results:
+        make_object = dict()
+        make_object['value'] = row[0]
+        make_object['label'] = row[0]
+        make_list.append(make_object)
+
+    return jsonify({'makes' : make_list})
 # ----------------------
 @app.route('/api')
 def api():
