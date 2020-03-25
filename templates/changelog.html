@@ -43,6 +43,11 @@
                   <td>2.2</td>
                   <td>There was an issue where the search form made it difficult to get a report on cars where the name is ambiguous, or not well defined, such as ‘BMW 3-series’ or ‘Lexus ES’. Because of this, the web report interface’s search form was swapped out for a select option. <br><br> I utilized the <i>fetch()</i> API to grab the updated lists, and they are asynchronously rendered as you change your selections.</td>
                 </tr>
+                <tr>
+                  <td>03-24-2020</td>
+                  <td>2.2.1</td>
+                  <td>The data tables on the report now have pages! Instead of getting a list of 100 items, you now see five at a time.<br><br> Also fixed a server issue while I was in there. The DB provider [clearDB], has a non-adjustable server timeout configuration. To mitigate dropping connections, we now ping the server between requests.<a href="https://github.com/zshafiqu/vehicleinfo.org/pull/14" target="_blank"> See pull request here.</a></td>
+                </tr>
               </tbody>
             </table>
           </div>
