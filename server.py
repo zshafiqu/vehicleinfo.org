@@ -175,7 +175,7 @@ def report():
     # Using this while loop as a method to ensure two attempts before rendering an error page
     i = 0
     while True:
-        if i == 2:
+        if i == 2: # Attempt twice before going to the error page
             return render_template('error.html')
         try:
             # Because jsonify() converts a python object to a Flask response, you need to use '.json' to make references
