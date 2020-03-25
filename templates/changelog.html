@@ -36,7 +36,7 @@
                 <tr>
                   <td>03-24-2020</td>
                   <td>1.2</td>
-                  <td>There was an issue where the search form made it difficult to get a report on car’s where the name is ambiguous, or not well defined, such as ‘BMW 3-series’ or ‘Lexus ES’. Because of this, the web report interface’s search form was swapped out for a select option. <br><br> I utilized the <i>fetch()</i> API to grab the updated lists, and they are asynchronously rendered as you change your selections.</td>
+                  <td>There was an issue where the search form made it difficult to get a report on cars where the name is ambiguous, or not well defined, such as ‘BMW 3-series’ or ‘Lexus ES’. Because of this, the web report interface’s search form was swapped out for a select option. <br><br> I utilized the <i>fetch()</i> API to grab the updated lists, and they are asynchronously rendered as you change your selections.</td>
                 </tr>
               </tbody>
             </table>
@@ -61,6 +61,9 @@
                   <td>1.0</td>
                   <td>Initial version, the API has three routes; <strong>GET /year</strong>, <strong>GET /year/make</strong>, and <strong>GET /year/make/model</strong>. All responses are returned in JSON format.</td>
                 </tr>
+                <td>03-21-2020</td>
+                <td>1.2</td>
+                <td>Resolved an issue where certain interfaces such as the commandline redirect HTTP requests because of trailing slashes. <br> <br> <b>Remedy:</b> Use non-trailing slashes on all application routes, and set application property for strict slashes to false in order to allow both request types to be processed.</td>
               </tbody>
             </table>
           </div>
