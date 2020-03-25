@@ -42,67 +42,64 @@
   </section>
 </main>
 <script>
-  // Define global variables for our form selections (by ID)
   let year_select = document.getElementById('year');
   let make_select = document.getElementById('make');
   let model_select = document.getElementById('model');
-  // ------------------------------------------------------
-  // Create a function to track changes on our year value
+  // Update makes and models onchange() for year
   year_select.onchange = function() {
     updateMakes()
     updateModels()
-    // let make_select = document.getElementById('make');
-    // console.log(make_select.value)
   }
-  // ------------------------------------------------------
-  // Create a function to track changes on our model value
+  // Update models onchange() for make
   make_select.onchange = function() {
     updateModels()
   }
-  // ------------------------------------------------------
+  // Function to update available makes given year
   function updateMakes() {
-    // Retrieve value for year
     year = year_select.value;
-    // console.log(year);
-    // Use fetch() API to access predefined flask route [similar concept to AJAX]
+    // use fetch() API to access predefined flask route [similar concept to AJAX]
     fetch('/makes/'+year).then(function(response) {
       // parse response as JSON and return data
       response.json().then(function(data) {
+        // string builder for innerHTML
         let makes_HTML = '';
-        // Loop over JSON object, the outermost key was set as 'makes'in flask route
+        // traverse JSON object, the outermost key was set as 'makes' in flask route
         for (let make of data.makes) {
           makes_HTML += '<option value="'+ make.value + '">' + make.label + '</option>';
         }
-        // overwrite the old HTML
+        // apply new HTML to this component
         make_select.innerHTML = makes_HTML;
       });
     });
   }
-  // ------------------------------------------------------
+  // Function to update available models given a year and make
   function updateModels() {
     year = year_select.value;
     make = make_select.value;
-    // console.log(make_select.value)
-
+    // use fetch() API to access predefined flask route [similar concept to AJAX]
     fetch('/models/'+make+'/'+year).then(function(response) {
-      // parse response as JSON and return data
-
       response.json().then(function(data) {
-        // console.log(data.models.length)
+        // special case handler
+        /* Let's say we select 1992, Alfa Romeo
+        Then we switch year to 2002, but Alfa Romeo made no cars in 2002
+        We need to rerun the updateModels() function to retrieve the new
+        'make's' model list. We do this by checking the size of the JSON
+        object for models, if it equals 0, you need to re-run this function
+        to reflect the new value in the 'make' selector
+        */
         if (data.models.length == 0) {
-          console.log(make_select.value);
           updateModels()
         }
+        // string builder for innerHTML
         let models_HTML = '';
-        // Loop over JSON object, the outermost key was set as 'makes'in flask route
+        // traverse JSON object, the outermost key was set as 'makes' in flask route
         for (let model of data.models) {
           models_HTML += '<option value="'+ model.value + '">' + model.label + '</option>';
         }
-        // overwrite the old HTML
+        // apply new HTML to this component
         model_select.innerHTML = models_HTML;
       });
     });
   }
-  // ------------------------------------------------------
 </script>
 {% endblock content %}
