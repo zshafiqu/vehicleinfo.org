@@ -173,15 +173,23 @@ def report():
     # Because jsonify() converts a python object to a Flask response, you need to use '.json' to make references
     # list comprehension to create tuples with (value, label) from resulting lists from function calls
     form.make.choices = [(make['value'], make['label']) for make in get_distinct_makes_for_year(1992).json['makes']]
-    form.model.choices = [(model['value'], model['label']) for model in get_all_models_for_year('Acura', 1992).json['models']]
-    '''
-    # add to choices
-    form.make.choices = [(row[0], row[0]) for row in results]
+    form.model.choices = [(model['value'], model['label']) for model in get_all_models_for_year(form.make.choices[0][0], 1992).json['models']]
 
-    if request.method == 'POST':
+    # If POST request, that means client hit 'submit' and is requesting a report
+    if request.method == "POST":
+        year = form.year.data
         make = form.make.data
-        print(make)
-    '''
+        model = form.model.data
+
+        try:
+            data = get_by_year_make_and_model(year, make, model).get_json()
+            recalls = get_recalls_from_NHTSA(year, make, model)
+            complaints = get_complaints_from_NHTSA(year, make, model)
+            return render_template('view_report.html', data=data, recalls=recalls, complaints=complaints)
+
+        except:
+            return render_template('error.html')
+
     return render_template('report.html', form=form)
 # ----------------------
 @app.route('/models/<make>/<year>')
@@ -216,20 +224,20 @@ def get_distinct_makes_for_year(year):
 
     return jsonify({'makes' : make_list})
 # ----------------------
-@app.route('/view_report', methods=['POST'])
-def handle_request():
-    try:
-        year = request.form['year'].strip()
-        make = request.form['make'].strip()
-        model = request.form['model'].strip()
-
-        data = get_by_year_make_and_model(year, make, model).get_json()
-        recalls = get_recalls_from_NHTSA(year, make, model)
-        complaints = get_complaints_from_NHTSA(year, make, model)
-
-        return render_template('view_report.html', data=data, recalls=recalls, complaints=complaints)
-    except:
-        return render_template('error.html')
+# @app.route('/view_report', methods=['POST'])
+# def handle_request():
+#     try:
+#         year = request.form['year'].strip()
+#         make = request.form['make'].strip()
+#         model = request.form['model'].strip()
+#
+#         data = get_by_year_make_and_model(year, make, model).get_json()
+#         recalls = get_recalls_from_NHTSA(year, make, model)
+#         complaints = get_complaints_from_NHTSA(year, make, model)
+#
+#         return render_template('view_report.html', data=data, recalls=recalls, complaints=complaints)
+#     except:
+#         return render_template('error.html')
 # ----------------------
 @app.route('/api')
 def api():
