@@ -51,6 +51,8 @@
   year_select.onchange = function() {
     updateMakes()
     updateModels()
+    // let make_select = document.getElementById('make');
+    // console.log(make_select.value)
   }
   // ------------------------------------------------------
   // Create a function to track changes on our model value
@@ -80,10 +82,17 @@
   function updateModels() {
     year = year_select.value;
     make = make_select.value;
+    // console.log(make_select.value)
 
     fetch('/models/'+make+'/'+year).then(function(response) {
       // parse response as JSON and return data
+
       response.json().then(function(data) {
+        // console.log(data.models.length)
+        if (data.models.length == 0) {
+          console.log(make_select.value);
+          updateModels()
+        }
         let models_HTML = '';
         // Loop over JSON object, the outermost key was set as 'makes'in flask route
         for (let model of data.models) {
