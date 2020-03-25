@@ -171,10 +171,22 @@ def report():
     makes = get_distinct_makes_for_year(1992)
     form = Form()
 
-    # Because jsonify() converts a python object to a Flask response, you need to use '.json' to make references
-    # list comprehension to create tuples with (value, label) given by resulting lists from function calls
-    form.make.choices = [(make['value'], make['label']) for make in get_distinct_makes_for_year(1992).json['makes']]
-    form.model.choices = [(model['value'], model['label']) for model in get_all_models_for_year(form.make.choices[0][0], 1992).json['models']]
+    # When I was testing, I'd get an error for 'lost connection to database.'
+    # Using this while loop as a method to ensure two attempts before rendering an error page
+    i = 0
+    while True:
+        if i == 2:
+            return render_template('error.html')
+        try:
+            # Because jsonify() converts a python object to a Flask response, you need to use '.json' to make references
+            # list comprehension to create tuples with (value, label) given by resulting lists from function calls
+            form.make.choices = [(make['value'], make['label']) for make in get_distinct_makes_for_year(1992).json['makes']]
+            form.model.choices = [(model['value'], model['label']) for model in get_all_models_for_year(form.make.choices[0][0], 1992).json['models']]
+        except:
+            # Lost connection with DB server
+            i += 1
+            continue
+        break # Exit on success
 
     # If POST request, that means client hit 'submit' and is requesting a report
     if request.method == "POST":
