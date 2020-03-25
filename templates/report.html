@@ -6,7 +6,7 @@
     <div class="container">
       <div class="pulse animated block-heading" style="padding-top: 50px;">
         <h2 class="text-info">Vehicle Report</h2>
-        <p>Enter a year, make, and model to get a vehicle report. The reports include vehicle information, as well as other information such as recalls and consumer complaints.</p>
+        <p>Select a year, make, and model to get a vehicle report. The reports include vehicle information, as well as other information such as recalls and consumer complaints.</p>
       </div>
     </div>
   </section>
@@ -49,8 +49,19 @@
 
   // Update makes and models onchange() for year
   year_select.onchange = function() {
-    // console.log(make_select.value)
     updateMakes()
+    // special case handler
+    /* Lets say you select 1993, Honda
+    then you switch back to 2004
+    The make will switch back to Acura
+    (the first make available for 2004)
+    but the models will render for 2004, Honda
+    This is because the make_select value
+    has not been updated yet. To mitigate this,
+    we add a 250 m/s delay between the update
+    calls.. This ensures the MOST RECENT VALUE
+    is being called.
+    */
     setTimeout(function() {
       updateModels()
     }, delayInMilliseconds);

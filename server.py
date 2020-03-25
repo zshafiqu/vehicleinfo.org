@@ -160,6 +160,7 @@ def index():
 # FlaskForm inherited from flask_wtf
 class Form(FlaskForm):
     # SelectField inherited from wtforms
+    # Utilizing list comprehension to hardcode the year range
     year = SelectField('year', choices=[(iter+1992, iter+1992) for iter in range(29)])
     make = SelectField('make', choices=[])
     model = SelectField('model', choices=[])
@@ -171,7 +172,7 @@ def report():
     form = Form()
 
     # Because jsonify() converts a python object to a Flask response, you need to use '.json' to make references
-    # list comprehension to create tuples with (value, label) from resulting lists from function calls
+    # list comprehension to create tuples with (value, label) given by resulting lists from function calls
     form.make.choices = [(make['value'], make['label']) for make in get_distinct_makes_for_year(1992).json['makes']]
     form.model.choices = [(model['value'], model['label']) for model in get_all_models_for_year(form.make.choices[0][0], 1992).json['models']]
 
@@ -185,11 +186,16 @@ def report():
             data = get_by_year_make_and_model(year, make, model).get_json()
             recalls = get_recalls_from_NHTSA(year, make, model)
             complaints = get_complaints_from_NHTSA(year, make, model)
-            return render_template('view_report.html', data=data, recalls=recalls, complaints=complaints)
 
+            return render_template('view_report.html',
+                                   data=data,
+                                   recalls=recalls,
+                                   complaints=complaints)
+        # 404 Not found or 500 Internal Server Error
         except:
             return render_template('error.html')
 
+    # For initial /GET requests
     return render_template('report.html', form=form)
 # ----------------------
 @app.route('/models/<make>/<year>')
