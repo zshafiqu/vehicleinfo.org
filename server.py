@@ -224,21 +224,6 @@ def get_distinct_makes_for_year(year):
 
     return jsonify({'makes' : make_list})
 # ----------------------
-# @app.route('/view_report', methods=['POST'])
-# def handle_request():
-#     try:
-#         year = request.form['year'].strip()
-#         make = request.form['make'].strip()
-#         model = request.form['model'].strip()
-#
-#         data = get_by_year_make_and_model(year, make, model).get_json()
-#         recalls = get_recalls_from_NHTSA(year, make, model)
-#         complaints = get_complaints_from_NHTSA(year, make, model)
-#
-#         return render_template('view_report.html', data=data, recalls=recalls, complaints=complaints)
-#     except:
-#         return render_template('error.html')
-# ----------------------
 @app.route('/api')
 def api():
     return render_template('api.html')
