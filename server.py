@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_talisman import Talisman
 from flask_wtf import FlaskForm
 from wtforms import SelectField
+from sqlalchemy.pool import QueuePool
 import requests, json, os, ast, datetime
 # ----------------------
 # Activate virtual env with - source env/bin/activate
@@ -23,6 +24,12 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('BASE_URI')
 # ----------------------
 # Bind app to db obj
 db = SQLAlchemy(app)
+# ----------------------
+# Was running into a timeouterror for mySQL on Heroku's clearDB instance.
+# Referencing stackoverflow, "the only work around I could find for this by
+# talking to the ClearDB people is to add in the pessimistic ping when creating the engine."
+# Not ideal since its pings DB everytime before you do a query, but avoids 500 Internal Server Error
+db = SQLAlchemy(engine_options={"pool_size": 10, "poolclass":QueuePool, "pool_pre_ping":True})
 # ----------------------
 ''' Template filter converter for JSON formatted time '''
 @app.template_filter('strftime')
