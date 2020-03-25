@@ -4,11 +4,14 @@ from flask_talisman import Talisman
 from flask_wtf import FlaskForm
 from wtforms import SelectField
 from sqlalchemy.pool import QueuePool
+from flask_minify import minify
 import requests, json, os, ast, datetime
 # ----------------------
 # Activate virtual env with - source env/bin/activate
 # Initialize flask app, enable auto deploy from master branch for heroku
 app = Flask(__name__)
+# From flask_minify, wrap app around minify module to minify the HTML/CSS/JS responses
+minify(app=app, html=True, js=True, cssless=True)
 # Designate application URL routing to occur with or without a trailing slash
 # By default, all of the routes defined below exist without a trailing slash
 app.url_map.strict_slashes = False
@@ -253,5 +256,6 @@ def about():
     return render_template('about.html')
 # ----------------------
 if __name__ == '__main__':
-    from waitress import serve
-    serve(app)
+    # from waitress import serve
+    # serve(app)
+    app.run(debug=True)
