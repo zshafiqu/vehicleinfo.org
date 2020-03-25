@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_talisman import Talisman
 from flask_wtf import FlaskForm
 from wtforms import SelectField
+from sqlalchemy.pool import QueuePool
 import requests, json, os, ast, datetime
 # ----------------------
 # Activate virtual env with - source env/bin/activate
@@ -23,6 +24,12 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('BASE_URI')
 # ----------------------
 # Bind app to db obj
 db = SQLAlchemy(app)
+# ----------------------
+# Was running into a timeouterror for mySQL on Heroku's clearDB instance.
+# Referencing stackoverflow, "the only work around I could find for this by
+# talking to the ClearDB people is to add in the pessimistic ping when creating the engine."
+# Not ideal since its pings DB everytime before you do a query, but avoids 500 Internal Server Error
+db = SQLAlchemy(engine_options={"pool_size": 10, "poolclass":QueuePool, "pool_pre_ping":True})
 # ----------------------
 ''' Template filter converter for JSON formatted time '''
 @app.template_filter('strftime')
@@ -171,22 +178,13 @@ def report():
     makes = get_distinct_makes_for_year(1992)
     form = Form()
 
-    # When I was testing, I'd get an error for 'lost connection to database.'
-    # Using this while loop as a method to ensure two attempts before rendering an error page
-    i = 0
-    while True:
-        if i == 2: # Attempt twice before going to the error page
-            return render_template('error.html')
-        try:
-            # Because jsonify() converts a python object to a Flask response, you need to use '.json' to make references
-            # list comprehension to create tuples with (value, label) given by resulting lists from function calls
-            form.make.choices = [(make['value'], make['label']) for make in get_distinct_makes_for_year(1992).json['makes']]
-            form.model.choices = [(model['value'], model['label']) for model in get_all_models_for_year(form.make.choices[0][0], 1992).json['models']]
-        except:
-            # Lost connection with DB server
-            i += 1
-            continue
-        break # Exit on success
+    try:
+        # Because jsonify() converts a python object to a Flask response, you need to use '.json' to make references
+        # list comprehension to create tuples with (value, label) given by resulting lists from function calls
+        form.make.choices = [(make['value'], make['label']) for make in get_distinct_makes_for_year(1992).json['makes']]
+        form.model.choices = [(model['value'], model['label']) for model in get_all_models_for_year(form.make.choices[0][0], 1992).json['models']]
+    except:
+        return render_template('error.html')
 
     # If POST request, that means client hit 'submit' and is requesting a report
     if request.method == "POST":
