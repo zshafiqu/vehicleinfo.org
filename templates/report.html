@@ -21,17 +21,17 @@
         <!-- YEAR -->
         <div class="form-group">
           <label>Year</label>
-          {{ form.year (class_="form-control") }}
+          {{ form.year (class_="form-control", autocomplete="off") }}
         </div>
         <!-- MAKE -->
         <div class="form-group">
           <label>Make</label>
-          {{ form.make (class_="form-control") }}
+          {{ form.make (class_="form-control", autocomplete="off") }}
         </div>
         <!-- MODEL -->
         <div class="form-group">
           <label>Model</label>
-          {{ form.model (class_="form-control") }}
+          {{ form.model (class_="form-control", autocomplete="off") }}
         </div>
         <!-- SUBMIT -->
         <div class="form-group">
@@ -45,10 +45,15 @@
   let year_select = document.getElementById('year');
   let make_select = document.getElementById('make');
   let model_select = document.getElementById('model');
+  var delayInMilliseconds = 200;
+
   // Update makes and models onchange() for year
   year_select.onchange = function() {
+    // console.log(make_select.value)
     updateMakes()
-    updateModels()
+    setTimeout(function() {
+      updateModels()
+    }, delayInMilliseconds);
   }
   // Update models onchange() for make
   make_select.onchange = function() {
@@ -76,7 +81,6 @@
   function updateModels() {
     year = year_select.value;
     make = make_select.value;
-    console.log(make)
     // use fetch() API to access predefined flask route [similar concept to AJAX]
     fetch('/models/'+make+'/'+year).then(function(response) {
       response.json().then(function(data) {
