@@ -42,22 +42,30 @@
   </section>
 </main>
 <script>
-  // Define variables for our form selections (by ID)
+  // Define global variables for our form selections (by ID)
   let year_select = document.getElementById('year');
   let make_select = document.getElementById('make');
   let model_select = document.getElementById('model');
-
   // ------------------------------------------------------
   // Create a function to track changes on our year value
   year_select.onchange = function() {
-    // Retrieve value
+    updateMakes()
+    updateModels()
+  }
+  // ------------------------------------------------------
+  // Create a function to track changes on our model value
+  make_select.onchange = function() {
+    updateModels()
+  }
+  // ------------------------------------------------------
+  function updateMakes() {
+    // Retrieve value for year
     year = year_select.value;
+    // console.log(year);
     // Use fetch() API to access predefined flask route [similar concept to AJAX]
     fetch('/makes/'+year).then(function(response) {
       // parse response as JSON and return data
       response.json().then(function(data) {
-        console.table(data)
-        // use string builder to make new HTML objects for the given make
         let makes_HTML = '';
         // Loop over JSON object, the outermost key was set as 'makes'in flask route
         for (let make of data.makes) {
@@ -69,17 +77,13 @@
     });
   }
   // ------------------------------------------------------
-  // Create a function to track changes on our model value
-  make_select.onchange = function() {
-    // Retrieve values
+  function updateModels() {
     year = year_select.value;
     make = make_select.value;
-    // Use fetch() API to access predefined flask route [similar concept to AJAX]
+
     fetch('/models/'+make+'/'+year).then(function(response) {
       // parse response as JSON and return data
       response.json().then(function(data) {
-        console.table(data)
-        // use string builder to make new HTML objects for the given make
         let models_HTML = '';
         // Loop over JSON object, the outermost key was set as 'makes'in flask route
         for (let model of data.models) {
@@ -90,5 +94,6 @@
       });
     });
   }
+  // ------------------------------------------------------
 </script>
 {% endblock content %}
