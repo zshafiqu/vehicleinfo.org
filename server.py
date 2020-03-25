@@ -185,7 +185,7 @@ def report():
         form.model.choices = [(model['value'], model['label']) for model in get_all_models_for_year(form.make.choices[0][0], 1992).json['models']]
     except:
         return render_template('error.html')
-    
+
     # If POST request, that means client hit 'submit' and is requesting a report
     if request.method == "POST":
         year = form.year.data
@@ -253,6 +253,6 @@ def about():
     return render_template('about.html')
 # ----------------------
 if __name__ == '__main__':
-    # from waitress import serve
-    # serve(app)
-    app.run(debug=True)
+    from waitress import serve
+    serve(app)
+    
