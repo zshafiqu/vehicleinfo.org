@@ -11,7 +11,12 @@ This project is intended to be open source and public, so any and all contributi
 
 
 ## Release History
-
+* 2.2.0
+    * Resolves issue where the search form made it difficult to get a report on cars where the name is ambiguous, or not well defined, such as ‘BMW 3-series’ or ‘Lexus ES’. Because of this, the web report interface’s search form was swapped out for a select option.
+    * Utilized the fetch() API to grab the updated lists, and they are asynchronously rendered as you change your selections.  
+    * [(See pull request)](https://github.com/zshafiqu/vehicleinfo.org/pull/13)
+* 2.1.0
+    * Trailing slash fix for API. Fixes inconsistent HTTP request paths. [(See pull request)](https://github.com/zshafiqu/vehicleinfo.org/pull/12)
 * 2.0.0
     * Designed a whole new UI [(see pull request)](https://github.com/zshafiqu/vehicleinfo.org/pull/2)
     * Significant improvements warranted skipping versions b/w 1.0.1 & 2
