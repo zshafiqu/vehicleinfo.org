@@ -170,7 +170,8 @@ def report():
     makes = get_distinct_makes_for_year(1992)
     form = Form()
 
-    # Because jsonify() converts a python object to a Flask response, you need to use '.json'
+    # Because jsonify() converts a python object to a Flask response, you need to use '.json' to make references
+    # list comprehension to create tuples with (value, label) from resulting lists from function calls
     form.make.choices = [(make['value'], make['label']) for make in get_distinct_makes_for_year(1992).json['makes']]
     form.model.choices = [(model['value'], model['label']) for model in get_all_models_for_year('Acura', 1992).json['models']]
     '''
