@@ -76,6 +76,7 @@
   function updateModels() {
     year = year_select.value;
     make = make_select.value;
+    console.log(make)
     // use fetch() API to access predefined flask route [similar concept to AJAX]
     fetch('/models/'+make+'/'+year).then(function(response) {
       response.json().then(function(data) {
