@@ -6,6 +6,11 @@
       <meta charset="utf-8">
       <link rel="icon" href="{{ url_for('static', filename='img/car.png') }}">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+      <!-- Open Graph Protocol -->
+      <meta property="og:title" content="The Vehicle Information Project">
+      <meta property="og:description" content="The Vehicle Information Project aims to make vehicle information public and accessible for anyone who needs it.">
+      <meta property="og:image" content="https://www.vehicleinfo.org/static/img/car.png">
+      <meta property="og:url" content="https://vehicleinfo.org">
       <title>The Vehicle Information Project</title>
       <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
@@ -66,7 +71,6 @@
     <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="{{url_for('static', filename='js/script.min.js')}}"></script>
-    <!-- Additional scripts that may be unique to a specific page -->
     {% block scripts %} {% endblock %}
     <!-- SCRIPTS -->
   </body>
