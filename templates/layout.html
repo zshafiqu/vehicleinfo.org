@@ -4,14 +4,20 @@
   <!-- Begin HEAD -->
   <head>
       <meta charset="utf-8">
-      <link rel="icon" href="{{ url_for('static', filename='img/car.png') }}">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
       <!-- Open Graph Protocol -->
       <meta property="og:title" content="The Vehicle Information Project">
       <meta property="og:description" content="The Vehicle Information Project aims to make vehicle information public and accessible for anyone who needs it.">
       <meta property="og:image" content="https://www.vehicleinfo.org/static/img/car.png">
       <meta property="og:url" content="https://vehicleinfo.org">
+      <!-- Twitter Card Meta Tags -->
+      <meta name="twitter:title" content="The Vehicle Information Project">
+      <meta name="twitter:description" content="The Vehicle Information Project aims to make vehicle information public and accessible for anyone who needs it.">
+      <meta name="twitter:image" content="https://www.vehicleinfo.org/static/img/car.png">
+      <meta name="twitter:card" content="summary_large_image">
+      <!-- Everything else -->
       <title>The Vehicle Information Project</title>
+      <link rel="icon" href="{{ url_for('static', filename='img/car.png') }}">
       <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
       <link rel="stylesheet" href="{{ url_for('static', filename='fonts/fontawesome-all.min.css') }}">
