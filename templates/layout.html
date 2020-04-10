@@ -113,10 +113,11 @@
 
       // Retrieve last element from vector and log it's styling if it exists
       var lastElement = sections[sections.length-1];
-      console.log(lastElement.style.paddingBottom);
+      // Access computed style to see embedded CSS from class
+      style = getComputedStyle(lastElement)
 
       // Now let's check and see if some value already exists
-      var existingPadding = String(lastElement.style.paddingBottom);
+      var existingPadding = String(style.paddingBottom);
       if (existingPadding != "") {
         console.log('There was existing padding')
         // This means we have some existing padding
