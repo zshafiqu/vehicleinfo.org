@@ -11,6 +11,9 @@ import requests, json, os, ast, datetime
 # Activate virtual env with - source env/bin/activate
 # Initialize flask app, enable auto deploy from master branch for heroku
 app = Flask(__name__)
+# Setup simple cache instance configuration & Initialize it to app instance
+cache = Cache(config={'CACHE_TYPE': 'simple'})
+cache.init_app(app)
 # From flask_minify, wrap app around minify module to minify the HTML/CSS/JS responses
 minify(app=app, html=True, js=True, cssless=True)
 # Designate application URL routing to occur with or without a trailing slash
@@ -263,6 +266,6 @@ def not_found(e):
     return render_template('error.html')
 # ----------------------
 if __name__ == '__main__':
-    from waitress import serve
-    serve(app)
-    # app.run(debug=True)
+    # from waitress import serve
+    # serve(app)
+    app.run(debug=True)
