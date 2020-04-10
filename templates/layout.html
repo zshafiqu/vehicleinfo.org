@@ -111,11 +111,20 @@
       var difference = vh - height;
       console.log(difference)
 
+      var sections = body.getElementsByTagName('section');
+
+      var lastElement = sections[sections.length-1];
+      console.log(lastElement);
+
+      differenceAsString = String(difference)+"px;";
+      console.log(differenceAsString);
+      lastElement.style.paddingBottom = differenceAsString;
+
+
+
     }
 
     // utilize getElementsByTagName
-    var sections = body.getElementsByTagName('section');
-    console.log(sections);
     // var sectionArr = [];
     //
     // for (var i = 0; i < sections.length; i +=1) {
