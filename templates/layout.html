@@ -89,44 +89,70 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="{{url_for('static', filename='js/script.min.js')}}"></script>
     <script type="text/javascript">
-    const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
-    var body = document.body;
-    var html = document.documentElement;
+    function getViewPortHeight() {
+      return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    }
+    // const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    // const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+    function getBodyHeight() {
+      var body = document.body;
+      var height = body.offsetHeight;
+      return height;
+    }
+
+    // var body = document.body;
+    // var html = document.documentElement;
 
     // var height = Math.max( body.scrollHeight, body.offsetHeight,
     //                    html.clientHeight, html.scrollHeight, html.offsetHeight );
-    var height = body.offsetHeight
+    // var height = body.offsetHeight
 
 
     // These values above should get us the size of the viewport to use when sizing the footer
-    console.log(vw)
-    console.log(vh)
-    console.log('doing math')
+    // console.log(vw)
+    // console.log(vh)
+    // console.log('doing math')
 
-    console.log(height)
-    if (height < vh) {
-      console.log('we have overflow');
-      var difference = vh - height;
-      console.log(difference)
+    function calculateOffset(viewportHeight, actualHeight) {
+      return viewportHeight - actualHeight;
+    }
 
+    function updateOffset(difference) {
+      var body = document.body;
+
+      // Retrieve all sections
       var sections = body.getElementsByTagName('section');
-
+      // Get last element
       var lastElement = sections[sections.length-1];
       console.log(lastElement);
 
       differenceAsString = String(difference)+"px";
       console.log(differenceAsString);
 
-      lastElement.style.paddingBottom = differenceAsString
+      lastElement.style.paddingBottom = differenceAsString;
 
       console.log(lastElement.style);
-      // lastElement.style.paddingBottom = String(differenceAsString);
-
-
-
     }
+    // console.log(height)
+    // if (height < vh) {
+    //   console.log('we have overflow');
+      // var difference = vh - height;
+      // console.log(difference)
+
+      // var sections = body.getElementsByTagName('section');
+      //
+      // var lastElement = sections[sections.length-1];
+      // console.log(lastElement);
+      //
+      // differenceAsString = String(difference)+"px";
+      // console.log(differenceAsString);
+      //
+      // lastElement.style.paddingBottom = differenceAsString
+      //
+      // console.log(lastElement.style);
+      // lastElement.style.paddingBottom = String(differenceAsString);
 
     // utilize getElementsByTagName
     // var sectionArr = [];
