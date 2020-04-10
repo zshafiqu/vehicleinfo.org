@@ -206,7 +206,8 @@ def report():
                                    recalls=recalls,
                                    complaints=complaints)
         # 404 Not found or 500 Internal Server Error
-        except:
+        except Exception as e:
+            print(e)
             return render_template('error.html')
 
     # For initial /GET requests
@@ -255,8 +256,14 @@ def changelog():
 @app.route('/about')
 def about():
     return render_template('about.html')
+# ----------------------
 @app.route('/error')
 def error():
+    return render_template('error.html')
+# ----------------------
+@app.errorhandler(404)
+def not_found(e):
+    print(e)
     return render_template('error.html')
 # ----------------------
 if __name__ == '__main__':

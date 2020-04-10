@@ -1,14 +1,28 @@
 {% extends "layout.html" %}
 {% block content %}
-<main class="page contact-us-page">
-  <section class="clean-block clean-form dark" style="padding-bottom: 10px;">
-    <div class="container">
-      <div class="pulse animated block-heading" style="padding-top: 200px;padding-bottom: 400px;">
-        <h2 class="text-info"><strong>SORRY!</strong></h2>
-        <h2 class="text-info">Page Not Found</h2>
+<style media="screen">
+  .sad {
+  max-height: 50%;
+  max-width: 50%;
+  position: absolute;
+  /* top: 0; */
+  /* bottom: 0; */
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+</style>
+<main class="page landing-page">
+  <section class="clean-block clean-info dark">
+    <div class="container" style="padding-top:10em; padding-bottom:25em;">
+      <div class="pulse animated block-heading" >
+        <h2 class="text-info"><strong>Oops!</strong> That's an error.</h2>
+        <!-- <h2 class="text-info"></h2> -->
         <p>The page you requested could not be found.</p>
         <!-- <p>This could be due to an internal server error, or the page you requested does not exist.</p> -->
-        <p><strong>Please try again later!</strong></p>
+        <!-- <p><strong>Please try again later!</strong></p> -->
+        <p><a href="/">Click here to return home</a></p>
+        <img class="sad" src="{{ url_for('static', filename='img/sad_face.png') }}">
       </div>
     </div>
   </section>
