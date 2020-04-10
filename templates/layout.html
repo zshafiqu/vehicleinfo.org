@@ -121,23 +121,43 @@
 
     function updateOffset(difference) {
       console.log('In update offsetHeight')
-      var body = document.body;
 
-      // Retrieve all sections
+      // Make reference to body and retrieve all sections as a vector
+      var body = document.body;
       var sections = body.getElementsByTagName('section');
-      // Get last element
+
+      // Retrieve last element from vector and log it's styling if it exists
       var lastElement = sections[sections.length-1];
-      // console.log(lastElement);
       console.log(lastElement.style.paddingBottom);
 
-      // Possibly already has existing bottom padding
+      // Now let's check and see if some value already exists
       var existingPadding = String(lastElement.style.paddingBottom);
-      print(existingPadding)
+      if (existingPadding != "") {
+        // This means we have some existing padding
+        // Parse existingPadding as a substring to remove the 'px'
+        existingPadding = existingPadding.substring(0,existingPadding.length-2);
 
-      differenceAsString = String(difference)+"px";
+        // Cast to Integer then check its type to be sure
+        existingPadding = parseInt(existingPadding);
+        console.log(typeof existingPadding);
+
+        // Then add it to the 'difference' variable to account for it
+        difference = difference + existingPadding;
+      }
+
+      // Once we've checked for existing value, we can mve forward with updating the styling
+      differenceAsString = String(difference)+"px"; // Make a string out of it
+      lastElement.style.paddingBottom = differenceAsString; // Apply styling
+
+
+
+
+      // Possibly already has existing bottom padding
+      // var existingPadding = String(lastElement.style.paddingBottom);
+      // print(existingPadding)
       // console.log(differenceAsString);
 
-      lastElement.style.paddingBottom = differenceAsString;
+
 
       // console.log(lastElement.style);
     }
@@ -192,11 +212,14 @@
 
     // Possibly already has existing bottom padding
     var existingPadding = String(lastElement.style.paddingBottom);
-    console.log(existingPadding)
-    existingPadding = existingPadding.substring(0,existingPadding.length-2)
-    console.log(existingPadding)
-    existingPadding = parseInt(existingPadding)
-    console.log(typeof existingPadding)
+    if (existingPadding != "") {
+      console.log('erro')
+    }
+    // console.log(existingPadding)
+    // existingPadding = existingPadding.substring(0,existingPadding.length-2)
+    // console.log(existingPadding)
+    // existingPadding = parseInt(existingPadding)
+    // console.log(typeof existingPadding)
     // here's the gameplan, if we have an overflow, we want to apply margin to the last section within main
     </script>
     {% block scripts %} {% endblock %}
