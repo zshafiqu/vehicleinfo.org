@@ -116,9 +116,13 @@
       var lastElement = sections[sections.length-1];
       console.log(lastElement);
 
-      differenceAsString = String(difference)+"px;";
+      differenceAsString = String(difference)+"px";
       console.log(differenceAsString);
-      lastElement.style.paddingBottom = differenceAsString;
+
+      lastElement.style.paddingBottom = differenceAsString
+
+      console.log(lastElement.style);
+      // lastElement.style.paddingBottom = String(differenceAsString);
 
 
 
