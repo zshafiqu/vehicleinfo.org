@@ -39,7 +39,7 @@ function updateOffset(difference) {
 
     // Cast to Integer then check its type to be sure
     existingPadding = parseInt(existingPadding);
-    console.log(typeof existingPadding);
+    // console.log(typeof existingPadding);
 
     // Then add it to the 'difference' variable to account for it
     difference = difference + existingPadding;

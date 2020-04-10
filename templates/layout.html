@@ -23,16 +23,10 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
       <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.min.css') }}">
       <style media="screen">
+        /* Overwrite height for footer adjustment */
         body, html {
           height: auto;
         }
-        /* main {
-          min-height: 100% !important;
-          margin-bottom: -105px !important;
-        }
-        .push {
-          height: 105px !important;
-        } */
       </style>
   </head>
   <!-- End HEAD -->
@@ -64,10 +58,6 @@
     {% block content %} {% endblock %}
     <!-- END CONTENT -->
 
-    <!-- ADD PUSH FOR STICKY FOOTER -->
-    <!-- <div class="push">
-
-    </div> -->
     <!-- BEGIN FOOTER -->
     <footer class="page-footer dark" style="background:#222425;">
       <div class="footer-copyright" style="margin-top:0px; padding-bottom:25px;">
@@ -88,6 +78,7 @@
     <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="{{url_for('static', filename='js/script.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/stickyfooter.js')}}"></script>
     {% block scripts %} {% endblock %}
     <!-- SCRIPTS -->
   </body>
