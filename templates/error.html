@@ -2,8 +2,8 @@
 {% block content %}
 <style media="screen">
   .sad {
-  max-height: 50%;
-  max-width: 50%;
+  max-height: 100%;
+  max-width: 100%;
   position: absolute;
   /* top: 0; */
   /* bottom: 0; */
@@ -14,17 +14,12 @@
 </style>
 <main class="page landing-page">
   <section class="clean-block clean-info dark">
-    <div class="container" style="padding-top:10em; padding-bottom:22em;">
+    <div class="container" style="padding-top:10em; padding-bottom:25em;">
       <div class="pulse animated block-heading" >
-        <!-- <hr> -->
         <h2 class="text-info"><strong>Oops!</strong> That's an error.</h2>
-        <!-- <h2 class="text-info"></h2> -->
-        <p>The page you requested could not be found.</p>
-        <!-- <p>This could be due to an internal server error, or the page you requested does not exist.</p> -->
-        <!-- <p><strong>Please try again later!</strong></p> -->
+        <p style="padding-bottom:1em;">The page you requested could not be found.<br> That's all we know.</p>
         <p style="padding-bottom:2em;"><a href="/">Click here to return home</a></p>
-        <!-- <hr> -->
-        <img class="sad" src="{{ url_for('static', filename='img/sad_face.png') }}">
+        <img class="sad" src="{{ url_for('static', filename='img/crash.svg') }}">
       </div>
     </div>
   </section>
