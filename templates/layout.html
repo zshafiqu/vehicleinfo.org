@@ -23,6 +23,9 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
       <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.min.css') }}">
       <style media="screen">
+        body, html {
+          height:auto;
+        }
         /* main {
           min-height: 100% !important;
           margin-bottom: -105px !important;
@@ -62,9 +65,9 @@
     <!-- END CONTENT -->
 
     <!-- ADD PUSH FOR STICKY FOOTER -->
-    <div class="push">
+    <!-- <div class="push">
 
-    </div>
+    </div> -->
     <!-- BEGIN FOOTER -->
     <footer class="page-footer dark" style="padding-top: 15px;">
       <div>
@@ -91,10 +94,23 @@
     const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
+    var body = document.body;
+    var html = document.documentElement;
+
+    // var height = Math.max( body.scrollHeight, body.offsetHeight,
+    //                    html.clientHeight, html.scrollHeight, html.offsetHeight );
+    var height = body.offsetHeight
+
+
     // These values above should get us the size of the viewport to use when sizing the footer
     console.log(vw)
     console.log(vh)
+    console.log('doing math')
 
+    console.log(height)
+    if (height < vh) {
+      console.log('we have overflow');
+    }
     </script>
     {% block scripts %} {% endblock %}
     <!-- SCRIPTS -->
