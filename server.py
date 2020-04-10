@@ -180,8 +180,19 @@ class Form(FlaskForm):
     make = SelectField('make', choices=[])
     model = SelectField('model', choices=[])
 # ----------------------
+# The cached decorator has optional argument called 'unless'
+# This argument accepts a callable that returns True or False
+# If unless returns True then it will bypass the caching mechanism entirely
+def only_cache_get(*args, **kwargs):
+    # Basically, bypasses the caching mechanism for 'POST' requests
+    # If this isn't bypassed, if someone requests a report, and then presses on 'get a report'
+    # The report they just submitted a request for gets cached on the server
+    if request.method == 'GET':
+        return False
+    return True
+# ----------------------
 @app.route('/report', methods=['GET', 'POST'])
-@cache.cached(timeout=300) # Cache on server for 5 minutes
+@cache.cached(timeout=300, unless=only_cache_get) # Cache on server for 5 minutes, and then pass unless parameter
 def report():
     # Initialize some default value for when the page is loaded
     makes = get_distinct_makes_for_year(1992)
