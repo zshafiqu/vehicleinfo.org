@@ -180,6 +180,7 @@ class Form(FlaskForm):
     model = SelectField('model', choices=[])
 # ----------------------
 @app.route('/report', methods=['GET', 'POST'])
+@cache.cached(timeout=300) # Cache on server for 5 minutes
 def report():
     # Initialize some default value for when the page is loaded
     makes = get_distinct_makes_for_year(1992)
