@@ -257,10 +257,6 @@ def changelog():
 def about():
     return render_template('about.html')
 # ----------------------
-@app.route('/error')
-def error():
-    return render_template('error.html')
-# ----------------------
 @app.errorhandler(404)
 def not_found(e):
     print(e)
