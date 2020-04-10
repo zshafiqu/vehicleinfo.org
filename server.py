@@ -218,7 +218,7 @@ def report():
     # For initial /GET requests
     return render_template('report.html', form=form)
 # ----------------------
-# Helper route for form selector
+# Helper route for form selector, no need to cache this
 @app.route('/models/<make>/<year>')
 def get_all_models_for_year(make, year):
     tableName = get_table_name(year)
@@ -235,7 +235,7 @@ def get_all_models_for_year(make, year):
 
     return jsonify({'models' : model_list})
 # ----------------------
-# Helper route for form selector
+# Helper route for form selector, no need to cache this
 @app.route('/makes/<year>')
 def get_distinct_makes_for_year(year):
     tableName = get_table_name(int(year))
@@ -253,22 +253,23 @@ def get_distinct_makes_for_year(year):
     return jsonify({'makes' : make_list})
 # ----------------------
 @app.route('/api')
-@cache.cached(timeout=300)
+@cache.cached(timeout=300) # Cache on server for 5 minutes
 def api():
     return render_template('api.html')
 # ----------------------
 @app.route('/changelog')
-@cache.cached(timeout=300)
+@cache.cached(timeout=300) # Cache on server for 5 minutes
 def changelog():
     return render_template('changelog.html')
 # ----------------------
 @app.route('/about')
-@cache.cached(timeout=300)
+@cache.cached(timeout=300) # Cache on server for 5 minutes
 def about():
     return render_template('about.html')
 # ----------------------
 # This route handles error
 @app.errorhandler(Exception)
+@cache.cached(timeout=300) # Cache on server for 5 minutes
 def not_found(e):
     return render_template('error.html')
 # ----------------------
