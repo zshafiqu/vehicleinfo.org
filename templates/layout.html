@@ -126,15 +126,28 @@
       var sections = body.getElementsByTagName('section');
       // Get last element
       var lastElement = sections[sections.length-1];
-      console.log(lastElement);
+      // console.log(lastElement);
 
       differenceAsString = String(difference)+"px";
-      console.log(differenceAsString);
+      // console.log(differenceAsString);
 
       lastElement.style.paddingBottom = differenceAsString;
 
-      console.log(lastElement.style);
+      // console.log(lastElement.style);
     }
+
+    var vw = getViewPortHeight();
+    var realheight = getBodyHeight();
+    console.log(vw);
+    console.log(realheight);
+    console.log(calculateOffset(vw, realheight))
+
+    // if (realheight < vw) {
+    //   console.log('We have an overflow');
+    //   var diff = calculateOffset(vw, realheight);
+    //   console.log('Overflow amount is '+ String(diff));
+    //   updateOffset(diff);
+    // }
     // console.log(height)
     // if (height < vh) {
     //   console.log('we have overflow');
