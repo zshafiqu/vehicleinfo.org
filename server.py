@@ -11,6 +11,9 @@ import requests, json, os, ast, datetime
 # Activate virtual env with - source env/bin/activate
 # Initialize flask app, enable auto deploy from master branch for heroku
 app = Flask(__name__)
+# Setup simple cache instance configuration & Initialize it to app instance
+cache = Cache(config={'CACHE_TYPE': 'simple'})
+cache.init_app(app)
 # From flask_minify, wrap app around minify module to minify the HTML/CSS/JS responses
 minify(app=app, html=True, js=True, cssless=True)
 # Designate application URL routing to occur with or without a trailing slash
@@ -165,6 +168,7 @@ def get_by_year_make_and_model(year, make, model):
     return jsonify(compile_response(list))
 # ----------------------
 @app.route('/')
+@cache.cached(timeout=300)
 def index():
     return render_template('home.html')
 # ----------------------
@@ -176,7 +180,19 @@ class Form(FlaskForm):
     make = SelectField('make', choices=[])
     model = SelectField('model', choices=[])
 # ----------------------
+# The cached decorator has optional argument called 'unless'
+# This argument accepts a callable that returns True or False
+# If unless returns True then it will bypass the caching mechanism entirely
+def only_cache_get(*args, **kwargs):
+    # Basically, bypasses the caching mechanism for 'POST' requests
+    # If this isn't bypassed, if someone requests a report, and then presses on 'get a report'
+    # The report they just submitted a request for gets cached on the server
+    if request.method == 'GET':
+        return False
+    return True
+# ----------------------
 @app.route('/report', methods=['GET', 'POST'])
+@cache.cached(timeout=300, unless=only_cache_get) # Cache on server for 5 minutes, and then pass unless parameter
 def report():
     # Initialize some default value for when the page is loaded
     makes = get_distinct_makes_for_year(1992)
@@ -213,6 +229,7 @@ def report():
     # For initial /GET requests
     return render_template('report.html', form=form)
 # ----------------------
+# Helper route for form selector, no need to cache this
 @app.route('/models/<make>/<year>')
 def get_all_models_for_year(make, year):
     tableName = get_table_name(year)
@@ -229,6 +246,7 @@ def get_all_models_for_year(make, year):
 
     return jsonify({'models' : model_list})
 # ----------------------
+# Helper route for form selector, no need to cache this
 @app.route('/makes/<year>')
 def get_distinct_makes_for_year(year):
     tableName = get_table_name(int(year))
@@ -246,23 +264,26 @@ def get_distinct_makes_for_year(year):
     return jsonify({'makes' : make_list})
 # ----------------------
 @app.route('/api')
+@cache.cached(timeout=300) # Cache on server for 5 minutes
 def api():
     return render_template('api.html')
 # ----------------------
 @app.route('/changelog')
+@cache.cached(timeout=300) # Cache on server for 5 minutes
 def changelog():
     return render_template('changelog.html')
 # ----------------------
 @app.route('/about')
+@cache.cached(timeout=300) # Cache on server for 5 minutes
 def about():
     return render_template('about.html')
 # ----------------------
 # This route handles error
 @app.errorhandler(Exception)
+@cache.cached(timeout=300) # Cache on server for 5 minutes
 def not_found(e):
     return render_template('error.html')
 # ----------------------
 if __name__ == '__main__':
     from waitress import serve
     serve(app)
-    # app.run(debug=True)
