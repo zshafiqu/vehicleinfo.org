@@ -24,7 +24,7 @@
       <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.min.css') }}">
       <style media="screen">
         body, html {
-          height:auto;
+          height: inherit;
         }
         /* main {
           min-height: 100% !important;
@@ -118,6 +118,7 @@
       // Now let's check and see if some value already exists
       var existingPadding = String(lastElement.style.paddingBottom);
       if (existingPadding != "") {
+        console.log('There was existing padding')
         // This means we have some existing padding
         // Parse existingPadding as a substring to remove the 'px'
         existingPadding = existingPadding.substring(0,existingPadding.length-2);
@@ -132,6 +133,7 @@
 
       // Once we've checked for existing value, we can mve forward with updating the styling
       differenceAsString = String(difference)+"px"; // Make a string out of it
+      console.log('About to update padding with value: '+differenceAsString)
       lastElement.style.paddingBottom = differenceAsString; // Apply styling
     }
     // ------------------------------------------
@@ -141,12 +143,12 @@
     console.log(realheight);
     console.log(calculateOffset(vw, realheight))
 
-    if (realheight < vw) {
-      console.log('We have an overflow');
-      var diff = calculateOffset(vw, realheight);
-      console.log('Overflow amount is '+ String(diff));
-      updateOffset(diff);
-    }
+    // if (realheight < vw) {
+    //   console.log('We have an overflow');
+    //   var diff = calculateOffset(vw, realheight);
+    //   console.log('Overflow amount is '+ String(diff));
+    //   updateOffset(diff);
+    // }
     // ------------------------------------------
     </script>
     {% block scripts %} {% endblock %}
