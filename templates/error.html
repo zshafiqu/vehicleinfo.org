@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
 <style media="screen">
-  .sad {
+  .crash {
   max-height: 100%;
   max-width: 100%;
   position: absolute;
@@ -19,7 +19,7 @@
         <h2 class="text-info"><strong>Oops!</strong> That's an error.</h2>
         <p style="padding-bottom:1em;">The page you requested could not be found.<br> That's all we know.</p>
         <p style="padding-bottom:2em;"><a href="/">Click here to return home</a></p>
-        <img class="sad" src="{{ url_for('static', filename='img/crash.svg') }}">
+        <img class="crash" src="{{ url_for('static', filename='img/crash.svg') }}">
       </div>
     </div>
   </section>
