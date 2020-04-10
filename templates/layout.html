@@ -22,6 +22,15 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
       <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.min.css') }}">
+      <style media="screen">
+        /* main {
+          min-height: 100% !important;
+          margin-bottom: -105px !important;
+        }
+        .push {
+          height: 105px !important;
+        } */
+      </style>
   </head>
   <!-- End HEAD -->
 
@@ -52,6 +61,10 @@
     {% block content %} {% endblock %}
     <!-- END CONTENT -->
 
+    <!-- ADD PUSH FOR STICKY FOOTER -->
+    <div class="push">
+
+    </div>
     <!-- BEGIN FOOTER -->
     <footer class="page-footer dark" style="padding-top: 15px;">
       <div>
@@ -74,6 +87,15 @@
     <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="{{url_for('static', filename='js/script.min.js')}}"></script>
+    <script type="text/javascript">
+    const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+    // These values above should get us the size of the viewport to use when sizing the footer
+    console.log(vw)
+    console.log(vh)
+
+    </script>
     {% block scripts %} {% endblock %}
     <!-- SCRIPTS -->
   </body>
