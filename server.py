@@ -205,10 +205,10 @@ def report():
                                    data=data,
                                    recalls=recalls,
                                    complaints=complaints)
-        # 404 Not found or 500 Internal Server Error
+        # Pass to error handler
         except Exception as e:
-            print(e)
-            return render_template('error.html')
+            return not_found(e)
+
 
     # For initial /GET requests
     return render_template('report.html', form=form)
@@ -257,9 +257,9 @@ def changelog():
 def about():
     return render_template('about.html')
 # ----------------------
-@app.errorhandler(404)
+# This route handles error
+@app.errorhandler(Exception)
 def not_found(e):
-    print(e)
     return render_template('error.html')
 # ----------------------
 if __name__ == '__main__':
