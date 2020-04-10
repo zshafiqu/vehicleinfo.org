@@ -13,7 +13,7 @@ This project is intended to be open source and public, so any and all contributi
 ## Release History
 * 2.2.2
     * Fixed an issue where on tall screens, the footer would float with a bunch of whitespace. Spent some time ironing out CSS and JS issues to develop some code that updates the last section on a page if the viewport exceeds the size of real content.
-    * [(See pull request)](https://github.com/zshafiqu/vehicleinfo.org/pull/15)
+    * [(See pull request)](https://github.com/zshafiqu/vehicleinfo.org/pull/17)
 * 2.2.1
     * The data tables on the report now have pages! Instead of getting a list of 100 items, you now see five at a time.  
     * Also fixed a server issue while I was in there. The DB provider [clearDB], has a non-adjustable server timeout configuration. To mitigate dropping connections, we now ping the server between requests. The pull request below has more details, including the link to the stackoverflow post I used.
