@@ -11,6 +11,9 @@ This project is intended to be open source and public, so any and all contributi
 
 
 ## Release History
+* 2.3.0
+    * Add's caching to the routes on the website for 5 minutes at a time, that way if someone is on the site, they get a seamless experience when going to pages they've already visited. Utilized Flask Caching, and did some handling to bypass caching on POST requests in order to avoid errors.
+    * [(See pull request)](https://github.com/zshafiqu/vehicleinfo.org/pull/18)
 * 2.2.2
     * Fixed an issue where on tall screens, the footer would float with a bunch of whitespace. Spent some time ironing out CSS and JS issues to develop some code that updates the last section on a page if the viewport exceeds the size of real content.
     * [(See pull request)](https://github.com/zshafiqu/vehicleinfo.org/pull/17)
