@@ -24,7 +24,7 @@
       <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.min.css') }}">
       <style media="screen">
         body, html {
-          height: inherit;
+          height: auto;
         }
         /* main {
           min-height: 100% !important;
@@ -90,20 +90,24 @@
     <script src="{{url_for('static', filename='js/script.min.js')}}"></script>
     <script type="text/javascript">
     // ------------------------------------------
+    // Return total viewport size, aka the screen size
     function getViewPortHeight() {
       return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     }
     // ------------------------------------------
+    // Return how much HTML we're actually presenting
     function getBodyHeight() {
       var body = document.body;
       var height = body.offsetHeight;
       return height;
     }
     // ------------------------------------------
+    // Get the difference between screen size and what we're presenting
     function calculateOffset(viewportHeight, actualHeight) {
       return viewportHeight - actualHeight;
     }
     // ------------------------------------------
+    // Adds a 'push' to the last section on a page if it doesn't fill the viewport
     function updateOffset(difference) {
       console.log('In update offsetHeight')
 
@@ -144,12 +148,12 @@
     console.log(realheight);
     console.log(calculateOffset(vw, realheight))
 
-    // if (realheight < vw) {
-    //   console.log('We have an overflow');
-    //   var diff = calculateOffset(vw, realheight);
-    //   console.log('Overflow amount is '+ String(diff));
-    //   updateOffset(diff);
-    // }
+    if (realheight < vw) {
+      console.log('We have an overflow');
+      var diff = calculateOffset(vw, realheight);
+      console.log('Overflow amount is '+ String(diff));
+      updateOffset(diff);
+    }
     // ------------------------------------------
     </script>
     {% block scripts %} {% endblock %}
