@@ -120,6 +120,7 @@
     }
 
     function updateOffset(difference) {
+      console.log('In update offsetHeight')
       var body = document.body;
 
       // Retrieve all sections
@@ -127,6 +128,11 @@
       // Get last element
       var lastElement = sections[sections.length-1];
       // console.log(lastElement);
+      console.log(lastElement.style.paddingBottom);
+
+      // Possibly already has existing bottom padding
+      var existingPadding = String(lastElement.style.paddingBottom);
+      print(existingPadding)
 
       differenceAsString = String(difference)+"px";
       // console.log(differenceAsString);
@@ -136,12 +142,12 @@
       // console.log(lastElement.style);
     }
 
-    var vw = getViewPortHeight();
-    var realheight = getBodyHeight();
-    console.log(vw);
-    console.log(realheight);
-    console.log(calculateOffset(vw, realheight))
-
+    // var vw = getViewPortHeight();
+    // var realheight = getBodyHeight();
+    // console.log(vw);
+    // console.log(realheight);
+    // console.log(calculateOffset(vw, realheight))
+    //
     // if (realheight < vw) {
     //   console.log('We have an overflow');
     //   var diff = calculateOffset(vw, realheight);
@@ -174,6 +180,23 @@
     //   sectionArr.push(sections[i].innerHTML)
     // }
 
+    console.log('In update offsetHeight')
+    var body = document.body;
+
+    // Retrieve all sections
+    var sections = body.getElementsByTagName('section');
+    // Get last element
+    var lastElement = sections[sections.length-1];
+    // console.log(lastElement);
+    // console.log(lastElement.style.paddingBottom);
+
+    // Possibly already has existing bottom padding
+    var existingPadding = String(lastElement.style.paddingBottom);
+    console.log(existingPadding)
+    existingPadding = existingPadding.substring(0,existingPadding.length-2)
+    console.log(existingPadding)
+    existingPadding = parseInt(existingPadding)
+    console.log(typeof existingPadding)
     // here's the gameplan, if we have an overflow, we want to apply margin to the last section within main
     </script>
     {% block scripts %} {% endblock %}
