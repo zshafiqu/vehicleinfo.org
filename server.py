@@ -5,6 +5,7 @@ from flask_wtf import FlaskForm
 from wtforms import SelectField
 from sqlalchemy.pool import QueuePool
 from flask_minify import minify
+from flask_caching import Cache
 import requests, json, os, ast, datetime
 # ----------------------
 # Activate virtual env with - source env/bin/activate
@@ -254,6 +255,9 @@ def changelog():
 @app.route('/about')
 def about():
     return render_template('about.html')
+@app.route('/error')
+def error():
+    return render_template('error.html')
 # ----------------------
 if __name__ == '__main__':
     # from waitress import serve
