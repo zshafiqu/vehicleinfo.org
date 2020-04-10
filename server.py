@@ -5,6 +5,7 @@ from flask_wtf import FlaskForm
 from wtforms import SelectField
 from sqlalchemy.pool import QueuePool
 from flask_minify import minify
+from flask_caching import Cache
 import requests, json, os, ast, datetime
 # ----------------------
 # Activate virtual env with - source env/bin/activate
@@ -204,9 +205,10 @@ def report():
                                    data=data,
                                    recalls=recalls,
                                    complaints=complaints)
-        # 404 Not found or 500 Internal Server Error
-        except:
-            return render_template('error.html')
+        # Pass to error handler
+        except Exception as e:
+            return not_found(e)
+
 
     # For initial /GET requests
     return render_template('report.html', form=form)
@@ -255,6 +257,12 @@ def changelog():
 def about():
     return render_template('about.html')
 # ----------------------
+# This route handles error
+@app.errorhandler(Exception)
+def not_found(e):
+    return render_template('error.html')
+# ----------------------
 if __name__ == '__main__':
     from waitress import serve
     serve(app)
+    # app.run(debug=True)

@@ -1,14 +1,25 @@
 {% extends "layout.html" %}
 {% block content %}
-<main class="page contact-us-page">
-  <section class="clean-block clean-form dark" style="padding-bottom: 10px;">
-    <div class="container">
-      <div class="pulse animated block-heading" style="padding-top: 250px;padding-bottom: 350px;">
-        <h2 class="text-info"><strong>SORRY!</strong></h2>
-        <h2 class="text-info">Page Not Found</h2>
-        <p>The page you requested could not be found.</p>
-        <p>This could be due to an internal server error, or the page you requested does not exist.</p>
-        <p><strong>Please try again later!</strong></p>
+<style media="screen">
+  .crash {
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  /* top: 0; */
+  /* bottom: 0; */
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+</style>
+<main class="page landing-page">
+  <section class="clean-block clean-info dark">
+    <div class="container" style="padding-top:10em; padding-bottom:10em">
+      <div class="pulse animated block-heading" >
+        <h2 class="text-info"><strong>Oops!</strong> That's an error.</h2>
+        <p style="padding-bottom:1em;">The page you requested could not be found.<br> That's all we know.</p>
+        <p style="padding-bottom:2em;"><a href="/">Click here to return home</a></p>
+        <img class="crash" src="{{ url_for('static', filename='img/crash.svg') }}">
       </div>
     </div>
   </section>
