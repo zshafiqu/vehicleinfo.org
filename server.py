@@ -285,5 +285,6 @@ def not_found(e):
     return render_template('error.html')
 # ----------------------
 if __name__ == '__main__':
-    from waitress import serve
-    serve(app)
+    # from waitress import serve
+    # serve(app)
+    app.run(debug=True)
