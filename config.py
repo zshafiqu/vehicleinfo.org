@@ -17,6 +17,7 @@ class server_object:
         self.app = app
         self.cache = cache
         self.db = db
+        self.cache_timeout = 1800 # Cache timeout is 30 minutes
 # ----------------------
 def create_cache_instance(app):
     # Setup simple cache instance configuration & Initialize it to app instance
