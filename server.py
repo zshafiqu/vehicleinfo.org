@@ -4,6 +4,7 @@ from wtforms import SelectField
 import requests, json, ast, datetime
 # ----------------------
 from config import create_server_instance
+from server_utils import *
 
 server = create_server_instance()
 app = server.app
@@ -13,30 +14,8 @@ db = server.db
 ''' Template filter converter for JSON formatted time '''
 @app.template_filter('strftime')
 def parse_date(datestring):
-    timepart = datestring.split('(')[1].split(')')[0]
-    milliseconds = int(timepart[:-5])
-    hours = int(timepart[-5:]) / 100
-    time = milliseconds / 1000
-    dt = datetime.datetime.utcfromtimestamp(time + hours * 3600)
-    return dt.strftime("%Y-%m-%d")
+    return parse_date_util(datestring)
 # ----------------------
-def get_recalls_from_NHTSA(year, make, model):
-    # Build URL for call to NHTSA API and typecast incase year input is int
-    year = str(year) # typecast incase input is int
-    url = 'https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/'+year+'/make/'+make+'/model/'+model+'?format=json'
-    # Make request
-    items = requests.get(url).json()
-    return items
-# ----------------------
-def get_complaints_from_NHTSA(year, make, model):
-    # Build URL for call to NHTSA API and typecast incase year input is int
-    year = str(year)
-    url = 'https://one.nhtsa.gov/webapi/api/Complaints/vehicle/modelyear/'+year+'/make/'+make+'/model/'+model+'?format=json'
-    # Make request
-    items = requests.get(url).json()
-    return items
-# ----------------------
-from api_helpers import *
 # ----------------------
 ''' ------------- ALL API ROUTES LIVE BELOW THIS LINE ------------- '''
 # Route 1, get all vehicles for a given year

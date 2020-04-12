@@ -2,6 +2,30 @@ from flask import Flask, render_template, jsonify, request
 from flask_wtf import FlaskForm
 from wtforms import SelectField
 import requests, json, ast, datetime
+''' Template filter converter for JSON formatted time '''
+def parse_date_util(datestring):
+    timepart = datestring.split('(')[1].split(')')[0]
+    milliseconds = int(timepart[:-5])
+    hours = int(timepart[-5:]) / 100
+    time = milliseconds / 1000
+    dt = datetime.datetime.utcfromtimestamp(time + hours * 3600)
+    return dt.strftime("%Y-%m-%d")
+# ----------------------
+def get_recalls_from_NHTSA(year, make, model):
+    # Build URL for call to NHTSA API and typecast incase year input is int
+    year = str(year) # typecast incase input is int
+    url = 'https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/'+year+'/make/'+make+'/model/'+model+'?format=json'
+    # Make request
+    items = requests.get(url).json()
+    return items
+# ----------------------
+def get_complaints_from_NHTSA(year, make, model):
+    # Build URL for call to NHTSA API and typecast incase year input is int
+    year = str(year)
+    url = 'https://one.nhtsa.gov/webapi/api/Complaints/vehicle/modelyear/'+year+'/make/'+make+'/model/'+model+'?format=json'
+    # Make request
+    items = requests.get(url).json()
+    return items
 ''' ------------- HELPER FUNCTIONS FOR API ROUTES BELOW THIS LINE ------------- '''
 def get_table_name(year):
     return str(year)+'_vehicles'
