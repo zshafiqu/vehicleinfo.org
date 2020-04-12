@@ -69,13 +69,14 @@
               </select>
             {% else %}
             <h6><strong>Only available Style: </strong>
-              {% for style in data['Results'][0]['Styles'] %}
+              {{ data['Results'][0]['Styles'][0] }}
+              <!-- {% for style in data['Results'][0]['Styles'] %}
                 {% if style == data['Results'][0]['Styles'][-1] %}
                   {{ style }}
                 {% else %}
                   {{ style }},
                 {% endif %}
-              {% endfor %}
+              {% endfor %} -->
             </h6>
             {% endif %}
           </form>
