@@ -41,7 +41,34 @@
             {% set temp = data['Results'][0]['Styles'][0] %}
             <img class="img-fluid" src="{{ data['Results'][0]['Images'][temp] }}">
             <hr>
-            <h6><strong>Available Style(s): </strong>
+            <!-- <h6><strong>Available Style(s): </strong>
+              {% for style in data['Results'][0]['Styles'] %}
+                {% if style == data['Results'][0]['Styles'][-1] %}
+                  {{ style }}
+                {% else %}
+                  {{ style }},
+                {% endif %}
+              {% endfor %}
+            </h6> -->
+            {% if data['Results'][0]['Styles']|length  > 1 %}
+              <h6><strong>Available Styles: </strong>
+                {% for style in data['Results'][0]['Styles'] %}
+                  {% if style == data['Results'][0]['Styles'][-1] %}
+                    {{ style }}
+                  {% else %}
+                    {{ style }},
+                  {% endif %}
+                {% endfor %}
+              </h6>
+              <!--  img toggler for multiple styles -->
+              <h6>Toggle Styles</h6>
+              <select class="form-control" name="">
+                {% for style in data['Results'][0]['Styles'] %}
+                <option value={{style}}> {{style}} </option>
+                {% endfor %}
+              </select>
+            {% else %}
+            <h6><strong>Only available Style: </strong>
               {% for style in data['Results'][0]['Styles'] %}
                 {% if style == data['Results'][0]['Styles'][-1] %}
                   {{ style }}
@@ -50,11 +77,7 @@
                 {% endif %}
               {% endfor %}
             </h6>
-            <select class="form-control" name="">
-              {% for style in data['Results'][0]['Styles'] %}
-              <option value={{style}}> {{style}} </option>
-              {% endfor %}
-            </select>
+            {% endif %}
           </form>
           <!-- CARD 1 -->
         </div>
