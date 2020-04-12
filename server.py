@@ -4,7 +4,7 @@ import json
 # ----------------------
 # Local imports
 from config import create_server_instance
-from server_utils import *
+from api_utils import *
 # ----------------------
 # Create server instance and grab values
 server = create_server_instance()
