@@ -2,6 +2,8 @@
 # Abstracting this because as the application gets more complex,
 # we get more and more spaghetti code, so this should help with organization
 # ----------------------
+from flask_wtf import FlaskForm
+from wtforms import SelectField
 import requests, json, ast, datetime
 # ----------------------
 def parse_date_util(datestring):
@@ -84,4 +86,23 @@ def default_response():
     response['Results'] = []
 
     return response
+# ----------------------
+# FlaskForm inherited from flask_wtf
+class Form(FlaskForm):
+    # SelectField inherited from wtforms
+    # Utilizing list comprehension to hardcode the year range
+    year = SelectField('year', choices=[(iter+1992, iter+1992) for iter in range(29)])
+    make = SelectField('make', choices=[])
+    model = SelectField('model', choices=[])
+# ----------------------
+def parse_value_label(results):
+    list = []
+
+    for row in results:
+        make_object = dict()
+        make_object['value'] = row[0]
+        make_object['label'] = row[0]
+        list.append(make_object)
+
+    return list
 # ----------------------

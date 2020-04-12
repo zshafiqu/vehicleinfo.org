@@ -62,6 +62,8 @@ def create_app():
     return app
 # ----------------------
 def create_server_instance():
+    # Use this method to create a configured application
+    # Then return it as an instance of the server_object
     app = create_app()
     cache = create_cache_instance(app)
     db = create_db_cursor(app)

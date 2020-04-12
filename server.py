@@ -85,13 +85,13 @@ def get_by_year_make_and_model(year, make, model):
 def index():
     return render_template('home.html')
 # ----------------------
-# FlaskForm inherited from flask_wtf
-class Form(FlaskForm):
-    # SelectField inherited from wtforms
-    # Utilizing list comprehension to hardcode the year range
-    year = SelectField('year', choices=[(iter+1992, iter+1992) for iter in range(29)])
-    make = SelectField('make', choices=[])
-    model = SelectField('model', choices=[])
+# # FlaskForm inherited from flask_wtf
+# class Form(FlaskForm):
+#     # SelectField inherited from wtforms
+#     # Utilizing list comprehension to hardcode the year range
+#     year = SelectField('year', choices=[(iter+1992, iter+1992) for iter in range(29)])
+#     make = SelectField('make', choices=[])
+#     model = SelectField('model', choices=[])
 # ----------------------
 # The cached decorator has optional argument called 'unless'
 # This argument accepts a callable that returns True or False
@@ -149,13 +149,13 @@ def get_all_models_for_year(make, year):
     raw_query = "SELECT MODEL FROM "+tableName+" WHERE make LIKE '"+make+"'"
     results = db.engine.execute(raw_query)
 
-    model_list = []
+    model_list = parse_value_label(results)
 
-    for row in results:
-        model_object = dict()
-        model_object['value'] = row[0]
-        model_object['label'] = row[0]
-        model_list.append(model_object)
+    # for row in results:
+    #     model_object = dict()
+    #     model_object['value'] = row[0]
+    #     model_object['label'] = row[0]
+    #     model_list.append(model_object)
 
     return jsonify({'models' : model_list})
 # ----------------------
@@ -166,13 +166,14 @@ def get_distinct_makes_for_year(year):
     raw_query = "SELECT DISTINCT MAKE FROM "+tableName
     results = db.engine.execute(raw_query)
 
-    make_list = []
-
-    for row in results:
-        make_object = dict()
-        make_object['value'] = row[0]
-        make_object['label'] = row[0]
-        make_list.append(make_object)
+    make_list = parse_value_label(results)
+    # make_list = []
+    #
+    # for row in results:
+    #     make_object = dict()
+    #     make_object['value'] = row[0]
+    #     make_object['label'] = row[0]
+    #     make_list.append(make_object)
 
     return jsonify({'makes' : make_list})
 # ----------------------
