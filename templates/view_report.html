@@ -51,7 +51,9 @@
               {% endfor %}
             </h6>
             <select class="form-control" name="">
-
+              {% for style in data['Results'][0]['Styles'] %}
+              <option value={{style}}> {{style}} </option>
+              {% endfor %}
             </select>
           </form>
           <!-- CARD 1 -->
