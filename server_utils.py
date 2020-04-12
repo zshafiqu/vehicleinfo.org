@@ -23,7 +23,6 @@ def get_recalls_from_NHTSA(year, make, model):
     # Build URL for call to NHTSA API and typecast incase year input is int
     year = str(year) # typecast incase input is int
     url = 'https://one.nhtsa.gov/webapi/api/Recalls/vehicle/modelyear/'+year+'/make/'+make+'/model/'+model+'?format=json'
-
     # Make request
     items = requests.get(url).json()
 
@@ -33,7 +32,6 @@ def get_complaints_from_NHTSA(year, make, model):
     # Build URL for call to NHTSA API and typecast incase year input is int
     year = str(year)
     url = 'https://one.nhtsa.gov/webapi/api/Complaints/vehicle/modelyear/'+year+'/make/'+make+'/model/'+model+'?format=json'
-
     # Make request
     items = requests.get(url).json()
 
@@ -95,6 +93,7 @@ class Form(FlaskForm):
     make = SelectField('make', choices=[])
     model = SelectField('model', choices=[])
 # ----------------------
+# Use this for dynamic select field to get value & label for HTML
 def parse_value_label(results):
     list = []
 

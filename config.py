@@ -29,7 +29,6 @@ def create_cache_instance(app):
 def create_db_cursor(app):
     # Bind app to db obj
     db = SQLAlchemy(app)
-
     # Was running into a timeouterror for mySQL on Heroku's clearDB instance.
     # Referencing stackoverflow, "the only work around I could find for this by
     # talking to the ClearDB people is to add in the pessimistic ping when creating the engine."
@@ -68,7 +67,6 @@ def create_server_instance():
     app = create_app()
     cache = create_cache_instance(app)
     db = create_db_cursor(app)
-
     server = server_object(app, cache, db)
 
     return server

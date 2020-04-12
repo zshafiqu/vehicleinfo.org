@@ -1,11 +1,12 @@
-from flask import Flask, render_template, jsonify, request
-from flask_wtf import FlaskForm
-from wtforms import SelectField
-import requests, json
+# Package imports
+from flask import render_template, jsonify, request
+import json
 # ----------------------
+# Local imports
 from config import create_server_instance
 from server_utils import *
 # ----------------------
+# Create server instance and grab values
 server = create_server_instance()
 app = server.app
 cache = server.cache
@@ -17,7 +18,6 @@ cache_timeout = server.cache_timeout
 def parse_date(datestring):
     return parse_date_util(datestring)
 # ----------------------
-# ALL API ROUTES LIVE BELOW THIS LINE
 # Route 1, get all vehicles for a given year
 @app.route('/api/<year>', methods=['GET'])
 def get_by_year(year):
@@ -89,7 +89,7 @@ def index():
 def only_cache_get(*args, **kwargs):
     # Basically, bypasses the caching mechanism for 'POST' requests
     # If this isn't bypassed, if someone requests a report, and then presses on 'get a report'
-    # The report they just submitted a request for gets cached on the server
+    # The report they just submitted a request for gets cached on the server [which we don't want]
     if request.method == 'GET':
         return False
     return True
@@ -104,8 +104,10 @@ def report():
     try:
         # Because jsonify() converts a python object to a Flask response, you need to use '.json' to make references
         # list comprehension to create tuples with (value, label) given by resulting lists from function calls
-        form.make.choices = [(make['value'], make['label']) for make in get_distinct_makes_for_year(1992).json['makes']]
-        form.model.choices = [(model['value'], model['label']) for model in get_all_models_for_year(form.make.choices[0][0], 1992).json['models']]
+        form.make.choices = [(make['value'], make['label'])
+                             for make in get_distinct_makes_for_year(1992).json['makes']]
+        form.model.choices = [(model['value'], model['label'])
+                              for model in get_all_models_for_year(form.make.choices[0][0], 1992).json['models']]
     except Exception as e:
         return not_found(e)
 
@@ -127,7 +129,6 @@ def report():
         # Pass to error handler
         except Exception as e:
             return not_found(e)
-
 
     # For initial /GET requests
     return render_template('report.html', form=form)
@@ -153,23 +154,23 @@ def get_distinct_makes_for_year(year):
     return jsonify({'makes' : make_list})
 # ----------------------
 @app.route('/api')
-@cache.cached(timeout=cache_timeout) # Cache on server for 5 minutes
+@cache.cached(timeout=cache_timeout)
 def api():
     return render_template('api.html')
 # ----------------------
 @app.route('/changelog')
-@cache.cached(timeout=cache_timeout) # Cache on server for 5 minutes
+@cache.cached(timeout=cache_timeout)
 def changelog():
     return render_template('changelog.html')
 # ----------------------
 @app.route('/about')
-@cache.cached(timeout=cache_timeout) # Cache on server for 5 minutes
+@cache.cached(timeout=cache_timeout)
 def about():
     return render_template('about.html')
 # ----------------------
 # This route handles error
 @app.errorhandler(Exception)
-@cache.cached(timeout=cache_timeout) # Cache on server for 5 minutes
+@cache.cached(timeout=cache_timeout)
 def not_found(e):
     return render_template('error.html')
 # ----------------------
