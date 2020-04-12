@@ -7,10 +7,13 @@ The purpose of this tool is to be a public resource for anyone interested in acc
 
 This project is intended to be open source and public, so any and all contributions are always welcome!
 
-![The Vehicle Information Project](scrot.jpg)
+![The Vehicle Information Project](/static/img/scrot.jpg)
 
 
 ## Release History
+* 04/11/2020
+    * Not a release update, but I refactored the main server code between three files. See server.py, config.py, and api_utils.py for the application business logic breakdown. Also made some updates to the API and Change Log page because I had made some mistakes with bootstrap and flexbox in the styling.
+    * Also in 2.2.2 I fixed the tall screen issue by expanding the last element on the page. I didn't like the way that looked after seeing it on a device, so I now expand the footer instead of the last element. See /static/js/stickyfooter.js for the updates.
 * 2.3.0
     * Add's caching to the routes on the website for 5 minutes at a time, that way if someone is on the site, they get a seamless experience when going to pages they've already visited. Utilized Flask Caching, and did some handling to bypass caching on POST requests in order to avoid errors.
     * [(See pull request)](https://github.com/zshafiqu/vehicleinfo.org/pull/18)
