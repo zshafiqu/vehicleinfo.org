@@ -11,6 +11,9 @@ This project is intended to be open source and public, so any and all contributi
 
 
 ## Release History
+* 2.3.1
+    * Add's image toggling on the report interface for the available styles. If there is a car that came as a sedan and coupe, you can toggle images for both styles.
+    * [(See pull request)](https://github.com/zshafiqu/vehicleinfo.org/pull/22)
 * 04/11/2020
     * Not a release update, but I refactored the main server code between three files. See server.py, config.py, and api_utils.py for the application business logic breakdown. Also made some updates to the API and Change Log page because I had made some mistakes with bootstrap and flexbox in the styling.
     * Also in 2.2.2 I fixed the tall screen issue by expanding the last element on the page. I didn't like the way that looked after seeing it on a device, so I now expand the footer instead of the last element. See /static/js/stickyfooter.js for the updates.

@@ -31,25 +31,43 @@
       <div class="row" style="padding-bottom: 15px;">
         <div class="col align-self-center col-lg-5 col-md-12 col-sm-12" style="padding-bottom: inherit;" id="adjust">
           <!-- CARD 1 -->
-          <form class="text-center shadow">
+          <form class="text-center shadow" style="max-width: 100%;">
             <h2>
               {{data['Results'][0]['Year']}}
               {{data['Results'][0]['Make']}}
               {{data['Results'][0]['Model']}}
             </h2>
             <hr>
+            <!-- We assign a temp image when to pass back as a response -->
             {% set temp = data['Results'][0]['Styles'][0] %}
-            <img class="img-fluid" src="{{ data['Results'][0]['Images'][temp] }}">
+            <img id="main-img" class="img-fluid" src="{{ data['Results'][0]['Images'][temp] }}">
             <hr>
-            <h6><strong>Available Style(s): </strong>
-              {% for style in data['Results'][0]['Styles'] %}
-                {% if style == data['Results'][0]['Styles'][-1] %}
-                  {{ style }}
-                {% else %}
-                  {{ style }},
-                {% endif %}
-              {% endfor %}
+            <!-- If the length(list(styles)) > 1, do plural formatting -->
+            {% if data['Results'][0]['Styles']|length  > 1 %}
+              <h6><strong>Available Styles: </strong>
+                {% for style in data['Results'][0]['Styles'] %}
+                  {% if style == data['Results'][0]['Styles'][-1] %}
+                    {{ style }}
+                  {% else %}
+                    {{ style }},
+                  {% endif %}
+                {% endfor %}
+              </h6>
+              <!--  Img toggler for multiple styles -->
+              <!-- On change for selector toggle's the updateImage(style) function -->
+              <!-- Set the selector to be 50% max-width, and set its left-right margin to be auto -->
+              <select class="form-control"
+              onChange="updateImage(this.options[this.selectedIndex].value)"
+              style="max-width: 10em; margin: auto;">
+                {% for style in data['Results'][0]['Styles'] %}
+                <option value={{style}}> {{style}} </option>
+                {% endfor %}
+              </select>
+            {% else %}
+            <h6><strong>Available Style: </strong>
+              {{ data['Results'][0]['Styles'][0] }}
             </h6>
+            {% endif %}
           </form>
           <!-- CARD 1 -->
         </div>
@@ -231,5 +249,13 @@
      $("#table2_filter").parent().removeClass("col-sm-12 col-md-6");
      $("#table2_filter").parent().addClass("col-sm-12 col-md-12");
    });
+</script>
+<script type="text/javascript">
+  // Create image vector based on the JSON object that was passed from the server
+  var images = {{ data['Results'][0]['Images']|safe}}
+  function updateImage(style) {
+    // Edit the "main-img" tag with the corresponding image for the provided style
+    document.getElementById("main-img").src = images[style];
+  }
 </script>
 {% endblock scripts %}
