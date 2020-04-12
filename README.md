@@ -7,7 +7,7 @@ The purpose of this tool is to be a public resource for anyone interested in acc
 
 This project is intended to be open source and public, so any and all contributions are always welcome!
 
-![The Vehicle Information Project](scrot.jpg)
+![The Vehicle Information Project](/static/img/scrot.jpg)
 
 
 ## Release History
