@@ -1,23 +1,22 @@
 from flask import Flask, render_template, jsonify, request
 from flask_wtf import FlaskForm
 from wtforms import SelectField
-import requests, json, ast, datetime
+import requests, json
 # ----------------------
 from config import create_server_instance
 from server_utils import *
-
+# ----------------------
 server = create_server_instance()
 app = server.app
 cache = server.cache
 db = server.db
 # ----------------------
-''' Template filter converter for JSON formatted time '''
+# Template filter converter for JSON formatted time
 @app.template_filter('strftime')
 def parse_date(datestring):
     return parse_date_util(datestring)
 # ----------------------
-# ----------------------
-''' ------------- ALL API ROUTES LIVE BELOW THIS LINE ------------- '''
+# ALL API ROUTES LIVE BELOW THIS LINE
 # Route 1, get all vehicles for a given year
 @app.route('/api/<year>', methods=['GET'])
 def get_by_year(year):
@@ -199,3 +198,4 @@ if __name__ == '__main__':
     # from waitress import serve
     # serve(app)
     app.run(debug=True)
+# ----------------------
