@@ -122,10 +122,13 @@ def report():
             recalls = get_recalls_from_NHTSA(year, make, model)
             complaints = get_complaints_from_NHTSA(year, make, model)
 
-            return render_template('view_report.html',
-                                   data=data,
-                                   recalls=recalls,
-                                   complaints=complaints)
+            try:
+                return render_template('view_report.html',
+                                data=data,
+                                recalls=recalls,
+                                complaints=complaints)
+            except Exception as e:
+                return not_found(e)
         # Pass to error handler
         except Exception as e:
             return not_found(e)
