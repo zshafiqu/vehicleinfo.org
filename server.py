@@ -1,12 +1,7 @@
 from flask import Flask, render_template, jsonify, request
-from flask_sqlalchemy import SQLAlchemy
-from flask_talisman import Talisman
 from flask_wtf import FlaskForm
 from wtforms import SelectField
-from sqlalchemy.pool import QueuePool
-from flask_minify import minify
-from flask_caching import Cache
-import requests, json, os, ast, datetime
+import requests, json, ast, datetime
 # ----------------------
 from config import create_server_instance
 
