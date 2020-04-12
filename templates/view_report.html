@@ -41,15 +41,7 @@
             {% set temp = data['Results'][0]['Styles'][0] %}
             <img class="img-fluid" src="{{ data['Results'][0]['Images'][temp] }}">
             <hr>
-            <!-- <h6><strong>Available Style(s): </strong>
-              {% for style in data['Results'][0]['Styles'] %}
-                {% if style == data['Results'][0]['Styles'][-1] %}
-                  {{ style }}
-                {% else %}
-                  {{ style }},
-                {% endif %}
-              {% endfor %}
-            </h6> -->
+            <!-- If the length(list(styles)) > 1, do plural formatting -->
             {% if data['Results'][0]['Styles']|length  > 1 %}
               <h6><strong>Available Styles: </strong>
                 {% for style in data['Results'][0]['Styles'] %}
@@ -60,7 +52,7 @@
                   {% endif %}
                 {% endfor %}
               </h6>
-              <!--  img toggler for multiple styles -->
+              <!--  Add Img toggler for multiple styles -->
               <h6>Toggle Styles</h6>
               <select class="form-control" name="">
                 {% for style in data['Results'][0]['Styles'] %}
@@ -68,15 +60,8 @@
                 {% endfor %}
               </select>
             {% else %}
-            <h6><strong>Only available Style: </strong>
+            <h6><strong>Only Available Style: </strong>
               {{ data['Results'][0]['Styles'][0] }}
-              <!-- {% for style in data['Results'][0]['Styles'] %}
-                {% if style == data['Results'][0]['Styles'][-1] %}
-                  {{ style }}
-                {% else %}
-                  {{ style }},
-                {% endif %}
-              {% endfor %} -->
             </h6>
             {% endif %}
           </form>
