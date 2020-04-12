@@ -178,8 +178,6 @@ def not_found(e):
     return render_template('error.html')
 # ----------------------
 if __name__ == '__main__':
-    # from waitress import serve
-    # serve(app)
-    print(cache_timeout)
-    app.run(debug=True)
+    from waitress import serve
+    serve(app)
 # ----------------------
