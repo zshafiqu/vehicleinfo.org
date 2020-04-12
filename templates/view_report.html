@@ -39,7 +39,7 @@
             </h2>
             <hr>
             {% set temp = data['Results'][0]['Styles'][0] %}
-            <img class="img-fluid" src="{{ data['Results'][0]['Images'][temp] }}">
+            <img id="main-img" class="img-fluid" src="{{ data['Results'][0]['Images'][temp] }}">
             <hr>
             <!-- If the length(list(styles)) > 1, do plural formatting -->
             {% if data['Results'][0]['Styles']|length  > 1 %}
@@ -54,7 +54,7 @@
               </h6>
               <!--  Add Img toggler for multiple styles -->
               <h6>Toggle Styles</h6>
-              <select class="form-control" name="">
+              <select class="form-control" onChange="updateImage(this.options[this.selectedIndex].value)">
                 {% for style in data['Results'][0]['Styles'] %}
                 <option value={{style}}> {{style}} </option>
                 {% endfor %}
@@ -247,8 +247,17 @@
    });
 </script>
 <script type="text/javascript">
-  var imgs = {{ data['Results'][0]['Images']|safe}}
-  console.log(imgs)
+  // var imgs = {{ data['Results'][0]['Images']|safe}}
+  // Below will get URLs for given style
+  // for (var prop in imgs) {
+    // console.log(imgs[prop])
+  // }
+
+  function updateImage(style) {
+    var images = {{ data['Results'][0]['Images']|safe}}
+    // var imageTag =
+    document.getElementById("main-img").src = images[style];
+  }
 
 </script>
 {% endblock scripts %}
