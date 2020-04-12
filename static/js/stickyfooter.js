@@ -20,9 +20,9 @@ function calculateOffset(viewportHeight, actualHeight) {
 function updateOffset(difference) {
   // console.log('In update offsetHeight')
 
-  // Make reference to body and retrieve all sections as a vector
+  // Make reference to body and retrieve all elements with this tag as a vector
   var body = document.body;
-  var sections = body.getElementsByTagName('section');
+  var sections = body.getElementsByTagName('footer');
 
   // Retrieve last element from vector and log it's styling if it exists
   var lastElement = sections[sections.length-1];
