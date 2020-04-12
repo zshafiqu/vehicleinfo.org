@@ -38,6 +38,7 @@
               {{data['Results'][0]['Model']}}
             </h2>
             <hr>
+            <!-- We assign a temp image when to pass back as a response -->
             {% set temp = data['Results'][0]['Styles'][0] %}
             <img id="main-img" class="img-fluid" src="{{ data['Results'][0]['Images'][temp] }}">
             <hr>
@@ -52,15 +53,18 @@
                   {% endif %}
                 {% endfor %}
               </h6>
-              <!--  Add Img toggler for multiple styles -->
-              <h6>Toggle Styles</h6>
-              <select class="form-control" onChange="updateImage(this.options[this.selectedIndex].value)">
+              <!--  Img toggler for multiple styles -->
+              <!-- On change for selector toggle's the updateImage(style) function -->
+              <!-- Set the selector to be 50% max-width, and set its left-right margin to be auto -->
+              <select class="form-control"
+              onChange="updateImage(this.options[this.selectedIndex].value)"
+              style="max-width: 10em; margin: auto;">
                 {% for style in data['Results'][0]['Styles'] %}
                 <option value={{style}}> {{style}} </option>
                 {% endfor %}
               </select>
             {% else %}
-            <h6><strong>Only Available Style: </strong>
+            <h6><strong>Available Style: </strong>
               {{ data['Results'][0]['Styles'][0] }}
             </h6>
             {% endif %}
@@ -247,17 +251,11 @@
    });
 </script>
 <script type="text/javascript">
-  // var imgs = {{ data['Results'][0]['Images']|safe}}
-  // Below will get URLs for given style
-  // for (var prop in imgs) {
-    // console.log(imgs[prop])
-  // }
-
+  // Create image vector based on the JSON object that was passed from the server
+  var images = {{ data['Results'][0]['Images']|safe}}
   function updateImage(style) {
-    var images = {{ data['Results'][0]['Images']|safe}}
-    // var imageTag =
+    // Edit the "main-img" tag with the corresponding image for the provided style
     document.getElementById("main-img").src = images[style];
   }
-
 </script>
 {% endblock scripts %}
