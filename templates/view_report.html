@@ -31,7 +31,7 @@
       <div class="row" style="padding-bottom: 15px;">
         <div class="col align-self-center col-lg-5 col-md-12 col-sm-12" style="padding-bottom: inherit;" id="adjust">
           <!-- CARD 1 -->
-          <form class="text-center shadow">
+          <form class="text-center shadow" style="max-width: 100%;">
             <h2>
               {{data['Results'][0]['Year']}}
               {{data['Results'][0]['Make']}}
@@ -245,5 +245,10 @@
      $("#table2_filter").parent().removeClass("col-sm-12 col-md-6");
      $("#table2_filter").parent().addClass("col-sm-12 col-md-12");
    });
+</script>
+<script type="text/javascript">
+  var imgs = {{ data['Results'][0]['Images']|safe}}
+  console.log(imgs)
+
 </script>
 {% endblock scripts %}
