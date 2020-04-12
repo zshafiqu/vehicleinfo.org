@@ -22,6 +22,10 @@ function updateOffset(difference) {
 
   // Make reference to body and retrieve all elements with this tag as a vector
   var body = document.body;
+  /*
+  Was adding padding to the last section before, but I prefer the way it looks
+  adding padding to the footer instead. Keeps the layout more consistent.
+  */
   var sections = body.getElementsByTagName('footer');
 
   // Retrieve last element from vector and log it's styling if it exists
