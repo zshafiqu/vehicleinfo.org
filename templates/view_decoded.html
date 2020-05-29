@@ -43,7 +43,7 @@
                         <tbody>
                           <!-- Entering table's body, slicing through JSON to create table -->
                           {% for item in response['Results'] %}
-                            {% if item['Value'] is not none %}
+                            {% if item['Value'] is not none and item['Value'] not in ignore_strings %}
                             <tr>
                               <td> {{ item['Variable'] }} </td>
                               <td> <strong>{{ item['Value'] }}</strong> </td>
