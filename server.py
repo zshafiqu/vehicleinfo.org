@@ -157,105 +157,116 @@ def report():
         year = form.year.data
         make = form.make.data
         model = form.model.data
-        print(year)
-        print(make)
-        print(model)
 
+        # BooleanFields
         include_recalls = form.recalls.data
         include_complaints = form.complaints.data
-        print(include_recalls)
-        print(include_complaints)
 
-        # ---------
-        if include_recalls and include_complaints:
-            # do something
+        try:
+            results = process_form_input(year, make, model, include_recalls, include_complaints)
+
             try:
-                data = get_by_year_make_and_model(year, make, model).get_json()
-                recalls = get_recalls_from_NHTSA(year, make, model)
-                complaints = get_complaints_from_NHTSA(year, make, model)
-
-                try:
-                    return render_template('view_report.html',
-                                    data=data,
-                                    recalls=recalls,
-                                    complaints=complaints)
-                except Exception as e:
-                    return not_found(e)
-            # Pass to error handler
+                return render_template('view_report.html',
+                                data=results['data'],
+                                recalls=results['recalls'],
+                                complaints=results['complaints'])
             except Exception as e:
                 return not_found(e)
-        # ---------
-        elif include_recalls and not include_complaints:
-            try:
-                data = get_by_year_make_and_model(year, make, model).get_json()
-                recalls = get_recalls_from_NHTSA(year, make, model)
-                complaints = None
-
-                try:
-                    return render_template('view_report.html',
-                                    data=data,
-                                    recalls=recalls,
-                                    complaints=complaints)
-                except Exception as e:
-                    return not_found(e)
-            # Pass to error handler
-            except Exception as e:
-                return not_found(e)
-        # ---------
-        elif include_complaints and not include_recalls:
-            try:
-                data = get_by_year_make_and_model(year, make, model).get_json()
-                recalls = None
-                complaints = get_complaints_from_NHTSA(year, make, model)
-
-                try:
-                    return render_template('view_report.html',
-                                    data=data,
-                                    recalls=recalls,
-                                    complaints=complaints)
-                except Exception as e:
-                    return not_found(e)
-            # Pass to error handler
-            except Exception as e:
-                return not_found(e)
-        # ---------
-        else:
-            try:
-                data = get_by_year_make_and_model(year, make, model).get_json()
-                recalls = None
-                complaints = None
-
-                try:
-                    return render_template('view_report.html',
-                                    data=data,
-                                    recalls=recalls,
-                                    complaints=complaints)
-                except Exception as e:
-                    return not_found(e)
-            # Pass to error handler
-            except Exception as e:
-                return not_found(e)
+        except Exception as e:
+            return not_found(e)
 
 
 
-        # stuff = request.form.getlist('optionsbox')
-        # print(stuff)
-
-        # try:
-        #     data = get_by_year_make_and_model(year, make, model).get_json()
-        #     recalls = get_recalls_from_NHTSA(year, make, model)
-        #     complaints = get_complaints_from_NHTSA(year, make, model)
-        #
+        # # ---------
+        # if include_recalls and include_complaints:
+        #     # do something
         #     try:
-        #         return render_template('view_report.html',
-        #                         data=data,
-        #                         recalls=recalls,
-        #                         complaints=complaints)
+        #         data = get_by_year_make_and_model(year, make, model).get_json()
+        #         recalls = get_recalls_from_NHTSA(year, make, model)
+        #         complaints = get_complaints_from_NHTSA(year, make, model)
+        #
+        #         try:
+        #             return render_template('view_report.html',
+        #                             data=data,
+        #                             recalls=recalls,
+        #                             complaints=complaints)
+        #         except Exception as e:
+        #             return not_found(e)
+        #     # Pass to error handler
         #     except Exception as e:
         #         return not_found(e)
-        # # Pass to error handler
-        # except Exception as e:
-        #     return not_found(e)
+        # # ---------
+        # elif include_recalls and not include_complaints:
+        #     try:
+        #         data = get_by_year_make_and_model(year, make, model).get_json()
+        #         recalls = get_recalls_from_NHTSA(year, make, model)
+        #         complaints = None
+        #
+        #         try:
+        #             return render_template('view_report.html',
+        #                             data=data,
+        #                             recalls=recalls,
+        #                             complaints=complaints)
+        #         except Exception as e:
+        #             return not_found(e)
+        #     # Pass to error handler
+        #     except Exception as e:
+        #         return not_found(e)
+        # # ---------
+        # elif include_complaints and not include_recalls:
+        #     try:
+        #         data = get_by_year_make_and_model(year, make, model).get_json()
+        #         recalls = None
+        #         complaints = get_complaints_from_NHTSA(year, make, model)
+        #
+        #         try:
+        #             return render_template('view_report.html',
+        #                             data=data,
+        #                             recalls=recalls,
+        #                             complaints=complaints)
+        #         except Exception as e:
+        #             return not_found(e)
+        #     # Pass to error handler
+        #     except Exception as e:
+        #         return not_found(e)
+        # # ---------
+        # else:
+        #     try:
+        #         data = get_by_year_make_and_model(year, make, model).get_json()
+        #         recalls = None
+        #         complaints = None
+        #
+        #         try:
+        #             return render_template('view_report.html',
+        #                             data=data,
+        #                             recalls=recalls,
+        #                             complaints=complaints)
+        #         except Exception as e:
+        #             return not_found(e)
+        #     # Pass to error handler
+        #     except Exception as e:
+        #         return not_found(e)
+        #
+        #
+        #
+        # # stuff = request.form.getlist('optionsbox')
+        # # print(stuff)
+        #
+        # # try:
+        # #     data = get_by_year_make_and_model(year, make, model).get_json()
+        # #     recalls = get_recalls_from_NHTSA(year, make, model)
+        # #     complaints = get_complaints_from_NHTSA(year, make, model)
+        # #
+        # #     try:
+        # #         return render_template('view_report.html',
+        # #                         data=data,
+        # #                         recalls=recalls,
+        # #                         complaints=complaints)
+        # #     except Exception as e:
+        # #         return not_found(e)
+        # # # Pass to error handler
+        # # except Exception as e:
+        # #     return not_found(e)
 
     # For initial /GET requests
     return render_template('report.html', form=form)
