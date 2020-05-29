@@ -94,8 +94,10 @@ class Form(FlaskForm):
     model = SelectField('model', choices=[])
 
     # Modifying the Form class we've created using FlaskForm and Flask_wtf
-    recalls = BooleanField()
-    complaints = BooleanField()
+    # BooleanField() inherited from wtforms, T/F data type, setting default makes the default checked
+    # See documentation here : http://wtforms.simplecodes.com/docs/0.6/fields.html
+    recalls = BooleanField(default=True)
+    complaints = BooleanField(default=True)
 # ----------------------
 # Use this for dynamic select field to get value & label for HTML
 def parse_value_label(results):
