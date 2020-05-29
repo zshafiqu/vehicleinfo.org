@@ -11,6 +11,9 @@ This project is intended to be open source and public, so any and all contributi
 
 
 ## Release History
+* 3.0.0
+    * New feature addition! Vehicleinfo.org gets a VIN decoder for the web interface. Simply input your vehicle's VIN number and be presented with various pieces of information about the automobile that was available. Handy tool to verify that a VIN matches the actual vehicle!
+    * [(See pull request)](https://github.com/zshafiqu/vehicleinfo.org/pull/23)
 * 2.3.1
     * Add's image toggling on the report interface for the available styles. If there is a car that came as a sedan and coupe, you can toggle images for both styles.
     * [(See pull request)](https://github.com/zshafiqu/vehicleinfo.org/pull/22)
