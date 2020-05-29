@@ -2,6 +2,17 @@
 {% block content %}
 <!-- Add embedded styling for row -->
 <style>
+  /* 768px and below */
+  @media screen and (max-width: 768px) {
+    /* Adjust the VIN title on this page so that it doesnt overflow */
+    #vin-title {
+      font-size:1.4rem !important;
+    }
+    /* Adjust table font size on mobile view */
+    td {
+      font-size:.65rem !important;
+    }
+  }
   .row {
     /* have to add this because datatables adds margin */
     margin-left:0px !important;
@@ -25,7 +36,7 @@
       <div class="row" style="padding-bottom: 15px;">
         <div class="col">
           <form class="text-center shadow" style="max-width: 100%;">
-            <h2 style="padding-bottom: 15px;">Information gathered from <strong>{{ response['SearchCriteria'][4:] }}</strong></h2>
+            <h2 style="padding-bottom: 15px;">Information gathered from <strong id="vin-title">{{ response['SearchCriteria'][4:] }}</strong></h2>
             <div class="table-responsive">
               <table class="table">
               <!-- Create a list of strings that we want to ignore -->
