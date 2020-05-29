@@ -3,12 +3,15 @@
 <!-- Add embedded styling for row -->
 <style>
   /* 768px and below */
-  /* Adjust the VIN title on this page so that it doesnt overflow */
   @media screen and (max-width: 768px) {
+    /* Adjust the VIN title on this page so that it doesnt overflow */
     #vin-title {
-      font-size:1.5rem !important;
+      font-size:1.4rem !important;
     }
-    /* Adjust report column on mobile view */
+    /* Adjust table font size on mobile view */
+    td {
+      font-size:.65rem !important;
+    }
   }
   .row {
     /* have to add this because datatables adds margin */
