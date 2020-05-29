@@ -177,12 +177,22 @@ def changelog():
 def about():
     return render_template('about.html')
 # ----------------------
-@app.route('/decoder')
-@cache.cached(timeout=cache_timeout)
+@app.route('/decoder', methods=['GET', 'POST'])
+# @cache.cached(timeout=cache_timeout)
 def decoder():
-    vin = '1G1YY12S225114600'
-    response = decode_vin_vpic(vin)
-    return render_template('view_decoded.html', response=response)
+    if request.method == "POST":
+        # do something
+        print('Print is pressed')
+        vin = request.form['VIN'].strip()
+        print(vin)
+        response = decode_vin_vpic(vin)
+        print("About to output response")
+        print(response)
+        return render_template('view_decoded.html', response=response)
+
+    # vin = '1G1YY12S225114600'
+    # response = decode_vin_vpic(vin)
+    return render_template('decoder.html')
 # ----------------------
 # This route handles error
 @app.errorhandler(Exception)
