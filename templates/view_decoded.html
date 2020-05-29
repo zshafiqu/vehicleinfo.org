@@ -19,7 +19,7 @@
   <section class="clean-block clean-form dark" style="padding-bottom: 10px;">
     <div class="container" style="padding-top: 50px;">
       <div class="pulse animated block-heading">
-        <h2 class="text-info">VIN Report</h2>
+        <h2 class="text-info">Requested VIN Decoding</h2>
       </div>
     </div>
   </section>
@@ -30,7 +30,7 @@
       <div class="row" style="padding-bottom: 15px;">
         <div class="col">
             <form class="text-center shadow" style="max-width: 100%;">
-                <h2 style="padding-bottom: 15px;">Basic Information for the</h2>
+                <h2 style="padding-bottom: 15px;">Basic Information for <strong>{{ response['SearchCriteria'][4:] }}</strong></h2>
                 <div class="table-responsive">
                     <table class="table">
                         <!-- <thead>
@@ -39,7 +39,7 @@
                                 <th>Column 1</th>
                             </tr>
                         </thead> -->
-                        {% set ignore_strings = ["", "Not Applicable"] %}
+                        {% set ignore_strings = ["", "Not Applicable", "0", "0 - VIN decoded clean. Check Digit (9th position) is correct"] %}
                         <tbody>
                           <!-- Entering table's body, slicing through JSON to create table -->
                           {% for item in response['Results'] %}
