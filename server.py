@@ -181,8 +181,8 @@ def about():
 @cache.cached(timeout=cache_timeout)
 def decoder():
     vin = '1G1YY12S225114600'
-    results = decode_vin_vpic(vin)
-    return results
+    # results = decode_vin_vpic(vin)
+    return render_template('view_decoded.html')
 # ----------------------
 # This route handles error
 @app.errorhandler(Exception)

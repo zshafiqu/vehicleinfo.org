@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+  @media screen and (max-width: 576px) {
+    #adjust {
+      padding-bottom: 15px !important;
+    }
+    /* Adjust report column on mobile view */
+  }
+  .row {
+    /* have to add this because datatables adds margin */
+    margin-left:0px !important;
+    margin-right:0px !important;
+  }
+
+</style>
+<main class="page contact-us-page">
+  <!-- BEGIN SECTION 1 -->
+  <section class="clean-block clean-form dark" style="padding-bottom: 10px;">
+    <div class="container" style="padding-top: 50px;">
+      <div class="pulse animated block-heading">
+        <h2 class="text-info">VIN Report</h2>
+      </div>
+    </div>
+  </section>
+  <!-- END SECTION 1 -->
+  <!-- BEGIN SECTION 2 -->
+  <section class="clean-block clean-form" style="padding-top: 50px;">
+    <div class="container" style="max-width:100%">
+
+    </div>
+  </section>
+</main>
+{% endblock content %}
+
+{% block scripts %}
+<!-- Data tables scripts -->
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+   $(function() {
+    $("#table1").dataTable({
+        "iDisplayLength": 3,
+        "lengthChange": false,
+        "stateSave": false,
+        "info":false,
+       });
+    $("#table2").dataTable({
+      "iDisplayLength": 5,
+      "lengthChange": false,
+      "stateSave": false,
+      "info":false,
+      });
+   });
+</script>
+<!-- Have to add this script to resize the dumb data table stuff :( -->
+<script type="text/javascript">
+  $(document).ready(function(){
+     $("#table1_filter").parent().removeClass("col-sm-12 col-md-6");
+     $("#table1_filter").parent().addClass("col-sm-12 col-md-12");
+     $("#table2_filter").parent().removeClass("col-sm-12 col-md-6");
+     $("#table2_filter").parent().addClass("col-sm-12 col-md-12");
+   });
+</script>
+{% endblock scripts %}
