@@ -204,11 +204,15 @@ def decoder():
     return render_template('decoder.html')
 # ----------------------
 # This route handles error
-@app.errorhandler(Exception)
 # Do not cache the error handler otherwise it'll stay within certain routes even after the fact
 # By default, e is None unless an error description was passed to the function
+@app.errorhandler(Exception)
 def not_found(e=None):
-    # Pass error message to template if there is one
+    # Convert the error message to a string type if its not None, that way whatever the error message is,
+    # it'll guarantee to be output
+    # Then pass it to the error message if neccesary
+    if e is not None:
+        e = str(e)
     return render_template('error.html', e=e)
 # ----------------------
 if __name__ == '__main__':
