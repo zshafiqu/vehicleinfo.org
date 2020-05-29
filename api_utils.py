@@ -105,3 +105,12 @@ def parse_value_label(results):
 
     return list
 # ----------------------
+# Use this helper function to hit the NHTSA API to decode the vin for us in a JSON consumable format
+def decode_vin_vpic(vin):
+    # Build a URL to hit the vPIC API from the NHTSA
+    vin = str(vin).strip() # Cast to string and strip of whitespace as precaution
+    url = 'https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/'+vin+'?format=json'
+    # Make request
+    items = requests.get(url).json()
+    return items
+# ----------------------

@@ -1,3 +1,5 @@
+# Main server file
+# ----------------------
 # Package imports defined by requirements
 from flask import render_template, jsonify, request
 import json
@@ -178,7 +180,9 @@ def about():
 @app.route('/decoder')
 @cache.cached(timeout=cache_timeout)
 def decoder():
-    return 'On page decoder'
+    vin = '1G1YY12S225114600'
+    results = decode_vin_vpic(vin)
+    return results
 # ----------------------
 # This route handles error
 @app.errorhandler(Exception)
