@@ -114,3 +114,9 @@ def decode_vin_vpic(vin):
     items = requests.get(url).json()
     return items
 # ----------------------
+# Use this method to verify the response we got contains actual data and not errors
+def validate_vpic_response(data):
+    # Check data column within JSON response
+    if data['Results'][1]['Value'] == "0":
+        return True
+    return False
