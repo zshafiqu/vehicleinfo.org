@@ -1,25 +1,20 @@
 {% extends "layout.html" %}
 {% block content %}
+<!-- Add embedded styling for row -->
 <style>
-  @media screen and (max-width: 576px) {
-    #adjust {
-      padding-bottom: 15px !important;
-    }
-    /* Adjust report column on mobile view */
-  }
   .row {
     /* have to add this because datatables adds margin */
     margin-left:0px !important;
     margin-right:0px !important;
   }
-
 </style>
+<!-- Begin HTML content -->
 <main class="page contact-us-page">
   <!-- BEGIN SECTION 1 -->
   <section class="clean-block clean-form dark" style="padding-bottom: 10px;">
     <div class="container" style="padding-top: 50px;">
       <div class="pulse animated block-heading">
-        <h2 class="text-info">Requested VIN Decoding</h2>
+        <h2 class="text-info">Requested VIN Decoded</h2>
       </div>
     </div>
   </section>
@@ -29,44 +24,34 @@
     <div class="container" style="max-width:100%">
       <div class="row" style="padding-bottom: 15px;">
         <div class="col">
-            <form class="text-center shadow" style="max-width: 100%;">
-                <h2 style="padding-bottom: 15px;">Basic Information for <strong>{{ response['SearchCriteria'][4:] }}</strong></h2>
-                <div class="table-responsive">
-                    <table class="table">
-                        <!-- <thead>
-                            <tr>
-                                <th>Column 1</th>
-                                <th>Column 1</th>
-                            </tr>
-                        </thead> -->
-                        {% set ignore_strings = ["", "Not Applicable", "0", "0 - VIN decoded clean. Check Digit (9th position) is correct"] %}
-                        <tbody>
-                          <!-- Entering table's body, slicing through JSON to create table -->
-                          {% for item in response['Results'] %}
-                            {% if item['Value'] is not none and item['Value'] not in ignore_strings %}
-                            <tr>
-                              <td> {{ item['Variable'] }} </td>
-                              <td> <strong>{{ item['Value'] }}</strong> </td>
-                            </tr>
-                            {% endif %}
-                          {% endfor %}
-                            <!-- MAKE -->
-                            <!-- <tr>
-                              <td> {{response['Results'][6]['Variable']}} </td>
-                              <td> <strong>{{response['Results'][6]['Value']}}</strong> </td>
-                            </tr> -->
-
-                        </tbody>
-                    </table>
-                </div>
-            </form>
+          <form class="text-center shadow" style="max-width: 100%;">
+            <h2 style="padding-bottom: 15px;">Basic Information for <strong>{{ response['SearchCriteria'][4:] }}</strong></h2>
+            <div class="table-responsive">
+              <table class="table">
+              <!-- Create a list of strings that we want to ignore -->
+              {% set ignore_strings = ["", "Not Applicable", "0", "0 - VIN decoded clean. Check Digit (9th position) is correct"] %}
+                <tbody>
+                  <!-- For each item within the results section of the JSON response -->
+                  {% for item in response['Results'] %}
+                    <!-- As long as the value isn't null and the value isn't in the list of ignore_strings -->
+                    {% if item['Value'] is not none and item['Value'] not in ignore_strings %}
+                      <!-- Output that row onto the table -->
+                      <tr>
+                        <td> {{ item['Variable'] }} </td>
+                        <td> <strong>{{ item['Value'] }}</strong> </td>
+                      </tr>
+                    {% endif %}
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </form>
         </div>
-    </div>
-
+      </div>
     </div>
   </section>
+  <!-- END SECTION 2 -->
 </main>
 {% endblock content %}
-
-{% block scripts %}
-{% endblock scripts %}
+<!-- {% block scripts %}
+{% endblock scripts %} -->
