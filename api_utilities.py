@@ -139,12 +139,12 @@ def get_decode_error(error_code):
         return 'Invalid Vehicle Identification Number entered.'
 # ----------------------
 # Helper function to process the form input passed during POST requests to the /report route
-def process_form_input(year, make, model, include_recalls, include_complaints):
+def process_optional_input(year, make, model, include_recalls, include_complaints):
     # Initialize dictionary for response
     results = dict()
 
-    # Data will always need to be grabbed, so may as well get that first
-    data = get_by_year_make_and_model(year, make, model).get_json()
+    # # Data will always need to be grabbed, so may as well get that first
+    # data = get_by_year_make_and_model(year, make, model).get_json()
     recalls = None
     complaints = None
 
@@ -158,7 +158,7 @@ def process_form_input(year, make, model, include_recalls, include_complaints):
         complaints = get_complaints_from_NHTSA(year, make, model)
 
     # Assign data to dictionary, then return it
-    results['data'] = data
+    # results['data'] = data
     results['recalls'] = recalls
     results['complaints'] = complaints
 

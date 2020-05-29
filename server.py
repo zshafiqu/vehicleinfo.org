@@ -163,11 +163,15 @@ def report():
         include_complaints = form.complaints.data
 
         try:
-            results = process_form_input(year, make, model, include_recalls, include_complaints)
+            # Data will always need to be grabbed, so may as well get that first
+            data = get_by_year_make_and_model(year, make, model).get_json()
+
+            # Process the optional input (the recall and complaint info)
+            results = process_optional_input(year, make, model, include_recalls, include_complaints)
 
             try:
                 return render_template('view_report.html',
-                                data=results['data'],
+                                data=data,
                                 recalls=results['recalls'],
                                 complaints=results['complaints'])
             except Exception as e:
