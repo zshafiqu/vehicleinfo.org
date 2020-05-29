@@ -144,6 +144,7 @@
       </div>
       <!-- END ROW 1 -->
 
+      {% if recalls is not none %}
       <!-- BEGIN ROW 2 -->
       <div class="row" style="padding-bottom: 15px;">
         <div class="col">
@@ -181,7 +182,9 @@
         </div>
       </div>
       <!-- END ROW 2 -->
+      {% endif %}
 
+      {% if complaints is not none %}
       <!-- BEGIN ROW 3 -->
       <div class="row" style="padding-bottom: 15px;">
         <div class="col">
@@ -215,6 +218,7 @@
         </div>
       </div>
       <!-- END ROW 3 -->
+      {% endif %}
     </div>
   </section>
 </main>
