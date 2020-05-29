@@ -1,8 +1,8 @@
-# Package imports
+# Package imports defined by requirements
 from flask import render_template, jsonify, request
 import json
 # ----------------------
-# Local imports
+# Local imports that we created
 from config import create_server_instance
 from api_utils import *
 # ----------------------
@@ -170,6 +170,11 @@ def changelog():
 @cache.cached(timeout=cache_timeout)
 def about():
     return render_template('about.html')
+# ----------------------
+@app.route('/decoder')
+@cache.cached(timeout=cache_timeout)
+def decoder():
+    return 'On page decoder'
 # ----------------------
 # This route handles error
 @app.errorhandler(Exception)
