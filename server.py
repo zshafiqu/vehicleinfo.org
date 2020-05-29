@@ -109,6 +109,21 @@ def get_distinct_makes_for_year(year):
 def index():
     return render_template('home.html')
 # ----------------------
+@app.route('/api')
+@cache.cached(timeout=cache_timeout)
+def api():
+    return render_template('api.html')
+# ----------------------
+@app.route('/changelog')
+@cache.cached(timeout=cache_timeout)
+def changelog():
+    return render_template('changelog.html')
+# ----------------------
+@app.route('/about')
+@cache.cached(timeout=cache_timeout)
+def about():
+    return render_template('about.html')
+# ----------------------
 # The cached decorator has optional argument called 'unless'
 # This argument accepts a callable that returns True or False
 # If unless returns True then it will bypass the caching mechanism entirely
@@ -162,21 +177,6 @@ def report():
     # For initial /GET requests
     return render_template('report.html', form=form)
 # ----------------------
-@app.route('/api')
-@cache.cached(timeout=cache_timeout)
-def api():
-    return render_template('api.html')
-# ----------------------
-@app.route('/changelog')
-@cache.cached(timeout=cache_timeout)
-def changelog():
-    return render_template('changelog.html')
-# ----------------------
-@app.route('/about')
-@cache.cached(timeout=cache_timeout)
-def about():
-    return render_template('about.html')
-# ----------------------
 @app.route('/decoder', methods=['GET', 'POST'])
 @cache.cached(timeout=cache_timeout, unless=only_cache_GET) # Cache on server for 5 minutes, and then pass unless parameter
 def decoder():
@@ -204,7 +204,7 @@ def decoder():
     return render_template('decoder.html')
 # ----------------------
 # This route handles error
-# Do not cache the error handler otherwise it'll stay within certain routes even after the fact
+# Do not cache the error handler otherwise it'll stay within certain routes even after an error has been rendered
 # By default, e is None unless an error description was passed to the function
 @app.errorhandler(Exception)
 def not_found(e=None):
