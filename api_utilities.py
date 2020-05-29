@@ -105,3 +105,30 @@ def parse_value_label(results):
 
     return list
 # ----------------------
+# Use this helper function to hit the NHTSA API to decode the vin for us in a JSON consumable format
+def decode_vin_vpic(vin):
+    # Build a URL to hit the vPIC API from the NHTSA
+    vin = str(vin).strip() # Cast to string and strip of whitespace as precaution
+    url = 'https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/'+vin+'?format=json'
+    # Make request
+    items = requests.get(url).json()
+    return items
+# ----------------------
+# Use this method to verify the response we got contains actual data and not errors
+def validate_vpic_response(data):
+    # Check data column within JSON response
+    if data['Results'][1]['Value'] != "0":
+        return False
+    return True
+# ----------------------
+def validate_vin_length(vin):
+    if len(vin) != 17:
+        return False
+    return True
+# ----------------------
+def get_decode_error(error_code):
+    if error_code == 0:
+        return 'Invalid input length, a valid VIN is 17 letters and numbers.'
+    if error_code == 1:
+        return 'Invalid Vehicle Identification Number entered.'
+# ----------------------

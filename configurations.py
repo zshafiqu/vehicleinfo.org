@@ -1,4 +1,3 @@
-
 # This file's purpose is to setup the configurations for our Flask server
 # Abstracting this because as the application gets more complex,
 # we get more and more spaghetti code, so this should help with organization
@@ -11,7 +10,7 @@ from flask_minify import minify
 from flask_caching import Cache
 import os
 # ----------------------
-class server_object:
+class ServerObject:
     # Use this class to hold our app, it's cache object, and its database cursor
     def __init__(self, app, cache, db):
         self.app = app
@@ -67,7 +66,8 @@ def create_server_instance():
     app = create_app()
     cache = create_cache_instance(app)
     db = create_db_cursor(app)
-    server = server_object(app, cache, db)
+    # Instance variable
+    server = ServerObject(app, cache, db)
 
     return server
 # ----------------------

@@ -1,22 +1,26 @@
-# Package imports
+# Main server file
+# ----------------------
+# Package imports defined by requirements
 from flask import render_template, jsonify, request
 import json
 # ----------------------
-# Local imports
-from config import create_server_instance
-from api_utils import *
+# Local imports that we created
+from configurations import create_server_instance
+from api_utilities import *
 # ----------------------
 # Create server instance and grab values
 server = create_server_instance()
-app = server.app
-cache = server.cache
-db = server.db
-cache_timeout = server.cache_timeout
+app = server.app # Flask app object
+cache = server.cache # Flask cache object
+db = server.db # Database object
+cache_timeout = server.cache_timeout # Cache timeout value for server
 # ----------------------
 # Template filter converter for JSON formatted time
 @app.template_filter('strftime')
 def parse_date(datestring):
     return parse_date_util(datestring)
+# ----------------------
+''' ALL API ROUTES LIVE BELOW THIS COMMENT '''
 # ----------------------
 # Route 1, get all vehicles for a given year
 @app.route('/api/<year>', methods=['GET'])
@@ -78,6 +82,28 @@ def get_by_year_make_and_model(year, make, model):
     # Aggregate data into a JSON casted response map with count, message, and results
     return jsonify(compile_response(list))
 # ----------------------
+# Helper route for form selector, no need to cache this
+@app.route('/models/<make>/<year>')
+def get_all_models_for_year(make, year):
+    tableName = get_table_name(year)
+    raw_query = "SELECT MODEL FROM "+tableName+" WHERE make LIKE '"+make+"'"
+    results = db.engine.execute(raw_query)
+    model_list = parse_value_label(results)
+
+    return jsonify({'models' : model_list})
+# ----------------------
+# Helper route for form selector, no need to cache this
+@app.route('/makes/<year>')
+def get_distinct_makes_for_year(year):
+    tableName = get_table_name(int(year))
+    raw_query = "SELECT DISTINCT MAKE FROM "+tableName
+    results = db.engine.execute(raw_query)
+    make_list = parse_value_label(results)
+
+    return jsonify({'makes' : make_list})
+# ----------------------
+''' ALL VIEW ROUTES LIVE BELOW THIS COMMENT '''
+# ----------------------
 @app.route('/')
 @cache.cached(timeout=cache_timeout)
 def index():
@@ -86,7 +112,7 @@ def index():
 # The cached decorator has optional argument called 'unless'
 # This argument accepts a callable that returns True or False
 # If unless returns True then it will bypass the caching mechanism entirely
-def only_cache_get(*args, **kwargs):
+def only_cache_GET(*args, **kwargs):
     # Basically, bypasses the caching mechanism for 'POST' requests
     # If this isn't bypassed, if someone requests a report, and then presses on 'get a report'
     # The report they just submitted a request for gets cached on the server [which we don't want]
@@ -95,7 +121,7 @@ def only_cache_get(*args, **kwargs):
     return True
 # ----------------------
 @app.route('/report', methods=['GET', 'POST'])
-@cache.cached(timeout=cache_timeout, unless=only_cache_get) # Cache on server for 5 minutes, and then pass unless parameter
+@cache.cached(timeout=cache_timeout, unless=only_cache_GET) # Cache on server for 5 minutes, and then pass unless parameter
 def report():
     # Initialize some default value for when the page is loaded
     makes = get_distinct_makes_for_year(1992)
@@ -136,26 +162,6 @@ def report():
     # For initial /GET requests
     return render_template('report.html', form=form)
 # ----------------------
-# Helper route for form selector, no need to cache this
-@app.route('/models/<make>/<year>')
-def get_all_models_for_year(make, year):
-    tableName = get_table_name(year)
-    raw_query = "SELECT MODEL FROM "+tableName+" WHERE make LIKE '"+make+"'"
-    results = db.engine.execute(raw_query)
-    model_list = parse_value_label(results)
-
-    return jsonify({'models' : model_list})
-# ----------------------
-# Helper route for form selector, no need to cache this
-@app.route('/makes/<year>')
-def get_distinct_makes_for_year(year):
-    tableName = get_table_name(int(year))
-    raw_query = "SELECT DISTINCT MAKE FROM "+tableName
-    results = db.engine.execute(raw_query)
-    make_list = parse_value_label(results)
-
-    return jsonify({'makes' : make_list})
-# ----------------------
 @app.route('/api')
 @cache.cached(timeout=cache_timeout)
 def api():
@@ -171,11 +177,43 @@ def changelog():
 def about():
     return render_template('about.html')
 # ----------------------
+@app.route('/decoder', methods=['GET', 'POST'])
+@cache.cached(timeout=cache_timeout, unless=only_cache_GET) # Cache on server for 5 minutes, and then pass unless parameter
+def decoder():
+    # When client hits submit
+    if request.method == "POST":
+        try:
+            vin = request.form['VIN'].strip()
+            # If the vin isn't 17 in length, no need to hit the vPIC API
+            if validate_vin_length(vin) is not True:
+                return not_found(get_decode_error(0))
+
+            # Make an API call now
+            response = decode_vin_vpic(vin)
+            # No guarantee the VIN was valid, so check
+            if validate_vpic_response(response) is not True:
+                return not_found(get_decode_error(1))
+
+            # If all is good, finally attempt to render Template
+            return render_template('view_decoded.html', response=response)
+
+        # If for whatever reason this fails, return an error
+        except Exception as e:
+            return not_found(e)
+    # For all other request methods, i.e. 'GET', return the form page
+    return render_template('decoder.html')
+# ----------------------
 # This route handles error
+# Do not cache the error handler otherwise it'll stay within certain routes even after the fact
+# By default, e is None unless an error description was passed to the function
 @app.errorhandler(Exception)
-@cache.cached(timeout=cache_timeout)
-def not_found(e):
-    return render_template('error.html')
+def not_found(e=None):
+    # Convert the error message to a string type if its not None, that way whatever the error message is,
+    # it'll guarantee to be output
+    # Then pass it to the error message if neccesary
+    if e is not None:
+        e = str(e)
+    return render_template('error.html', e=e)
 # ----------------------
 if __name__ == '__main__':
     from waitress import serve
