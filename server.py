@@ -178,22 +178,24 @@ def about():
     return render_template('about.html')
 # ----------------------
 @app.route('/decoder', methods=['GET', 'POST'])
-# @cache.cached(timeout=cache_timeout, unless=only_cache_GET) # Cache on server for 5 minutes, and then pass unless parameter
+@cache.cached(timeout=cache_timeout, unless=only_cache_GET) # Cache on server for 5 minutes, and then pass unless parameter
 def decoder():
     # When client hits submit
     if request.method == "POST":
         try:
             vin = request.form['VIN'].strip()
             # If the vin isn't 17 in length, no need to hit the vPIC API
-            if len(vin) != 17:
-                return not_found(None)
+            if validate_vin_length(vin) is not True:
+                return not_found('Invalid VIN entered.')
 
             # Make an API call now
             response = decode_vin_vpic(vin)
 
             # No gaurantee the VIN was valid, so check
-            if validate_vpic_response(response) is not False:
-                return render_template('view_decoded.html', response=response)
+            if validate_vpic_response(response) is not True:
+                return not_found('Invalid VIN entered.')
+
+            return render_template('view_decoded.html', response=response)
 
         except Exception as e:
             return not_found(e)
@@ -202,9 +204,11 @@ def decoder():
 # ----------------------
 # This route handles error
 @app.errorhandler(Exception)
-@cache.cached(timeout=cache_timeout)
-def not_found(e):
-    return render_template('error.html')
+# Do not cache the error handler otherwise it'll stay within certain routes even after the fact
+# By default, e is None unless an error description was passed to the function
+def not_found(e=None):
+    print(e)
+    return render_template('error.html', e=e)
 # ----------------------
 if __name__ == '__main__':
     # from waitress import serve
