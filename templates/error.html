@@ -18,7 +18,7 @@
       <div class="pulse animated block-heading" >
         <h2 class="text-info"><strong>Oops!</strong> That's an error.</h2>
         {% if e is not none %}
-          <p style="padding-bottom:1em;">The page you requested could not be found.<br> Here's some error information we've gathered:<br> <strong>{{ e }}</strong></p>
+          <p style="padding-bottom:1em;">The page you requested could not be found.<br> Here's some error information we've gathered:<br> <strong>{{ e[0]|upper}}{{e[1:] }}</strong></p>
         {% else %}
           <p style="padding-bottom:1em;">The page you requested could not be found.<br> That's all we know.</p>
         {% endif %}

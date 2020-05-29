@@ -186,20 +186,21 @@ def decoder():
             vin = request.form['VIN'].strip()
             # If the vin isn't 17 in length, no need to hit the vPIC API
             if validate_vin_length(vin) is not True:
-                return not_found('Invalid VIN entered.')
+                return not_found(get_decode_error())
 
             # Make an API call now
             response = decode_vin_vpic(vin)
-
-            # No gaurantee the VIN was valid, so check
+            # No guarantee the VIN was valid, so check
             if validate_vpic_response(response) is not True:
-                return not_found('Invalid VIN entered.')
+                return not_found(get_decode_error())
 
+            # If all is good, finally attempt to render Template
             return render_template('view_decoded.html', response=response)
 
+        # If for whatever reason this fails, return an error
         except Exception as e:
             return not_found(e)
-
+    # For all other request methods, i.e. 'GET', return the form page
     return render_template('decoder.html')
 # ----------------------
 # This route handles error
@@ -207,7 +208,7 @@ def decoder():
 # Do not cache the error handler otherwise it'll stay within certain routes even after the fact
 # By default, e is None unless an error description was passed to the function
 def not_found(e=None):
-    print(e)
+    # Pass error message to template if there is one
     return render_template('error.html', e=e)
 # ----------------------
 if __name__ == '__main__':
