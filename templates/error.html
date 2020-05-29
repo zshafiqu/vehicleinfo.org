@@ -17,7 +17,11 @@
     <div class="container" style="padding-top:10em; padding-bottom:10em">
       <div class="pulse animated block-heading" >
         <h2 class="text-info"><strong>Oops!</strong> That's an error.</h2>
-        <p style="padding-bottom:1em;">The page you requested could not be found.<br> That's all we know.</p>
+        {% if e is not none %}
+          <p style="padding-bottom:1em;">The page you requested could not be found.<br> Here's some error information we've gathered:<br> <strong>{{ e }}</strong></p>
+        {% else %}
+          <p style="padding-bottom:1em;">The page you requested could not be found.<br> That's all we know.</p>
+        {% endif %}
         <p style="padding-bottom:2em;"><a href="/">Click here to return home</a></p>
         <img class="crash" src="{{ url_for('static', filename='img/crash.svg') }}">
       </div>
