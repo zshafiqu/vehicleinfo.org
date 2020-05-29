@@ -5,8 +5,8 @@ from flask import render_template, jsonify, request
 import json
 # ----------------------
 # Local imports that we created
-from config import create_server_instance
-from api_utils import *
+from configurations import create_server_instance
+from api_utilities import *
 # ----------------------
 # Create server instance and grab values
 server = create_server_instance()
