@@ -3,7 +3,7 @@
 # we get more and more spaghetti code, so this should help with organization
 # ----------------------
 from flask_wtf import FlaskForm
-from wtforms import SelectField
+from wtforms import SelectField, BooleanField
 import requests, json, ast, datetime
 # ----------------------
 def parse_date_util(datestring):

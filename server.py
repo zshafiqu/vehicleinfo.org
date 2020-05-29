@@ -158,6 +158,10 @@ def report():
         make = form.make.data
         model = form.model.data
 
+        one = form.recalls.data
+        two = form.complaints.data
+        print(one)
+        print(two)
         # stuff = request.form.getlist('optionsbox')
         # print(stuff)
 
