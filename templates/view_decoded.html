@@ -39,15 +39,23 @@
                                 <th>Column 1</th>
                             </tr>
                         </thead> -->
+                        {% set ignore_strings = ["", "Not Applicable"] %}
                         <tbody>
                           <!-- Entering table's body, slicing through JSON to create table -->
-
-
+                          {% for item in response['Results'] %}
+                            {% if item['Value'] is not none %}
                             <tr>
-                                <td> {{response['Results'][6]['Variable']}} </td>
-                                <td> <strong>{{response['Results'][6]['Value']}}</strong> </td>
+                              <td> {{ item['Variable'] }} </td>
+                              <td> <strong>{{ item['Value'] }}</strong> </td>
                             </tr>
-                            <!-- <tr></tr> -->
+                            {% endif %}
+                          {% endfor %}
+                            <!-- MAKE -->
+                            <!-- <tr>
+                              <td> {{response['Results'][6]['Variable']}} </td>
+                              <td> <strong>{{response['Results'][6]['Value']}}</strong> </td>
+                            </tr> -->
+
                         </tbody>
                     </table>
                 </div>
@@ -61,33 +69,4 @@
 {% endblock content %}
 
 {% block scripts %}
-<!-- Data tables scripts -->
-<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" type="text/javascript"></script>
-<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" type="text/javascript"></script>
-<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-   $(function() {
-    $("#table1").dataTable({
-        "iDisplayLength": 3,
-        "lengthChange": false,
-        "stateSave": false,
-        "info":false,
-       });
-    $("#table2").dataTable({
-      "iDisplayLength": 5,
-      "lengthChange": false,
-      "stateSave": false,
-      "info":false,
-      });
-   });
-</script>
-<!-- Have to add this script to resize the dumb data table stuff :( -->
-<script type="text/javascript">
-  $(document).ready(function(){
-     $("#table1_filter").parent().removeClass("col-sm-12 col-md-6");
-     $("#table1_filter").parent().addClass("col-sm-12 col-md-12");
-     $("#table2_filter").parent().removeClass("col-sm-12 col-md-6");
-     $("#table2_filter").parent().addClass("col-sm-12 col-md-12");
-   });
-</script>
 {% endblock scripts %}
