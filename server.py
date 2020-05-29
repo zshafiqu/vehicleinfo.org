@@ -8,15 +8,17 @@ from api_utils import *
 # ----------------------
 # Create server instance and grab values
 server = create_server_instance()
-app = server.app
-cache = server.cache
-db = server.db
-cache_timeout = server.cache_timeout
+app = server.app # Flask app object
+cache = server.cache # Flask cache object
+db = server.db # Database object
+cache_timeout = server.cache_timeout # Cache timeout value for server
 # ----------------------
 # Template filter converter for JSON formatted time
 @app.template_filter('strftime')
 def parse_date(datestring):
     return parse_date_util(datestring)
+# ----------------------
+''' ALL API ROUTES LIVE BELOW THIS COMMENT '''
 # ----------------------
 # Route 1, get all vehicles for a given year
 @app.route('/api/<year>', methods=['GET'])
@@ -78,6 +80,28 @@ def get_by_year_make_and_model(year, make, model):
     # Aggregate data into a JSON casted response map with count, message, and results
     return jsonify(compile_response(list))
 # ----------------------
+# Helper route for form selector, no need to cache this
+@app.route('/models/<make>/<year>')
+def get_all_models_for_year(make, year):
+    tableName = get_table_name(year)
+    raw_query = "SELECT MODEL FROM "+tableName+" WHERE make LIKE '"+make+"'"
+    results = db.engine.execute(raw_query)
+    model_list = parse_value_label(results)
+
+    return jsonify({'models' : model_list})
+# ----------------------
+# Helper route for form selector, no need to cache this
+@app.route('/makes/<year>')
+def get_distinct_makes_for_year(year):
+    tableName = get_table_name(int(year))
+    raw_query = "SELECT DISTINCT MAKE FROM "+tableName
+    results = db.engine.execute(raw_query)
+    make_list = parse_value_label(results)
+
+    return jsonify({'makes' : make_list})
+# ----------------------
+''' ALL VIEW ROUTES LIVE BELOW THIS COMMENT '''
+# ----------------------
 @app.route('/')
 @cache.cached(timeout=cache_timeout)
 def index():
@@ -135,26 +159,6 @@ def report():
 
     # For initial /GET requests
     return render_template('report.html', form=form)
-# ----------------------
-# Helper route for form selector, no need to cache this
-@app.route('/models/<make>/<year>')
-def get_all_models_for_year(make, year):
-    tableName = get_table_name(year)
-    raw_query = "SELECT MODEL FROM "+tableName+" WHERE make LIKE '"+make+"'"
-    results = db.engine.execute(raw_query)
-    model_list = parse_value_label(results)
-
-    return jsonify({'models' : model_list})
-# ----------------------
-# Helper route for form selector, no need to cache this
-@app.route('/makes/<year>')
-def get_distinct_makes_for_year(year):
-    tableName = get_table_name(int(year))
-    raw_query = "SELECT DISTINCT MAKE FROM "+tableName
-    results = db.engine.execute(raw_query)
-    make_list = parse_value_label(results)
-
-    return jsonify({'makes' : make_list})
 # ----------------------
 @app.route('/api')
 @cache.cached(timeout=cache_timeout)
