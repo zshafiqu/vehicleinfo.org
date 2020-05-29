@@ -186,13 +186,13 @@ def decoder():
             vin = request.form['VIN'].strip()
             # If the vin isn't 17 in length, no need to hit the vPIC API
             if validate_vin_length(vin) is not True:
-                return not_found(get_decode_error())
+                return not_found(get_decode_error(0))
 
             # Make an API call now
             response = decode_vin_vpic(vin)
             # No guarantee the VIN was valid, so check
             if validate_vpic_response(response) is not True:
-                return not_found(get_decode_error())
+                return not_found(get_decode_error(1))
 
             # If all is good, finally attempt to render Template
             return render_template('view_decoded.html', response=response)

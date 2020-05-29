@@ -126,6 +126,9 @@ def validate_vin_length(vin):
         return False
     return True
 # ----------------------
-def get_decode_error():
-    return 'Invalid Vehicle Identification Number Entered'
+def get_decode_error(error_code):
+    if error_code == 0:
+        return 'Invalid input length, a valid VIN is 17 letters and numbers.'
+    if error_code == 1:
+        return 'Invalid Vehicle Identification Number entered.'
 # ----------------------
