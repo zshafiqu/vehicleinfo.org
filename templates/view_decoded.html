@@ -27,6 +27,33 @@
   <!-- BEGIN SECTION 2 -->
   <section class="clean-block clean-form" style="padding-top: 50px;">
     <div class="container" style="max-width:100%">
+      <div class="row" style="padding-bottom: 15px;">
+        <div class="col">
+            <form class="text-center shadow" style="max-width: 100%;">
+                <h2 style="padding-bottom: 15px;">Basic Information for the</h2>
+                <div class="table-responsive">
+                    <table class="table">
+                        <!-- <thead>
+                            <tr>
+                                <th>Column 1</th>
+                                <th>Column 1</th>
+                            </tr>
+                        </thead> -->
+                        <tbody>
+                          <!-- Entering table's body, slicing through JSON to create table -->
+
+
+                            <tr>
+                                <td> {{response['Results'][6]['Variable']}} </td>
+                                <td> <strong>{{response['Results'][6]['Value']}}</strong> </td>
+                            </tr>
+                            <!-- <tr></tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
 
     </div>
   </section>
