@@ -92,6 +92,10 @@ class Form(FlaskForm):
     year = SelectField('year', choices=[(iter+1992, iter+1992) for iter in range(29)])
     make = SelectField('make', choices=[])
     model = SelectField('model', choices=[])
+
+    # Modifying the Form class we've created using FlaskForm and Flask_wtf
+    recalls = BooleanField()
+    complaints = BooleanField()
 # ----------------------
 # Use this for dynamic select field to get value & label for HTML
 def parse_value_label(results):

@@ -158,6 +158,9 @@ def report():
         make = form.make.data
         model = form.model.data
 
+        # stuff = request.form.getlist('optionsbox')
+        # print(stuff)
+
         try:
             data = get_by_year_make_and_model(year, make, model).get_json()
             recalls = get_recalls_from_NHTSA(year, make, model)
