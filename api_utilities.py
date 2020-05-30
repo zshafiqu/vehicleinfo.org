@@ -3,7 +3,7 @@
 # we get more and more spaghetti code, so this should help with organization
 # ----------------------
 from flask_wtf import FlaskForm
-from wtforms import SelectField
+from wtforms import SelectField, BooleanField
 import requests, json, ast, datetime
 # ----------------------
 def parse_date_util(datestring):
@@ -92,6 +92,12 @@ class Form(FlaskForm):
     year = SelectField('year', choices=[(iter+1992, iter+1992) for iter in range(29)])
     make = SelectField('make', choices=[])
     model = SelectField('model', choices=[])
+
+    # Modifying the Form class we've created using FlaskForm and Flask_wtf
+    # BooleanField() inherited from wtforms, T/F data type, setting default makes the default checked
+    # See documentation here : http://wtforms.simplecodes.com/docs/0.6/fields.html
+    recalls = BooleanField(default=True)
+    complaints = BooleanField(default=True)
 # ----------------------
 # Use this for dynamic select field to get value & label for HTML
 def parse_value_label(results):
@@ -131,4 +137,28 @@ def get_decode_error(error_code):
         return 'Invalid input length, a valid VIN is 17 letters and numbers.'
     if error_code == 1:
         return 'Invalid Vehicle Identification Number entered.'
+# ----------------------
+# Helper function to process the form input passed during POST requests to the /report route
+def process_optional_input(year, make, model, include_recalls, include_complaints):
+    # Initialize dictionary for response, and response variables
+    results = dict()
+    recalls = None
+    complaints = None
+
+    # Now check the T/F values for the checkbox inputs
+    if include_recalls and include_complaints:
+        recalls = get_recalls_from_NHTSA(year, make, model)
+        complaints = get_complaints_from_NHTSA(year, make, model)
+
+    if include_recalls and not include_complaints:
+        recalls = get_recalls_from_NHTSA(year, make, model)
+
+    if include_complaints and not include_recalls:
+        complaints = get_complaints_from_NHTSA(year, make, model)
+
+    # Assign information to dictionary, then return it
+    results['recalls'] = recalls
+    results['complaints'] = complaints
+
+    return results
 # ----------------------

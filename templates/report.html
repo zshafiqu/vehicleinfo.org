@@ -33,6 +33,17 @@
           <label>Model</label>
           {{ form.model (class_="form-control", autocomplete="off") }}
         </div>
+        <!-- CHECKBOXES FOR RECALLS AND CONSUMER COMPLAINTS -->
+        <div class="form-group">
+          <div class="form-check">
+            {{ form.recalls (class_="form-check-input") }}
+            <label class="form-check-label" style="font-size: 13px;">Include Recalls</label>
+          </div>
+          <div class="form-check">
+            {{ form.complaints (class_="form-check-input") }}
+            <label class="form-check-label" style="font-size: 13px;">Include Consumer Complaints</label>
+          </div>
+        </div>
         <!-- SUBMIT -->
         <div class="form-group">
           <button class="btn btn-primary btn-block" type="submit" value="submit">Submit</button>

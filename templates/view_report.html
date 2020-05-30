@@ -145,75 +145,81 @@
       <!-- END ROW 1 -->
 
       <!-- BEGIN ROW 2 -->
-      <div class="row" style="padding-bottom: 15px;">
-        <div class="col">
-          <form class="text-center shadow" style="max-width: 100%;">
-            <h2 style="padding-bottom: 15px;">Recalls for the
-              {{data['Results'][0]['Year']}}
-              {{data['Results'][0]['Make']}}
-              {{data['Results'][0]['Model']}}
-            </h2>
-            <div class="table-responsive">
-              <table id="table1" class="table">
-                <thead>
-                  <tr>
-                    <th>Recall Number</th>
-                    <th>Report Date</th>
-                    <th>Summary</th>
-                    <th>Consequence</th>
-                    <th>Remedy</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {% for info in recalls['Results']|reverse %}
-                    <tr id="{{loop.index}}">
-                      <td><small>{{ info['NHTSACampaignNumber'] }}</small></td>
-                      <td><small>{{ info['ReportReceivedDate']|strftime }}</small></td>
-                      <td><small>{{ info['Summary']|capitalize }}</small></td>
-                      <td><small>{{ info['Conequence']|capitalize }}</small></td>
-                      <td><small>{{ info['Remedy']|capitalize }}</small></td>
+      <!-- Logic to check if the recalls variable is None (the client didn't select the checkbox) -->
+      {% if recalls is not none %}
+        <div class="row" style="padding-bottom: 15px;">
+          <div class="col">
+            <form class="text-center shadow" style="max-width: 100%;">
+              <h2 style="padding-bottom: 15px;">Recalls for the
+                {{data['Results'][0]['Year']}}
+                {{data['Results'][0]['Make']}}
+                {{data['Results'][0]['Model']}}
+              </h2>
+              <div class="table-responsive">
+                <table id="table1" class="table">
+                  <thead>
+                    <tr>
+                      <th>Recall Number</th>
+                      <th>Report Date</th>
+                      <th>Summary</th>
+                      <th>Consequence</th>
+                      <th>Remedy</th>
                     </tr>
-                    {% endfor %}
-                </tbody>
-              </table>
-            </div>
-          </form>
+                  </thead>
+                  <tbody>
+                    {% for info in recalls['Results']|reverse %}
+                      <tr id="{{loop.index}}">
+                        <td><small>{{ info['NHTSACampaignNumber'] }}</small></td>
+                        <td><small>{{ info['ReportReceivedDate']|strftime }}</small></td>
+                        <td><small>{{ info['Summary']|capitalize }}</small></td>
+                        <td><small>{{ info['Conequence']|capitalize }}</small></td>
+                        <td><small>{{ info['Remedy']|capitalize }}</small></td>
+                      </tr>
+                      {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
+      {% endif %}
       <!-- END ROW 2 -->
 
       <!-- BEGIN ROW 3 -->
-      <div class="row" style="padding-bottom: 15px;">
-        <div class="col">
-          <form class="text-center shadow" style="max-width: 100%;">
-            <h2 style="padding-bottom: 15px;">Consumer complaints for the
-              {{data['Results'][0]['Year']}}
-              {{data['Results'][0]['Make']}}
-              {{data['Results'][0]['Model']}}
-            </h2>
-            <div class="table-responsive">
-              <table id="table2" class="table">
-                <thead>
-                  <tr>
-                    <th>Incident Date</th>
-                    <th>Affected Component</th>
-                    <th>Summary</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {% for info in complaints['Results']|reverse %}
-                    <tr id="{{loop.index}}">
-                      <td><small>{{ info['DateComplaintFiled']|strftime }}</small></td>
-                      <td><small>{{ info['Component']|capitalize }}</small></td>
-                      <td><small>{{ info['Summary']|capitalize }}</small></td>
+      <!-- Logic to check if the complaints variable is None (the client didn't select the checkbox) -->
+      {% if complaints is not none %}
+        <div class="row" style="padding-bottom: 15px;">
+          <div class="col">
+            <form class="text-center shadow" style="max-width: 100%;">
+              <h2 style="padding-bottom: 15px;">Consumer complaints for the
+                {{data['Results'][0]['Year']}}
+                {{data['Results'][0]['Make']}}
+                {{data['Results'][0]['Model']}}
+              </h2>
+              <div class="table-responsive">
+                <table id="table2" class="table">
+                  <thead>
+                    <tr>
+                      <th>Incident Date</th>
+                      <th>Affected Component</th>
+                      <th>Summary</th>
                     </tr>
-                    {% endfor %}
-                </tbody>
-              </table>
-            </div>
-          </form>
+                  </thead>
+                  <tbody>
+                    {% for info in complaints['Results']|reverse %}
+                      <tr id="{{loop.index}}">
+                        <td><small>{{ info['DateComplaintFiled']|strftime }}</small></td>
+                        <td><small>{{ info['Component']|capitalize }}</small></td>
+                        <td><small>{{ info['Summary']|capitalize }}</small></td>
+                      </tr>
+                      {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
+      {% endif %}
       <!-- END ROW 3 -->
     </div>
   </section>
