@@ -39,9 +39,24 @@ import csv
 def get_external_source_filepath(year):
     return 'external_master/'+str(year)+'.csv'
 # ----------------------
-def convert_external_data_to_list(year):
+# Helper to get the master source filename given a year
+def get_master_source_filepath(year):
+    return 'master_data/'+str(year)+'.csv'
+# ----------------------
+def external_data_to_list(year):
     # Get current filename
     curr_filename = get_external_source_filepath(year)
+
+    # Open file and get a cursor to read the file
+    with open(curr_filename) as file:
+        data_list = list(csv.reader(file))
+
+    # Return the new list
+    return data_list
+# ----------------------
+def master_data_to_list(year):
+    # Get current filename
+    curr_filename = get_master_source_filepath(year)
 
     # Open file and get a cursor to read the file
     with open(curr_filename) as file:
@@ -84,4 +99,4 @@ def compare_external_source_to_master_data(start_year, end_year):
     # if the new row does not match the old row, write the new row
     pass
 if __name__ == "__main__":
-    print(convert_external_data_to_list(1992))
+    print(master_data_to_list(1992))
