@@ -32,3 +32,28 @@
     a new row will be created and then added into the master data set. The other colums such as trim_data and image_sources
     will remain empty.. To be filled in a later step
 '''
+# ----------------------
+import csv
+# ----------------------
+# Helper to get the external source filename given a year
+def get_external_source_name(year):
+    return 'external_master'+str(year)+'.csv'
+# ----------------------
+# Prints external source files within a year range
+def read_external_sources(start_year, end_year):
+
+    # Go through full range
+    while start_year <= end_year:
+        # Get current file name
+        curr_filename = get_external_source_name(start_year)
+
+        # Open file and get a cursor to read the file
+        with open(curr_filename) as file:
+            reader = csv.reader(file)
+            # Move one row to avoid headers
+            next(reader)
+
+            for row in reader:
+                print(row)
+    return None
+# ----------------------
