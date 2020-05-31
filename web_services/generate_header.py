@@ -1,4 +1,6 @@
 # ----------------------
+import random
+# ----------------------
 def get_header():
     # return a random user agent header based on generated number
     list = [

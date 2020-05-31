@@ -6,7 +6,7 @@
 # ----------------------
 from bs4 import BeautifulSoup, SoupStrainer
 import requests, json, os, csv, ast, random
-import generate_header
+from generate_header import get_header
 # ----------------------
 # This function makes an HTTP request to KBB to gather the page's HTML
 def get_soup_from_url(url):
@@ -26,7 +26,8 @@ def get_soup_from_url(url):
 
         try:
             # Generate a new header, required to emulate browser
-            headers = generate_header.get_header()
+            headers = get_header()
+            # print(headers)
             # Make request, timeout after 20 seconds for hanging requests
             page = requests.get(url, headers=headers, timeout=20).text
 
@@ -109,6 +110,7 @@ def scrape_styles_data(year, make, model, bodystyles):
     if len(bodystyles) == 1:
 
         url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
+        # print(url)
         soup = get_soup_from_url(url)
 
         try:
@@ -224,6 +226,7 @@ def add_styles_for_new_vehicles(year):
                     # If this fails, we just got a hit. So pass this to the soup function(s)
                     print('No style information for:'+str(row))
                     data = row_dispatcher(row)
+                    print(data)
                     # Write – year , make , model, body_styles, trim_data,  image_sources
                     writer.writerow([row[0], row[1], row[2], row[3], data])
                     print('Finished row operations for:'+str(row))
