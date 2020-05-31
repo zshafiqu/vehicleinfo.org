@@ -102,40 +102,29 @@ def compare_external_source_to_master_data(year):
     old_list = master_data_to_list(year)
     new_list = external_data_to_list(year)
 
-    loop_counter = 0
+    old_counter = 0
     new_counter = 0
     # for row in new_list:
     while new_counter != len(new_list):
 
-        old_row = old_list[loop_counter]
-        old_make = old_row[1]
+        old_row = old_list[old_counter]
+        # old_make = old_row[1]
         old_model = old_row[2]
         # print(old_model)
 
         new_row = new_list[new_counter]
-        new_make = new_row[1]
+        # new_make = new_row[1]
         new_model = new_row[2]
         # print(new_model)
 
         if new_model != old_model:
-            print(new_model)
+            print(new_row[0], new_row[1], new_row[2], new_row[3])
             new_counter += 1
 
         else:
-            print(old_model)
+            # print(old_row[0], old_row[1], old_row[2], old_row[3], old_row[4], old_row[5])
             new_counter += 1
-            loop_counter += 1
-
-        # if new_model != old_model:
-        #     print(new_model)
-        #     print(old_model)
-        #     new_counter += 1
-
-        # loop_counter += 1
-        # new_counter += 1
-
-
-    pass
+            old_counter += 1
+# ----------------------
 if __name__ == "__main__":
-    # print(master_data_to_list(1992)[0])
-    compare_external_source_to_master_data(2020)
+    compare_external_source_to_master_data(1992)
