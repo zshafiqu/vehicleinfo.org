@@ -39,6 +39,17 @@ import csv
 def get_external_source_filepath(year):
     return 'external_master/'+str(year)+'.csv'
 # ----------------------
+def convert_external_data_to_list(year):
+    # Get current filename
+    curr_filename = get_external_source_filepath(year)
+
+    # Open file and get a cursor to read the file
+    with open(curr_filename) as file:
+        data_list = list(csv.reader(file))
+
+    # Return the new list
+    return data_list
+# ----------------------
 # Prints external source files within a year range
 def read_external_sources(start_year, end_year):
 
@@ -49,16 +60,28 @@ def read_external_sources(start_year, end_year):
 
         # Open file and get a cursor to read the file
         with open(curr_filename) as file:
-            reader = csv.reader(file)
+            data_list = list(csv.reader(file))
+            print(data_list[1])
+            # reader = csv.reader(file)
             # Move one row to avoid headers
-            next(reader)
+            # next(reader)
 
-            for row in reader:
-                print(row[0], row[1], row[2])
+            # make a list of all the rows
+            # data_list = list()
+            # counter = 1
+            # print(reader[counter])
+            # for row in reader:
+                # print
 
         # Increment the current year
         start_year += 1
     return None
 # ----------------------
+def compare_external_source_to_master_data(start_year, end_year):
+    # Open both new and old files
+    # Compare the two row by row
+    # If the new row matches the old row, write the old row
+    # if the new row does not match the old row, write the new row
+    pass
 if __name__ == "__main__":
-    # read_external_sources(1992, 1992)
+    print(convert_external_data_to_list(1992))
