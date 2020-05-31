@@ -124,7 +124,7 @@ def scrape_styles_data(year, make, model, bodystyles):
         index = 0
         for style in bodystyles:
             url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'+'?bodystyle='+style
-            soup = get_soup_from_urloup(url)
+            soup = get_soup_from_url(url)
 
             try:
                 result = parse_soup_to_dictionary(soup)
@@ -153,7 +153,7 @@ def create_updated_csv_directory():
     try:
         os.mkdir(new_path)
     except OSError:
-        print('Failed to create directory '+path)
+        print('Failed to create directory '+new_path)
 # ----------------------
 # def add_styles_for_new_vehicles(year):
 #     # Get source path to read from, and destination path to write to
