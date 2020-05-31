@@ -119,11 +119,20 @@ def compare_external_source_to_master_data(year):
 
         if new_model != old_model:
             print(new_model)
-            # print(old_model)
             new_counter += 1
 
-        loop_counter += 1
-        new_counter += 1
+        else:
+            print(old_model)
+            new_counter += 1
+            loop_counter += 1
+
+        # if new_model != old_model:
+        #     print(new_model)
+        #     print(old_model)
+        #     new_counter += 1
+
+        # loop_counter += 1
+        # new_counter += 1
 
 
     pass
