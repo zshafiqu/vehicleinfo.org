@@ -47,7 +47,7 @@ def get_master_source_filepath(year):
 # ----------------------
 # Helper to get the target destination filepath, which will be the outer directory for now
 def get_new_destination_filepath(year):
-    return str(year)+'.csv'
+    return 'updated_CSVs/'+str(year)+'.csv'
 # ----------------------
 def external_data_to_list(year):
     # Get current filename
@@ -76,7 +76,7 @@ def master_data_to_list(year):
 def clear_double_quotes(string):
     return str(string).replace('"',"'")
 # ----------------------
-def compare_external_source_to_master_data(year):
+def add_external_source_data_to_master_data(year):
     # Get new file path (destination)
     new_path = get_new_destination_filepath(year)
 
@@ -113,7 +113,13 @@ def compare_external_source_to_master_data(year):
                 writer_object.writerow([old_row[0], old_row[1], old_row[2], old_row[3], old_row[4], old_row[5]])
                 new_counter += 1
                 old_counter += 1
-
+    return None
+# ----------------------
+def add_years_in_range(start_year, end_year):
+    while start_year <= end_year:
+        add_external_source_data_to_master_data(start_year)
+        start_year += 1
+    return None
 # ----------------------
 if __name__ == "__main__":
-    compare_external_source_to_master_data(2020)
+    add_years_in_range(1992, 2020)
