@@ -36,8 +36,8 @@
 import csv
 # ----------------------
 # Helper to get the external source filename given a year
-def get_external_source_name(year):
-    return 'external_master'+str(year)+'.csv'
+def get_external_source_filepath(year):
+    return 'external_master/'+str(year)+'.csv'
 # ----------------------
 # Prints external source files within a year range
 def read_external_sources(start_year, end_year):
@@ -45,7 +45,7 @@ def read_external_sources(start_year, end_year):
     # Go through full range
     while start_year <= end_year:
         # Get current file name
-        curr_filename = get_external_source_name(start_year)
+        curr_filename = get_external_source_filepath(start_year)
 
         # Open file and get a cursor to read the file
         with open(curr_filename) as file:
@@ -54,6 +54,11 @@ def read_external_sources(start_year, end_year):
             next(reader)
 
             for row in reader:
-                print(row)
+                print(row[0], row[1], row[2])
+
+        # Increment the current year
+        start_year += 1
     return None
 # ----------------------
+if __name__ == "__main__":
+    # read_external_sources(1992, 1992)
