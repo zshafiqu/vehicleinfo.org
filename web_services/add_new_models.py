@@ -115,7 +115,18 @@ def add_external_source_data_to_master_data(year):
                 old_counter += 1
     return None
 # ----------------------
+def create_updated_csv_directory():
+    import os, pathlib
+    curr_path = str(pathlib.Path().absolute())
+    new_path = curr_path+'/updated_CSVs'
+    try:
+        os.mkdir(new_path)
+    except OSError:
+        print('Failed to create directory '+path)
+# ----------------------
 def add_years_in_range(start_year, end_year):
+    create_updated_csv_directory()
+
     while start_year <= end_year:
         add_external_source_data_to_master_data(start_year)
         start_year += 1
