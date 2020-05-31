@@ -69,29 +69,29 @@ def master_data_to_list(year):
 # ----------------------
 # Prints external source files within a year range
 def read_external_sources(start_year, end_year):
-
-    # Go through full range
-    while start_year <= end_year:
-        # Get current file name
-        curr_filename = get_external_source_filepath(start_year)
-
-        # Open file and get a cursor to read the file
-        with open(curr_filename) as file:
-            data_list = list(csv.reader(file))
-            print(data_list[1])
-            # reader = csv.reader(file)
-            # Move one row to avoid headers
-            # next(reader)
-
-            # make a list of all the rows
-            # data_list = list()
-            # counter = 1
-            # print(reader[counter])
-            # for row in reader:
-                # print
-
-        # Increment the current year
-        start_year += 1
+    #
+    # # Go through full range
+    # while start_year <= end_year:
+    #     # Get current file name
+    #     curr_filename = get_external_source_filepath(start_year)
+    #
+    #     # Open file and get a cursor to read the file
+    #     with open(curr_filename) as file:
+    #         data_list = list(csv.reader(file))
+    #         print(data_list[1])
+    #         # reader = csv.reader(file)
+    #         # Move one row to avoid headers
+    #         # next(reader)
+    #
+    #         # make a list of all the rows
+    #         # data_list = list()
+    #         # counter = 1
+    #         # print(reader[counter])
+    #         # for row in reader:
+    #             # print
+    #
+    #     # Increment the current year
+    #     start_year += 1
     return None
 # ----------------------
 def compare_external_source_to_master_data(year):
@@ -102,10 +102,31 @@ def compare_external_source_to_master_data(year):
     old_list = master_data_to_list(year)
     new_list = external_data_to_list(year)
 
-    loop_counter = 1
+    loop_counter = 0
+    new_counter = 0
     # for row in new_list:
+    while new_counter != len(new_list):
+
+        old_row = old_list[loop_counter]
+        old_make = old_row[1]
+        old_model = old_row[2]
+        print(old_model)
+
+        new_row = new_list[new_counter]
+        new_make = new_row[1]
+        new_model = new_row[2]
+        print(new_model)
+
+        if new_model != old_model:
+            print(new_model)
+            print(old_model)
+            new_counter += 1
+
+        loop_counter += 1
+        new_counter += 1
 
 
     pass
 if __name__ == "__main__":
-    print(master_data_to_list(1992)[0])
+    # print(master_data_to_list(1992)[0])
+    compare_external_source_to_master_data(1992)
