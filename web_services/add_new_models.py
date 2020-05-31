@@ -47,7 +47,7 @@ def get_master_source_filepath(year):
 # ----------------------
 # Helper to get the target destination filepath, which will be the outer directory for now
 def get_new_destination_filepath(year):
-    return 'updated_CSVs/'+str(year)+'.csv'
+    return 'models_added/'+str(year)+'.csv'
 # ----------------------
 def external_data_to_list(year):
     # Get current filename
@@ -105,6 +105,7 @@ def add_external_source_data_to_master_data(year):
 
             if new_model != old_model:
                 # Write the new year, make, model, and bodystyle. We'll get trim_data and image_sources later
+                print('Adding a new model to the data set: '+str(new_row))
                 writer_object.writerow([new_row[0], new_row[1], new_row[2], clear_double_quotes(new_row[3])])
                 new_counter += 1 # Move the new file's cursor until it matches the old file's cursor again
 
@@ -118,11 +119,11 @@ def add_external_source_data_to_master_data(year):
 def create_updated_csv_directory():
     import os, pathlib
     curr_path = str(pathlib.Path().absolute())
-    new_path = curr_path+'/updated_CSVs'
+    new_path = curr_path+'/models_added'
     try:
         os.mkdir(new_path)
     except OSError:
-        print('Failed to create directory '+path)
+        print('Failed to create directory '+new_path)
 # ----------------------
 def add_years_in_range(start_year, end_year):
     create_updated_csv_directory()
@@ -133,4 +134,4 @@ def add_years_in_range(start_year, end_year):
     return None
 # ----------------------
 if __name__ == "__main__":
-    add_years_in_range(1992, 2020)
+    add_years_in_range(2020, 2020)
