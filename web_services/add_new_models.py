@@ -31,6 +31,8 @@
     If a row (defined as year/make/model) exists in the new CSV and not in the master CSV,
     a new row will be created and then added into the master data set. The other colums such as trim_data and image_sources
     will remain empty.. To be filled in a later step
+
+    The result is a new CSV with new models filled in amongst the old models we already have
 '''
 # ----------------------
 import csv
@@ -43,13 +45,17 @@ def get_external_source_filepath(year):
 def get_master_source_filepath(year):
     return 'master_data/'+str(year)+'.csv'
 # ----------------------
+# Helper to get the target destination filepath, which will be the outer directory for now
+def get_new_destination_filepath(year):
+    return str(year)+'.csv'
+# ----------------------
 def external_data_to_list(year):
     # Get current filename
     curr_filename = get_external_source_filepath(year)
 
     # Open file and get a cursor to read the file
     with open(curr_filename) as file:
-        next(csv.reader(file))
+        next(csv.reader(file)) # Skip the header
         data_list = list(csv.reader(file))
 
     # Return the new list
@@ -61,70 +67,53 @@ def master_data_to_list(year):
 
     # Open file and get a cursor to read the file
     with open(curr_filename) as file:
-        next(csv.reader(file))
+        next(csv.reader(file)) # Skip the header
         data_list = list(csv.reader(file))
 
     # Return the new list
     return data_list
 # ----------------------
-# Prints external source files within a year range
-def read_external_sources(start_year, end_year):
-    #
-    # # Go through full range
-    # while start_year <= end_year:
-    #     # Get current file name
-    #     curr_filename = get_external_source_filepath(start_year)
-    #
-    #     # Open file and get a cursor to read the file
-    #     with open(curr_filename) as file:
-    #         data_list = list(csv.reader(file))
-    #         print(data_list[1])
-    #         # reader = csv.reader(file)
-    #         # Move one row to avoid headers
-    #         # next(reader)
-    #
-    #         # make a list of all the rows
-    #         # data_list = list()
-    #         # counter = 1
-    #         # print(reader[counter])
-    #         # for row in reader:
-    #             # print
-    #
-    #     # Increment the current year
-    #     start_year += 1
-    return None
+def clear_double_quotes(string):
+    return str(string).replace('"',"'")
 # ----------------------
 def compare_external_source_to_master_data(year):
-    # Open both new and old files
-    # Compare the two row by row
-    # If the new row matches the old row, write the old row
-    # if the new row does not match the old row, write the new row
-    old_list = master_data_to_list(year)
-    new_list = external_data_to_list(year)
+    # Get new file path (destination)
+    new_path = get_new_destination_filepath(year)
 
-    old_counter = 0
-    new_counter = 0
-    # for row in new_list:
-    while new_counter != len(new_list):
+    # Open the new file
+    with open(new_path, 'w') as new_file:
+        # Create writer object
+        writer_object = csv.writer(new_file)
 
-        old_row = old_list[old_counter]
-        # old_make = old_row[1]
-        old_model = old_row[2]
-        # print(old_model)
+        # Write the headers
+        writer_object.writerow(['year', 'make', 'model', 'body_styles', 'trim_data', 'image_sources'])
 
-        new_row = new_list[new_counter]
-        # new_make = new_row[1]
-        new_model = new_row[2]
-        # print(new_model)
+        # Convert the old and new files to lists
+        old_list = master_data_to_list(year)
+        new_list = external_data_to_list(year)
+        old_counter = 0
+        new_counter = 0
 
-        if new_model != old_model:
-            print(new_row[0], new_row[1], new_row[2], new_row[3])
-            new_counter += 1
+        # Go through both new and old files and compare the rows to look for any additions
+        while new_counter != len(new_list):
 
-        else:
-            # print(old_row[0], old_row[1], old_row[2], old_row[3], old_row[4], old_row[5])
-            new_counter += 1
-            old_counter += 1
+            # Get old row and new row, as well each rows models
+            old_row = old_list[old_counter]
+            old_model = old_row[2]
+            new_row = new_list[new_counter]
+            new_model = new_row[2]
+
+            if new_model != old_model:
+                # Write the new year, make, model, and bodystyle. We'll get trim_data and image_sources later
+                writer_object.writerow([new_row[0], new_row[1], new_row[2], clear_double_quotes(new_row[3])])
+                new_counter += 1 # Move the new file's cursor until it matches the old file's cursor again
+
+            else:
+                # Write the old row's info, its not a new addition and we've already got its info
+                writer_object.writerow([old_row[0], old_row[1], old_row[2], old_row[3], old_row[4], old_row[5]])
+                new_counter += 1
+                old_counter += 1
+
 # ----------------------
 if __name__ == "__main__":
-    compare_external_source_to_master_data(1992)
+    compare_external_source_to_master_data(2020)
