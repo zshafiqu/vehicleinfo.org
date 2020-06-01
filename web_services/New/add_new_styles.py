@@ -1,7 +1,34 @@
 '''
     May 30, 2020
-    Script to scrape the styles for newly added vehicles
-    This would be run following 'add_new_models.py'
+
+    PREFACE:
+        - Script to scrape the styles for newly added vehicles
+        - This would be run following 'add_new_models.py', where new models would be added from the external source
+        - At this point, those new models are missing their 'trim_data' and 'image_sources' columns because they haven't
+        been scraped for. That is where this script comes in
+
+    GENERAL FLOW:
+        - This script starts by converting a given year's CSV file into a list of rows on memory within the program
+        - This list of rows is then passed to a parallel processing module called concurrent.futures
+        - This parallel processing module creates multiple threads, and processes one row at a time
+        - Once all the rows are processed, they are returned in a 'result' list
+        - This result list is passed to a writer function, that sorts the rows in ascending order and writes them to new CSVs
+        - The writer also checks to see if its an old row or new row, and writes an empty string for the 'image_data' column on new rows, because
+        that data is scraped for after this
+
+    HOW IS EACH ROW PROCESSED?
+        - For each row, it attempts to exctract row[4], which would be the 'trim_data' column
+        - If that extraction is successful, that tells the program that this isn't a new vehicle, so just return that row as is
+
+        - If the extraction fails, great, we know this is a new make and model for us that we need to get data from
+        - Then for each vehicle model, we make a request to KBB to get the HTML we need using BeautifulSoup and SoupStrainer
+        - Note, some vehicles have multiple body styles, so we query models by each bodystyle to get EVERY trim
+
+        - The HTML is returned, and converted to two lists, the headings which are the trims, and the attributes which are things like MPG, seating, HP, etc
+        - These two lists are then passed to another method that matches the trims and attributes together, which are then returned as a dictionary
+        - Once we have the dictionary with new data, we create a new row and append this dictionary to that row
+        - That row is then considered updated, and passed back to the parallel processing part of the program where its stored
+        in a large result list and written to output
 '''
 # ----------------------
 from bs4 import BeautifulSoup, SoupStrainer
@@ -304,6 +331,7 @@ def update(year):
     return None
 # ----------------------
 if __name__ == '__main__':
+    print("you're in add_new_styles.py")
     # create_updated_csv_directory()
     # update(2020)
 # ----------------------
