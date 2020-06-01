@@ -1,7 +1,7 @@
 # ----------------------
-import lib.add_new_models as ANM
-import lib.add_new_styles as ANS
-import lib.add_new_images as ANI
+import scraping_lib.add_new_models as ANM
+import scraping_lib.add_new_styles as ANS
+import scraping_lib.add_new_images as ANI
 import os, pathlib
 # ----------------------
 '''
