@@ -1,131 +1,131 @@
 from bs4 import BeautifulSoup, SoupStrainer
 import requests, json, os, mysql.connector, csv, ast, random
 # Script to scrape images for each vehicle in our list
-''' The goal of this script is to store the source for each image in our database '''
+# ''' The goal of this script is to store the source for each image in our database '''
+# # ----------------------
+# # def scrapeEdmunds(year, make, model):
+# #     # URL to scrape from
+# #     url = 'https://www.edmunds.com/'+make+'/'+model+'/'+year+'/review/'
+# #     # url = 'https://www.edmunds.com/lexus/es-300/2001/review/'
+# #
+# #     # required to emulate broswer user agent
+# #     headers = {
+# #         'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36',
+# #         'Origin': 'http://example.com',
+# #         'Referer': 'http://example.com/some_page'
+# #         }
+# #
+# #     # get html
+# #     source = requests.get(url, headers=headers).text
+# #     soup = BeautifulSoup(source, 'lxml')
+# #     imgSource = soup.findAll("img", {"class":"w-100"})
+# #
+# #     # Run Check
+# #     if len(imgSource) is 0:
+# #         imgSource = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
+# #     else:
+# #         imgSource = imgSource[0]['src']
+# #
+# #     # imgSource = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
+# #     # print(imgSource)
+# #     return imgSource
+# # ----------------------
+# def getHeader():
+#     # return a random user agent header based on generated number
+#     list = [
+#             {
+#              'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36',
+#              'Origin': 'http://example.com',
+#              'Referer': 'http://example.com/some_page'
+#              },
+#             {
+#              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
+#              'Origin': 'http://example.com',
+#              'Referer': 'http://example.com/some_page'
+#              },
+#             {
+#              'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36',
+#              'Origin': 'http://example.com',
+#              'Referer': 'http://example.com/some_page'
+#              },
+#             {
+#              'User-Agent': 'Mozilla/5.0 (X11; OpenBSD i386) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36',
+#              'Origin': 'http://example.com',
+#              'Referer': 'http://example.com/some_page'
+#             },
+#             {
+#              'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36',
+#              'Origin': 'http://example.com',
+#              'Referer': 'http://example.com/some_page'
+#              },
+#             {
+#              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36',
+#              'Origin': 'http://example.com',
+#              'Referer': 'http://example.com/some_page'
+#              },
+#             {
+#              'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
+#              'Origin': 'http://example.com',
+#              'Referer': 'http://example.com/some_page'
+#              },
+#             {
+#              'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.93 Safari/537.36',
+#              'Origin': 'http://example.com',
+#              'Referer': 'http://example.com/some_page'
+#              },
+#             {
+#              'User-Agent': 'Mozilla/5.0 (Windows NT 4.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36',
+#              'Origin': 'http://example.com',
+#              'Referer': 'http://example.com/some_page'
+#              },
+#             {
+#              'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+#              'Origin': 'http://example.com',
+#              'Referer': 'http://example.com/some_page'
+#              },
+#             {
+#              'User-Agent': 'Mozilla/5.0 (X11; U; Linux i586; en-US) AppleWebKit/533.2 (KHTML, like Gecko) Chrome/5.0.342.1 Safari/533.2',
+#              'Origin': 'http://example.com',
+#              'Referer': 'http://example.com/some_page'
+#              }
+#         ]
+#     # list is of size 11
+#     curr = random.randrange(0, 10)
+#     return list[curr]
 # ----------------------
-# def scrapeEdmunds(year, make, model):
-#     # URL to scrape from
-#     url = 'https://www.edmunds.com/'+make+'/'+model+'/'+year+'/review/'
-#     # url = 'https://www.edmunds.com/lexus/es-300/2001/review/'
+# def getSoup(url):
+#     # Get soup via URL
+#     print('About to make request')
+#     i = 0
 #
-#     # required to emulate broswer user agent
-#     headers = {
-#         'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36',
-#         'Origin': 'http://example.com',
-#         'Referer': 'http://example.com/some_page'
-#         }
+#     # Continually try to make this request until its successful
+#     while True:
+#         if i == 15:
+#             # OR until 15 times, at which point stop wasting time and break
+#             page = ''
+#             break
+#         try:
+#             # Generate a new header [required to emulate browser behavior]
+#             headers = getHeader()
+#             # Request for the resource, timeout after 20 seconds (for hanging requests)
+#             page = requests.get(url, headers=headers, timeout=20).text
+#         except:
+#             # If the request fails, log it, and try again
+#             print('Fail on request #'+str(i)+', trying again')
+#             i += 1
+#             continue
+#         break # Break out of while loop here on success of the try block
 #
-#     # get html
-#     source = requests.get(url, headers=headers).text
-#     soup = BeautifulSoup(source, 'lxml')
-#     imgSource = soup.findAll("img", {"class":"w-100"})
+#     # Log that the request has been completed
+#     print('Finished request')
+#     # SoupStrainer sets it such that we only parse the response for items with this class tag
+#     # Helps reduce time spent doing unneccesary work
+#     onlyImgTags = SoupStrainer(class_="css-4g6ai3")
+#     # BeautifulSoup parses the page as xml for us
+#     soup = BeautifulSoup(page, 'lxml', parse_only=onlyImgTags)
 #
-#     # Run Check
-#     if len(imgSource) is 0:
-#         imgSource = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
-#     else:
-#         imgSource = imgSource[0]['src']
-#
-#     # imgSource = 'https://www.autotechemporium.com/frontend/assets/images/placeholder/inventory-full-placeholder.png'
-#     # print(imgSource)
-#     return imgSource
-# ----------------------
-def getHeader():
-    # return a random user agent header based on generated number
-    list = [
-            {
-             'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.90 Safari/537.36',
-             'Origin': 'http://example.com',
-             'Referer': 'http://example.com/some_page'
-             },
-            {
-             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
-             'Origin': 'http://example.com',
-             'Referer': 'http://example.com/some_page'
-             },
-            {
-             'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36',
-             'Origin': 'http://example.com',
-             'Referer': 'http://example.com/some_page'
-             },
-            {
-             'User-Agent': 'Mozilla/5.0 (X11; OpenBSD i386) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36',
-             'Origin': 'http://example.com',
-             'Referer': 'http://example.com/some_page'
-            },
-            {
-             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36',
-             'Origin': 'http://example.com',
-             'Referer': 'http://example.com/some_page'
-             },
-            {
-             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36',
-             'Origin': 'http://example.com',
-             'Referer': 'http://example.com/some_page'
-             },
-            {
-             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36',
-             'Origin': 'http://example.com',
-             'Referer': 'http://example.com/some_page'
-             },
-            {
-             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.93 Safari/537.36',
-             'Origin': 'http://example.com',
-             'Referer': 'http://example.com/some_page'
-             },
-            {
-             'User-Agent': 'Mozilla/5.0 (Windows NT 4.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36',
-             'Origin': 'http://example.com',
-             'Referer': 'http://example.com/some_page'
-             },
-            {
-             'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
-             'Origin': 'http://example.com',
-             'Referer': 'http://example.com/some_page'
-             },
-            {
-             'User-Agent': 'Mozilla/5.0 (X11; U; Linux i586; en-US) AppleWebKit/533.2 (KHTML, like Gecko) Chrome/5.0.342.1 Safari/533.2',
-             'Origin': 'http://example.com',
-             'Referer': 'http://example.com/some_page'
-             }
-        ]
-    # list is of size 11
-    curr = random.randrange(0, 10)
-    return list[curr]
-# ----------------------
-def getSoup(url):
-    # Get soup via URL
-    print('About to make request')
-    i = 0
-
-    # Continually try to make this request until its successful
-    while True:
-        if i == 15:
-            # OR until 15 times, at which point stop wasting time and break
-            page = ''
-            break
-        try:
-            # Generate a new header [required to emulate browser behavior]
-            headers = getHeader()
-            # Request for the resource, timeout after 20 seconds (for hanging requests)
-            page = requests.get(url, headers=headers, timeout=20).text
-        except:
-            # If the request fails, log it, and try again
-            print('Fail on request #'+str(i)+', trying again')
-            i += 1
-            continue
-        break # Break out of while loop here on success of the try block
-
-    # Log that the request has been completed
-    print('Finished request')
-    # SoupStrainer sets it such that we only parse the response for items with this class tag
-    # Helps reduce time spent doing unneccesary work
-    onlyImgTags = SoupStrainer(class_="css-4g6ai3")
-    # BeautifulSoup parses the page as xml for us
-    soup = BeautifulSoup(page, 'lxml', parse_only=onlyImgTags)
-
-    # return the soup'd data
-    return soup
+#     # return the soup'd data
+#     return soup
 # ----------------------
 def scrapeKBBImages(year, make, model, bodystyles):
     # Scrape KBB for image sources
