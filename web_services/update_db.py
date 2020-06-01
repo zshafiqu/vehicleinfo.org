@@ -1,6 +1,6 @@
 # ----------------------
-import os, mysql.connector, csv, json, ast
-from flask import jsonify
+import os, csv, json, ast
+import SQLAlchemy
 # USAGE: to create or update our database with information from any csv file
 '''
     NOTE: This script probably isn't as robust as it should be, but thats
@@ -47,9 +47,9 @@ def file_to_database(vehicles_year, database_object):
     # --------------------------------------------------------------------
     # ID | Year | Make | Model | Body-Styles | Trim-Data | Images-Sources
     # --------------------------------------------------------------------
-    ''' curr.execute(
-        "CREATE TABLE "+tablename+" (id INT AUTO_INCREMENT PRIMARY KEY, year INT, make TEXT, model TEXT, body_styles TEXT, trim_data JSON, image_sources JSON)"
-        ) '''
+    # curr.execute(
+    #     "CREATE TABLE "+tablename+" (id INT AUTO_INCREMENT PRIMARY KEY, year INT, make TEXT, model TEXT, body_styles TEXT, trim_data JSON, image_sources JSON)"
+    #     )
 
     # Traverse the file to do the operations on it
     with open(fileroute) as file:
