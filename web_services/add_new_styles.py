@@ -7,12 +7,13 @@
 from bs4 import BeautifulSoup, SoupStrainer
 import requests, json, os, csv, ast, random
 from generate_header import get_header
+import concurrent.futures
 # ----------------------
 # This function makes an HTTP request to KBB to gather the page's HTML and convert it to a BeautifulSoup object
 def get_soup_from_url(url):
     # Entered get_soup_from_url method, create an iterator to keep track
     # of request attempt count
-    print('Preparing to make request for data')
+    ''' print('Preparing to make request for data') '''
     iteration = 0
 
     # Contintually attempt this request until it's successful
@@ -33,14 +34,14 @@ def get_soup_from_url(url):
 
         except:
             # If the request fails, log it to stdout, then try again
-            print('Request failed on iteration #'+str(iteration)+', trying again!')
+            ''' print('Request failed on iteration #'+str(iteration)+', trying again!') '''
             iteration += 1
             continue
 
         # If we've exectued the above successfully, break out of while loop
         break
 
-    print('Request completed!')
+    ''' print('Request completed!') '''
 
     # Filter for proprietary classes that contain our data
     only_boxes = SoupStrainer("div", class_="css-130z0y1-StyledBox-default emf8dez0")
@@ -265,7 +266,7 @@ def csv_rows_to_list(year):
 def write_output(list, year):
     # Get source path to read from, and destination path to write to
     destination_path = get_destination_filepath(year)
-
+    list.sort()
     with open(destination_path, 'w') as destination:
         # Create writer object
         writer = csv.writer(destination)
@@ -275,7 +276,10 @@ def write_output(list, year):
         # Traverse rows in source file
         for row in list:
             # print(row)
-            writer.writerow(row)
+            try:
+                writer.writerow([row[0], row[1], row[2], row[3], row[4], row[5]])
+            except:
+                writer.writerow([row[0], row[1], row[2], row[3], row[4], ''])
 # ----------------------
 # Opens source CSVs, parses them, makes call to get new data, then writes the new data
 def dispatcher_for_row_from_list(row):
@@ -290,12 +294,14 @@ def dispatcher_for_row_from_list(row):
         new_row = row
     except:
         # If this fails, we just got a hit. So pass this to the soup function(s)
-        print('No style information for:'+str(row))
+        ''' print('No style information for:'+str(row)) '''
         data = row_dispatcher(row)
+        # print(data)
         # print(data)
         # Write – year , make , model, body_styles, trim_data,  image_sources
         temp = [row[0], row[1], row[2], row[3], data]
-        print('Finished row operations for:'+str(row))
+        print(temp)
+        ''' print('Finished row operations for:'+str(row)) '''
         new_row = temp
         # results.append(temp)
     return new_row
@@ -305,7 +311,7 @@ def update(year):
     rows = csv_rows_to_list(year)
     results = []
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=32) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=64) as executor:
         stuff = { executor.submit(dispatcher_for_row_from_list, row): row for row in rows }
 
         for thread_result in concurrent.futures.as_completed(stuff):
@@ -326,7 +332,7 @@ def update(year):
 #     rows = csv_rows_to_list(year)
 # data = csv_rows_to_list(2020)
 # write_output(data, 2020)
-
+update(2020)
 
 # ----------------------
 ''' NOTE : BELOW IS THE OLD METHOD FOR PARSING SOUP TO A DICTIONARY '''
