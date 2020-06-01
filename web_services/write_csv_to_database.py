@@ -74,5 +74,19 @@ def write_csv(year):
             id += 1
     return None
 # ----------------------
+def write_csv_in_range():
+    start_year = int(input("Enter the start year you'd like to write to the database: "))
+    end_year = int(input("Enter the end year you'd like to to write to the database: "))
+
+    while start_year <= end_year:
+        print('*******************************************************')
+        print('Currently working on '+str(start_year))
+
+        write_csv(start_year)
+
+        print('Finished '+str(start_year))
+        start_year += 1
+# ----------------------
 if __name__ == "__main__":
-    write_csv(2020)
+    write_csv_in_range()
+# ----------------------
