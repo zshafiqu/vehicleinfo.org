@@ -205,11 +205,50 @@ def row_dispatcher(row):
     # Return results
     return styles_data
 # ----------------------
-# Opens source CSVs, parses them, makes call to get new data, then writes the new data
-def add_styles_for_new_vehicles(year):
+# # Opens source CSVs, parses them, makes call to get new data, then writes the new data
+# def add_styles_for_new_vehicles(year):
+#     # Get source path to read from, and destination path to write to
+#     source_path = get_source_filepath(year)
+#     destination_path = get_destination_filepath(year)
+#     list = []
+#
+#     #Open source file to find the vehicles that have blanks for trim_data
+#     with open(source_path) as source:
+#         # Get reader object, skip first row as its the header
+#         reader = csv.reader(source)
+#         next(reader)
+#
+#         with open(destination_path, 'w') as destination:
+#             # Create writer object
+#             writer = csv.writer(destination)
+#             # Write the headers on the first row of new file
+#             writer.writerow(['year', 'make', 'model', 'body_styles', 'trim_data', 'image_sources'])
+#
+#             # Traverse rows in source file
+#             for row in reader:
+#                 # See if there's anything in the styles column
+#                 try:
+#                     temp = row[4] # If this executes successfully, just write the row as is
+#                     # Write – year , make , model, body_styles, trim_data,  image_sources
+#                     writer.writerow([row[0], row[1], row[2], row[3], row[4], row[5]])
+#                     list.append(row)
+#                 except:
+#                     # If this fails, we just got a hit. So pass this to the soup function(s)
+#                     # print('No style information for:'+str(row))
+#                     data = row_dispatcher(row)
+#                     print(data)
+#                     # Write – year , make , model, body_styles, trim_data,  image_sources
+#                     writer.writerow([row[0], row[1], row[2], row[3], data])
+#                     # print('Finished row operations for:'+str(row))
+#                     list.append(row)
+#
+#     print(list)
+# ----------------------
+# ----------------------
+def csv_rows_to_list(year):
     # Get source path to read from, and destination path to write to
     source_path = get_source_filepath(year)
-    destination_path = get_destination_filepath(year)
+    list = []
 
     #Open source file to find the vehicles that have blanks for trim_data
     with open(source_path) as source:
@@ -217,30 +256,78 @@ def add_styles_for_new_vehicles(year):
         reader = csv.reader(source)
         next(reader)
 
-        with open(destination_path, 'w') as destination:
-            # Create writer object
-            writer = csv.writer(destination)
-            # Write the headers on the first row of new file
-            writer.writerow(['year', 'make', 'model', 'body_styles', 'trim_data', 'image_sources'])
+        # Traverse rows in source file
+        for row in reader:
+            list.append(row)
 
-            # Traverse rows in source file
-            for row in reader:
-                # See if there's anything in the styles column
-                try:
-                    temp = row[4] # If this executes successfully, just write the row as is
-                    # Write – year , make , model, body_styles, trim_data,  image_sources
-                    writer.writerow([row[0], row[1], row[2], row[3], row[4], row[5]])
-                except:
-                    # If this fails, we just got a hit. So pass this to the soup function(s)
-                    print('No style information for:'+str(row))
-                    data = row_dispatcher(row)
-                    print(data)
-                    # Write – year , make , model, body_styles, trim_data,  image_sources
-                    writer.writerow([row[0], row[1], row[2], row[3], data])
-                    print('Finished row operations for:'+str(row))
+    return list
 # ----------------------
-create_updated_csv_directory()
-add_styles_for_new_vehicles(2020)
+def write_output(list, year):
+    # Get source path to read from, and destination path to write to
+    destination_path = get_destination_filepath(year)
+
+    with open(destination_path, 'w') as destination:
+        # Create writer object
+        writer = csv.writer(destination)
+        # Write the headers on the first row of new file
+        writer.writerow(['year', 'make', 'model', 'body_styles', 'trim_data', 'image_sources'])
+
+        # Traverse rows in source file
+        for row in list:
+            # print(row)
+            writer.writerow(row)
+# ----------------------
+# Opens source CSVs, parses them, makes call to get new data, then writes the new data
+def dispatcher_for_row_from_list(row):
+    # Get source path to read from, and destination path to write to
+    # results = []
+    try:
+        temp = row[4] # If this executes successfully, just write the row as is
+        # Write – year , make , model, body_styles, trim_data,  image_sources
+        # writer.writerow([row[0], row[1], row[2], row[3], row[4], row[5]])
+        # temp = [row[0], row[1], row[2], row[3], row[4], row[5]]
+        # results.append(row)
+        new_row = row
+    except:
+        # If this fails, we just got a hit. So pass this to the soup function(s)
+        print('No style information for:'+str(row))
+        data = row_dispatcher(row)
+        # print(data)
+        # Write – year , make , model, body_styles, trim_data,  image_sources
+        temp = [row[0], row[1], row[2], row[3], data]
+        print('Finished row operations for:'+str(row))
+        new_row = temp
+        # results.append(temp)
+    return new_row
+# ----------------------
+def update(year):
+    create_updated_csv_directory()
+    rows = csv_rows_to_list(year)
+    results = []
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=32) as executor:
+        stuff = { executor.submit(dispatcher_for_row_from_list, row): row for row in rows }
+
+        for thread_result in concurrent.futures.as_completed(stuff):
+            try:
+                data = thread_result.result()
+                results.append(data)
+            except Exception as e:
+                continue
+
+
+    write_output(results, year)
+    return None
+# ----------------------
+# create_updated_csv_directory()
+# add_styles_for_new_vehicles(2020)
+# print(csv_rows_to_list(2020))
+# def do_work(year):
+#     rows = csv_rows_to_list(year)
+# data = csv_rows_to_list(2020)
+# write_output(data, 2020)
+
+
 # ----------------------
 ''' NOTE : BELOW IS THE OLD METHOD FOR PARSING SOUP TO A DICTIONARY '''
 # def parse_soup_to_dictionary(soup):
