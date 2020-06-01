@@ -126,11 +126,6 @@ def create_updated_csv_directory():
         print('Failed to create directory '+new_path)
 # ----------------------
 def add_models(year):
-    # create_updated_csv_directory()
     add_external_source_data_to_master_data(year)
-    #
-    # while start_year <= end_year:
-    #     add_external_source_data_to_master_data(start_year)
-    #     start_year += 1
     return None
 # ----------------------

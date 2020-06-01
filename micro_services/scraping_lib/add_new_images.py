@@ -247,7 +247,7 @@ def add_images(year):
     results = []
 
     # Use thread pool to execute multiple requests concurrently, also max_workers can be set depending on system env
-    with concurrent.futures.ThreadPoolExecutor(max_workers=64) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=128) as executor:
         # For each row in rows, pass it as its own single thread to the dispatcher_for_row_from_list() method
         # Begin load operations, each dict entry looks like {<Future at 'address' state=pending>: row}
         row_futures = { executor.submit(dispatcher_for_row_from_list, row): row for row in rows }

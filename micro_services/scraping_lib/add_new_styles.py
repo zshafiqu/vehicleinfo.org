@@ -30,6 +30,12 @@
         - That row is then considered updated, and passed back to the parallel processing part of the program where its stored
         in a large result list and written to output
 
+    ADDING A NEW YEAR?
+        - If adding a whole new year to the data set (a year that doesn't already exist) :
+        - Create an empty CSV with that year in the old master directory
+        - The script will do its comparison, and none of the lines will be the same, so it'll just merge EVERYTHING into the new one.
+        - OR you could just manually add the new year's CSV file to the 'add_new_styles'
+
     METHOD SIGNATURES:
         - get_soup_from_url(url):
         - convert_soup_to_text_list(soup):
@@ -330,7 +336,7 @@ def add_styles(year):
     results = []
 
     # Use thread pool to execute multiple requests concurrently, also max_workers can be set depending on system env
-    with concurrent.futures.ThreadPoolExecutor(max_workers=64) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=128) as executor:
         # For each row in rows, pass it as its own single thread to the dispatcher_for_row_from_list() method
         # Begin load operations, each dict entry looks like {<Future at 'address' state=pending>: row}
         row_futures = { executor.submit(dispatcher_for_row_from_list, row): row for row in rows }
