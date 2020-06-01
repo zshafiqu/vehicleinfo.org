@@ -72,17 +72,6 @@ def write_csv(year):
 
             # First create a template raw query that we can fill in with the row information later
             sql = "INSERT INTO "+table_name+" (year, make, model, body_styles, trim_data, image_sources) VALUES (%s, %s, %s, %s, %s, %s)"
-            #
-            # trim_data = json_conversion(row[4])
-            # image_sources = json_conversion(row[5])
-            # # Values list
-            # list = []
-            # list.append(str(row[0])) # Year
-            # list.append(str(row[1])) # Make
-            # list.append(str(row[2])) # Model
-            # list.append(str(row[3])) # Body_styles
-            # list.append(trim_data) # Trim_data
-            # list.append(image_sources) # Image_sources
 
             ordered_list = [row[0], row[1], row[2], row[3], row[4], row[5]]
 
