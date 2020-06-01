@@ -134,5 +134,3 @@ def add_models(year):
     #     start_year += 1
     return None
 # ----------------------
-if __name__ == "__main__":
-    # add_years_in_range(2020, 2020)

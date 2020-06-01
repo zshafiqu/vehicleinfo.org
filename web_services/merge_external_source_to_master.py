@@ -61,3 +61,5 @@ def run_merge():
 
     move_to_master_data()
 # ----------------------
+if __name__ == '__main__':
+    run_merge()

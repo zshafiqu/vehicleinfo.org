@@ -48,7 +48,7 @@
 # ----------------------
 from bs4 import BeautifulSoup, SoupStrainer
 import requests, json, os, csv, ast, random
-from generate_header import get_header
+from .generate_header import get_header
 import concurrent.futures
 # ----------------------
 # This function makes an HTTP request to KBB to gather the page's HTML and convert it to a BeautifulSoup object
@@ -346,9 +346,4 @@ def add_styles(year):
     # Once this whole multithreaded operation completes, we pass our LARGE resulting list to our write_output function
     write_output(results, year)
     return None
-# ----------------------
-if __name__ == '__main__':
-    # print("you're in add_new_styles.py")
-    # create_updated_csv_directory()
-    # update(2020)
 # ----------------------
