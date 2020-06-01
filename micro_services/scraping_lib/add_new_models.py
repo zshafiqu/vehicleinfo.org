@@ -24,7 +24,7 @@
     - At the point of running this service, we don't have and trim information, or image sources
 
     USAGE:
-    - Download the new CSVs from the above URL, and place the external source CSVs into their own folder
+    - Download the new CSVs from the above URL, and place the external source CSVs into their own folder called 'external_master'
     - Ensure that you have the 'master_data' available in the same directory
 
     The script will open the new CSVs, and the master CSVs, and compare each row.
