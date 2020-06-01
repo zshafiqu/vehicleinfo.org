@@ -27,18 +27,6 @@ def get_file_by_year(year):
 def get_table_name(year):
     return str(year)+'_vehicles'
 # ----------------------
-def convert_string_to_json(string):
-    temp = string
-    try:
-        # Evaluate as a list literal, then evaluate to JSON
-        string = ast.literal_eval(string)
-        string = json.dumps(string)
-    except:
-        # If the above fails, return the OG string we stored in 'temp'
-        return temp
-    # If all works out, return the string converted to JSON
-    return string
-# ----------------------
 def write_csv(year):
     # Create a cursor object from the database_object
     db_object = get_database_object()
@@ -57,6 +45,7 @@ def write_csv(year):
     # --------------------------------------------------------------------
 
     # Executing this as a raw query
+    # NOTE - storing the body_styles, trim_data, and image_sources as plain text because we can cast it to JSON later within our server
     curr.execute(
         "CREATE TABLE "+table_name+" (id INT AUTO_INCREMENT PRIMARY KEY, year INT, make TEXT, model TEXT, body_styles TEXT, trim_data TEXT, image_sources TEXT)"
         )
