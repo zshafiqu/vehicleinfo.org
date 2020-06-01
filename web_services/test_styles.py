@@ -95,6 +95,64 @@ def parse_soup_to_dictionary(soup):
 
     return outer_map
 # ----------------------
+def extract_soup_text_to_list(soup):
+    items = []
+
+    for item in soup:
+        temp = item.text
+        items.append(temp)
+
+    return items
+# ----------------------
+def mappify_headings_and_attributes_from_list(headings, attributes):
+    # We have a list of headings (the trims)
+    # and list of attributes (all attributes for all trims, we need to slice this properly)
+    '''
+    An example of headings:
+        ['Dealer Home Service', 'Base Style', 'TTS', 'RS']
+        len() = 4
+
+    An example of attributes:
+        ['Combined Fuel Economy', '26 MPG', 'Seating', 'Seats 4', 'Horsepower', '228 @ 4500 RPM HP', 'Engine', '4-Cyl, Turbo, 2.0 Liter', 'Combined Fuel Economy', '25 MPG', 'Seating', 'Seats 4', 'Horsepower', '288 @ 5400 RPM HP', 'Engine', '4-Cyl, Turbo, 2.0 Liter', 'Combined Fuel Economy', '23 MPG', 'Seating', 'Seats 4', 'Horsepower', '394 hp HP', 'Engine', '5-Cyl, Turbo, 2.5 Liter']
+        len() = 24
+    '''
+
+    # Use 'i' to traverse the list of headings, remember KBB added this 'Dealer Home Service' box, so be sure to skip that
+    i = 1 # 'Dealer Home Service' will always be first, so just set that to 1 so we skip it
+    j = 0 # Use 'j' as a loop control variable for the attributes list
+    trims = dict() # This will be the wrapping dictionary for our JSON object
+
+    # For each trim
+    while i < len(headings):
+
+        curr_trim = headings[i] # Current trim
+        topmost_attribute = attributes[0] # We need to know when we've finished a trim, so we use the topmost attribute as an indicator of when we've completed one trim
+        attributes_for_curr_trim = dict() # Each trim gets its own dictionary with its attributes
+        new_trim_flag = True
+
+        # Go through the list of attributes until the second to last value
+        while j < len(attributes)-1:
+            # Check if the current attribute is the topmost attribute, because that would indicate we just finished a trim and are on the next set of attributes
+            if attributes[j] == topmost_attribute and new_trim_flag == False:
+                # Set thew new_trim_flag to True indicating that we're ready to work on a new trim
+                new_trim_flag = True
+                break
+            else:
+                # Set the new_trim_flag to false cause we're currently workign on a trim
+                new_trim_flag = False
+                # Key, value mapping ... 'Combined Fuel Economy' : '26 MPG'
+                attributes_for_curr_trim[str(attributes[j])] = str(attributes[j+1])
+                 # Jump by two because we've mapped the last two values as key,value
+                j += 2
+
+        # Once the attributes have been assigned as we've broke out of the inner loop, map the trim to it's dictionary of attributes
+        trims[str(curr_trim)] = attributes_for_curr_trim
+        # Go to the next heading (trim)
+        i += 1
+
+    # By now, all attributes and trims should be parsed as the dictionary 'trims'
+    return trims
+# ----------------------
 # print()
 year = '2020'
 make = 'Audi'
@@ -106,23 +164,24 @@ soup = get_soup_from_url(url)
 headings = soup.findAll('h3')
 attributes = soup.findAll('p')
 
-a = []
-b = []
+a = extract_soup_text_to_list(headings)
+b = extract_soup_text_to_list(attributes)
 
-for heading in headings:
-    temp = heading.text
-    a.append(temp)
-
-for attribute in attributes:
-    temp = attribute.text
-    b.append(temp)
-
-
+print(len(a))
 print(a)
 
 print('\n')
 
+print(len(b))
 print(b)
+
+
+print('\n')
+
+print(mappify_headings_and_attributes_from_list(a, b))
+# ----------------------
+
+
 
 # print(soup[1])
 # dictionary = parse_soup_to_dictionary(soup)
