@@ -303,65 +303,7 @@ def update(year):
     write_output(results, year)
     return None
 # ----------------------
-# create_updated_csv_directory()
-# add_styles_for_new_vehicles(2020)
-# print(csv_rows_to_list(2020))
-# def do_work(year):
-#     rows = csv_rows_to_list(year)
-# data = csv_rows_to_list(2020)
-# write_output(data, 2020)
-create_updated_csv_directory()
-update(2020)
-
+if __name__ == '__main__':
+    # create_updated_csv_directory()
+    # update(2020)
 # ----------------------
-''' NOTE : BELOW IS THE OLD METHOD FOR PARSING SOUP TO A DICTIONARY '''
-# def parse_soup_to_dictionary(soup):
-#     '''
-#         - Every vehicle follows the same pattern with up to 4 attributes per
-#         trim; { Fuel Economy, Seating, Horsepower, Engine Size }
-#
-#         - To parse through the soup object properly, we need to consider the following;
-#             1. The length of the headings will tell us how many trims there are ( len(headings) = 3)
-#             2. The length of the attributes is a function of ( 8 * len(headings) )
-#             3. Attributes are split by a key, value mapping
-#             4. Thus, len(attributes) = 24
-#
-#         - The implementation of parsing would be O( m*n ) for each trims
-#         - You create a dictionary until you've reached counter = ( heading_number * 8 )
-#
-#         - See pseudocode below;
-#             for heading in headings:
-#                 for attribute in attributes:
-#                     go until you've finished this trim's attributes
-#
-#             dictionary : {
-#                 trim : { attributes },
-#                 trim : { attributes },
-#                 etc.
-#             }
-#     '''
-#     headings = soup.findAll("h3")
-#     attributes = soup.findAll("p")
-#     outer_map = dict()
-#
-#     i = 0
-#     j = 0
-#
-#     while i < len(headings):
-#         z = 0
-#         inner_map = dict()
-#
-#         while j < len(attributes):
-#             if z > 7:
-#                 break
-#             else:
-#                 inner_map[str(attributes[j].text)] = str(attributes[j+1].text)
-#
-#             j += 2
-#             z += 2
-#
-#         outer_map[str(headings[i].text)] = inner_map
-#         i += 1
-#
-#     return outer_map
-# # ----------------------
