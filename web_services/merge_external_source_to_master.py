@@ -40,10 +40,11 @@ def move_to_master_data():
         print('Failed to copy directory from '+old_path+' to '+new_path)
 # ----------------------
 def run_merge():
-    start_year = int(input("Enter the start year you'd like to update"))
-    end_year = int(input("Enter the end year you'd like to update"))
+    start_year = int(input("Enter the start year you'd like to update: "))
+    end_year = int(input("Enter the end year you'd like to update: "))
 
     # Create all needed directorys
+    create_new_master_data_directory()
     ANM.create_updated_csv_directory()
     ANS.create_styles_csv_directory()
     ANI.create_images_csv_directory()
@@ -53,7 +54,7 @@ def run_merge():
         print('Currently working on '+str(start_year))
 
         ANM.add_models(start_year)
-        ANS.add_images(start_year)
+        ANS.add_styles(start_year)
         ANI.add_images(start_year)
 
         print('Finished '+str(start_year))
