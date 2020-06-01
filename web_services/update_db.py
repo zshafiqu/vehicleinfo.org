@@ -17,7 +17,7 @@ username = os.environ.get('DB_USER')
 dbname = os.environ.get('DB_NAME')
 passwd = os.environ.get('DB_PASS')
 server = os.environ.get('DB_SERVER')
-port = os.environ.get('DB_PORT')
+port = int(os.environ.get('DB_PORT'))
 # ----------------------
 def json_conversion(somestring):
     temp = somestring
@@ -99,7 +99,7 @@ def connect_to_db(host, port, user, password, database):
 # ----------------------
 def file_pathify(year):
     # Return file path for given year
-    return 'master_data/'+str(year)+'.csv'
+    return 'new_master_data/'+str(year)+'.csv'
 # ----------------------
 def patch_range(min, max):
     # Connect with global variables
@@ -116,4 +116,4 @@ def patch_range(min, max):
 
         counter += 1
 # ----------------------
-# patch_range(2019, 2020)
+patch_range(2019, 2020)
