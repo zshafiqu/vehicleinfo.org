@@ -1,7 +1,6 @@
 # ----------------------
 import scraping_lib.add_new_models as ANM
-import scraping_lib.add_new_styles as ANS
-import scraping_lib.add_new_images as ANI
+import scraping_lib.pull_data_for_models as PDFM
 import os, pathlib, shutil
 # ----------------------
 '''
@@ -37,9 +36,9 @@ def create_new_master_data_directory():
 def move_to_new_master_data():
     curr_path = str(pathlib.Path().absolute())
     new_path = curr_path+'/new_master_data'
-    old_path = curr_path+'/images_added'
+    old_path = curr_path+'/data_pulled'
     try:
-        shutil.copy(old_path, new_path)
+        shutil.move(old_path, new_path)
     except OSError:
         print('Failed to copy directory from '+old_path+' to '+new_path)
 # ----------------------
@@ -63,17 +62,20 @@ def run_merge():
 
     # Create all needed directorys
     create_new_master_data_directory()
+    # Create the models added directory
     ANM.create_updated_csv_directory()
-    ANS.create_styles_csv_directory()
-    ANI.create_images_csv_directory()
+    # Create the data pulled directory
+    PDFM.create_data_pulled_csv_directory()
+
+
 
     while start_year <= end_year:
         print('*******************************************************')
         print('Currently working on '+str(start_year))
 
+        # Add the new models from external source to 'models_added'
         ANM.add_models(start_year)
-        ANS.add_styles(start_year)
-        ANI.add_images(start_year)
+        PDFM.entry_point_for_pull_data_by_year(start_year)
 
         print('Finished '+str(start_year))
         start_year += 1

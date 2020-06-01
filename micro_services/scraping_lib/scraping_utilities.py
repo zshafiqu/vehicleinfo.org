@@ -53,9 +53,6 @@
 '''
 # ----------------------
 from bs4 import BeautifulSoup, SoupStrainer
-import requests, json, os, csv, ast, random
-from generate_header import get_header
-import concurrent.futures
 # ----------------------
 # This function takes a soup object, and converts it into a list based on all the inner texts from the HTML
 def convert_soup_to_text_list(soup):
@@ -141,6 +138,7 @@ def parse_soup_to_styles_dictionary(soup):
     # Return the JSON ready dict
     return dictionary
 # ----------------------
+# Parses an image soup object for a URL
 def parse_soup_for_img_src(soup):
     image_source = soup.findAll("img", {"class":"css-4g6ai3"})
     return image_source[0]['src']

@@ -11,7 +11,7 @@
 # ----------------------
 from bs4 import BeautifulSoup, SoupStrainer
 import requests, json, os, csv, ast, random
-from generate_header import get_header
+from .generate_header import get_header
 # ----------------------
 # This function makes an HTTP request to KBB to gather the page's HTML and convert it to a BeautifulSoup object
 def get_soup_from_url(url):

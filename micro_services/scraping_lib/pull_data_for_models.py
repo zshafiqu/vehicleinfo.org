@@ -1,7 +1,8 @@
 # ----------------------
-import requests, json, os, csv, ast, random
-from get_soup import get_soup_from_url
-from scraping_utilities import parse_soup_to_styles_dictionary, parse_soup_for_img_src
+import os, csv, ast, pathlib
+from .get_soup import get_soup_from_url
+from .scraping_utilities import parse_soup_to_styles_dictionary, parse_soup_for_img_src
+import concurrent.futures
 # ----------------------
 # Gets filepath for source CSVs
 def get_source_filepath(year):
@@ -13,7 +14,6 @@ def get_destination_filepath(year):
 # ----------------------
 # Creates directory for new output files
 def create_data_pulled_csv_directory():
-    import os, pathlib
     curr_path = str(pathlib.Path().absolute())
     new_path = curr_path+'/data_pulled'
     try:
@@ -90,6 +90,7 @@ def row_dispatcher(row):
             # If row[4] and row[5] is blank, that means no style and information
             # print('No style and image information for:'+str(row))
             data = handle_empty_row(row)
+            print(data)
 
             # Create a temporary row with the newly scraped image data
             trim_data = data['Trims']
@@ -194,11 +195,3 @@ def entry_point_for_pull_data_by_year(year):
     write_output(results, year)
     return None
 # ----------------------
-
-# year = '2020'
-# make = 'Honda'
-# model = 'Civic'
-# bodystyles = ['Hatchback', 'Sedan']
-# bodystyle = ['Hatchback']
-#
-# print(scrape_KBB_for_styles_and_images(year, make, model, bodystyles)['Images'])

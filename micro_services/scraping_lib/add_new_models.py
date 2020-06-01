@@ -106,7 +106,7 @@ def add_external_source_data_to_master_data(year):
             if new_model != old_model:
                 # Write the new year, make, model, and bodystyle. We'll get trim_data and image_sources later
                 print('Adding a new model to the data set: '+str(new_row))
-                writer_object.writerow([new_row[0], new_row[1], new_row[2], clear_double_quotes(new_row[3])], '', '')
+                writer_object.writerow([new_row[0], new_row[1], new_row[2], clear_double_quotes(new_row[3]), '', ''])
                 new_counter += 1 # Move the new file's cursor until it matches the old file's cursor again
 
             else:
