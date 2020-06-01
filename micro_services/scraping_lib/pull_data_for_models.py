@@ -1,8 +1,7 @@
 # ----------------------
 import requests, json, os, csv, ast, random
 from get_soup import get_soup_from_url
-from style_utilities import parse_soup_to_styles_dictionary
-from image_utilities import parse_soup_for_img_src
+from scraping_utilities import parse_soup_to_styles_dictionary, parse_soup_for_img_src
 # ----------------------
 # Gets filepath for source CSVs
 def get_source_filepath(year):
