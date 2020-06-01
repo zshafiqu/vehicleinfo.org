@@ -125,13 +125,14 @@ def create_updated_csv_directory():
     except OSError:
         print('Failed to create directory '+new_path)
 # ----------------------
-def add_years_in_range(start_year, end_year):
-    create_updated_csv_directory()
-
-    while start_year <= end_year:
-        add_external_source_data_to_master_data(start_year)
-        start_year += 1
+def add_models(year):
+    # create_updated_csv_directory()
+    add_external_source_data_to_master_data(year)
+    #
+    # while start_year <= end_year:
+    #     add_external_source_data_to_master_data(start_year)
+    #     start_year += 1
     return None
 # ----------------------
 if __name__ == "__main__":
-    add_years_in_range(2020, 2020)
+    # add_years_in_range(2020, 2020)

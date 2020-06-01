@@ -29,6 +29,21 @@
         - Once we have the dictionary with new data, we create a new row and append this dictionary to that row
         - That row is then considered updated, and passed back to the parallel processing part of the program where its stored
         in a large result list and written to output
+
+    METHOD SIGNATURES:
+        - get_soup_from_url(url):
+        - convert_soup_to_text_list(soup):
+        - mappify_headings_and_attributes_from_list(headings, attributes):
+        - parse_soup_to_dictionary(soup):
+        - scrape_styles_data(year, make, model, bodystyles):
+        - get_source_filepath(year):
+        - get_destination_filepath(year):
+        - create_updated_csv_directory():
+        - row_dispatcher(row):
+        - convert_csv_rows_to_list(year):
+        - write_output(list, year):
+        - dispatcher_for_row_from_list(row):
+        - update(year):
 '''
 # ----------------------
 from bs4 import BeautifulSoup, SoupStrainer
@@ -40,7 +55,7 @@ import concurrent.futures
 def get_soup_from_url(url):
     # Entered get_soup_from_url method, create an iterator to keep track
     # of request attempt count
-    ''' print('Preparing to make request for data') '''
+    print('Preparing to make request for data')
     iteration = 0
 
     # Contintually attempt this request until it's successful
@@ -61,14 +76,14 @@ def get_soup_from_url(url):
 
         except:
             # If the request fails, log it to stdout, then try again
-            ''' print('Request failed on iteration #'+str(iteration)+', trying again!') '''
+            print('Request failed on iteration #'+str(iteration)+', trying again!')
             iteration += 1
             continue
 
         # If we've exectued the above successfully, break out of while loop
         break
 
-    ''' print('Request completed!') '''
+    print('Request completed!')
 
     # Filter for proprietary classes that contain our data
     only_boxes = SoupStrainer("div", class_="css-130z0y1-StyledBox-default emf8dez0")
@@ -213,7 +228,7 @@ def get_destination_filepath(year):
     return 'styles_added/'+str(year)+'.csv'
 # ----------------------
 # Creates directory for new output files
-def create_updated_csv_directory():
+def create_styles_csv_directory():
     import os, pathlib
     curr_path = str(pathlib.Path().absolute())
     new_path = curr_path+'/styles_added'
@@ -296,19 +311,21 @@ def dispatcher_for_row_from_list(row):
         new_row = row # Assign the old row as is to the 'new_row' variable
     except:
         # If this fails, we just got a hit. So pass this to the row specific dispatcher
-        ''' print('No style information for:'+str(row)) '''
+        # print('No style information for:'+str(row))
         data = row_dispatcher(row)
+        # print(data)
         # Create a temporary row with the newly scraped style data
         temp = [row[0], row[1], row[2], row[3], data]
-        ''' print('Finished row operations for:'+str(row)) '''
+        print(temp)
+        # print('Finished row operations for:'+str(row))
         new_row = temp
     # Return one row at a time from here
     return new_row
 # ----------------------
 # Main entry point for given year
-def update(year):
+def add_styles(year):
     # Grabs the given year's rows from its respective CSV file, and converts it to a list
-    rows = csv_rows_to_list(year)
+    rows = convert_csv_rows_to_list(year)
     # Get a results list going for us to add to as our threads complete
     results = []
 
@@ -331,7 +348,7 @@ def update(year):
     return None
 # ----------------------
 if __name__ == '__main__':
-    print("you're in add_new_styles.py")
+    # print("you're in add_new_styles.py")
     # create_updated_csv_directory()
     # update(2020)
 # ----------------------
