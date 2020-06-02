@@ -91,7 +91,6 @@ def row_dispatcher(row):
             # If row[4] and row[5] is blank, that means no style and information
             # print('No style and image information for:'+str(row))
             data = handle_empty_row(row)
-            # print(data)
 
             # Create a temporary row with the newly scraped image data
             trim_data = data['Styles']
@@ -102,6 +101,21 @@ def row_dispatcher(row):
             new_row = temp
 
         return new_row
+# ----------------------
+# Soup operations, this takes a dictionary with soup values, and attempts to extract style and img information from it
+def extract_data_from_soup_dict(soup_dictionary):
+    # First pass it to the styles utility, will get us a JSON dictionary of the styles
+    styles_soup = soup_dictionary['Trims']
+    styles_dictionary = parse_soup_to_styles_dictionary(styles_soup)
+
+    image_soup = soup_dictionary['Images']
+    image_url = parse_soup_for_img_src(image_soup)
+
+    results = dict()
+    results['style_result'] = styles_dictionary
+    results['img_result'] = image_url
+
+    return results
 # ----------------------
 def scrape_KBB_for_styles_and_images(year, make, model, bodystyles):
     # Cleanse model input
@@ -115,68 +129,77 @@ def scrape_KBB_for_styles_and_images(year, make, model, bodystyles):
 
     # If len(bodystyles) is 1, only need to make one request
     if len(bodystyles) == 1:
+        # Sometimes KBB will detect the bot and refuse to respond with the requested webpage, which causes us to default to uknown image
+        # To make the script a little better, we'll try 3 time to – request for webpage and parse responses
+        # If after three times it doesn't work, then just return blank values
         url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'
+        # print(url)
+        count = 0
 
-        # Get dictionary of soup
-        soup_dictionary = get_soup_from_url(url)
+        while True:
 
-        try:
-            # First pass it to the styles utility, will get us a JSON dictionary of the styles
-            styles_soup = soup_dictionary['Trims']
-            styles_dictionary = parse_soup_to_styles_dictionary(styles_soup)
+            if count == 3:
+                styles[bodystyles[0]] = dict()
+                images[bodystyles[0]] = default_url
+                break
 
-        except Exception as e:
-            print(url)
-            print(e)
-            # Assign blank dictionaries if it fails
-            styles_dictionary = dict()
+            try:
+                soup_dictionary = get_soup_from_url(url)
+                items = extract_data_from_soup_dict(soup_dictionary)
 
-        try:
-            # Next, pass to image utility
-            image_soup = soup_dictionary['Images']
-            image_url = parse_soup_for_img_src(image_soup)
+                # Assign results
+                styles[bodystyles[0]] = items['style_result']
+                images[bodystyles[0]] = items['img_result']
 
-        except Exception as e:
-            print(url)
-            print(e)
-            # print(e)
-            image_url = default_url
+            except Exception as e:
+                print('\n')
+                print('Error when requesting and parsing response from KBB, trying again!')
+                print(url)
+                print(e)
+                print('\n')
+                count += 1
+                continue
 
-        styles[bodystyles[0]] = styles_dictionary
-        images[bodystyles[0]] = image_url
+            # If we've executed the above successfully, break out of while loop
+            break
 
     # In all other instances where there is more than 1 bodystyle, make requests for each one
     else:
         index = 0
+
         for style in bodystyles:
             url = 'https://www.kbb.com/'+make+'/'+model+'/'+year+'/'+'?bodystyle='+style
-            # Get dictionary of soup
-            soup_dictionary = get_soup_from_url(url)
+            count = 0
+            # print(url)
 
-            try:
-                # First pass it to the styles utility, will get us a JSON dictionary of the styles
-                styles_soup = soup_dictionary['Trims']
-                styles_dictionary = parse_soup_to_styles_dictionary(styles_soup)
+            while True:
 
-            except Exception as e:
-                # Assign blank dictionaries if it fails
-                print(url)
-                print(e)
-                styles_dictionary = dict()
+                if count == 3:
+                    styles[bodystyles[index]] = dict()
+                    images[bodystyles[index]] = default_url
+                    break
 
-            try:
-                # Next, pass to image utility
-                image_soup = soup_dictionary['Images']
-                image_url = parse_soup_for_img_src(image_soup)
+                try:
+                    soup_dictionary = get_soup_from_url(url)
+                    items = extract_data_from_soup_dict(soup_dictionary)
 
-            except:
-                print(url)
-                print(e)
-                image_url = default_url
+                    # Assign results
+                    styles[bodystyles[index]] = items['style_result']
+                    images[bodystyles[index]] = items['img_result']
+
+                except Exception as e:
+                    print('Error when requesting and parsing response from KBB, trying again!')
+                    print(url)
+                    print(e)
+                    count += 1
+                    continue
+
+                # If we've executed the above successfully, break out of while loop
+                break
 
             # Use the bodystyle as the key for the trims dictionary
-            styles[bodystyles[index]] = styles_dictionary
-            images[bodystyles[index]] = image_url
+            # styles[bodystyles[index]] = items['style_result']
+            # images[bodystyles[index]] = items['img_result']
             index += 1
 
     styles_and_images['Styles'] = styles
@@ -192,7 +215,7 @@ def entry_point_for_pull_data_by_year(year):
     results = []
 
     # Use thread pool to execute multiple requests concurrently, also max_workers can be set depending on system env
-    with concurrent.futures.ThreadPoolExecutor(max_workers=128) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=None) as executor:
         # For each row in rows, pass it as its own single thread to the dispatcher_for_row_from_list() method
         # Begin load operations, each dict entry looks like {<Future at 'address' state=pending>: row}
         row_futures = { executor.submit(row_dispatcher, row): row for row in rows }
