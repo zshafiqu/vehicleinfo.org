@@ -17,7 +17,7 @@ from .generate_header import get_header
 def get_soup_from_url(url):
     # Entered get_soup_from_url method, create an iterator to keep track
     # of request attempt count
-    print('Preparing to make request for data')
+    # print('Preparing to make request for data')
     iteration = 0
     soup_dictionary = dict()
 
@@ -39,14 +39,14 @@ def get_soup_from_url(url):
 
         except:
             # If the request fails, log it to stdout, then try again
-            print('Request failed on iteration #'+str(iteration)+', trying again!')
+            # print('Request failed on iteration #'+str(iteration)+', trying again!')
             iteration += 1
             continue
 
         # If we've exectued the above successfully, break out of while loop
         break
 
-    print('Request completed!')
+    # print('Request completed!')
 
     # Filter for proprietary classes that contain our data
     # SoupStrainer sets it such that we only parse the response for items with this class tag

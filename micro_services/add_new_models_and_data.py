@@ -47,12 +47,10 @@ def remove_old_directories():
 
     # Remove models_added, styles_added, and images_added ONLY after you've moved to new master
     models_path = curr_path+'/models_added'
-    styles_path = curr_path+'/styles_added'
-    images_path = curr_path+'images_added'
 
     shutil.rmtree(models_path, ignore_errors=True)
-    shutil.rmtree(styles_path, ignore_errors=True)
-    shutil.rmtree(images_path, ignore_errors=True)
+    # shutil.rmtree(styles_path, ignore_errors=True)
+    # shutil.rmtree(images_path, ignore_errors=True)
 
     return None
 # ----------------------
@@ -61,7 +59,7 @@ def run_merge():
     end_year = int(input("Enter the end year you'd like to update: "))
 
     # Create all needed directorys
-    create_new_master_data_directory()
+    # create_new_master_data_directory()
     # Create the models added directory
     ANM.create_updated_csv_directory()
     # Create the data pulled directory
@@ -73,16 +71,23 @@ def run_merge():
         print('*******************************************************')
         print('Currently working on '+str(start_year))
 
-        # Add the new models from external source to 'models_added'
-        ANM.add_models(start_year)
-        PDFM.entry_point_for_pull_data_by_year(start_year)
+        if start_year == 2021:
+                PDFM.entry_point_for_pull_data_by_year(start_year)
+        else:
+            # Add the new models from external source to 'models_added'
+            ANM.add_models(start_year)
+            PDFM.entry_point_for_pull_data_by_year(start_year)
 
         print('Finished '+str(start_year))
         start_year += 1
+
+    create_new_master_data_directory()
+    move_to_new_master_data()
+    remove_old_directories()
 # ----------------------
 if __name__ == '__main__':
     run_merge()
 
-    if move_to_new_master_data():
-        remove_old_directories()
+    # if move_to_new_master_data():
+    #     remove_old_directories()
 # ----------------------

@@ -87,14 +87,16 @@ def row_dispatcher(row):
         if row[4] != '' and row[5] != '':
             new_row = row
         else:
+            # print('In new data!')
             # If row[4] and row[5] is blank, that means no style and information
             # print('No style and image information for:'+str(row))
             data = handle_empty_row(row)
-            print(data)
+            # print(data)
 
             # Create a temporary row with the newly scraped image data
-            trim_data = data['Trims']
+            trim_data = data['Styles']
             image_data = data['Images']
+
             temp = [row[0], row[1], row[2], row[3], trim_data, image_data]
             print(temp)
             new_row = temp
@@ -123,15 +125,21 @@ def scrape_KBB_for_styles_and_images(year, make, model, bodystyles):
             styles_soup = soup_dictionary['Trims']
             styles_dictionary = parse_soup_to_styles_dictionary(styles_soup)
 
+        except Exception as e:
+            print(url)
+            print(e)
+            # Assign blank dictionaries if it fails
+            styles_dictionary = dict()
+
+        try:
             # Next, pass to image utility
             image_soup = soup_dictionary['Images']
             image_url = parse_soup_for_img_src(image_soup)
 
-
-        except:
-            print("Error on parsing soup to map / single bodystyle / inside of scrape trim data")
-            # Assign blank dictionaries if it fails
-            styles_dictionary = dict()
+        except Exception as e:
+            print(url)
+            print(e)
+            # print(e)
             image_url = default_url
 
         styles[bodystyles[0]] = styles_dictionary
@@ -150,14 +158,20 @@ def scrape_KBB_for_styles_and_images(year, make, model, bodystyles):
                 styles_soup = soup_dictionary['Trims']
                 styles_dictionary = parse_soup_to_styles_dictionary(styles_soup)
 
+            except Exception as e:
+                # Assign blank dictionaries if it fails
+                print(url)
+                print(e)
+                styles_dictionary = dict()
+
+            try:
                 # Next, pass to image utility
                 image_soup = soup_dictionary['Images']
                 image_url = parse_soup_for_img_src(image_soup)
 
             except:
-                print("Error on parsing soup to map / multiple bodystyle / inside of scrape trim data")
-                # Assign blank dictionaries if it fails
-                styles_dictionary = dict()
+                print(url)
+                print(e)
                 image_url = default_url
 
             # Use the bodystyle as the key for the trims dictionary
