@@ -28,7 +28,7 @@
 ## HOW IT WORKS :
 - I created a library of files called 'scraping_lib', which contains a bunch of files that do various operations on updating data. We can look at those files one by one.
 
-  1. add_new_models.py:
+  **1. add_new_models.py:**
 
     - This file's sole job is to compare the local master data against the newly added external source. The external source files are incomplete, and are missing a lot of the data that makes vehicleinfo.org. These files contain the year, make, and model data. We want to be able to merge the newly added makes and models to our existing CSVs, while maintaining order and not losing any data we already have.
 
@@ -44,18 +44,18 @@
 
     - After all rows have been written, return the new CSV file, with blanks for trim/image data where new additions were made.
 
-  2. scraping_utilities.py:
+  **2. scraping_utilities.py:**
     - This file contains all the helper methods for scraping images and trim data from KBB. The main objective of the methods here are to take in a BeautifulSoup object, and search through it using things like CSS classes and HTML tags. The data is then organized into dictionaries and returned.
 
-  3. generate_header.py:
+  **3. generate_header.py:**
     - This file contains the get_header method that returns an HTTP header for us to use in our web requests in order to avoid bot detectors.
 
-  4. get_soup.py:
+  **4. get_soup.py:**
     - This file contains the access method called get_soup_from_url(url) that makes a request to KBB, and returns a BeautifulSoup object that strained for only image and trim data using SoupStrainer.
 
     - Before, we were scraping for each of these data points separate, which was redundant because we would have to make two separate requests.. Was inefficient and wasted time. We speed up our scraping process by only requesting once but creating two BeautifulSoup objects.
 
-  5. pull_data_for_models.py:
+  **5. pull_data_for_models.py:**
     - Script to scrape the styles and images for newly added vehicles. This would be run following 'add_new_models.py', where new models would be added from the external source. At this point, those new models are missing their 'trim_data' and 'image_sources' columns because they haven't been scraped for. That is where this script comes in.
 
     - This script starts by converting a given year's CSV file into a list of rows on memory within the program. This list of rows is then passed to a parallel processing module called 'concurrent.futures'. This parallel processing module creates multiple threads, and processes one row at a time.
