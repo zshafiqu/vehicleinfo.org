@@ -1,3 +1,13 @@
+'''
+    June 3, 2020
+
+    PREFACE:
+        - This file contains the get_header method that returns an HTTP header for us to use in our web requests
+        in order to avoid bot detectors
+
+    METHOD SIGNATURES:
+        - get_header()
+'''
 # ----------------------
 import random
 # ----------------------

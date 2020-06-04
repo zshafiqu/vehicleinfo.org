@@ -22,7 +22,7 @@ def get_database_object():
 # ----------------------
 def get_file_by_year(year):
     # Return file path for given year
-    return 'new_master_data/'+str(year)+'.csv'
+    return 'master_data/'+str(year)+'.csv'
 # ----------------------
 def get_table_name(year):
     return str(year)+'_vehicles'

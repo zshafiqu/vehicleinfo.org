@@ -1,12 +1,18 @@
 '''
-    June 1, 2020
+    June 3, 2020
 
-    I realized that doing an 'add_new_styles' and then 'add_new_images' sequentially
-    would mean that we're making two separate HTTP requests for the same information.
+    PREFACE:
+        - This file contains the access method called get_soup_from_url(url) that makes a
+        request to KBB, and returns a BeautifulSoup object that is strained for only image and trim data
+        using SoupStrainer
+        - Before, we were scraping for each of these data points separate, which was redundant because we would
+        have to make two separate requests.. Was inefficient and wasted time. We speed up our scraping process
+        by only requesting once but creating two BeautifulSoup objects.
+        - We'll isolate the get_soup_from_url into its own file that returns
+        multiple soup objects in a single request
 
-    So instead, we'll isolate the get_soup_from_url into its own file that returns
-    multiple soup objects in a single request
-
+    METHOD SIGNATURES:
+        - get_soup_from_url(url)
 '''
 # ----------------------
 from bs4 import BeautifulSoup, SoupStrainer

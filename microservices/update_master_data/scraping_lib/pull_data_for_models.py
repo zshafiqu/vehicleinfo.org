@@ -1,3 +1,46 @@
+'''
+    June 3, 2020
+
+    PREFACE:
+        - Script to scrape the styles and images for newly added vehicles
+        - This would be run following 'add_new_models.py', where new models would be added from the external source
+        - At this point, those new models are missing their 'trim_data' and 'image_sources' columns because they haven't
+        been scraped for. That is where this script comes in
+
+    GENERAL FLOW:
+        - This script starts by converting a given year's CSV file into a list of rows on memory within the program
+        - This list of rows is then passed to a parallel processing module called concurrent.futures
+        - This parallel processing module creates multiple threads, and processes one row at a time
+        - Once all the rows are processed, they are returned in a 'result' list
+        - This result list is passed to a writer function, that sorts the rows in ascending order and writes them to new CSVs
+        - The writer also checks to see if its an old row or new row, and writes an empty string for the 'image_data' column on new rows, because
+        that data is scraped for after this
+
+    HOW IS EACH ROW PROCESSED?
+        - For each row, it attempts to exctract row[4] and row[5], which would be the 'trim_data' & 'image_data' olumn
+        - If that extraction is successful, that tells the program that this isn't a new vehicle, so just return that row as is
+
+        - If the extraction fails, great, we know this is a new make and model for us that we need to get data from
+        - Then for each vehicle model, we make a request to KBB to get the HTML we need using BeautifulSoup and SoupStrainer
+        - Note, some vehicles have multiple body styles, so we query models by each bodystyle to get EVERY trim
+
+        - The HTML is returned as a BeautifulSoup object that has been strained only for images and style data. This data is parsed into
+        a dictionary and returned here. (See scraping_utilities.py for details)
+        - The dictionary is then sliced for the image and trim info, which is then formed into a row object
+        - The row object gets passed back to be written to the CSV
+
+    METHOD SIGNATURES:
+        - get_source_filepath(year)
+        - get_destination_filepath(year)
+        - create_data_pulled_csv_directory()
+        - convert_csv_rows_to_list(year)
+        - write_output(list, year)
+        - handle_empty_row(row)
+        - row_dispatcher(row)
+        - extract_data_from_soup_dict(soup_dictionary)
+        - scrape_KBB_for_styles_and_images(year, make, model, bodystyles)
+        - entry_point_for_pull_data_by_year(year)
+'''
 # ----------------------
 import os, csv, ast, pathlib
 from .get_soup import get_soup_from_url

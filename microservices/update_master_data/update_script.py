@@ -32,6 +32,7 @@ def create_new_master_data_directory():
         os.mkdir(new_path)
     except OSError:
         print('Failed to create directory '+new_path)
+    return None
 # ----------------------
 def move_to_new_master_data():
     curr_path = str(pathlib.Path().absolute())
@@ -41,16 +42,13 @@ def move_to_new_master_data():
         shutil.move(old_path, new_path)
     except OSError:
         print('Failed to copy directory from '+old_path+' to '+new_path)
+    return None
 # ----------------------
 def remove_old_directories():
     curr_path = str(pathlib.Path().absolute())
-
     # Remove models_added, styles_added, and images_added ONLY after you've moved to new master
     models_path = curr_path+'/models_added'
-
     shutil.rmtree(models_path, ignore_errors=True)
-    # shutil.rmtree(styles_path, ignore_errors=True)
-    # shutil.rmtree(images_path, ignore_errors=True)
 
     return None
 # ----------------------
@@ -58,14 +56,10 @@ def run_merge():
     start_year = int(input("Enter the start year you'd like to update: "))
     end_year = int(input("Enter the end year you'd like to update: "))
 
-    # Create all needed directorys
-    # create_new_master_data_directory()
     # Create the models added directory
     ANM.create_updated_csv_directory()
     # Create the data pulled directory
     PDFM.create_data_pulled_csv_directory()
-
-
 
     while start_year <= end_year:
         print('*******************************************************')
@@ -84,10 +78,8 @@ def run_merge():
     create_new_master_data_directory()
     move_to_new_master_data()
     remove_old_directories()
+    return None
 # ----------------------
 if __name__ == '__main__':
     run_merge()
-
-    # if move_to_new_master_data():
-    #     remove_old_directories()
 # ----------------------
