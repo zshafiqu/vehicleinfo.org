@@ -21,7 +21,10 @@ class ServerObject:
     # ----------------------
     # Object initializer method, takes in no parameters as the ServerObject's data is predefined above
     def __init__(self):
-        pass
+        app = self.create_app()
+        cache = self.create_cache()
+        db = self.create_db_cursor()
+        cache_timeout = 1800 # Cache timeout = 30 minutes
     # ----------------------
     # ServerObject's own method to create a Flask application object, as well as assign app configs
     def create_app(self):
@@ -47,7 +50,7 @@ class ServerObject:
 
         return app
     # ----------------------
-    def create_cache_instance(self):
+    def create_cache(self):
         # Setup simple cache instance configuration
         cache = Cache(config={'CACHE_TYPE': 'simple'})
         # Bind cache instance to app
@@ -67,15 +70,3 @@ class ServerObject:
 
         return db
     # ----------------------
-
-def create_server_instance():
-    # Use this method to create a configured application
-    # Then return it as an instance of the server_object
-    app = create_app()
-    cache = create_cache_instance(app)
-    db = create_db_cursor(app)
-    # Instance variable
-    server = ServerObject(app, cache, db)
-
-    return server
-# ----------------------

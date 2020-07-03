@@ -5,11 +5,11 @@ from flask import render_template, jsonify, request
 import json
 # ----------------------
 # Local imports that we created
-from configurations import create_server_instance
+from configurations import ServerObject
 from api_utilities import *
 # ----------------------
 # Create server instance and grab values
-server = create_server_instance()
+server = ServerObject()
 app = server.app # Flask app object
 cache = server.cache # Flask cache object
 db = server.db # Database object
