@@ -10,64 +10,61 @@ from flask_minify import minify
 from flask_caching import Cache
 import os
 # ----------------------
+# The ServerObject class is used to encapsulate our server and its configurations
 class ServerObject:
-    # Use this class to hold our app, it's cache object, and its database cursor
-    def __init__(self, app, cache, db):
-        self.app = app
-        self.cache = cache
-        self.db = db
-        self.cache_timeout = 1800 # Cache timeout is 30 minutes
-# ----------------------
-def create_cache_instance(app):
-    # Setup simple cache instance configuration & Initialize it to app instance
-    cache = Cache(config={'CACHE_TYPE': 'simple'})
-    cache.init_app(app)
+    # The class contains a couple variables that are associated with the server, below
+    app = None
+    cache = None
+    db = None
+    cache_timeout = None
+    # ----------------------
+    # Object initializer method, takes in no parameters as the ServerObject's data is predefined above
+    def __init__(self):
+        self.app = self.create_app()
+        self.cache = self.create_cache(self.app)
+        self.db = self.create_db_cursor(self.app)
+        self.cache_timeout = 1800 # Cache timeout = 30 minutes
+    # ----------------------
+    # ServerObject's own method to create a Flask application object, as well as assign app configs
+    def create_app(self):
+        # Create Flask app object
+        app = Flask(__name__)
 
-    return cache
-# ----------------------
-def create_db_cursor(app):
-    # Bind app to db obj
-    db = SQLAlchemy(app)
-    # Was running into a timeouterror for mySQL on Heroku's clearDB instance.
-    # Referencing stackoverflow, "the only work around I could find for this by
-    # talking to the ClearDB people is to add in the pessimistic ping when creating the engine."
-    # Not ideal since its pings DB everytime before you do a query, but avoids 500 Internal Server Error
-    db = SQLAlchemy(engine_options={"pool_size": 10, "poolclass":QueuePool, "pool_pre_ping":True})
+        # From flask_minify, wrap app around minify module to minify the HTML/CSS/JS responses
+        minify(app=app, html=True, js=True, cssless=True)
 
-    return db
-# ----------------------
-def create_app():
-    # Activate virtual env with - source env/bin/activate
-    # Initialize flask app, enable auto deploy from master branch for heroku
-    app = Flask(__name__)
+        # Designate application URL routing to occur with or without a trailing slash
+        # By default, all of the routes defined below exist without a trailing slash
+        app.url_map.strict_slashes = False
 
-    # From flask_minify, wrap app around minify module to minify the HTML/CSS/JS responses
-    minify(app=app, html=True, js=True, cssless=True)
+        # Use Talisman to force any http:// prefixed requests to redirect to https://
+        # Edit the CSP in order to serve CSS styles and JavaScript files
+        Talisman(app, content_security_policy=None)
+        app.secret_key = os.environ.get('KEY')
 
-    # Designate application URL routing to occur with or without a trailing slash
-    # By default, all of the routes defined below exist without a trailing slash
-    app.url_map.strict_slashes = False
+        # Configure flask app with info stored locally within environment (locally or heroku)
+        # To install mysqlclient, needed to run brew install mysql
+        app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+        app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('BASE_URI')
 
-    # Use Talisman to force any http:// prefixed requests to redirect to https://
-    # Edit the CSP in order to serve CSS styles and JavaScript files
-    Talisman(app, content_security_policy=None)
-    app.secret_key = os.environ.get('KEY')
+        return app
+    # ----------------------
+    def create_cache(self, app):
+        # Setup simple cache instance configuration
+        cache = Cache(config={'CACHE_TYPE': 'simple'})
+        # Bind cache instance to app
+        cache.init_app(app)
 
-    # Configure flask app with info stored locally within environment (locally or heroku)
-    # To install mysqlclient, needed to run brew install mysql
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('BASE_URI')
+        return cache
+    # ----------------------
+    def create_db_cursor(self, app):
+        # Bind app to db obj
+        db = SQLAlchemy(app)
+        # Was running into a timeouterror for mySQL on Heroku's clearDB instance.
+        # Referencing stackoverflow, "the only work around I could find for this by
+        # talking to the ClearDB people is to add in the pessimistic ping when creating the engine."
+        # Not ideal since its pings DB everytime before you do a query, but avoids 500 Internal Server Error
+        db = SQLAlchemy(engine_options={"pool_size": 10, "poolclass":QueuePool, "pool_pre_ping":True})
 
-    return app
-# ----------------------
-def create_server_instance():
-    # Use this method to create a configured application
-    # Then return it as an instance of the server_object
-    app = create_app()
-    cache = create_cache_instance(app)
-    db = create_db_cursor(app)
-    # Instance variable
-    server = ServerObject(app, cache, db)
-
-    return server
-# ----------------------
+        return db
+    # ----------------------
