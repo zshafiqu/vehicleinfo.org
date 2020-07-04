@@ -17,14 +17,13 @@ class ServerObject:
     cache = None
     db = None
     cache_timeout = None
-
     # ----------------------
     # Object initializer method, takes in no parameters as the ServerObject's data is predefined above
     def __init__(self):
-        app = self.create_app()
-        cache = self.create_cache()
-        db = self.create_db_cursor()
-        cache_timeout = 1800 # Cache timeout = 30 minutes
+        self.app = self.create_app()
+        self.cache = self.create_cache(self.app)
+        self.db = self.create_db_cursor(self.app)
+        self.cache_timeout = 1800 # Cache timeout = 30 minutes
     # ----------------------
     # ServerObject's own method to create a Flask application object, as well as assign app configs
     def create_app(self):
@@ -50,17 +49,17 @@ class ServerObject:
 
         return app
     # ----------------------
-    def create_cache(self):
+    def create_cache(self, app):
         # Setup simple cache instance configuration
         cache = Cache(config={'CACHE_TYPE': 'simple'})
         # Bind cache instance to app
-        cache.init_app(self.app)
+        cache.init_app(app)
 
         return cache
     # ----------------------
-    def create_db_cursor(self):
+    def create_db_cursor(self, app):
         # Bind app to db obj
-        db = SQLAlchemy(self.app)
+        db = SQLAlchemy(app)
 
         # Was running into a timeouterror for mySQL on Heroku's clearDB instance.
         # Referencing stackoverflow, "the only work around I could find for this by
