@@ -1,4 +1,4 @@
-# Main server file
+# Main server file, procedurally formatted for Flask
 # ----------------------
 # Package imports defined by requirements
 from flask import render_template, jsonify, request

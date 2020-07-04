@@ -10,8 +10,8 @@ from flask_minify import minify
 from flask_caching import Cache
 import os
 # ----------------------
+# The ServerObject class is used to encapsulate our server and its configurations
 class ServerObject:
-    # The ServerObject class is used to encapsulate our server and its configurations
     # The class contains a couple variables that are associated with the server, below
     app = None
     cache = None
@@ -60,7 +60,6 @@ class ServerObject:
     def create_db_cursor(self, app):
         # Bind app to db obj
         db = SQLAlchemy(app)
-
         # Was running into a timeouterror for mySQL on Heroku's clearDB instance.
         # Referencing stackoverflow, "the only work around I could find for this by
         # talking to the ClearDB people is to add in the pessimistic ping when creating the engine."
