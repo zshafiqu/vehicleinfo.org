@@ -1,15 +1,31 @@
 # ----------------------
 import os, csv, json, ast
 import mysql.connector
+
+# Gather OS variables
+host = os.environ.get('RDS_HOST')
+port = os.environ.get('RDS_PORT')
+user = os.environ.get('RDS_USER')
+password = os.environ.get('RDS_PASSWORD')
+database = os.environ.get('RDS_DBNAME')
+# ----------------------
+def create_db_if_not_exists():
+    # Connect to DB without specifying a database
+    db_object = mysql.connector.connect(
+        host=host,
+        port=port,
+        user=user,
+        password=password,
+        )
+
+    # Use this local object to create the database
+    query = "CREATE DATABASE IF NOT EXISTS `vehicleinfo-db`" 
+    curr = db_object.cursor() # Get the cursor 
+    curr.execute(query)  # Execute the initial DB creation 
+    return None
 # ----------------------
 def get_database_object():
-    # Establish connection to our database using info stored locally on machine
-    host = os.environ.get('RDS_HOST')
-    port = os.environ.get('RDS_PORT')
-    user = os.environ.get('RDS_USER')
-    password = os.environ.get('RDS_PASSWORD')
-    database = os.environ.get('RDS_DBNAME')
-
+    # Establish connection to our database using OS vars stored locally on machine
     db_object = mysql.connector.connect(
         host=host,
         port=port,
@@ -77,34 +93,15 @@ def write_csv(year):
 def write_csv_in_range():
     start_year = int(input("Enter the start year you'd like to write to the database: "))
     end_year = int(input("Enter the end year you'd like to to write to the database: "))
-
-    # Needed since no guarantee the table exists
-    host = os.environ.get('RDS_HOST')
-    port = os.environ.get('RDS_PORT')
-    user = os.environ.get('RDS_USER')
-    password = os.environ.get('RDS_PASSWORD')
-
-    # Connect to DB without specifying a database
-    db_object = mysql.connector.connect(
-        host=host,
-        port=port,
-        user=user,
-        password=password,
-        )
-
-    # Use this local object to create the database
-    initial_sql = "CREATE DATABASE IF NOT EXISTS `vehicleinfo-db`" 
-    curr = db_object.cursor() # Get the cursor 
-    curr.execute(initial_sql)  # Execute the initial DB creation 
+    create_db_if_not_exists()
 
     while start_year <= end_year:
         print('*******************************************************')
         print('Currently working on '+str(start_year))
-
         write_csv(start_year)
-
         print('Finished '+str(start_year))
         start_year += 1
+
 # ----------------------
 if __name__ == "__main__":
     write_csv_in_range()
