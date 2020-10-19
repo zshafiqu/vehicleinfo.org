@@ -44,6 +44,10 @@ def get_table_name(year):
     return str(year)+'_vehicles'
 # ----------------------
 def write_csv(year):
+            
+    print('*******************************************************')
+    print('Currently working on '+str(year))
+
     # Create a cursor object from the database_object
     db_object = get_database_object()
     curr = db_object.cursor()
@@ -88,20 +92,30 @@ def write_csv(year):
             db_object.commit()
             print(curr.rowcount, "record inserted.")
             id += 1
+
+    print('Finished '+str(start_year))
     return None
 # ----------------------
 def write_csv_in_range():
     start_year = int(input("Enter the start year you'd like to write to the database: "))
     end_year = int(input("Enter the end year you'd like to to write to the database: "))
+    
     create_db_if_not_exists()
+    years = [i for i in range(start_year, end_year + 1)]
+    print(years)
 
-    while start_year <= end_year:
-        print('*******************************************************')
-        print('Currently working on '+str(start_year))
-        write_csv(start_year)
-        print('Finished '+str(start_year))
-        start_year += 1
+    import concurrent.futures
+    with concurrent.futures.ThreadPoolExecutor(max_workers=32) as executor:
+        futures = { executor.submit(write_csv, year) :  year for year in years }
 
+    # while start_year <= end_year:
+    #     print('*******************************************************')
+    #     print('Currently working on '+str(start_year))
+    #     write_csv(start_year)
+    #     print('Finished '+str(start_year))
+    #     start_year += 1
+
+    return None
 # ----------------------
 if __name__ == "__main__":
     write_csv_in_range()
