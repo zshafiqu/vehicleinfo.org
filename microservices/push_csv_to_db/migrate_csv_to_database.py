@@ -93,7 +93,7 @@ def write_csv(year):
             print(curr.rowcount, "record inserted.")
             id += 1
 
-    print('Finished '+str(start_year))
+    print('Finished '+str(year))
     return None
 # ----------------------
 def write_csv_in_range():
@@ -107,13 +107,6 @@ def write_csv_in_range():
     import concurrent.futures
     with concurrent.futures.ThreadPoolExecutor(max_workers=32) as executor:
         futures = { executor.submit(write_csv, year) :  year for year in years }
-
-    # while start_year <= end_year:
-    #     print('*******************************************************')
-    #     print('Currently working on '+str(start_year))
-    #     write_csv(start_year)
-    #     print('Finished '+str(start_year))
-    #     start_year += 1
 
     return None
 # ----------------------
