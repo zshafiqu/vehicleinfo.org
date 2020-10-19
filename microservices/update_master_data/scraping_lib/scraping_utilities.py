@@ -102,6 +102,6 @@ def parse_soup_to_styles_dictionary(soup):
 # ----------------------
 # Parses an image soup object for a URL
 def parse_soup_for_img_src(soup):
-    image_source = soup.findAll("img", {"class":"css-4g6ai3"})
+    image_source = soup.findAll("img", {"class":"css-n0lk2j-StyledImage e99w8gw0"})
     return image_source[0]['src']
 # ----------------------
