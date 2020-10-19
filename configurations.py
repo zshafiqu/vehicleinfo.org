@@ -45,7 +45,7 @@ class ServerObject:
         # Configure flask app with info stored locally within environment (locally or heroku)
         # To install mysqlclient, needed to run brew install mysql
         app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-        app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('RDS_URI')
+        app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('BASE_URI')
 
         return app
     # ----------------------
