@@ -1,7 +1,6 @@
 # ----------------------
 import os, csv, json, ast
 import mysql.connector
-
 # Gather OS variables
 host = os.environ.get('RDS_HOST')
 port = os.environ.get('RDS_PORT')
@@ -44,9 +43,6 @@ def get_table_name(year):
     return str(year)+'_vehicles'
 # ----------------------
 def write_csv(year):
-            
-    print('*******************************************************')
-    print('Currently working on '+str(year))
 
     # Create a cursor object from the database_object
     db_object = get_database_object()
@@ -93,7 +89,6 @@ def write_csv(year):
             print(curr.rowcount, "record inserted.")
             id += 1
 
-    print('Finished '+str(year))
     return None
 # ----------------------
 def write_csv_in_range():
@@ -102,7 +97,6 @@ def write_csv_in_range():
     
     create_db_if_not_exists()
     years = [i for i in range(start_year, end_year + 1)]
-    print(years)
 
     import concurrent.futures
     with concurrent.futures.ThreadPoolExecutor(max_workers=32) as executor:
