@@ -4,18 +4,17 @@ import mysql.connector
 # ----------------------
 def get_database_object():
     # Establish connection to our database using info stored locally on machine
-    host = os.environ.get('DB_HOST')
-    port = os.environ.get('DB_PORT')
-    user = os.environ.get('DB_USER')
-    password = os.environ.get('DB_PASSWORD')
-    database = os.environ.get('DB_DBNAME')
+    host = os.environ.get('RDS_HOST')
+    port = os.environ.get('RDS_PORT')
+    user = os.environ.get('RDS_USER')
+    password = os.environ.get('RDS_PASSWORD')
+    database = os.environ.get('RDS_DBNAME')
 
     db_object = mysql.connector.connect(
         host=host,
         port=port,
         user=user,
         password=password,
-        database=database
         )
 
     return db_object
@@ -77,6 +76,11 @@ def write_csv(year):
 def write_csv_in_range():
     start_year = int(input("Enter the start year you'd like to write to the database: "))
     end_year = int(input("Enter the end year you'd like to to write to the database: "))
+
+    initial_sql = "CREATE DATABASE IF NOT EXISTS `vehicleinfo-db`" 
+    db_object = get_database_object()
+    curr = db_object.cursor()
+    curr.execute(initial_sql)
 
     while start_year <= end_year:
         print('*******************************************************')
