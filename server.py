@@ -221,7 +221,7 @@ def not_found(e=None):
     return render_template('error.html', e=e)
 # ----------------------
 if __name__ == '__main__':
-    app.run(debug=True)
-    # from waitress import serve
-    # serve(app)
+    # app.run(debug=True)
+    from waitress import serve
+    serve(app, url_scheme='https', port=8080)
 # ----------------------
