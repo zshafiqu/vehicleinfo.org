@@ -222,7 +222,5 @@ def not_found(e=None):
 # ----------------------
 if __name__ == '__main__':
     from waitress import serve
-    serve(application)
-    # application.run(debug=True)
-    # serve(application, url_scheme='https', port=8080)
+    serve(application, url_scheme='https', port=8080)
 # ----------------------
