@@ -14,6 +14,7 @@ This project is intended to be open source and public, so any and all contributi
 
 | Version 	| Description of Changes 	|
 |-	|-	|
+| 3.1.2 	| - Migrated deployment and database from Heroku and ClearDB to AWS Elastic Beanstalk and AWS RDS. This isn't a functional update but worth noting in the change log as certain configurations were changed in order to operate on AWS standards instead of Heroku.<br>- [See pull request](https://github.com/zshafiqu/vehicleinfo.org/pull/26) 	|
 | 3.1.1 	| - Updated a lot of the web services stuff. Making updates is much easier now and is well documented, with descriptions for everything. See the microservices folder for the details.<br>- [See pull request](https://github.com/zshafiqu/vehicleinfo.org/pull/25) 	|
 | 3.1.0 	| - When getting a report through the web interface, recalls and consumer complaints are no longer mandatory. Two checkboxes have been added to the form, and are selected by default to include recalls and consumer complaints. If the client doesn't want either of these pieces of information, they can choose to omit them.<br>- [See pull request](https://github.com/zshafiqu/vehicleinfo.org/pull/24) 	|
 | 3.0.0 	| - New feature addition! Vehicleinfo.org gets a VIN decoder for the web interface. Simply input your vehicle's VIN number and be presented with various pieces of information about the automobile that was available. Handy tool to verify that a VIN matches the actual vehicle!<br>- [See pull request](https://github.com/zshafiqu/vehicleinfo.org/pull/23) 	|

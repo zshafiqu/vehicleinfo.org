@@ -1,15 +1,30 @@
 # ----------------------
 import os, csv, json, ast
 import mysql.connector
+# Gather OS variables
+host = os.environ.get('RDS_HOST')
+port = os.environ.get('RDS_PORT')
+user = os.environ.get('RDS_USER')
+password = os.environ.get('RDS_PASSWORD')
+database = os.environ.get('RDS_DBNAME')
+# ----------------------
+def create_db_if_not_exists():
+    # Connect to DB without specifying a database
+    db_object = mysql.connector.connect(
+        host=host,
+        port=port,
+        user=user,
+        password=password,
+        )
+
+    # Use this local object to create the database
+    query = "CREATE DATABASE IF NOT EXISTS `vehicleinfo-db`" 
+    curr = db_object.cursor() # Get the cursor 
+    curr.execute(query)  # Execute the initial DB creation 
+    return None
 # ----------------------
 def get_database_object():
-    # Establish connection to our database using info stored locally on machine
-    host = os.environ.get('DB_HOST')
-    port = os.environ.get('DB_PORT')
-    user = os.environ.get('DB_USER')
-    password = os.environ.get('DB_PASSWORD')
-    database = os.environ.get('DB_DBNAME')
-
+    # Establish connection to our database using OS vars stored locally on machine
     db_object = mysql.connector.connect(
         host=host,
         port=port,
@@ -28,6 +43,7 @@ def get_table_name(year):
     return str(year)+'_vehicles'
 # ----------------------
 def write_csv(year):
+
     # Create a cursor object from the database_object
     db_object = get_database_object()
     curr = db_object.cursor()
@@ -72,20 +88,21 @@ def write_csv(year):
             db_object.commit()
             print(curr.rowcount, "record inserted.")
             id += 1
+
     return None
 # ----------------------
 def write_csv_in_range():
     start_year = int(input("Enter the start year you'd like to write to the database: "))
     end_year = int(input("Enter the end year you'd like to to write to the database: "))
+    
+    create_db_if_not_exists()
+    years = [i for i in range(start_year, end_year + 1)]
 
-    while start_year <= end_year:
-        print('*******************************************************')
-        print('Currently working on '+str(start_year))
+    import concurrent.futures
+    with concurrent.futures.ThreadPoolExecutor(max_workers=32) as executor:
+        futures = { executor.submit(write_csv, year) :  year for year in years }
 
-        write_csv(start_year)
-
-        print('Finished '+str(start_year))
-        start_year += 1
+    return None
 # ----------------------
 if __name__ == "__main__":
     write_csv_in_range()
