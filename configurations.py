@@ -39,7 +39,8 @@ class ServerObject:
 
         # Use Talisman to force any http:// prefixed requests to redirect to https://
         # Edit the CSP in order to serve CSS styles and JavaScript files
-        Talisman(app, content_security_policy=None)
+
+        ''' Talisman(app, content_security_policy=None)'''
         app.secret_key = os.environ.get('KEY')
 
         # Configure flask app with info stored locally within environment (locally or heroku)
