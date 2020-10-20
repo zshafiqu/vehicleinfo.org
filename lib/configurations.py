@@ -53,7 +53,6 @@ class ServerObject:
         cache = Cache(config={'CACHE_TYPE': 'simple'})
         # Bind cache instance to app
         cache.init_app(app)
-
         return cache
     # ----------------------
     def create_db_cursor(self, app):
@@ -64,6 +63,5 @@ class ServerObject:
         # talking to the ClearDB people is to add in the pessimistic ping when creating the engine."
         # Not ideal since its pings DB everytime before you do a query, but avoids 500 Internal Server Error
         db = SQLAlchemy(engine_options={"pool_size": 10, "poolclass":QueuePool, "pool_pre_ping":True})
-
         return db
     # ----------------------
