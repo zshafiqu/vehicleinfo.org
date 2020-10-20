@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- Add embedded styling for row -->
+<style>
+  /* 768px and below */
+  @media screen and (max-width: 768px) {
+    /* Adjust the VIN title on this page so that it doesnt overflow */
+    #vin-title {
+      font-size:1.4rem !important;
+    }
+    /* Adjust table font size on mobile view */
+    td {
+      font-size:.65rem !important;
+    }
+  }
+  .row {
+    /* have to add this because datatables adds margin */
+    margin-left:0px !important;
+    margin-right:0px !important;
+  }
+</style>
+<!-- Begin HTML content -->
+<main class="page contact-us-page">
+  <!-- BEGIN SECTION 1 -->
+  <section class="clean-block clean-form dark" style="padding-bottom: 10px;">
+    <div class="container" style="padding-top: 50px;">
+      <div class="pulse animated block-heading">
+        <h2 class="text-info">Requested VIN Decoded</h2>
+      </div>
+    </div>
+  </section>
+  <!-- END SECTION 1 -->
+  <!-- BEGIN SECTION 2 -->
+  <section class="clean-block clean-form" style="padding-top: 50px;">
+    <div class="container" style="max-width:100%">
+      <div class="row" style="padding-bottom: 15px;">
+        <div class="col">
+          <form class="text-center shadow" style="max-width: 100%;">
+            <h2 style="padding-bottom: 15px;">Information gathered from <strong id="vin-title">{{ response['SearchCriteria'][4:] }}</strong></h2>
+            <div class="table-responsive">
+              <table class="table">
+              <!-- Create a list of strings that we want to ignore -->
+              {% set ignore_strings = ["", "Not Applicable", "0", "0 - VIN decoded clean. Check Digit (9th position) is correct"] %}
+                <tbody>
+                  <!-- For each item within the results section of the JSON response -->
+                  {% for item in response['Results'] %}
+                    <!-- As long as the value isn't null and the value isn't in the list of ignore_strings -->
+                    {% if item['Value'] is not none and item['Value'] not in ignore_strings %}
+                      <!-- Output that row onto the table -->
+                      <tr>
+                        <td> {{ item['Variable'] }} </td>
+                        <td> <strong>{{ item['Value'] }}</strong> </td>
+                      </tr>
+                    {% endif %}
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END SECTION 2 -->
+</main>
+{% endblock content %}
+<!-- {% block scripts %}
+{% endblock scripts %} -->

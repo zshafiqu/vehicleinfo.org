@@ -1,0 +1,32 @@
+
+{% extends "layout.html" %}
+{% block content %}
+<main class="page contact-us-page">
+  <!-- SECTION 1 -->
+  <section class="clean-block clean-form dark" style="padding-bottom: 10px;">
+    <div class="container">
+      <div class="pulse animated block-heading" style="padding-top: 50px;">
+        <h2 class="text-info">VIN Decoder</h2>
+        <p>Enter a VIN (Vehicle Identification Number) in the field below to look up and receive an instant report on its manufacturer, brand, make and model, body style, engine size, and more!<p>
+      </div>
+    </div>
+  </section>
+  <!-- SECTION 2 -->
+  <section class="clean-block clean-form" style="padding-top: 50px;">
+    <div class="container">
+      <!-- Specify route to pass this input to when a POST request is made -->
+      <form class="text-center" action="/decoder" method="post">
+        <!-- YEAR -->
+        <div class="form-group">
+          <label>Vehicle Identification Number</label>
+          <input autofocus class="form-control" name="VIN" placeholder="" type="text">
+        </div>
+        <!-- SUBMIT -->
+        <div class="form-group">
+          <button class="btn btn-primary btn-block" type="submit" value="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+{% endblock content %}

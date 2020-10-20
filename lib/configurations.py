@@ -13,41 +13,41 @@ import os
 # The ServerObject class is used to encapsulate our server and its configurations
 class ServerObject:
     # The class contains a couple variables that are associated with the server, below
-    app = None
+    application = None
     cache = None
     db = None
     cache_timeout = None
     # ----------------------
     # Object initializer method, takes in no parameters as the ServerObject's data is predefined above
     def __init__(self):
-        self.app = self.create_app()
-        self.cache = self.create_cache(self.app)
-        self.db = self.create_db_cursor(self.app)
+        self.application = self.create_app()
+        self.cache = self.create_cache(self.application)
+        self.db = self.create_db_cursor(self.application)
         self.cache_timeout = 1800 # Cache timeout = 30 minutes
     # ----------------------
     # ServerObject's own method to create a Flask application object, as well as assign app configs
     def create_app(self):
         # Create Flask app object
-        app = Flask(__name__)
+        application = Flask(__name__)
 
         # From flask_minify, wrap app around minify module to minify the HTML/CSS/JS responses
-        minify(app=app, html=True, js=True, cssless=True)
+        minify(app=application, html=True, js=True, cssless=True)
 
         # Designate application URL routing to occur with or without a trailing slash
         # By default, all of the routes defined below exist without a trailing slash
-        app.url_map.strict_slashes = False
+        application.url_map.strict_slashes = False
 
         # Use Talisman to force any http:// prefixed requests to redirect to https://
         # Edit the CSP in order to serve CSS styles and JavaScript files
 
         # Talisman(app, content_security_policy=None)
-        app.secret_key = os.environ.get('KEY')
+        application.secret_key = os.environ.get('KEY')
 
         # Configure flask app with info stored locally within environment (locally or AWS)
         # To install mysqlclient, needed to run brew install mysql
-        app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-        app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('RDS_URI')
-        return app
+        application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+        application.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('RDS_URI')
+        return application
     # ----------------------
     def create_cache(self, app):
         # Setup simple cache instance configuration
