@@ -10,20 +10,20 @@ from api_utilities import *
 # ----------------------
 # Create server instance and grab values
 server = ServerObject()
-app = server.app # Flask app object
+application = server.application # Flask application object
 cache = server.cache # Flask cache object
 db = server.db # Database object
 cache_timeout = server.cache_timeout # Cache timeout value for server
 # ----------------------
 # Template filter converter for JSON formatted time
-@app.template_filter('strftime')
+@application.template_filter('strftime')
 def parse_date(datestring):
     return parse_date_util(datestring)
 # ----------------------
 ''' ALL API ROUTES LIVE BELOW THIS COMMENT '''
 # ----------------------
 # Route 1, get all vehicles for a given year
-@app.route('/api/<year>', methods=['GET'])
+@application.route('/api/<year>', methods=['GET'])
 def get_by_year(year):
     # Define table name for lookup and prepare query
     tableName = get_table_name(year)
@@ -43,7 +43,7 @@ def get_by_year(year):
     return jsonify(compile_response(list))
 # ----------------------
 # Route 2, get all vehicles for a given year and make
-@app.route('/api/<year>/<make>', methods=['GET'])
+@application.route('/api/<year>/<make>', methods=['GET'])
 def get_by_year_and_make(year, make):
     # Define table name for lookup and prepare query
     tableName = get_table_name(year)
@@ -63,7 +63,7 @@ def get_by_year_and_make(year, make):
     return jsonify(compile_response(list))
 # ----------------------
 # Route 3, get all vehicles for a given year and make
-@app.route('/api/<year>/<make>/<model>', methods=['GET'])
+@application.route('/api/<year>/<make>/<model>', methods=['GET'])
 def get_by_year_make_and_model(year, make, model):
     # Define table name for lookup and prepare query
     tableName = get_table_name(year)
@@ -83,7 +83,7 @@ def get_by_year_make_and_model(year, make, model):
     return jsonify(compile_response(list))
 # ----------------------
 # Helper route for form selector, no need to cache this
-@app.route('/models/<make>/<year>')
+@application.route('/models/<make>/<year>')
 def get_all_models_for_year(make, year):
     tableName = get_table_name(year)
     raw_query = "SELECT MODEL FROM "+tableName+" WHERE make LIKE '"+make+"'"
@@ -93,7 +93,7 @@ def get_all_models_for_year(make, year):
     return jsonify({'models' : model_list})
 # ----------------------
 # Helper route for form selector, no need to cache this
-@app.route('/makes/<year>')
+@application.route('/makes/<year>')
 def get_distinct_makes_for_year(year):
     tableName = get_table_name(int(year))
     raw_query = "SELECT DISTINCT MAKE FROM "+tableName
@@ -104,22 +104,22 @@ def get_distinct_makes_for_year(year):
 # ----------------------
 ''' ALL VIEW ROUTES LIVE BELOW THIS COMMENT '''
 # ----------------------
-@app.route('/')
+@application.route('/')
 @cache.cached(timeout=cache_timeout)
 def index():
     return render_template('home.html')
 # ----------------------
-@app.route('/api')
+@application.route('/api')
 @cache.cached(timeout=cache_timeout)
 def api():
     return render_template('api.html')
 # ----------------------
-@app.route('/changelog')
+@application.route('/changelog')
 @cache.cached(timeout=cache_timeout)
 def changelog():
     return render_template('changelog.html')
 # ----------------------
-@app.route('/about')
+@application.route('/about')
 @cache.cached(timeout=cache_timeout)
 def about():
     return render_template('about.html')
@@ -135,7 +135,7 @@ def only_cache_GET(*args, **kwargs):
         return False
     return True
 # ----------------------
-@app.route('/report', methods=['GET', 'POST'])
+@application.route('/report', methods=['GET', 'POST'])
 @cache.cached(timeout=cache_timeout, unless=only_cache_GET) # Cache on server for 5 minutes, and then pass unless parameter
 def report():
     # Initialize some default value for when the page is loaded
@@ -182,7 +182,7 @@ def report():
     # For initial /GET requests
     return render_template('report.html', form=form)
 # ----------------------
-@app.route('/decoder', methods=['GET', 'POST'])
+@application.route('/decoder', methods=['GET', 'POST'])
 @cache.cached(timeout=cache_timeout, unless=only_cache_GET) # Cache on server for 5 minutes, and then pass unless parameter
 def decoder():
     # When client hits submit
@@ -211,7 +211,7 @@ def decoder():
 # This route handles error
 # Do not cache the error handler otherwise it'll stay within certain routes even after an error has been rendered
 # By default, e is None unless an error description was passed to the function
-@app.errorhandler(Exception)
+@application.errorhandler(Exception)
 def not_found(e=None):
     # Convert the error message to a string type if its not None, that way whatever the error message is,
     # it'll guarantee to be output
@@ -221,8 +221,8 @@ def not_found(e=None):
     return render_template('error.html', e=e)
 # ----------------------
 if __name__ == '__main__':
-    # app.run(debug=True)
+    # application.run(debug=True)
     from waitress import serve
-    serve(app)
-    # serve(app, url_scheme='https', port=8080)
+    serve(application)
+    # serve(application, url_scheme='https', port=8080)
 # ----------------------
