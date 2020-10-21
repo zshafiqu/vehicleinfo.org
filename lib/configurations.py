@@ -37,9 +37,9 @@ class ServerObject:
         # By default, all of the routes defined below exist without a trailing slash
         application.url_map.strict_slashes = False
 
-        # Use Talisman to force any http:// prefixed requests to redirect to https://
+        ''' Use Talisman to force any http:// prefixed requests to redirect to https:// '''
         # Edit the CSP in order to serve CSS styles and JavaScript files
-        # Talisman(application, content_security_policy=None)
+        Talisman(application, content_security_policy=None)
         application.secret_key = os.environ.get('KEY')
 
         # Configure flask app with info stored locally within environment (locally or AWS)
